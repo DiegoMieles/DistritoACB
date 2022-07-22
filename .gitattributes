@@ -1,13 +1,11 @@
 Proyecto-ACB\Assets\Firebase\Plugins\x86_64\FirebaseCppMessaging.so filter=lfs diff=lfs merge=lfs -text
 Proyecto-ACB\Assets\Firebase\Plugins\x86_64\FirebaseCppAnalytics.so filter=lfs diff=lfs merge=lfs -text
-Proyecto-ACB\Assets\Firebase\Plugins\x86_64\FirebaseCppApp-8_9_0.so filter=lfs diff=lfs merge=lfs -text
+Proyecto-ACB/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-8_9_0.so filter=lfs diff=lfs merge=lfs -text
 Proyecto-ACB\Packages\com.ptc.vuforia.engine-10.5.5.tgz filter=lfs diff=lfs merge=lfs -text
 ## Unity ##
-
 *.cs diff=csharp text
 *.cginc text
 *.shader text
-
 *.mat merge=unityyamlmerge eol=lf
 *.anim merge=unityyamlmerge eol=lf
 *.unity merge=unityyamlmerge eol=lf
@@ -17,10 +15,7 @@ Proyecto-ACB\Packages\com.ptc.vuforia.engine-10.5.5.tgz filter=lfs diff=lfs merg
 *.asset merge=unityyamlmerge eol=lf
 *.meta merge=unityyamlmerge eol=lf
 *.controller merge=unityyamlmerge eol=lf
-
-
 ## git-lfs ##
-
 #Image
 *.jpg filter=lfs diff=lfs merge=lfs -text
 *.jpeg filter=lfs diff=lfs merge=lfs -text
@@ -28,22 +23,18 @@ Proyecto-ACB\Packages\com.ptc.vuforia.engine-10.5.5.tgz filter=lfs diff=lfs merg
 *.gif filter=lfs diff=lfs merge=lfs -text
 *.psd filter=lfs diff=lfs merge=lfs -text
 *.ai filter=lfs diff=lfs merge=lfs -text
-
 #Audio
 *.mp3 filter=lfs diff=lfs merge=lfs -text
 *.wav filter=lfs diff=lfs merge=lfs -text
 *.ogg filter=lfs diff=lfs merge=lfs -text
-
 #Video
 *.mp4 filter=lfs diff=lfs merge=lfs -text
 *.mov filter=lfs diff=lfs merge=lfs -text
-
 #3D Object
 *.FBX filter=lfs diff=lfs merge=lfs -text
 *.fbx filter=lfs diff=lfs merge=lfs -text
 *.blend filter=lfs diff=lfs merge=lfs -text
 *.obj filter=lfs diff=lfs merge=lfs -text
-
 #ETC
 *.a filter=lfs diff=lfs merge=lfs -text
 *.exr filter=lfs diff=lfs merge=lfs -text
