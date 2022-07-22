@@ -1,0 +1,28 @@
+var class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve =
+[
+    [ "ModifyMaterial", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#adbd45bac753802da3350195db39df03b", null ],
+    [ "ModifyMesh", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#ac32c01511a9208b3ae89e1b3ab925146", null ],
+    [ "OnDisable", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#ac808f51590b2e11c2c761deccb6ab1ea", null ],
+    [ "OnEnable", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#a9811a1966efcfcd2d4f649298e59ffc4", null ],
+    [ "Play", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#af750095de603f5a2cfa8372715c30dc7", null ],
+    [ "SetDirty", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#ac93a18442af808abbc4c85af11ad89e8", null ],
+    [ "Stop", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#af46e0162e0cbca4a8372624457dda02d", null ],
+    [ "m_EffectArea", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#aca9725a1e430769aab53c427bc958192", null ],
+    [ "shaderName", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#af6120d4229208344128dced7ccb35b69", null ],
+    [ "color", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#a24af9cdde55e17c3fe95f6edb7d422fd", null ],
+    [ "colorMode", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#acb3778272600a4475b67233e52001069", null ],
+    [ "duration", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#aeb68e3fe152b2d93527f649a2ffdb836", null ],
+    [ "effectArea", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#a71cafbc6caa53fbf7d77dfe51b74493c", null ],
+    [ "effectFactor", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#ae4c14b83226c45b9a8c0abf2faf5ade2", null ],
+    [ "keepAspectRatio", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#a8820402af7f0d6e9b28a04199491ed8c", null ],
+    [ "location", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#a898ecc47823e252f183e0d7cee5de702", null ],
+    [ "loop", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#aa82c6ee16274ea259ebf8a5bfc9d168a", null ],
+    [ "loopDelay", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#a257fce37ae6a872015117d6fec437813", null ],
+    [ "noiseTexture", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#a48576b721eb01a61d99c22a38954ce63", null ],
+    [ "play", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#a356aa35a566ca748a3f408997ef93b0c", null ],
+    [ "ptex", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#a49bdf4e631699b4303812f024cc88edd", null ],
+    [ "reverse", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#a3ab53fef2e2234e998a3587b9f9a3e78", null ],
+    [ "softness", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#a8773ab69b2ab0a5cdfea6dec8dd5af5f", null ],
+    [ "updateMode", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#aca1df8b3c0207d315a6f304d8dbee427", null ],
+    [ "width", "class_coffee_1_1_u_i_extensions_1_1_u_i_dissolve.html#a429405864826621f8e24c5d7664336e4", null ]
+];

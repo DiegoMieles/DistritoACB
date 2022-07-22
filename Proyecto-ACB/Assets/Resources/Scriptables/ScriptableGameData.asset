@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2552211f5a2559f4fa1fcf39d681ed35, type: 3}
+  m_Name: ScriptableGameData
+  m_EditorClassIdentifier: 
+  hours: 2
+  country: ES
+  costChallenge: 1
+  app:
+    version: 1.0
+    vers_android: 1.0
+    vers_ios: 1.0
+    text: "\xA1Nuestro equipo de desarrolladores no para de mejorar! Para disfrutar
+      de sus avances tendr\xE1s que actualizar la versi\xF3n de tu APP."
+    url_android: https://play.google.com/store/apps/details?id=com.acb.www&gl=ES
+    url_ios: https://apps.apple.com/es/app/acb/id437202587
+  mainMenuData:
+    transitionTime: 1
+    buildInfoData:
+    - id: Edf-Banco
+      title: Banco
+      info: Acude al Banco para consultar el saldo y movimientos de tus acbcoins.
+    - id: Edf-Misiones
+      title: Misiones
+      info: "En las marquesinas te proponemos misiones. \xA1Compl\xE9talas y consigue
+        tus premios!"
+    - id: Edf-Pabellon
+      title: "Pabell\xF3n"
+      info: "El Pabell\xF3n es el lugar en el que podr\xE1s gestionar tu Equipo Competitivo,
+        publicar y aceptar desaf\xEDos, ver tus tokens y potenciar tus cartas."
+    - id: Edf-Despacho
+      title: Despacho
+      info: "El Despacho es el lugar en el que puedes ver todos tus tokens, mejorarlos
+        con potenciadores y decidir cu\xE1l es la alineaci\xF3n de tu Equipo Competitivo."
+    - id: Edf-Tablon
+      title: "Tabl\xF3n"
+      info: "En el Tabl\xF3n de Anuncios podr\xE1s publicar ofertas de desaf\xEDo
+        y aceptar las de otros usuarios."
+    - id: Edf-CanchaInt
+      title: Cancha
+      info: "Acude a la Cancha para ver todos los desaf\xEDos en los que has competido."
+    - id: Edf-Cancha
+      title: Canchas Callejeras
+      info: "\xBFQuieres acbcoins? Puedes conseguirlos en las Canchas Callejeras
+        varias veces al d\xEDa."
+    - id: Edf-HeadQuarters
+      title: acb Headquarters
+      info: "acb Headquarters es el lugar donde acudir para consultar las condiciones
+        legales, los rankings y aprender m\xE1s sobre el juego.\n"
+    - id: Edf-Mall
+      title: Tienda
+      info: "En la Tienda podr\xE1s comprar nuevos tokens\n\xA1Atento a las oportunidades!"
+    - id: Edf-Mercadillo
+      title: Mercadillo
+      info: En el Mercadillo puedes vender o comprar productos

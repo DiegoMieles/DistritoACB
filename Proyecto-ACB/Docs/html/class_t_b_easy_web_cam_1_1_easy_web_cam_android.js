@@ -1,0 +1,25 @@
+var class_t_b_easy_web_cam_1_1_easy_web_cam_android =
+[
+    [ "EasyWebCamAndroid", "class_t_b_easy_web_cam_1_1_easy_web_cam_android.html#a060de16fdf6fe0d00bdde7f7be023455", null ],
+    [ "ewcUpdateTexture32", "class_t_b_easy_web_cam_1_1_easy_web_cam_android.html#a7e03957cfd135f76884385c266ce4f92", null ],
+    [ "getEnterFrame", "class_t_b_easy_web_cam_1_1_easy_web_cam_android.html#af32800357a498b1c9d9c9df9bf4342f8", null ],
+    [ "Init", "class_t_b_easy_web_cam_1_1_easy_web_cam_android.html#a0b88c0ff171baf0be21121958e277bf1", null ],
+    [ "isCameraUsable", "class_t_b_easy_web_cam_1_1_easy_web_cam_android.html#aa28d6cabbd182e9d322ee45dc4657762", null ],
+    [ "OnPause", "class_t_b_easy_web_cam_1_1_easy_web_cam_android.html#a5d14881b28bf9ad75a791d21914afa5b", null ],
+    [ "Play", "class_t_b_easy_web_cam_1_1_easy_web_cam_android.html#a042ea15305bdda7c9d3668d74f58e66e", null ],
+    [ "Release", "class_t_b_easy_web_cam_1_1_easy_web_cam_android.html#a26f62f623fc45a3df539bac84103bea1", null ],
+    [ "setFlashMode", "class_t_b_easy_web_cam_1_1_easy_web_cam_android.html#af2a941eaae7b13ee845736e459e4eb5d", null ],
+    [ "setFocusMode", "class_t_b_easy_web_cam_1_1_easy_web_cam_android.html#ac959ede3dbc4a77c0b63df91c9ace963", null ],
+    [ "setOrientation", "class_t_b_easy_web_cam_1_1_easy_web_cam_android.html#a2a2b626e5417b8b2d5bfbe315e10bcdc", null ],
+    [ "setPreviewResolution", "class_t_b_easy_web_cam_1_1_easy_web_cam_android.html#af7e0d0dd324cf0d077e0f182601c4ffb", null ],
+    [ "setTorchMode", "class_t_b_easy_web_cam_1_1_easy_web_cam_android.html#aaf7584e3d8187ed4e7493331d7940167", null ],
+    [ "Stop", "class_t_b_easy_web_cam_1_1_easy_web_cam_android.html#a04cf3cc1dde684efe1fbfbfe78f3f732", null ],
+    [ "SwitchCamera", "class_t_b_easy_web_cam_1_1_easy_web_cam_android.html#abeeedd07d5011f4cd20006dfe1098bee", null ],
+    [ "TakePhoto", "class_t_b_easy_web_cam_1_1_easy_web_cam_android.html#a00ebefc7812189d95f80e45f3af64710", null ],
+    [ "tapFocus", "class_t_b_easy_web_cam_1_1_easy_web_cam_android.html#a9a0544952fdfea0ac61b300d3e38110b", null ],
+    [ "UpdateImage", "class_t_b_easy_web_cam_1_1_easy_web_cam_android.html#afee86e55127386711c9726657fe60ea4", null ],
+    [ "IsPlaying", "class_t_b_easy_web_cam_1_1_easy_web_cam_android.html#a1ede37ba7bf75138f3e274fc02fb4084", null ],
+    [ "previewHeight", "class_t_b_easy_web_cam_1_1_easy_web_cam_android.html#a96c03858154564583e4cf4b2d804004f", null ],
+    [ "previewWidth", "class_t_b_easy_web_cam_1_1_easy_web_cam_android.html#aab65197b9317c76294986aaf45f04ebc", null ],
+    [ "WebCamPreview", "class_t_b_easy_web_cam_1_1_easy_web_cam_android.html#a221d1954c5411cc74d27a69105120326", null ]
+];

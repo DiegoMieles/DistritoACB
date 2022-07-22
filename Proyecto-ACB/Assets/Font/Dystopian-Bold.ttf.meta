@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 8efa2d6454125ef46bebc845f3a239d3
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Dystopian
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: ebc95ca1201998c408fe619ba9beaa35, type: 3}
+  - {fileID: 12800000, guid: a8a668449aad0ea4a9986373c6ed2079, type: 3}
+  - {fileID: 12800000, guid: 3bb0ecff8203f614cb99d3bb7c7cb947, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

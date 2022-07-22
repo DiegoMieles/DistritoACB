@@ -1,0 +1,4 @@
+var class_data_1_1_challenge_accepted_data_1_1_acball_challenge_data_1_1_acball_item_challenge_1_1_challenge_content =
+[
+    [ "TOKEN", "class_data_1_1_challenge_accepted_data_1_1_acball_challenge_data_1_1_acball_item_challenge_1_1_challenge_content.html#a1b8216aad49a92a431831c9c2c44b680", null ]
+];

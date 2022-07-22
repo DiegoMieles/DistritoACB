@@ -1,0 +1,45 @@
+var _scriptable_game_data_8cs =
+[
+    [ "Data.ScriptableGameData", "class_data_1_1_scriptable_game_data.html", "class_data_1_1_scriptable_game_data" ],
+    [ "Data.ItemData", "class_data_1_1_item_data.html", "class_data_1_1_item_data" ],
+    [ "Data.GeneralData", "class_data_1_1_general_data.html", "class_data_1_1_general_data" ],
+    [ "Data.MainMenuData", "class_data_1_1_main_menu_data.html", "class_data_1_1_main_menu_data" ],
+    [ "Data.MainMenuData.BuildData", "class_data_1_1_main_menu_data_1_1_build_data.html", "class_data_1_1_main_menu_data_1_1_build_data" ],
+    [ "Data.AvatarEditorData", "class_data_1_1_avatar_editor_data.html", "class_data_1_1_avatar_editor_data" ],
+    [ "Data.AvatarMenuData", "class_data_1_1_avatar_menu_data.html", "class_data_1_1_avatar_menu_data" ],
+    [ "Data.App", "class_data_1_1_app.html", "class_data_1_1_app" ],
+    [ "ItemType", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18", [
+      [ "NONE", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18ab50339a10e1de285ac99d4c3990b8693", null ],
+      [ "ACBALL", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18ac63806dcaedf9759896e070cbd107161", null ],
+      [ "BODYACCESORY", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18a51e727d427dee12db036433f06a92564", null ],
+      [ "HEADACCESORY", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18ac03d4366b1e9fb2507987da3b59d2ec7", null ],
+      [ "ARMACCESORY", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18a61e97aac0efae61525cf34905fa305af", null ],
+      [ "EYEACCESORY", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18ade2f68536b68d575e7244bb090a13422", null ],
+      [ "BACKGROUNDACCESORY", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18ac4125a38543f49d3adf910ef9392ad38", null ],
+      [ "FOREGROUNDACCESORY", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18a51e1b5646ae5d57dd6286d780643e550", null ],
+      [ "SKINCOLOR", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18a8d3443f7cb2f9bb62b7b8e417a10675a", null ],
+      [ "FACEFORM", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18a761a7343e762d9df0c488531e47a59a3", null ],
+      [ "EYES", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18a0f5a0565219c50fa7a790bb6a56eb605", null ],
+      [ "EAR", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18a3272e9b82d6c1165497002552fc56312", null ],
+      [ "NOSE", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18acb01e43a4cae492bdd0dac857257c2d6", null ],
+      [ "MOUTH", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18a6371bfbeb0f5c87eab3688a8524795f2", null ],
+      [ "EYEBROW", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18a56bf84ff5dd3843c2ae6c2a4a2408bb7", null ],
+      [ "HAIRSTYLE", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18a5381453f90c5f5d7e27ff9d68a1a00c8", null ],
+      [ "TOKEN", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18a94c8aa2452bccd82ee129b46f7c4be79", null ],
+      [ "BODYPART", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18a7651841fa57ee4438c36babb6df2bf14", null ],
+      [ "FACIALHAIR", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18ae25fa035e60a1c9802853514253562f0", null ],
+      [ "BODYFORM", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18a7bc1dc2dc4e9fbd4a8ae39cf7ae17d7e", null ],
+      [ "SHIRTDEFAULT", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18a3377e95fdc769b576027973242afaf84", null ],
+      [ "HAIRSTYLEBACK", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18a05ae8fbd173773f9073138b8c4aac376", null ],
+      [ "HAIRCOLOR", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18a2f51f84a920adaa8e9ac27b4f2e24780", null ],
+      [ "BOOSTER", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18a7789c2a174e66786a6c0a22520e330d4", null ],
+      [ "COINS", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18ae567402985b2d62bb90047a8b5545f47", null ],
+      [ "SKIN", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18a017ef937cce02f08a30f875ebcb80a60", null ],
+      [ "HIGTHLIGHT", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18a07450a495ea4ca6b314dd720980de471", null ],
+      [ "SUBCOLECTION", "_scriptable_game_data_8cs.html#a64d299e9233486e7e2dec91b458aaf18acf30a5f222520bcc193bf0f6fc3d12eb", null ]
+    ] ],
+    [ "TransitionTime", "_scriptable_game_data_8cs.html#ab8e0b83f99a71a9cd187984f7ad83601", [
+      [ "DAY", "_scriptable_game_data_8cs.html#ab8e0b83f99a71a9cd187984f7ad83601a5b1d59b5451c06afb65ab1bc2713cfb4", null ],
+      [ "NIGHT", "_scriptable_game_data_8cs.html#ab8e0b83f99a71a9cd187984f7ad83601a75f4d5610c115778464c9fe9e3a410ac", null ]
+    ] ]
+];

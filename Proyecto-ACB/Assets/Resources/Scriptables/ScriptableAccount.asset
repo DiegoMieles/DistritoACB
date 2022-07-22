@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b058b7eac12c9a44b0df526ce001fbb, type: 3}
+  m_Name: ScriptableAccount
+  m_EditorClassIdentifier: 
+  statsData:
+    coinsBalance: 0
+    acballsBalance: 0
+    acballsNotification: 0
+  avatarData:
+    nickName: 
+    skinColor: 0
+    bodyForm: 0
+    faceForm: 0
+    eyes: 0
+    ear: 0
+    nose: 0
+    mouth: 0
+    eyeBrow: 0
+    hairStyleFront: 0
+    hairStyleBack: 0
+    hairColor: 0
+    facialHair: 0
+    bodyAccessory: 0
+    headAccessory: 0
+    armAccessory: 0
+    eyesAccessory: 0
+    backGround: 0
+    foreGround: 0
+    isFirstTime: 0
+    avatarItems: []
+  stadiumData:
+    collectCoins: 0
+    lastCollectTime: 0
+    nextCollectTime: 0
+  missionsData:
+    missionItems: []

@@ -1,0 +1,25 @@
+var class_easy_web_cam_unity =
+[
+    [ "EasyWebCamUnity", "class_easy_web_cam_unity.html#ab437b7a459776010de33a7b878a2350c", null ],
+    [ "GetDeviceName", "class_easy_web_cam_unity.html#a99873e5821dcd6c67126f181c2ffa56d", null ],
+    [ "getEnterFrame", "class_easy_web_cam_unity.html#a1d4df18a3f3266f9f6d637a8d86bc2b4", null ],
+    [ "Init", "class_easy_web_cam_unity.html#a1d568106c1a5751fe09a84684f07f275", null ],
+    [ "isCameraUsable", "class_easy_web_cam_unity.html#a13c04e6b0a69a1291dc2b2a2d284daa3", null ],
+    [ "OnPause", "class_easy_web_cam_unity.html#a2663dc47ccab338d45961e00d99d5f1f", null ],
+    [ "Play", "class_easy_web_cam_unity.html#afc5cda7b8e7f3bf2570d674fa936f20f", null ],
+    [ "Release", "class_easy_web_cam_unity.html#a55745eba7369bac2bb4f9eaccf2de766", null ],
+    [ "setFlashMode", "class_easy_web_cam_unity.html#a6b863d14a324f0aea88fd17ab13eed7e", null ],
+    [ "setFocusMode", "class_easy_web_cam_unity.html#afc734b44160a66205ad87477999c24d4", null ],
+    [ "setOrientation", "class_easy_web_cam_unity.html#ad4c26f3962f91738e583cc7f0a32f946", null ],
+    [ "setPreviewResolution", "class_easy_web_cam_unity.html#aad82aefde8d117ab9d8386bfe8dee2e5", null ],
+    [ "setTorchMode", "class_easy_web_cam_unity.html#ae949e2b436a547bcced96c1fe7636944", null ],
+    [ "Stop", "class_easy_web_cam_unity.html#adc88a1721d679c4472f7265eea65bcfd", null ],
+    [ "SwitchCamera", "class_easy_web_cam_unity.html#a1af3a3801004e82a17056f73b7998e9c", null ],
+    [ "TakePhoto", "class_easy_web_cam_unity.html#a18c302a82e47df2f72c975aacd72976f", null ],
+    [ "tapFocus", "class_easy_web_cam_unity.html#a979a801eba5651f3cc5532380740bb16", null ],
+    [ "UpdateImage", "class_easy_web_cam_unity.html#a44e69e76757b57b9fde7416dc38019bb", null ],
+    [ "IsPlaying", "class_easy_web_cam_unity.html#a51b4bbcbc7624e892d23c02b69119f7c", null ],
+    [ "previewHeight", "class_easy_web_cam_unity.html#a07b9b86d8c9699d3f9884b189e61d80b", null ],
+    [ "previewWidth", "class_easy_web_cam_unity.html#ab9654981d64fe7400311a61afa624d6e", null ],
+    [ "WebCamPreview", "class_easy_web_cam_unity.html#a5a0a073688720616b9d5ec9f18b59b7c", null ]
+];

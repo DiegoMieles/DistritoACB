@@ -1,0 +1,25 @@
+var class_data_1_1_avatar_config_data =
+[
+    [ "armAccessory", "class_data_1_1_avatar_config_data.html#aa4d958faf78a761bc3f0e1aa78b53e25", null ],
+    [ "backGround", "class_data_1_1_avatar_config_data.html#ab2e640523105a91abeb1d013947b7196", null ],
+    [ "bodyAccessory", "class_data_1_1_avatar_config_data.html#a427abd8800a5d9ddbba8cce315b59c9c", null ],
+    [ "bodyForm", "class_data_1_1_avatar_config_data.html#aa824ac1fedaef2f2af4aaa407527c85f", null ],
+    [ "ear", "class_data_1_1_avatar_config_data.html#a694e85c9fc1600bdba9d113ad2a8b135", null ],
+    [ "eyeBrow", "class_data_1_1_avatar_config_data.html#a49bb69966c4c7794adb2d81d0aac5b92", null ],
+    [ "eyes", "class_data_1_1_avatar_config_data.html#a3d9d8d59af8a28407bd98a36b5621a84", null ],
+    [ "eyesAccessory", "class_data_1_1_avatar_config_data.html#a622896d220322d259e664dffa21a2fe7", null ],
+    [ "faceForm", "class_data_1_1_avatar_config_data.html#a5d71c0e193b9f1c3125e50c8c514970c", null ],
+    [ "facialHair", "class_data_1_1_avatar_config_data.html#add1bfe3e414990af88aaac1c7330a6da", null ],
+    [ "foreGround", "class_data_1_1_avatar_config_data.html#a241fe120962181d6c96ff8bbcbec574c", null ],
+    [ "hairColor", "class_data_1_1_avatar_config_data.html#ab1381d7e6c9eaa9ae9364d0585ea6f0c", null ],
+    [ "hairStyleBack", "class_data_1_1_avatar_config_data.html#ae0b9556f11e42370855119db6929c2df", null ],
+    [ "hairStyleFront", "class_data_1_1_avatar_config_data.html#ae974871d64ca2a3b4841d93557920f1a", null ],
+    [ "headAccessory", "class_data_1_1_avatar_config_data.html#a014c1cc03c39f112d20780cc2fbf2f13", null ],
+    [ "img_big", "class_data_1_1_avatar_config_data.html#a897018b543cc135ec32453c2dd9bea3f", null ],
+    [ "img_small", "class_data_1_1_avatar_config_data.html#aa7a0a32e787e99afeb489810a48e6bda", null ],
+    [ "isFirstTime", "class_data_1_1_avatar_config_data.html#a90fc5f1540fc1ca04f308a3f094ca8a6", null ],
+    [ "mouth", "class_data_1_1_avatar_config_data.html#a60c403923d491f118e1b3b904bcf7b63", null ],
+    [ "nickName", "class_data_1_1_avatar_config_data.html#ab1dc585ffd39173852b8c7fd0b310588", null ],
+    [ "nose", "class_data_1_1_avatar_config_data.html#a6292b915818ec9750358686762e57997", null ],
+    [ "skinColor", "class_data_1_1_avatar_config_data.html#a597ff2a7cddcc9b02a75e288be756b2e", null ]
+];

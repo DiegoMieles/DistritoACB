@@ -1,0 +1,972 @@
+fileFormatVersion: 2
+guid: 301eb24be17a39a449a3f1ad9f973b51
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2979231048505830435
+    second: ACBall-Baskonia
+  - first:
+      213: -6827606554280898236
+    second: ACBall-FCB
+  - first:
+      213: -8881548617537399034
+    second: ACBall-Baxi
+  - first:
+      213: 5924575239438740365
+    second: ACBall-CBC
+  - first:
+      213: -2073844015347850019
+    second: ACBall-BilbaoBasket
+  - first:
+      213: 5630115097500079049
+    second: ACBall-Casademont
+  - first:
+      213: 7024657904142205313
+    second: ACBall-Obradoiro
+  - first:
+      213: 4609399203698294298
+    second: ACBall-Andorra
+  - first:
+      213: -3380510853826299638
+    second: ACBall-RealMadrid
+  - first:
+      213: -9119143922681297735
+    second: ACBall-Lila
+  - first:
+      213: 1327100772413228269
+    second: ACBall-Verde
+  - first:
+      213: 7670147994478788847
+    second: ACBall-Naranja
+  - first:
+      213: 4061948178588636118
+    second: Atlas-ACBalls_12
+  - first:
+      213: 835157756534831474
+    second: Atlas-ACBalls_13
+  - first:
+      213: -1989251605741556342
+    second: ACBall-Burgos
+  - first:
+      213: 5812336307138448593
+    second: ACBall-Coosur
+  - first:
+      213: 1051972158877313226
+    second: ACBall-Leon
+  - first:
+      213: 2404393843422943922
+    second: ACBall-UCAM
+  - first:
+      213: -498216977259402482
+    second: ACBall-GranCanaria
+  - first:
+      213: 170055283035326060
+    second: ACBall-CJB
+  - first:
+      213: -4560323569368416727
+    second: ACBall-Urbas
+  - first:
+      213: 5704614727495167152
+    second: ACBall-Valencia
+  - first:
+      213: 6838834003375888578
+    second: ACBall-Unicaja
+  - first:
+      213: -2241210486908860392
+    second: Atlas-ACBalls_23
+  - first:
+      213: 2076323681607913690
+    second: Flechas-Potenciadores
+  - first:
+      213: -622296246031744683
+    second: ACBall-Abierto-OFF
+  - first:
+      213: 4959967729231871612
+    second: ACBall-Abierto-ON
+  - first:
+      213: 5354310171465811031
+    second: Potenciadores-Cesta
+  - first:
+      213: -8267454214809627721
+    second: Potenciadores-Tirador
+  - first:
+      213: 3177252138949176562
+    second: Potenciadores-Rebote
+  - first:
+      213: -5889168678901867649
+    second: Atlas-ACBalls_49
+  - first:
+      213: 7570918892198307919
+    second: Hexagono-2
+  - first:
+      213: -5403764129327757563
+    second: Hexagono-1
+  - first:
+      213: -3867676958724869254
+    second: Hexagono-0
+  - first:
+      213: -7020413415652068074
+    second: Potenciador-Cuadro
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ACBall-Baskonia
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 1737
+        width: 305
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32c210e9ada585920800000000000000
+      internalID: 2979231048505830435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACBall-FCB
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 1736
+        width: 302
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44155f953087f31a0800000000000000
+      internalID: -6827606554280898236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACBall-Baxi
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 1742
+        width: 302
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 607525cb6966eb480800000000000000
+      internalID: -8881548617537399034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACBall-CBC
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 1740
+        width: 302
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8b22df5ac1583250800000000000000
+      internalID: 5924575239438740365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACBall-BilbaoBasket
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 1742
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd42f911bd93833e0800000000000000
+      internalID: -2073844015347850019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACBall-Casademont
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 1742
+        width: 301
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c35e0ff9df222e40800000000000000
+      internalID: 5630115097500079049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACBall-Obradoiro
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 1430
+        width: 302
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 181490545299c7160800000000000000
+      internalID: 7024657904142205313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACBall-Andorra
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 1428
+        width: 302
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1eb7647720e7ff30800000000000000
+      internalID: 4609399203698294298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACBall-RealMadrid
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 1428
+        width: 302
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a09b4560a430611d0800000000000000
+      internalID: -3380510853826299638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACBall-Lila
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 1448
+        width: 277
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b44be8eaea427180800000000000000
+      internalID: -9119143922681297735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACBall-Verde
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 1448
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de446d80f1fca6210800000000000000
+      internalID: 1327100772413228269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACBall-Naranja
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 1449
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe0459976f6d17a60800000000000000
+      internalID: 7670147994478788847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas-ACBalls_12
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 1439
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d312d8e850fe5830800000000000000
+      internalID: 4061948178588636118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas-ACBalls_13
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 1439
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 279bba10e83179b00800000000000000
+      internalID: 835157756534831474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACBall-Burgos
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 1120
+        width: 301
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8d26ee3432c464e0800000000000000
+      internalID: -1989251605741556342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACBall-Coosur
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 1119
+        width: 302
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dcc716831199a050800000000000000
+      internalID: 5812336307138448593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACBall-Leon
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 1120
+        width: 302
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac8ab7bda1b599e00800000000000000
+      internalID: 1051972158877313226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACBall-UCAM
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 1108
+        width: 302
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ba5c59267f1e5120800000000000000
+      internalID: 2404393843422943922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACBall-GranCanaria
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 1114
+        width: 302
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0b62618c4af519f0800000000000000
+      internalID: -498216977259402482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACBall-CJB
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 1120
+        width: 301
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c66cf7101682c5200800000000000000
+      internalID: 170055283035326060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACBall-Urbas
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 802
+        width: 304
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92e34f210e976b0c0800000000000000
+      internalID: -4560323569368416727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACBall-Valencia
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 808
+        width: 304
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bcafcccedcda2f40800000000000000
+      internalID: 5704614727495167152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACBall-Unicaja
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 808
+        width: 300
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c81519da4b68ee50800000000000000
+      internalID: 6838834003375888578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas-ACBalls_23
+      rect:
+        serializedVersion: 2
+        x: 1444
+        y: 1108
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 818cae4cfee95e0e0800000000000000
+      internalID: -2241210486908860392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flechas-Potenciadores
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 1009
+        width: 48
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad098f8336590dc10800000000000000
+      internalID: 2076323681607913690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACBall-Abierto-OFF
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 703
+        width: 311
+        height: 398
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 551083e7cd82d57f0800000000000000
+      internalID: -622296246031744683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ACBall-Abierto-ON
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 710
+        width: 312
+        height: 398
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7e3446ee5855d440800000000000000
+      internalID: 4959967729231871612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potenciadores-Cesta
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 942
+        width: 105
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7540b7b8bb45e4a40800000000000000
+      internalID: 5354310171465811031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potenciadores-Tirador
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 785
+        width: 103
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b35779c13a144d80800000000000000
+      internalID: -8267454214809627721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potenciadores-Rebote
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 722
+        width: 105
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fc6aef8cfdd71c20800000000000000
+      internalID: 3177252138949176562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas-ACBalls_49
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 796
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7b92b7e948754ea0800000000000000
+      internalID: -5889168678901867649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hexagono-2
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 384
+        width: 347
+        height: 398
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4826c8be9e411960800000000000000
+      internalID: 7570918892198307919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hexagono-1
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 384
+        width: 346
+        height: 393
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 507cb6d9729f105b0800000000000000
+      internalID: -5403764129327757563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hexagono-0
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 385
+        width: 346
+        height: 392
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a73bd314c40435ac0800000000000000
+      internalID: -3867676958724869254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potenciador-Cuadro
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 372
+        width: 323
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 103, y: 102, z: 96, w: 112}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 615fba7b13b729e90800000000000000
+      internalID: -7020413415652068074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

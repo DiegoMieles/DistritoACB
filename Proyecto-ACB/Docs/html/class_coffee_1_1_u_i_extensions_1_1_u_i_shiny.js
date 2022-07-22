@@ -1,0 +1,27 @@
+var class_coffee_1_1_u_i_extensions_1_1_u_i_shiny =
+[
+    [ "ModifyMesh", "class_coffee_1_1_u_i_extensions_1_1_u_i_shiny.html#a9ee4fe6dac9bebb142d2e4ee2f0271d3", null ],
+    [ "OnDisable", "class_coffee_1_1_u_i_extensions_1_1_u_i_shiny.html#a94af6bf6b3f8a1dc28ca0b74ca8a463e", null ],
+    [ "OnEnable", "class_coffee_1_1_u_i_extensions_1_1_u_i_shiny.html#a58f4faca77e83401f6e836cd72d29fea", null ],
+    [ "Play", "class_coffee_1_1_u_i_extensions_1_1_u_i_shiny.html#a356303261e6d93a7fb2dde39894c6fd7", null ],
+    [ "SetDirty", "class_coffee_1_1_u_i_extensions_1_1_u_i_shiny.html#a801472d745f646dd73e773a9d5547ff7", null ],
+    [ "Stop", "class_coffee_1_1_u_i_extensions_1_1_u_i_shiny.html#a2a9aabab8bb0d5d0d947892a2ac4bbfb", null ],
+    [ "m_EffectArea", "class_coffee_1_1_u_i_extensions_1_1_u_i_shiny.html#affa11c36d578615e36adcfcb579ec4c9", null ],
+    [ "shaderName", "class_coffee_1_1_u_i_extensions_1_1_u_i_shiny.html#a7cc92dacfb44848ae2e8949ded0b7e75", null ],
+    [ "alpha", "class_coffee_1_1_u_i_extensions_1_1_u_i_shiny.html#ac1de2d980e6e95b59ae00ff3e09888eb", null ],
+    [ "brightness", "class_coffee_1_1_u_i_extensions_1_1_u_i_shiny.html#a2a669c94da1f9d447f36470e4cf634c1", null ],
+    [ "duration", "class_coffee_1_1_u_i_extensions_1_1_u_i_shiny.html#a837f60d80594802556cbb9e21dd8bb3b", null ],
+    [ "effectArea", "class_coffee_1_1_u_i_extensions_1_1_u_i_shiny.html#ab0d1f906f415d682ed8ab39abda2b218", null ],
+    [ "effectFactor", "class_coffee_1_1_u_i_extensions_1_1_u_i_shiny.html#a22aa8af071268389a2f11381b416a533", null ],
+    [ "gloss", "class_coffee_1_1_u_i_extensions_1_1_u_i_shiny.html#ab88d696538872d873cc5e4a925d435d1", null ],
+    [ "highlight", "class_coffee_1_1_u_i_extensions_1_1_u_i_shiny.html#a9a2e98189e736bb4a080a2b9e9b61069", null ],
+    [ "location", "class_coffee_1_1_u_i_extensions_1_1_u_i_shiny.html#a319e816112f75002aa32057457bdda3e", null ],
+    [ "loop", "class_coffee_1_1_u_i_extensions_1_1_u_i_shiny.html#ac91c9984e813d93a5cacdef9a693ece9", null ],
+    [ "loopDelay", "class_coffee_1_1_u_i_extensions_1_1_u_i_shiny.html#a6436ef7607e94cb7f9194ee4a8747e6a", null ],
+    [ "play", "class_coffee_1_1_u_i_extensions_1_1_u_i_shiny.html#a8c823a135a5429ea8ce29d22b4b61de0", null ],
+    [ "ptex", "class_coffee_1_1_u_i_extensions_1_1_u_i_shiny.html#a16d93ff08591fb317d2a1e675ce9b7b7", null ],
+    [ "rotation", "class_coffee_1_1_u_i_extensions_1_1_u_i_shiny.html#a449f8ae2799a06225c607cb67bda82cd", null ],
+    [ "softness", "class_coffee_1_1_u_i_extensions_1_1_u_i_shiny.html#a948132ae7b7223133a45d7799cea7b9a", null ],
+    [ "updateMode", "class_coffee_1_1_u_i_extensions_1_1_u_i_shiny.html#ad1f5cadac2e33ddbe12d8c4732f13f12", null ],
+    [ "width", "class_coffee_1_1_u_i_extensions_1_1_u_i_shiny.html#a32c759e9c14080ab0638d278b2eebba5", null ]
+];

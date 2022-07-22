@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf360b01210dea74d98543256445379b, type: 3}
+  m_Name: ScriptableAvatarExtraData
+  m_EditorClassIdentifier: 
+  skinColor:
+  - id: 0
+    type: 8
+    icon: {r: 0.99607843, g: 0.9647059, b: 0.92156863, a: 1}
+  - id: 1
+    type: 8
+    icon: {r: 0.99607843, g: 0.9019608, b: 0.84705883, a: 1}
+  - id: 2
+    type: 8
+    icon: {r: 1, g: 0.93333334, b: 0.89411765, a: 1}
+  - id: 3
+    type: 8
+    icon: {r: 0.99215686, g: 0.83137256, b: 0.7607843, a: 1}
+  - id: 4
+    type: 8
+    icon: {r: 0.9529412, g: 0.76862746, b: 0.69803923, a: 1}
+  - id: 5
+    type: 8
+    icon: {r: 0.8666667, g: 0.6627451, b: 0.5686275, a: 1}
+  - id: 6
+    type: 8
+    icon: {r: 0.83137256, g: 0.6117647, b: 0.4745098, a: 1}
+  - id: 7
+    type: 8
+    icon: {r: 0.7607843, g: 0.56078434, b: 0.47843137, a: 1}
+  - id: 8
+    type: 8
+    icon: {r: 0.80784315, g: 0.52156866, b: 0.36078432, a: 1}
+  - id: 9
+    type: 8
+    icon: {r: 0.6901961, g: 0.5019608, b: 0.41568628, a: 1}
+  - id: 10
+    type: 8
+    icon: {r: 0.7019608, g: 0.46666667, b: 0.33333334, a: 1}
+  - id: 11
+    type: 8
+    icon: {r: 0.6156863, g: 0.4392157, b: 0.3647059, a: 1}
+  hairColors:
+  - id: 12
+    type: 22
+    icon: {r: 0.972549, g: 0.9098039, b: 0.43137255, a: 1}
+  - id: 13
+    type: 22
+    icon: {r: 0.84705883, g: 0.6509804, b: 0.2627451, a: 1}
+  - id: 14
+    type: 22
+    icon: {r: 0.7019608, g: 0.46666667, b: 0.33333334, a: 1}
+  - id: 15
+    type: 22
+    icon: {r: 0.1882353, g: 0.10980392, b: 0.08235294, a: 1}
+  - id: 243
+    type: 22
+    icon: {r: 1, g: 1, b: 1, a: 1}
+  - id: 244
+    type: 22
+    icon: {r: 0.6901961, g: 0.6901961, b: 0.6901961, a: 1}
+  - id: 245
+    type: 22
+    icon: {r: 0, g: 0, b: 0, a: 1}
+  underShirts:
+  - underShirtSprite: {fileID: 21300000, guid: 7a7af05f1b9410d40a0ddbbbfc3d76a8, type: 3}
+    bodyReferences: 88000000
+    undershirtSizeName: H talla S
+  - underShirtSprite: {fileID: 21300000, guid: aac8e982d56a22a4fbb149e106c52f38, type: 3}
+    bodyReferences: 89000000
+    undershirtSizeName: M talla S
+  - underShirtSprite: {fileID: 21300000, guid: 8a12e3af4b3440f4cab0693aa5793f01, type: 3}
+    bodyReferences: 8a000000
+    undershirtSizeName: H talla M
+  - underShirtSprite: {fileID: 21300000, guid: a773359ee331e8c47957a943d7238bfc, type: 3}
+    bodyReferences: 8b000000
+    undershirtSizeName: M talla M
+  - underShirtSprite: {fileID: 21300000, guid: d10d31a3e2bffff44b579163ace7d8cd, type: 3}
+    bodyReferences: 8c000000
+    undershirtSizeName: H talla L
+  - underShirtSprite: {fileID: 21300000, guid: 0e9077fa52e5c7f459e43c9d1628ea6b, type: 3}
+    bodyReferences: 8d000000
+    undershirtSizeName: M talla L

@@ -1,0 +1,36 @@
+{
+  "project_info": {
+    "project_number": "124038199305",
+    "project_id": "distrito-acb",
+    "storage_bucket": "distrito-acb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:124038199305:ios:5768d20571ec7459c0a0d8",
+        "android_client_info": {
+          "package_name": "com.distritoacb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "124038199305-60vsfsd6e03u0buss711tjm4nc9le3be.apps.googleusercontent.com"
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmZ_ljKA1KNHONt_8DvEnjF4MiM3S-yxg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 0
+        },
+        "appinvite_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
