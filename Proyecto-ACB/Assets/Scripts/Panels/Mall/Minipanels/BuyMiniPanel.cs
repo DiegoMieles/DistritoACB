@@ -146,6 +146,15 @@ public class BuyMiniPanel : MonoBehaviour
                 ownedItemPrice.text = itemData.price;
             }
 
+            if (!string.IsNullOrEmpty(description) && descriptionText != null)
+            { 
+            descriptionText.text = itemData.item_type == "TOKENHIGTHLIGHT" ? itemData.name : description;
+            }
+
+        }
+        else
+        {
+            descriptionText.gameObject.SetActive(itemData.item_type != "TOKENHIGTHLIGHT");
         }
         if (productImage != null)
         {
@@ -173,10 +182,6 @@ public class BuyMiniPanel : MonoBehaviour
         }
         titleText.text = TitleTextFromItemType(itemData.item_type, itemData.seller_user_id == WebProcedure.Instance.accessData.user);
 
-        if (!string.IsNullOrEmpty(description) && descriptionText != null)
-        {
-            descriptionText.text = itemData.item_type == "TOKENHIGTHLIGHT"? itemData.name : description;
-        }
           
     }
 

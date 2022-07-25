@@ -137,7 +137,6 @@ public class PanelJumbleSale : Panel
     /// </summary>
     public void SetupPanel()
     {
-        UpdateCoinsText();
         exitButton.onClick.AddListener(() => { ACBSingleton.Instance.UpdateGameData(); Close(); });
         counter = 1;
         allItemsLoaded = false;
@@ -329,6 +328,7 @@ public class PanelJumbleSale : Panel
         JsonConvert.PopulateObject(obj.RawJson, mallData);
         if(mallData != null )
         {
+            coinAmount.text = mallData.balance.ToString();
             if (mallData.items.Count <= 0)
             {
                 allItemsLoaded = true;
@@ -371,7 +371,7 @@ public class PanelJumbleSale : Panel
             if (!appliedFilters.Contains(Filters.Mine) && jumbleItems[i].seller_user_id == WebProcedure.Instance.accessData.user) continue;
             if (!appliedFilters.Contains(Filters.All) && jumbleItems[i].seller_user_id != WebProcedure.Instance.accessData.user) continue;
             GameObject productButton = Instantiate(mallProductPrefab, mallProductsContainer);
-            productButton.GetComponent<JumbleSaleObjectButton>().SetupMallButton(jumbleItems[i], () => { ACBSingleton.Instance.UpdateGameData(); UpdateCoinsText(); SetupPanel(); }, SetupPanel);
+            productButton.GetComponent<JumbleSaleObjectButton>().SetupMallButton(jumbleItems[i], () => { ACBSingleton.Instance.UpdateGameData(); SetupPanel(); }, SetupPanel);
         }
 
     }
@@ -386,13 +386,7 @@ public class PanelJumbleSale : Panel
         SetSpinnerNewState(false);
     }
 
-    /// <summary>
-    /// Actualiza las monedas que tiene el jugador
-    /// </summary>
-    private void UpdateCoinsText()
-    {
-        coinAmount.text = Mathf.Clamp(ACBSingleton.Instance.AccountData.statsData.coinsBalance, 0, limit).ToString();
-    }
+
 
     /// <summary>
     /// Asigna el valor de activación del spinner de carga

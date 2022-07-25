@@ -38,7 +38,12 @@ public class PanelACBallToPublish : Panel
     private bool isLoadingNewACBalls; //Determina si está cargando más ACBalls del usuario
     private PageBody page; //Clase que contiene los datos principales de una página de ACBalls
     private int counter; //Entero que determina cual ha sido la última página de ACBalls cargada
-
+    [SerializeField, TextArea]
+    [Tooltip("Texto que se muestra cuando la traida de datos es fallida")]
+    private string textFail;
+    [SerializeField]
+    [Tooltip("Texto de no acballs")]
+    private Text textNoACBalls;
     #endregion
 
     #region Unity Methods
@@ -99,6 +104,7 @@ public class PanelACBallToPublish : Panel
     /// <param name="obj">Clase con los datos traidos por backend</param>
     private void OnSuccess(DataSnapshot obj)
     {
+        textNoACBalls.text = "";
         Debug.Log(obj.RawJson);
         acballsContainer = new AcbBallContainer.ACBallsToSell();
         JsonConvert.PopulateObject(obj.RawJson, acballsContainer);
@@ -114,6 +120,7 @@ public class PanelACBallToPublish : Panel
         
         if(acballsContainer.items.Count <= 0)
         {
+            textNoACBalls.text = textFail;
             SetSpinnerNewState(false);
             return;
         }

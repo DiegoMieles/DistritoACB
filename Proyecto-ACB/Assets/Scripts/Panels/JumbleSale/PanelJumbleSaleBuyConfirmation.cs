@@ -24,7 +24,10 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
     private string alertDelete = "¿Estás seguro?";
     [SerializeField]
     [Tooltip("Descripción de alerta al eliminar un item")]
-    private string alertDeleteDescription = "Esta oferta se eliminará automáticamente";
+    private string alertDeleteDescription = "Esta oferta se eliminará automáticamente";  
+    [SerializeField][TextArea]
+    [Tooltip("Descripción de alerta al eliminar un item")]
+    private string confirmationBuyText ;
     /// <summary>
     /// Configura los datos a mostrar del producto a comprar
     /// </summary>
@@ -91,7 +94,7 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
         if (price > -1 && price > ACBSingleton.Instance.AccountData.statsData.coinsBalance)
             ACBSingleton.Instance.AlertPanel.SetupPanel(notEnoughCurrencyAmountText, "", false, () => { spinner.gameObject.SetActive(false); });
         else
-            ACBSingleton.Instance.AlertPanel.SetupPanel(enoughCurrencyAmountText, "Esta operación te costará " + itemData.price + " acbcoins", true, () => { BuyItem(itemData); }, () => { spinner.gameObject.SetActive(false); });
+            ACBSingleton.Instance.AlertPanel.SetupPanel(enoughCurrencyAmountText, confirmationBuyText + itemData.price + " acbcoins", true, () => { BuyItem(itemData); }, () => { spinner.gameObject.SetActive(false); });
     }
     /// <summary>
     /// Método que se llama al presionar el botón de comprar producto, llamando a backend para verificar que la compra se pueda hacer
@@ -103,13 +106,15 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
         WebProcedure.Instance.BuyJumbleSaleItem(JsonConvert.SerializeObject(body), OnSuccessBuying, OnFailedBuying);
     }
     /// <summary>
-    /// destruye la publicación creada en el mercadillo
+    /// destruye la publicación creada en el mercadillo y crea lo páneles de confirmación
     /// </summary>
     protected void DeletePublication(JumbleSaleResult.JumbleItems itemData)
     {
          ACBSingleton.Instance.AlertPanel.SetupPanel(alertDelete, alertDeleteDescription, true,()=> {
              JumbleSaleResult.JumbleDeleteItemRequest body = new JumbleSaleResult.JumbleDeleteItemRequest() { item_id = itemData.id, user_id = WebProcedure.Instance.accessData.user };
-             WebProcedure.Instance.DeleteJumbleSaleItem(JsonConvert.SerializeObject(body), (DataSnapshot obj) => { OnDeletePublish?.Invoke(); Close(); }, (WebError obj) => { Debug.LogError(obj); });
+             WebProcedure.Instance.DeleteJumbleSaleItem(JsonConvert.SerializeObject(body), (DataSnapshot obj) => {
+                 ACBSingleton.Instance.AlertPanel.SetupPanel("Oferta eliminada", "", false,()=> { OnDeletePublish?.Invoke(); Close(); });
+                     }, (WebError obj) => { Debug.LogError(obj); });
          });
        
        

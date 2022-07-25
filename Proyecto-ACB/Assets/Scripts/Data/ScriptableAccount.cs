@@ -862,6 +862,7 @@ namespace Data
         public int total_items;
         public int total_pages;
         public List<JumbleItems> items = new List<JumbleItems>();
+        public int balance;
 
         public class JumbleItems
         {
@@ -934,6 +935,10 @@ namespace Data
             public Dictionary<ItemType, string> assets;
             public Dictionary<ItemType, string> tit_elements;
             public Dictionary<ItemType, string> desc_elements;
+            //Highlights properties
+            public string updated;
+            public string title;
+            public string created;
         }
     }
     /// <summary>

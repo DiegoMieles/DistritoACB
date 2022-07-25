@@ -56,6 +56,9 @@ public class PanelSkinsToPublish : Panel
     [Tooltip("Texto que se muestra cuando la traida de datos es fallida")]
     private string textFail;
     [SerializeField]
+    [Tooltip("Texto de no skins")]
+    private Text textNoSkins;
+    [SerializeField]
     [Tooltip("se encarga de abrir otros páneles")]
     private PanelOpener panelOpener;
     [SerializeField]
@@ -149,7 +152,16 @@ public class PanelSkinsToPublish : Panel
     /// <param name="obj">Información de skins a vender se decodifica en la clase SkinsToSell</param>
     private void OnSuccess(DataSnapshot obj)
     {
-         JsonConvert.PopulateObject(obj.RawJson, skinData);
+        if (obj.RawJson != "[]")
+        {
+            textNoSkins.text = "";
+            JsonConvert.PopulateObject(obj.RawJson, skinData);
+        }
+        else
+        {
+            textNoSkins.text = textFail;
+        }
+   
         publishButton.onClick.AddListener(PublishClick);
         UpdateData();
     }

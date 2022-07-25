@@ -281,7 +281,8 @@ public class BuyMiniPanelCard : BuyMiniPanel
     private void SetHighlightData(JumbleSaleResult.JumbleItemData highlightData)
     {
         WebProcedure.Instance.GetSprite(highlightData.data.path_img, (obj) => { frontCardImage.sprite = obj; spinner.gameObject.SetActive(false); flipCardButton.interactable = true; }, (error) => { });
-        highlightName.text = highlightData.data.name;
+        highlightName.text = highlightData.data.title;
+        highlightDate.text = !string.IsNullOrEmpty(highlightData.data.created) ? "Creación " + highlightData.data.created.ToString() : "";
         //highlightDate.text = !string.IsNullOrEmpty(highlightData.data.) ? "Creación " + highlightData.publication_date : "";
         highlightDescription.text = highlightData.data.description;
         WebProcedure.Instance.GetSprite(highlightData.data.pathImgCol, (obj) => { leagueImage.sprite = obj; }, (error) => { });
