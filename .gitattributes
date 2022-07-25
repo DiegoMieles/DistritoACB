@@ -17,7 +17,6 @@ Proyecto-ACB/Packages/com.ptc.vuforia.engine-10.5.5.tgz filter=lfs diff=lfs merg
 *.controller merge=unityyamlmerge eol=lf
 ## git-lfs ##
 #Image
-*.jpg filter=lfs diff=lfs merge=lfs -text
 *.gif filter=lfs diff=lfs merge=lfs -text
 *.psd filter=lfs diff=lfs merge=lfs -text
 *.ai filter=lfs diff=lfs merge=lfs -text
@@ -30,7 +29,6 @@ Proyecto-ACB/Packages/com.ptc.vuforia.engine-10.5.5.tgz filter=lfs diff=lfs merg
 *.mov filter=lfs diff=lfs merge=lfs -text
 #3D Object
 *.FBX filter=lfs diff=lfs merge=lfs -text
-*.fbx filter=lfs diff=lfs merge=lfs -text
 *.blend filter=lfs diff=lfs merge=lfs -text
 *.obj filter=lfs diff=lfs merge=lfs -text
 #ETC
