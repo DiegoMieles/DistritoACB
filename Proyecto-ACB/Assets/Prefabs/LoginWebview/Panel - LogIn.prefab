@@ -56,7 +56,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682524333251163101}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -86,7 +86,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682524333251163101}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
   m_Name: 
@@ -120,7 +120,7 @@ MonoBehaviour:
   urlOnStart: https://id-devel.acb.com/panel/iniciar-sesion?redirect_url=https://www.acb.com
   showOnStart: 1
   fullScreen: 0
-  useToolbar: 0
+  useToolbar: 1
   toolbarPosition: 0
   frame:
     serializedVersion: 2
@@ -128,7 +128,7 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  referenceRectTransform: {fileID: 4904068094559079855}
+  referenceRectTransform: {fileID: 1646941699795320765}
 --- !u!1 &3969678080769990492
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 3969678080769990495}
   - component: {fileID: 6112850291580499817}
   - component: {fileID: 4330653391196395376}
+  - component: {fileID: 565087821875947106}
   m_Layer: 5
   m_Name: Panel - LogIn
   m_TagString: Untagged
@@ -249,6 +250,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uniWebView: {fileID: 8878012126048737992}
+--- !u!223 &565087821875947106
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3969678080769990492}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 5
+  m_TargetDisplay: 0
 --- !u!1 &6068486172801630911
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,10 +303,10 @@ RectTransform:
   m_Father: {fileID: 4904068094559079855}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 720, y: -1480}
+  m_SizeDelta: {x: 1440, y: 2960}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8645959395351634742
 MonoBehaviour:
@@ -563,7 +585,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

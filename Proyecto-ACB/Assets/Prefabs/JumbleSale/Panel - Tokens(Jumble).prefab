@@ -92,7 +92,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &777120813
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1243,6 +1243,8 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+  tokenHighlightsContainer:
+    items: []
   alertAdds: "\xBFQuieres publicar este token?"
   alertFailAdds: Elige el token que quieres publicar.
   panelOpener: {fileID: 1649777347}
