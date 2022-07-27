@@ -285,7 +285,7 @@ public class BuyMiniPanelCard : BuyMiniPanel
         highlightDate.text = !string.IsNullOrEmpty(highlightData.data.created) ? "Creación " + highlightData.data.created.ToString() : "";
         //highlightDate.text = !string.IsNullOrEmpty(highlightData.data.) ? "Creación " + highlightData.publication_date : "";
         highlightDescription.text = highlightData.data.description;
-        WebProcedure.Instance.GetSprite(highlightData.data.pathImgCol, (obj) => { leagueImage.sprite = obj; }, (error) => { });
+        WebProcedure.Instance.GetSprite(highlightData.data.path_img_leauge, (obj) => { leagueImage.sprite = obj; }, (error) => { });
     }
 
     /// <summary>

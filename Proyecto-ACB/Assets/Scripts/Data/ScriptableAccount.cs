@@ -901,6 +901,7 @@ namespace Data
             public string path_img_front;
             public string pathThumbnail;
             public string pathImgCol;
+            public string path_img_leauge;
             public string path_img;
             public string path_img_back;
             public string triples;

@@ -921,7 +921,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Cerrar sesion
+  m_Text: "Cerrar sesi\xF3n"
 --- !u!114 &2423424324985750
 MonoBehaviour:
   m_ObjectHideFlags: 0
