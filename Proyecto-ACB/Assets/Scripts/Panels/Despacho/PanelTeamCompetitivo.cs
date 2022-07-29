@@ -46,8 +46,8 @@ public class PanelTeamCompetitivo : Panel
     /// </summary>
     private void OnEnable()
     {
-        CallInfoActualLeague();
-        OnDeleteOrAdd += (TokenContainer obj) => { if (isActualLeague) CallInfoActualLeague(obj); else CallInfoClassicLeague(obj); } ;
+        SwitchLeague(isActualLeague);
+         OnDeleteOrAdd += (TokenContainer obj) => { if (isActualLeague) CallInfoActualLeague(obj); else CallInfoClassicLeague(obj); } ;
     }
 
     /// <summary>
@@ -73,7 +73,8 @@ public class PanelTeamCompetitivo : Panel
     {
         panelTokenItemTop.ForEach(t=>t.ResetToken());
         panelTokenItemButtom.ForEach(t=>t.ResetToken());
-        
+        panelTokenItemTop.ForEach(t=> t.booster.transform.parent.GetComponent<Image>().sprite = actualborderCard) ;
+        panelTokenItemButtom.ForEach(t => t.booster.transform.parent.GetComponent<Image>().sprite = actualborderCard);
         WebProcedure.Instance.GetCurrentTeamCompetitiveUser(snapshot =>
         {
             Debug.Log("Cards states" + snapshot.RawJson);
@@ -89,8 +90,6 @@ public class PanelTeamCompetitivo : Panel
                     var data =  tokenContainer.teamData.teamItems.ElementAtOrDefault(i);
                     top?.ShowInfo(data, CallInfoActualLeague,spinner);
                     down?.ShowInfo(data, CallInfoActualLeague,spinner);
-                    top.booster.transform.parent.GetComponent<Image>().sprite = actualborderCard;
-                    down.booster.transform.parent.GetComponent<Image>().sprite = actualborderCard;
                 }
             }
             else
@@ -114,7 +113,8 @@ public class PanelTeamCompetitivo : Panel
         panelTokenItemTop.ForEach(t=>t.ResetToken());
         panelTokenItemButtom.ForEach(t=>t.ResetToken());
         tokenContainer = team;
-        
+        panelTokenItemTop.ForEach(t => t.booster.transform.parent.GetComponent<Image>().sprite = actualborderCard);
+        panelTokenItemButtom.ForEach(t => t.booster.transform.parent.GetComponent<Image>().sprite = actualborderCard);
         if (tokenContainer.teamData.teamItems != null && tokenContainer.teamData.teamItems.Count > 0)
         {
             for (var i = 0; i < tokenContainer.teamData.teamItems.Count; i++)
@@ -124,9 +124,6 @@ public class PanelTeamCompetitivo : Panel
                 var data =  tokenContainer.teamData.teamItems.ElementAtOrDefault(i);
                 top?.ShowInfo(data, CallInfoActualLeague,spinner);
                 down?.ShowInfo(data, CallInfoActualLeague,spinner);
-                top.booster.transform.parent.GetComponent<Image>().sprite = actualborderCard;
-                down.booster.transform.parent.GetComponent<Image>().sprite = actualborderCard;
-
             }
         }
         else
@@ -142,7 +139,8 @@ public class PanelTeamCompetitivo : Panel
     {
         panelTokenItemTop.ForEach(t => t.ResetToken());
         panelTokenItemButtom.ForEach(t => t.ResetToken());
-
+        panelTokenItemTop.ForEach(t => t.booster.transform.parent.GetComponent<Image>().sprite = classicborderCard);
+        panelTokenItemButtom.ForEach(t => t.booster.transform.parent.GetComponent<Image>().sprite = classicborderCard);
         WebProcedure.Instance.GetCurrentTeamCompetitiveUser(snapshot =>
         {
             Debug.Log("Cards states" + snapshot.RawJson);
@@ -158,8 +156,6 @@ public class PanelTeamCompetitivo : Panel
                     var data = tokenContainer.teamData.teamItems.ElementAtOrDefault(i);
                     top?.ShowInfo(data, CallInfoClassicLeague, spinner);
                     down?.ShowInfo(data, CallInfoClassicLeague, spinner);
-                    top.booster.transform.parent.GetComponent<Image>().sprite = classicborderCard;
-                    down.booster.transform.parent.GetComponent<Image>().sprite = classicborderCard;
                 }
             }
             else
@@ -183,7 +179,8 @@ public class PanelTeamCompetitivo : Panel
         panelTokenItemTop.ForEach(t => t.ResetToken());
         panelTokenItemButtom.ForEach(t => t.ResetToken());
         tokenContainer = team;
-
+        panelTokenItemTop.ForEach(t => t.booster.transform.parent.GetComponent<Image>().sprite = classicborderCard);
+        panelTokenItemButtom.ForEach(t => t.booster.transform.parent.GetComponent<Image>().sprite = classicborderCard);
         if (tokenContainer.teamData.teamItems != null && tokenContainer.teamData.teamItems.Count > 0)
         {
             for (var i = 0; i < tokenContainer.teamData.teamItems.Count; i++)
@@ -193,8 +190,6 @@ public class PanelTeamCompetitivo : Panel
                 var data = tokenContainer.teamData.teamItems.ElementAtOrDefault(i);
                 top?.ShowInfo(data, CallInfoClassicLeague, spinner);
                 down?.ShowInfo(data, CallInfoClassicLeague, spinner);
-                top.booster.transform.parent.GetComponent<Image>().sprite = classicborderCard;
-                down.booster.transform.parent.GetComponent<Image>().sprite = classicborderCard;
             }
         }
         else

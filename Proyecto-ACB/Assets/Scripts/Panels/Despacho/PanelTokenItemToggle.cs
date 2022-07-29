@@ -17,6 +17,15 @@ public class PanelTokenItemToggle : MonoBehaviour
     [SerializeField] [Tooltip("Imagen miniatura de la carta")]
     private Image imageThumbnail;
     [SerializeField]
+    [Tooltip("Imagen borde de la carta")]
+    private Image imageBorder;
+    [SerializeField]
+    [Tooltip("Imagen borde de la liga clásica")]
+    private Sprite clasicBorderSprite;
+    [SerializeField]
+    [Tooltip("Imagen borde de la liga actual")]
+    private Sprite actualBorderSprite;
+    [SerializeField]
     [Tooltip("Imagen miniatura de la carta si es highlight")]
     private Image imageThumbnailHighlight;
     [SerializeField] [Tooltip("Texto con el nombre del objeto")]
@@ -126,7 +135,8 @@ public class PanelTokenItemToggle : MonoBehaviour
         injured.SetActive(currentToken.isInjured);
         textName.text = tokendata.name;
         textHash.text = tokendata.token;
-        if(onToggleClicked != null)
+        if(imageBorder)imageBorder.sprite = tokendata.is_clasic ? clasicBorderSprite:actualBorderSprite ;
+        if (onToggleClicked != null)
         {
             GetComponent<Toggle>().onValueChanged.AddListener(onToggleClicked);
         }

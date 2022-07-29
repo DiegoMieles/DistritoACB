@@ -5089,6 +5089,11 @@ MonoBehaviour:
   backCardView: {fileID: 8334307822334410355}
   panelOpener: {fileID: 669471494408747675}
   videoPanelPrefab: {fileID: 3441262283023046251, guid: a702cc5683171c84b9780f132257b185, type: 3}
+  actualborderCard: {fileID: 21300000, guid: 29ba46e25e44069459bdad0a866c2df6, type: 3}
+  clasicborderCard: {fileID: 21300000, guid: 0b327dcebdb96e847b03d5c9f1cdb2c6, type: 3}
+  cardBorders:
+  - {fileID: 273750668115764799}
+  - {fileID: 6958840857654558988}
   frontCardImage: {fileID: 8667652860872895751}
   rarityImage: {fileID: 7700521525541848643}
   rarityText: {fileID: 3555439353205793168}
@@ -5110,7 +5115,6 @@ MonoBehaviour:
   injuryBackground: {fileID: 48644457080339173}
   injuryText: {fileID: 8431752929263985338}
   playerName: {fileID: 2869727339510316166}
-  creationDate: {fileID: 6478480782702285055}
   imageLeague: {fileID: 6562357739664984922}
   backButtonText: {fileID: 5187474209452320099}
   backCardPartButton: {fileID: 5143677032037791709}
@@ -5126,6 +5130,7 @@ MonoBehaviour:
   SwipeText: {fileID: 4331866148475635592}
   deleteCardText: Sacar del Equipo Competitivo
   addCardText: "A\xF1adir al equipo competitivo"
+  Spinner: {fileID: 0}
 --- !u!114 &669471494408747675
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -21,6 +21,8 @@ public class PanelAlert : MonoBehaviour
     private Text acceptButtonText;
     [SerializeField] [Tooltip("Texto del botón de cancelar")]
     private Text cancelButtonText;
+    [SerializeField] [Tooltip("Imagen que aparece arriba del título si es seteada")]
+    private Image imagePanel;
 
     private Action onSelectAcceptButton; //Acción que se ejecuta cuando se acepta la alerta
     private Action onSelectCancelButton; //Acción que se ejecuta cuando se cancela la alerta
@@ -32,8 +34,8 @@ public class PanelAlert : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        acceptButton.onClick.AddListener(() => { onSelectAcceptButton?.Invoke(); gameObject.SetActive(false); descriptionText.gameObject.SetActive(false); });
-        cancelButton.onClick.AddListener(() => { onSelectCancelButton?.Invoke(); gameObject.SetActive(false); descriptionText.gameObject.SetActive(false); });
+        acceptButton.onClick.AddListener(() => { onSelectAcceptButton?.Invoke(); gameObject.SetActive(false); descriptionText.gameObject.SetActive(false);  imagePanel.transform.parent.gameObject.SetActive(false); });
+        cancelButton.onClick.AddListener(() => { onSelectCancelButton?.Invoke(); gameObject.SetActive(false); descriptionText.gameObject.SetActive(false); imagePanel.transform.parent.gameObject.SetActive(false); });
     }
 
     #endregion
@@ -52,13 +54,18 @@ public class PanelAlert : MonoBehaviour
     /// <param name="customAcceptButtonText">Texto personalizado al botón de aceptar</param>
     /// <param name="customCancelButtonText">Texto personalizado al botón de cancelar</param>
     public void SetupPanel(string newText, string description, bool needCancelButton, Action onSelectAcceptButton, Action onSelectCancelButton = null, float delay = 0,
-        string customAcceptButtonText = "Aceptar", string customCancelButtonText = "Cancelar")
+        string customAcceptButtonText = "Aceptar", string customCancelButtonText = "Cancelar", Sprite panelImageSprite = null)
     {
         gameObject.SetActive(true);
         transform.SetAsFirstSibling();
         acceptButtonText.text = customAcceptButtonText;
         cancelButtonText.text = customCancelButtonText;
         descriptionText.text = description;
+        if(panelImageSprite && imagePanel)
+        {
+            imagePanel.sprite = panelImageSprite;
+            imagePanel.transform.parent.gameObject.SetActive(true);
+        }
         StartCoroutine(ShowPanel(newText,needCancelButton,onSelectAcceptButton,onSelectCancelButton,delay));
     }
 

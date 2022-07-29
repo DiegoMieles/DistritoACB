@@ -8380,7 +8380,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 38.57538, y: 32.43573}
+  m_AnchoredPosition: {x: 38.57538, y: 32.43579}
   m_SizeDelta: {x: 77.1508, y: 90.6284}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3883808481641077300
@@ -9710,7 +9710,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 38.57538, y: 32.43573}
+  m_AnchoredPosition: {x: 38.57538, y: 32.43579}
   m_SizeDelta: {x: 77.1508, y: 90.6284}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8231255681886017648
@@ -10704,7 +10704,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.8009033, y: 11.291199}
+  m_AnchoredPosition: {x: 0.8009033, y: 11.29126}
   m_SizeDelta: {x: -52.8542, y: -62.3532}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4467737028481151252
@@ -13971,7 +13971,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.0776978, y: -0.70269775}
+  m_AnchoredPosition: {x: 4.0776978, y: -0.7026367}
   m_SizeDelta: {x: -70.52319, y: -31.01123}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1331324378082890545
@@ -13992,6 +13992,11 @@ MonoBehaviour:
   backCardView: {fileID: 3812345146092113499}
   panelOpener: {fileID: 5623645452692523699}
   videoPanelPrefab: {fileID: 3441262283023046251, guid: a702cc5683171c84b9780f132257b185, type: 3}
+  actualborderCard: {fileID: 21300000, guid: 29ba46e25e44069459bdad0a866c2df6, type: 3}
+  clasicborderCard: {fileID: 21300000, guid: 0b327dcebdb96e847b03d5c9f1cdb2c6, type: 3}
+  cardBorders:
+  - {fileID: 4939830525835728407}
+  - {fileID: 2869786489065615652}
   frontCardImage: {fileID: 4542147551787949359}
   rarityImage: {fileID: 3286780003947837035}
   rarityText: {fileID: 8509048166707335608}
@@ -15750,6 +15755,9 @@ MonoBehaviour:
     isBoostPoints: 0
     videos: []
   removeCardButton: {fileID: 9047111527991523728}
+  clasicLeagueIcon: {fileID: -4625379203041903168, guid: 339e31cbd14dcb846a31c62c32a99eec, type: 3}
+  actualLeagueIcon: {fileID: 9189745415076915908, guid: 6c3a0cb3ea3587c47889bb67de971fc4, type: 3}
+  cardBorders: []
   confirmationAlertText: "\xBFQuieres a\xF1adir el token a tu Equipo Competitivo?"
   Spinner: {fileID: 4118697885945929555}
 --- !u!1 &8605266640905959214

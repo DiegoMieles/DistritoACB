@@ -26,6 +26,15 @@ public class PlayerCard : MonoBehaviour
     private PanelOpener panelOpener;
     [SerializeField] [Tooltip("Prefab del panel donde se ven los videos que contiene la carta")]
     private GameObject videoPanelPrefab;
+    [SerializeField]
+    [Tooltip("borde de las cartas de la liga actual")]
+    private Sprite actualborderCard;
+    [SerializeField]
+    [Tooltip("borde de las cartas de la liga clásica")]
+    private Sprite clasicborderCard;
+    [SerializeField]
+    [Tooltip("botón de la liga actual")]
+    private List<Image> cardBorders;
 
     [Space(5)]
     [Header("Front Card components")]
@@ -144,6 +153,7 @@ public class PlayerCard : MonoBehaviour
     /// <param name="onBoosterAdded">Acción que se ejecuta cuando un potenciador se ha añadido a la carta</param>
     public void SetupCardData(TokenItemData tokenData, Action onClickBackPartCardButton, bool canScroll = true, bool isDeletingAction = true, bool doFillAnimation = false, bool change = true, Action onBoosterAdded = null)
     {
+        cardBorders.ForEach(t => t.sprite = tokenData.is_clasic ? clasicborderCard : actualborderCard);
         this.tokenData = tokenData;
         this.doFillAnimation = doFillAnimation;
         this.onBoosterAdded = onBoosterAdded;
@@ -174,6 +184,7 @@ public class PlayerCard : MonoBehaviour
     /// <param name="onBoosterAdded">Acción que se ejecuta cuando un potenciador se ha añadido a la carta</param>
     public void SetupCardData(ChallengeAcceptedData.CardChallengeData.CardItems cardData, Action onBoosterAdded = null)
     {
+        cardBorders.ForEach(t => t.sprite = cardData.is_clasic ? clasicborderCard: actualborderCard );
         this.cardData = cardData;
         this.onBoosterAdded = onBoosterAdded;
         LoadFrontCardPart();

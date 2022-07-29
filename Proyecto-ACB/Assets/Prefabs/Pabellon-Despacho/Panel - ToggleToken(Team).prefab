@@ -612,6 +612,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toggle: {fileID: 3426018469071442607}
   imageThumbnail: {fileID: 6639115176421991918}
+  imageBorder: {fileID: 7397038763931625529}
+  clasicBorderSprite: {fileID: -611028203908382085, guid: ead46b0e50f8b37448b1520c58ad30b1, type: 3}
+  actualBorderSprite: {fileID: -216139874681259050, guid: 6c3a0cb3ea3587c47889bb67de971fc4, type: 3}
+  imageThumbnailHighlight: {fileID: 0}
   textName: {fileID: 4549433946116255849}
   textHash: {fileID: 3620156547423622284}
   team: {fileID: 1479960827443112631}
@@ -661,6 +665,19 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+  currentHighLight:
+    id: 0
+    token: 
+    title: 
+    name: 
+    description: 
+    urlvideo: 
+    pathImg: 
+    pathImgThumbnail: 
+    pathImgCol: 
+    higthlight_id: 0
+    user_id: 
+    enter: 0
   onFailed:
     m_PersistentCalls:
       m_Calls: []

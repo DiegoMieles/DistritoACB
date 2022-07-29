@@ -4,7 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using WebAPI;
-
+using System.Collections.Generic;
 /// <summary>
 /// Controla el panel de carta del equipo competitivo
 /// </summary>
@@ -23,8 +23,15 @@ public class PanelCardCompetitiveTeam : Panel
     private Action onFailed;
     [SerializeField] [Tooltip("Botón de eliminar carta del equipo competitivo")]
     private Button removeCardButton;
-
-
+    [SerializeField]
+    [Tooltip("icono de la liga clásica")]
+    private Sprite clasicLeagueIcon;
+    [SerializeField]
+    [Tooltip("icono de la liga actual")]
+    private Sprite actualLeagueIcon;
+    [SerializeField]
+    [Tooltip("botón de la liga actual")]
+    private List<Image> cardBorders;
     [Space(5)]
     [Header("Panel texts")]
     [SerializeField] [Tooltip("Texto de confirmación de alerta")]
@@ -116,7 +123,7 @@ public class PanelCardCompetitiveTeam : Panel
                     PanelTeamCompetitivo.OnClose?.Invoke();   
                     Close();
                 }
-            });
+            },null,0,"Aceptar","Cancelar",tokendata.is_clasic ? clasicLeagueIcon:actualLeagueIcon);
      
         }, error =>
         {

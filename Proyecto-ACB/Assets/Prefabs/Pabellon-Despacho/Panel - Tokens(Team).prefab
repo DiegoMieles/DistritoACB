@@ -1204,6 +1204,8 @@ MonoBehaviour:
       tokenItems: []
   alertAdds: "\xBFQuieres a\xF1adir el token a tu Equipo Competitivo?"
   alertFailAdds: "Elige el token que quieres a\xF1adir a tu Equipo."
+  clasicLeagueIcon: {fileID: -4625379203041903168, guid: 339e31cbd14dcb846a31c62c32a99eec, type: 3}
+  actualLeagueIcon: {fileID: 9189745415076915908, guid: 6c3a0cb3ea3587c47889bb67de971fc4, type: 3}
   dragableTargetPosition: {fileID: 0}
   playerCard: {fileID: 0}
   Spinner: {fileID: 0}
