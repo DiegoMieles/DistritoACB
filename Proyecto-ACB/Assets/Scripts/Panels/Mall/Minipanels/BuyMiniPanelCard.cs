@@ -91,9 +91,14 @@ public class BuyMiniPanelCard : BuyMiniPanel
     [SerializeField]
     [Tooltip("objeto que muestra que tiene heridas ")]
     private GameObject injuredFlag;
+    [SerializeField]
+    [Tooltip("panel padre que contiene este minipanel")]
+    private PanelJumbleSaleBuyConfirmation panelBuyConfirmation;
 
     private GameObject actualBackPart; //Parte reversa de la carta actual
-
+    private bool publishedByPlayer = true;
+    private bool isHighlight ;
+    private bool isJumbleSale ;
     #endregion
 
     #region Public Methods
@@ -161,7 +166,8 @@ public class BuyMiniPanelCard : BuyMiniPanel
     public override void ShowMiniPanel(Sprite productSprite, JumbleSaleResult.JumbleItems itemData, string description, Action onFailedLoading)
     {
         base.ShowMiniPanel(productSprite, itemData, description, onFailedLoading);
-
+        isJumbleSale = true;
+           publishedByPlayer = itemData.seller_user_id == WebProcedure.Instance.accessData.user;
         frontCardView.SetActive(true);
         backCardView.SetActive(false);
         backHighlightView.SetActive(false);
@@ -185,12 +191,15 @@ public class BuyMiniPanelCard : BuyMiniPanel
             {
                 Debug.Log($"Card data = { obj.RawJson}");
                 JsonConvert.PopulateObject(obj.RawJson, cardData);
+                cardData.data.description = itemData.description;
                 SetCardData(cardData);
             },
             (error) => { ACBSingleton.Instance.AlertPanel.SetupPanel(error.Message, "", false, onFailedLoading); });
         }
         else if(itemData.item_type == "TOKENHIGTHLIGHT")
         {
+            isHighlight = true;
+            titleText.transform.parent.gameObject.SetActive(!publishedByPlayer);
             JumbleSaleResult.JumbleItemData cardData = new JumbleSaleResult.JumbleItemData();
             WebProcedure.Instance.GetJumbleSaleInfoItem(itemData.id.ToString(), (obj) =>
             {
@@ -280,6 +289,7 @@ public class BuyMiniPanelCard : BuyMiniPanel
     /// <param name="highlightData">Datos de la carta tipo highlight</param>
     private void SetHighlightData(JumbleSaleResult.JumbleItemData highlightData)
     {
+      
         WebProcedure.Instance.GetSprite(highlightData.data.path_img, (obj) => { frontCardImage.sprite = obj; spinner.gameObject.SetActive(false); flipCardButton.interactable = true; }, (error) => { });
         highlightName.text = highlightData.data.title;
         highlightDate.text = !string.IsNullOrEmpty(highlightData.data.created) ? "Creación " + highlightData.data.created.ToString() : "";
@@ -296,6 +306,14 @@ public class BuyMiniPanelCard : BuyMiniPanel
         bool cachedState = frontCardView.activeInHierarchy;
         frontCardView.SetActive(actualBackPart.activeInHierarchy);
         actualBackPart.SetActive(cachedState);
+        if(isJumbleSale)
+        {
+            panelBuyConfirmation.costInfoLayout.gameObject.SetActive(!publishedByPlayer && !cachedState);
+            panelBuyConfirmation.deleteButton.transform.parent.gameObject.SetActive(publishedByPlayer && !cachedState);
+            titleText.transform.parent.gameObject.SetActive(!isHighlight && !cachedState);
+            descriptionText.transform.parent.gameObject.SetActive(!cachedState);
+        }
+       
     }
 
     /// <summary>
@@ -323,6 +341,7 @@ public class BuyMiniPanelCard : BuyMiniPanel
         rarityText.text = imageRarity.ToString().ToUpper();
         rarityImage.sprite = Resources.Load<Sprite>(path);
     }
+
 
     #endregion
 }

@@ -16,7 +16,7 @@ public class BuyMiniPanel : MonoBehaviour
     [SerializeField] [Tooltip("Imagen del producto")]
     protected Image productImage;
     [SerializeField] [Tooltip("Texto del título a mostrar en el minipanel")]
-    private Text titleText;
+    protected Text titleText;
     [SerializeField] [Tooltip("Texto de descripción del minipanel")]
     protected Text descriptionText;
     [SerializeField]
