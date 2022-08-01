@@ -1326,7 +1326,7 @@ namespace Data
         public bool isBoostAssists;
         public bool isBoostPoints;
         public List<CardVideoData> videos = new List<CardVideoData>();
-        public bool is_clasic;
+        public bool is_clasic = true;
 
     }
 
@@ -1577,7 +1577,7 @@ namespace Data
                 public string daysOrTextInjured;
                 public bool isBooster;
                 public object videos;
-                public bool is_clasic;
+                public bool is_clasic = true;
             }
         }
     }
