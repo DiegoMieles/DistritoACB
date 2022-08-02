@@ -27,6 +27,14 @@ public class PanelPavilionField : Panel
     private Text  textNoChallenges;
     [SerializeField,TextArea] [Tooltip("Texto que se muestra cuando el jugador no ha realizado desafios")]
     private string textFail;
+    [SerializeField]
+    [Tooltip("botón de la liga actual")]
+    private Button actualLeagueButton;
+    [SerializeField]
+    [Tooltip("botón de la liga clásica")]
+    private Button clasicLeagueButton;
+    [Tooltip("se está mostrando la liga clásica? ")]
+    private bool isclasicLeague;
     #endregion
 
     #region Unity Methods
@@ -36,22 +44,46 @@ public class PanelPavilionField : Panel
     /// </summary>
     private void OnEnable()
     {
-        UpdatePavilionView();
+        SwitchLEague(false);
+        goBackButton.onClick.AddListener(() => { ACBSingleton.Instance.PanelBuildingSelection.ResetCachedMapData(); Close(); });
+
     }
 
     #endregion
 
     #region Inner Methods
+    /// <summary>
+    /// Cambia la liga que se va a mostraar
+    /// </summary>
+    public void SwitchLEague(bool isClasic)
+    {
+        challengesFields.challengeData.challengeItems.Clear();
+        foreach (Transform child in fieldDataContainer)
+        {
+            Destroy(child.gameObject);
+        }
+        isclasicLeague = isClasic;
+        if (isclasicLeague) UpdatePavilionViewClasicLeague(); else UpdatePavilionViewActualLeague();
+        clasicLeagueButton.image.color = isclasicLeague ? new Color(1f, 1f, 1f, 1f) : new Color(1f, 1f, 1f, 0.5f);
+        actualLeagueButton.image.color = !isclasicLeague ? new Color(1f, 1f, 1f, 1f) : new Color(1f, 1f, 1f, 0.5f);
+    }
 
     /// <summary>
-    /// Carga los datos de desafios llamando a backend
+    /// Carga los datos de desafios llamando a backend de la liga actual
     /// </summary>
-    private void UpdatePavilionView()
+    private void UpdatePavilionViewActualLeague()
     {
-        goBackButton.onClick.AddListener(() => { ACBSingleton.Instance.PanelBuildingSelection.ResetCachedMapData(); Close(); });
+     
         WebProcedure.Instance.GetChallengesCancha(OnSuccess, OnFailed);
     }
 
+    /// <summary>
+    /// Carga los datos de desafios llamando a backend de la liga clásica
+    /// </summary>
+    private void UpdatePavilionViewClasicLeague()
+    {
+        WebProcedure.Instance.GetChallengesCancha(OnSuccess, OnFailed);
+    }
     /// <summary>
     /// Método que se ejecuta cuando los desafios han sido correctamente cargados desde backend
     /// </summary>
