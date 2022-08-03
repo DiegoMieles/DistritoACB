@@ -56,7 +56,7 @@ public class PanelPavilionField : Panel
     {
         SwitchLEague(false);
         goBackButton.onClick.AddListener(() => { ACBSingleton.Instance.PanelBuildingSelection.ResetCachedMapData(); Close(); });
-
+        counter = 1;
     }
 
     #endregion
@@ -67,11 +67,7 @@ public class PanelPavilionField : Panel
     /// </summary>
     public void SwitchLEague(bool isClasic)
     {
-        challengesFields.challengeData.challengeItems.Clear();
-        foreach (Transform child in fieldDataContainer)
-        {
-            Destroy(child.gameObject);
-        }
+        if(isClasic != isclasicLeague) counter = 1;
         isclasicLeague = isClasic;
         if (isclasicLeague) UpdatePavilionViewClasicLeague(); else UpdatePavilionViewActualLeague();
         clasicLeagueButton.image.color = isclasicLeague ? new Color(1f, 1f, 1f, 1f) : new Color(1f, 1f, 1f, 0.5f);
@@ -83,8 +79,7 @@ public class PanelPavilionField : Panel
     /// </summary>
     private void UpdatePavilionViewActualLeague()
     {
-        goBackButton.onClick.AddListener(() => { ACBSingleton.Instance.PanelBuildingSelection.ResetCachedMapData(); Close(); });
-        fieldDataContainer.sizeDelta = new Vector2(fieldDataContainer.sizeDelta.x, 0);
+      
         itemsScroll.onValueChanged.AddListener(OnScrollMove);
 
         itemsScroll.onValueChanged.AddListener((newValue) => {
@@ -120,12 +115,11 @@ public class PanelPavilionField : Panel
                 }
             }
         });
-    
-        
-        
+
+
+        isLoadingNewItems = true;
         allItemsAreLoaded = false;
-        counter = 1;
-        PageBody initialPage = new PageBody() { page = 1 };
+        PageBody initialPage = new PageBody() { page = counter };
         WebProcedure.Instance.GetChallengesCancha(JsonConvert.SerializeObject(initialPage), OnSuccess, OnFailed);
     }
 
@@ -137,8 +131,7 @@ public class PanelPavilionField : Panel
             counter++;
             SetNewSpinnerActiveState(true);
             isLoadingNewItems = true;
-            PageBody actualPage = new PageBody() { page = counter };
-            WebProcedure.Instance.GetChallengesCancha(JsonConvert.SerializeObject(actualPage), OnSuccess, (error) => { isLoadingNewItems = false; });
+            SwitchLEague(isclasicLeague);
         }
     }
 
@@ -147,7 +140,50 @@ public class PanelPavilionField : Panel
     /// </summary>
     private void UpdatePavilionViewClasicLeague()
     {
-        WebProcedure.Instance.GetChallengesCancha(OnSuccess, OnFailed);
+
+       
+        itemsScroll.onValueChanged.AddListener(OnScrollMove);
+
+        itemsScroll.onValueChanged.AddListener((newValue) => {
+            if (Mathf.Abs(lastPos - this.itemsScroll.content.transform.localPosition.y) >= DistanceToRecalcVisibility)
+            {
+                lastPos = this.itemsScroll.content.transform.localPosition.y;
+
+                RectTransform scrollTransform = this.itemsScroll.GetComponent<RectTransform>();
+                float checkRectMinY = scrollTransform.rect.yMin - DistanceMarginForLoad;
+                float checkRectMaxY = scrollTransform.rect.yMax + DistanceMarginForLoad;
+
+                foreach (Transform child in itemsScroll.content)
+                {
+                    RectTransform childTransform = child.GetComponent<RectTransform>();
+                    Vector3 positionInWord = childTransform.parent.TransformPoint(childTransform.localPosition);
+                    Vector3 positionInScroll = scrollTransform.InverseTransformPoint(positionInWord);
+                    float childMinY = positionInScroll.y + childTransform.rect.yMin;
+                    float childMaxY = positionInScroll.y + childTransform.rect.yMax;
+
+                    if (childMaxY >= checkRectMinY && childMinY <= checkRectMaxY)
+                    {
+                        var challlenge = child.GetComponent<ChallengeFieldButton>();
+                        challlenge.LoadImage();
+                        challlenge.LoadImageAvatar();
+                        Debug.Log("LoadImage");
+                    }
+                    else
+                    {
+                        var challlenge = child.GetComponent<ChallengeFieldButton>();
+                        challlenge.DestroyImage();
+                        challlenge.DestroyImageAvatar();
+                        Debug.Log("DestroyImage");
+                    }
+                }
+            }
+        });
+
+
+        isLoadingNewItems = true;
+        allItemsAreLoaded = false;
+        PageBody initialPage = new PageBody() { page = counter };
+        WebProcedure.Instance.GetChallengesCancha(JsonConvert.SerializeObject(initialPage), OnSuccess, OnFailed);
     }
     /// <summary>
     /// Método que se ejecuta cuando los desafios han sido correctamente cargados desde backend
@@ -168,7 +204,11 @@ public class PanelPavilionField : Panel
             SetNewSpinnerActiveState(false);
             return;
         }
-
+        fieldDataContainer.sizeDelta = new Vector2(fieldDataContainer.sizeDelta.x, 0);
+        foreach (Transform child in fieldDataContainer)
+        {
+            Destroy(child.gameObject);
+        }
         fieldDataContainer.sizeDelta += new Vector2(0, playerFieldPrefab.GetComponent<LayoutElement>().preferredHeight * challengesFields.challengeData.challengeItems.Count);
 
         if (challengesFields.challengeData.challengeItems != null && challengesFields.challengeData.challengeItems.Count > 0)
@@ -202,6 +242,7 @@ public class PanelPavilionField : Panel
     /// <param name="obj">Clase con los datos del error</param>
     private void OnFailed(WebError obj)
     {
+        isLoadingNewItems = false;
         onFailed?.Invoke();
         SetNewSpinnerActiveState(false);
     }
