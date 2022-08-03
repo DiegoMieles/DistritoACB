@@ -249,7 +249,7 @@ public class PlayerCard : MonoBehaviour
             scoreBase.text = tokenData.st_points;
             scoreWithBoost.text = tokenData.points;
             injuryBackground.color = tokenData.isInjured ? Color.red : Color.black;
-            injuryText.text = tokenData.textInjured;
+            injuryText.text = tokenData.daysOrTextInjured;
             playerName.text = tokenData.name;
 
             isInjure.gameObject?.SetActive(tokenData.isInjured);
@@ -277,7 +277,7 @@ public class PlayerCard : MonoBehaviour
             scoreBase.text = cardData.st_points;
             scoreWithBoost.text = cardData.points;
             injuryBackground.color = cardData.isInjured ? Color.red : Color.black;
-            injuryText.text = cardData.textInjured;
+            injuryText.text = cardData.daysOrTextInjured;
             playerName.text = cardData.name;
 
             isInjure.gameObject?.SetActive(cardData.isInjured);

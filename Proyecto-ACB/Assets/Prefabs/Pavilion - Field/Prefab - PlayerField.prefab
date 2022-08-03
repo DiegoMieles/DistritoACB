@@ -287,6 +287,7 @@ MonoBehaviour:
   winState: {fileID: 3964341771200946613}
   playerToken: {fileID: 3335886672715809403}
   playerView: {fileID: 5721342427196721548}
+  spritePlace: {fileID: 21300000, guid: 405da89bbd337424e911e8e6a87179e3, type: 3}
   panelOpener: {fileID: 4341297062219094638}
   panelPrefab: {fileID: 672235892832963052, guid: cb6052e63793f084ba1c03b2b77ea6b0, type: 3}
   checkImage: {fileID: -2828354978733313150, guid: ead46b0e50f8b37448b1520c58ad30b1, type: 3}
@@ -1664,7 +1665,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2e262151b658a71479578f76864d046a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 405da89bbd337424e911e8e6a87179e3, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

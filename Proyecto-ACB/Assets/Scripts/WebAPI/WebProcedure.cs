@@ -70,19 +70,21 @@ namespace WebAPI
         private const string MarketplaceGetItemUrl = "MarketplaceGetItem?item_id={0}";
 
         public const string CREDENTIALS = "CREDENTIALS";
-        
+
         #region USERS  
-        
+
         /// <summary>
         /// Obtiene lista de desafios de la cancha.
         /// </summary>
-        public  void  GetChallengesCancha (Action< DataSnapshot> onSuccess, Action<WebError> onFailed)
+        /// 
+
+        public void GetChallengesCancha(string json, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
         {
             try
             {
                 var form = new WWWForm();
-                var url = String.Format(GetChallengesCanchaUrl, accessData.user,accessData.accessToken,accessData.refreshToken);
-                StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
+                var url = String.Format(GetChallengesCanchaUrl, accessData.user, accessData.accessToken, accessData.refreshToken);
+                StartCoroutine(RequestCoroutine(url, json, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbPUT));
             }
             catch (WebException webEx)
             {

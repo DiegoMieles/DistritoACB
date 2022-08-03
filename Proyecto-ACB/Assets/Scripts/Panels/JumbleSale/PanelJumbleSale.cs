@@ -328,7 +328,7 @@ public class PanelJumbleSale : Panel
         JsonConvert.PopulateObject(obj.RawJson, mallData);
         if(mallData != null )
         {
-            coinAmount.text = mallData.balance.ToString();
+           if(mallData.balance > 0) coinAmount.text = mallData.balance.ToString();
             if (mallData.items.Count <= 0)
             {
                 allItemsLoaded = true;

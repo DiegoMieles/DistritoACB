@@ -1177,7 +1177,7 @@ MonoBehaviour:
   m_AsteriskChar: 42
   m_KeyboardType: 0
   m_LineType: 0
-  m_HideMobileInput: 0
+  m_HideMobileInput: 1
   m_CharacterValidation: 0
   m_CharacterLimit: 0
   m_OnEndEdit:
@@ -1976,7 +1976,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.39047736, y: 0.5}
-  m_AnchoredPosition: {x: -4.3706055, y: -0.63597107}
+  m_AnchoredPosition: {x: -4.3706665, y: -0.63597107}
   m_SizeDelta: {x: -34.741302, y: -18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1677323562
@@ -2892,10 +2892,10 @@ RectTransform:
   m_Father: {fileID: 6359864594343142242}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0.000061035, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 17, y: 0}
+  m_SizeDelta: {x: 213.664, y: 54.728996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1041882201855411221
 CanvasRenderer:
@@ -2935,7 +2935,7 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Publicar oferta

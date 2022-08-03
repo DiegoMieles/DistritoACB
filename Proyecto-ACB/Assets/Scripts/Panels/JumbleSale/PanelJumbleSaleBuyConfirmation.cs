@@ -15,10 +15,10 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
     protected JumbleSaleResult.JumbleItems itemData; //Clase con los datos del item que se está comprando
     [SerializeField]
     [Tooltip("botón de eliminar publicación")]
-    protected Button deleteButton;
+    public Button deleteButton;
     [SerializeField]
     [Tooltip("objeto que contiene la información de los costos de la publicación")]
-    protected GameObject costInfoLayout;
+    public GameObject costInfoLayout;
     [SerializeField]
     [Tooltip("Primer título de alerta al eliminar un item")]
     private string alertDelete = "¿Estás seguro?";
@@ -39,7 +39,7 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
         if (itemData.seller_user_id == WebProcedure.Instance.accessData.user && deleteButton != null)
         {
             costInfoLayout.SetActive(false);
-            deleteButton.gameObject.SetActive(true);
+            deleteButton.transform.parent.gameObject.SetActive(true);
             deleteButton.onClick.AddListener(() => { DeletePublication(itemData); });
         }
         this.itemData = itemData;
@@ -224,4 +224,5 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
 
         Debug.Log(obj.RawJson);
     }
+
 }

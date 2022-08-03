@@ -625,6 +625,7 @@ namespace Data
                 public bool isBoostAssists;
                 public bool isBoostPoints;
                 public List<CardVideoData> videos = new List<CardVideoData>();
+                public string daysOrTextInjured;
             }
         }
 
@@ -940,6 +941,7 @@ namespace Data
             public string updated;
             public string title;
             public string created;
+            public string background_img;
         }
     }
     /// <summary>
@@ -1005,6 +1007,7 @@ namespace Data
         {
             public int id;
             public string token;
+            public string name;
             public int idType;
             [JsonConverter(typeof(StringEnumConverter))]
             public BoosterType type;
@@ -1326,6 +1329,7 @@ namespace Data
         public bool isBoostAssists;
         public bool isBoostPoints;
         public List<CardVideoData> videos = new List<CardVideoData>();
+        public string daysOrTextInjured;
         public bool is_clasic = true;
 
     }
@@ -1589,7 +1593,8 @@ namespace Data
     public class ChallengesField
     {
         public ChallengeFieldData challengeData;
-
+        public int page;
+        public int rowCount;
         [Serializable]
         public class ChallengeFieldData
         {
