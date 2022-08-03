@@ -87,6 +87,8 @@ namespace Data
         public int id;
         [JsonConverter(typeof(StringEnumConverter))]
         public ItemType itemType;
+        [JsonConverter(typeof(StringEnumConverter))]
+        public ItemType type;
         public string title;
         public string description;
         public string path_img;

@@ -17,6 +17,7 @@ public class AvatarImageView : MonoBehaviour
     [SerializeField] [Tooltip("Determina si se debe cargar la imagen grande")]
     private bool loadBigImage;
 
+    public Image BackendLoadedImage => backendLoadedImage;
     /// <summary>
     /// Actualiza la vista del jugador (Normalmente cuando el avatar ha sido modificado)
     /// </summary>
@@ -50,7 +51,7 @@ public class AvatarImageView : MonoBehaviour
     /// <summary>
     /// Actualiza la vista del jugador (Normalmente cuando el avatar ha sido modificado)
     /// </summary>
-    /// <param name="challengeData">Datos del tablón de desafio</param>
+    /// <param name="challengeData">Datos del tablÃ³n de desafio</param>
     /// <param name="isBigImage">Determina si la imagen a cargar es grande</param>
     public void UpdateView(ChallengesTablon.ChallengesTablonItem challengeData, bool isBigImage)
     {

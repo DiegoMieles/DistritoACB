@@ -913,6 +913,7 @@ MonoBehaviour:
       challengeItems: []
   textNoChallenges: {fileID: 3539217558021131865}
   textFail: "A\xFAn no has participado en ning\xFAn desaf\xEDo"
+  itemsScroll: {fileID: 417324425671229234}
 --- !u!114 &3333121986235668545
 MonoBehaviour:
   m_ObjectHideFlags: 0

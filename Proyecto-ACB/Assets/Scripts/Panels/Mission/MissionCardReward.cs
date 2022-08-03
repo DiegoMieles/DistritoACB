@@ -152,7 +152,7 @@ public class MissionCardReward : MonoBehaviour
         scoreWithBoost.text = cardData.element.st_points;
         injuryBackground.color = cardData.element.isInjured ? Color.red : Color.black;
         injuryBackground.color = Color.white;
-        injuryText.text = cardData.element.textInjured;
+        injuryText.text = cardData.element.daysOrTextInjured;
 
     }
 

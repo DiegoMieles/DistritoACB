@@ -625,6 +625,7 @@ namespace Data
                 public bool isBoostAssists;
                 public bool isBoostPoints;
                 public List<CardVideoData> videos = new List<CardVideoData>();
+                public string daysOrTextInjured;
             }
         }
 
@@ -1328,6 +1329,7 @@ namespace Data
         public bool isBoostAssists;
         public bool isBoostPoints;
         public List<CardVideoData> videos = new List<CardVideoData>();
+        public string daysOrTextInjured;
 
     }
 
@@ -1589,7 +1591,8 @@ namespace Data
     public class ChallengesField
     {
         public ChallengeFieldData challengeData;
-
+        public int page;
+        public int rowCount;
         [Serializable]
         public class ChallengeFieldData
         {
