@@ -940,6 +940,7 @@ namespace Data
             public string updated;
             public string title;
             public string created;
+            public string background_img;
         }
     }
     /// <summary>
@@ -1005,6 +1006,7 @@ namespace Data
         {
             public int id;
             public string token;
+            public string name;
             public int idType;
             [JsonConverter(typeof(StringEnumConverter))]
             public BoosterType type;

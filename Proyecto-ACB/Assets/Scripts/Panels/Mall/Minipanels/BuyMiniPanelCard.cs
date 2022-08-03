@@ -77,6 +77,9 @@ public class BuyMiniPanelCard : BuyMiniPanel
     private Text highlightDescription;
     [SerializeField] [Tooltip("Imagen de la liga del highlight")]
     private Image leagueImage;
+    [SerializeField]
+    [Tooltip("Imagen de fondo de la parte de atrás del highlight")]
+    private Image highlightBackBackground;
 
     [Header("Other components")]
     [SerializeField] [Tooltip("Spinner de carga")]
@@ -191,6 +194,7 @@ public class BuyMiniPanelCard : BuyMiniPanel
             {
                 Debug.Log($"Card data = { obj.RawJson}");
                 JsonConvert.PopulateObject(obj.RawJson, cardData);
+                cardData.data.name = itemData.name;
                 cardData.data.description = itemData.description;
                 SetCardData(cardData);
             },
@@ -296,6 +300,7 @@ public class BuyMiniPanelCard : BuyMiniPanel
         //highlightDate.text = !string.IsNullOrEmpty(highlightData.data.) ? "Creación " + highlightData.publication_date : "";
         highlightDescription.text = highlightData.data.description;
         WebProcedure.Instance.GetSprite(highlightData.data.path_img_leauge, (obj) => { leagueImage.sprite = obj; }, (error) => { });
+        WebProcedure.Instance.GetSprite(highlightData.data.background_img, (obj) => { highlightBackBackground.sprite = obj; }, (error) => { });
     }
 
     /// <summary>

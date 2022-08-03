@@ -133,6 +133,11 @@ public class BuyMiniPanel : MonoBehaviour
     public virtual void ShowMiniPanel(Sprite productSprite, JumbleSaleResult.JumbleItems itemData, string description, Action onFailedLoading)
     {
         gameObject.SetActive(true);
+        if (!string.IsNullOrEmpty(description) && descriptionText != null)
+        {
+            descriptionText.text = itemData.item_type == "TOKENHIGTHLIGHT" ? itemData.name : description;
+        }
+
         if (itemData.seller_user_id == WebProcedure.Instance.accessData.user)
         {
             if (publicationDate)
@@ -145,12 +150,6 @@ public class BuyMiniPanel : MonoBehaviour
                 ownedItemPrice.transform.parent.gameObject.SetActive(true);
                 ownedItemPrice.text = itemData.price;
             }
-
-            if (!string.IsNullOrEmpty(description) && descriptionText != null)
-            { 
-            descriptionText.text = itemData.item_type == "TOKENHIGTHLIGHT" ? itemData.name : description;
-            }
-
         }
         else
         {
