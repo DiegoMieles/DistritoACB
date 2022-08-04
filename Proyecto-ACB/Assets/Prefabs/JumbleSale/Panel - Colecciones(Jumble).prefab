@@ -838,11 +838,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   colectionDataContainer:
-    collectionData:
-      collectionItems: []
+    collectionItems: []
+  highlightColectionDataContainer:
+    items: []
   spinner: {fileID: 1902524327}
   canClose: 1
-  textFail: 
+  textFail: No tienes card players para publicar
   textNoColeccion: {fileID: 2215551666223996575}
 --- !u!1 &6128430763923816543
 GameObject:
@@ -1180,7 +1181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -236.3732, y: 1367.0795}
+  m_AnchoredPosition: {x: -236.3732, y: 847.08}
   m_SizeDelta: {x: 472.7464, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8083894040779917405

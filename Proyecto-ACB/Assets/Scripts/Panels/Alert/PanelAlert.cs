@@ -54,11 +54,16 @@ public class PanelAlert : MonoBehaviour
     public void SetupPanel(string newText, string description, bool needCancelButton, Action onSelectAcceptButton, Action onSelectCancelButton = null, float delay = 0,
         string customAcceptButtonText = "Aceptar", string customCancelButtonText = "Cancelar")
     {
+        descriptionText.gameObject.SetActive(true);
         gameObject.SetActive(true);
         transform.SetAsFirstSibling();
         acceptButtonText.text = customAcceptButtonText;
         cancelButtonText.text = customCancelButtonText;
         descriptionText.text = description;
+        if (string.IsNullOrEmpty(description))
+        {
+            descriptionText.gameObject.SetActive(false);
+        }
         StartCoroutine(ShowPanel(newText,needCancelButton,onSelectAcceptButton,onSelectCancelButton,delay));
     }
 
@@ -74,7 +79,7 @@ public class PanelAlert : MonoBehaviour
     private IEnumerator ShowPanel(string newText,  bool needCancelButton, Action onSelectAcceptButton, Action onSelectCancelButton = null, float delay = 0)
     {
         yield return new WaitForSeconds(delay);
-        
+        descriptionText.gameObject.SetActive(false);
         alertText.text = newText;
         this.onSelectAcceptButton = onSelectAcceptButton;
         this.onSelectCancelButton = onSelectCancelButton;

@@ -88,6 +88,7 @@ namespace Panels
 
                 }, error =>
                 {
+                    textNoColeccion.text = textFail;
                     onFailed.Invoke();
                     ClosedSpinner();
                 });
@@ -120,6 +121,7 @@ namespace Panels
 
                 }, error =>
                 {
+                    textNoColeccion.text = textFail;
                     onFailed.Invoke();
                     ClosedSpinner();
                 });

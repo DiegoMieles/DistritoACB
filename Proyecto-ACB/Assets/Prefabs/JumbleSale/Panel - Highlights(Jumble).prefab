@@ -839,9 +839,11 @@ MonoBehaviour:
       m_Calls: []
   colectionDataContainer:
     collectionItems: []
+  highlightColectionDataContainer:
+    items: []
   spinner: {fileID: 1902524327}
   canClose: 1
-  textFail: 
+  textFail: No tienes highlights para publicar
   textNoColeccion: {fileID: 2215551666223996575}
 --- !u!1 &6128430763923816543
 GameObject:
@@ -1057,7 +1059,7 @@ GameObject:
   - component: {fileID: 2215551666223996575}
   - component: {fileID: 4778108545334843720}
   m_Layer: 5
-  m_Name: Text - NoPotenciadores
+  m_Name: Text - NoHighlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1179,7 +1181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -236.3732, y: 1367.0795}
+  m_AnchoredPosition: {x: -236.3732, y: 847.0799}
   m_SizeDelta: {x: 472.7464, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8083894040779917405
