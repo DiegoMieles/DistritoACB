@@ -153,10 +153,9 @@ public class PanelSkinsToPublish : Panel
     private void OnSuccess(DataSnapshot obj)
     {
         JsonConvert.PopulateObject(obj.RawJson, skinData);
-        if (skinData != null && obj.RawJson != "[]")
+        if ((skinData != null && obj.RawJson != "[]" ) || (skinData.BODYACCESORY.Count > 0 && skinData.ARMACCESORY.Count > 0 && skinData.BACKGROUNDACCESORY.Count > 0 && skinData.EYEACCESORY.Count > 0 && skinData.HEADACCESORY.Count > 0))
         {
             textNoSkins.text = "";
-           
         }
         else
         {
