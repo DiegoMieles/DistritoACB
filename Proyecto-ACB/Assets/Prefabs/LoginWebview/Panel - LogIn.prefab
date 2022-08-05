@@ -120,7 +120,7 @@ MonoBehaviour:
   urlOnStart: https://id.acb.com/iniciar-sesion?redirect_url=https://www.acb.com
   showOnStart: 1
   fullScreen: 0
-  useToolbar: 1
+  useToolbar: 0
   toolbarPosition: 0
   frame:
     serializedVersion: 2
