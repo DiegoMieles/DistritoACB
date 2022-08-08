@@ -1,5 +1,398 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &28144523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 28144524}
+  - component: {fileID: 28144530}
+  - component: {fileID: 28144529}
+  - component: {fileID: 28144528}
+  - component: {fileID: 28144527}
+  - component: {fileID: 28144526}
+  - component: {fileID: 28144525}
+  m_Layer: 5
+  m_Name: Button - Acceso
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &28144524
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28144523}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 311403652}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 133.96594, y: -306.07898}
+  m_SizeDelta: {x: 541.922, y: 467.404}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &28144530
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28144523}
+  m_CullTransparentMesh: 1
+--- !u!114 &28144529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28144523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 31a6cb4bfdfa63b439bbd4353a27ff7a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &28144528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28144523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 28144529}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &28144527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28144523}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0.5514498, b: 1, a: 1}
+  m_EffectDistance: {x: 5, y: 5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &28144526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28144523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b7e19a6ce942af42b7fb41eac573a7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectionOutline: {fileID: 28144527}
+  shiny: {fileID: 28144525}
+  buildingButton: {fileID: 28144528}
+  buildingData:
+    panelToOpen: {fileID: 7885220637714065018, guid: e723dd84f2b5e3d429e7988c6cfc3e9b, type: 3}
+    panelIsPrefab: 1
+    panelHasInfoToDisplay: 0
+    storePanelAsPrevious: 0
+    infoTitle: Control de acceso
+    infoDescription: "En el Tabl\xF3n de Anuncios podr\xE1s publicar ofertas de desaf\xEDo
+      y aceptar las de otros usuarios"
+    buildingIcon: {fileID: -2247894414512913946, guid: ead46b0e50f8b37448b1520c58ad30b1, type: 3}
+  buildingId: Edf-Acceso
+  lightObject: {fileID: 0}
+--- !u!114 &28144525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28144523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19b7e2285c104f6ca47d583f3e5444f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 300
+  m_EffectMaterial: {fileID: 2100000, guid: 9dc7e810a87b444ab96919f3215c2fe5, type: 2}
+  m_EffectFactor: 0
+  m_Width: 0.25
+  m_Rotation: 0
+  m_Softness: 1
+  m_Brightness: 1
+  m_Gloss: 1
+  m_EffectArea: 0
+  m_Player:
+    play: 0
+    initialPlayDelay: 0
+    duration: 1
+    loop: 1
+    loopDelay: 0
+    updateMode: 0
+  m_Play: 0
+  m_Loop: 0
+  m_Duration: 1
+  m_LoopDelay: 1
+  m_UpdateMode: 0
+--- !u!1 &101065526
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 101065527}
+  - component: {fileID: 101065533}
+  - component: {fileID: 101065532}
+  - component: {fileID: 101065531}
+  - component: {fileID: 101065530}
+  - component: {fileID: 101065529}
+  - component: {fileID: 101065528}
+  m_Layer: 5
+  m_Name: Button - Cartelera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &101065527
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101065526}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 311403652}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -332, y: 606.414}
+  m_SizeDelta: {x: 229.9056, y: 292.7119}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &101065533
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101065526}
+  m_CullTransparentMesh: 1
+--- !u!114 &101065532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101065526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: d8ed2b8d7aa7ca24b91008b0910f11aa, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &101065531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101065526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 101065532}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &101065530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101065526}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0.5514498, b: 1, a: 1}
+  m_EffectDistance: {x: 5, y: 5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &101065529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101065526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b7e19a6ce942af42b7fb41eac573a7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectionOutline: {fileID: 101065530}
+  shiny: {fileID: 101065528}
+  buildingButton: {fileID: 101065531}
+  buildingData:
+    panelToOpen: {fileID: 3732310476851415535, guid: a46958455eaa4804b89b4691a0a84b1a, type: 3}
+    panelIsPrefab: 1
+    panelHasInfoToDisplay: 0
+    storePanelAsPrevious: 0
+    infoTitle: Cartelera
+    infoDescription: "Esta es la informaci\xF3n sobre el tabl\xF3n"
+    buildingIcon: {fileID: 9125022375614917940, guid: ead46b0e50f8b37448b1520c58ad30b1, type: 3}
+  buildingId: Edf-Cartelera
+  lightObject: {fileID: 0}
+--- !u!114 &101065528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101065526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19b7e2285c104f6ca47d583f3e5444f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 300
+  m_EffectMaterial: {fileID: 2100000, guid: 9dc7e810a87b444ab96919f3215c2fe5, type: 2}
+  m_EffectFactor: 0
+  m_Width: 0.25
+  m_Rotation: 0
+  m_Softness: 1
+  m_Brightness: 1
+  m_Gloss: 1
+  m_EffectArea: 0
+  m_Player:
+    play: 0
+    initialPlayDelay: 0
+    duration: 1
+    loop: 1
+    loopDelay: 0
+    updateMode: 0
+  m_Play: 0
+  m_Loop: 0
+  m_Duration: 1
+  m_LoopDelay: 1
+  m_UpdateMode: 0
 --- !u!1 &220121837
 GameObject:
   m_ObjectHideFlags: 0
@@ -66,6 +459,81 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 89bcdb565374b45428a26741084d25b8, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &232828140
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 232828141}
+  - component: {fileID: 232828143}
+  - component: {fileID: 232828142}
+  m_Layer: 5
+  m_Name: Image - Pavilion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &232828141
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232828140}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 550827169}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 198.72554, y: -96.696365}
+  m_SizeDelta: {x: 2594.9648, y: 2926.3262}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &232828143
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232828140}
+  m_CullTransparentMesh: 1
+--- !u!114 &232828142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232828140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 57965575689964d42b0bf97f7ac8b108, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -145,13 +613,248 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 32.9
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -105.273766, y: 137.46573, z: 0.000024795532}
   - {x: -542.16565, y: -96.075935, z: 0.000024795532}
   - {x: -538.56696, y: -450.18872, z: 0.000024795532}
   - {x: -112.269295, y: -220.16447, z: 0.000024795532}
+--- !u!1 &262723331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 262723336}
+  - component: {fileID: 262723335}
+  - component: {fileID: 262723334}
+  - component: {fileID: 262723333}
+  - component: {fileID: 262723332}
+  m_Layer: 5
+  m_Name: ScrollView - Auditory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &262723336
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262723331}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1954711531}
+  m_Father: {fileID: 202279029969608225}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &262723335
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262723331}
+  m_CullTransparentMesh: 1
+--- !u!114 &262723334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262723331}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &262723333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262723331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: PanelBuildingSelection, Assembly-CSharp
+          m_MethodName: HidePanelOptions
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 311403653}
+          m_TargetAssemblyTypeName: BuildingsManager, Assembly-CSharp
+          m_MethodName: DeactivateBuildingOutline
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 5
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: PanelBuildingSelection, Assembly-CSharp
+          m_MethodName: HidePanelOptions
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 311403653}
+          m_TargetAssemblyTypeName: BuildingsManager, Assembly-CSharp
+          m_MethodName: ActivateBuildingsOutline
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &262723332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262723331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8e210c62aebd042af69709b09bac5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Content: {fileID: 311403652}
+  m_Horizontal: 1
+  m_Vertical: 1
+  m_MovementType: 2
+  m_Elasticity: 0.1
+  m_Inertia: 1
+  m_DecelerationRate: 0.135
+  m_ScrollSensitivity: 1
+  m_Viewport: {fileID: 1954711531}
+  m_HorizontalScrollbar: {fileID: 0}
+  m_VerticalScrollbar: {fileID: 0}
+  m_HorizontalScrollbarVisibility: 0
+  m_VerticalScrollbarVisibility: 0
+  m_HorizontalScrollbarSpacing: 0
+  m_VerticalScrollbarSpacing: 0
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &311403651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 311403652}
+  - component: {fileID: 311403653}
+  m_Layer: 5
+  m_Name: Content - Buildings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &311403652
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311403651}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_Children:
+  - {fileID: 550827169}
+  - {fileID: 101065527}
+  - {fileID: 28144524}
+  - {fileID: 1115865904}
+  m_Father: {fileID: 1954711531}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -447.56787, y: 42.87671}
+  m_SizeDelta: {x: 2030.1697, y: 2807.192}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &311403653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311403651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 597287964f3d64b4982c40fa754d1fee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildings:
+  - {fileID: 101065529}
+  - {fileID: 28144526}
+  - {fileID: 1115865906}
+  buildingDayOutline: {r: 0.909804, g: 0.1137255, b: 0.62352943, a: 1}
+  buildingNightOutline: {r: 0.909804, g: 0.1137255, b: 0.62352943, a: 1}
 --- !u!1 &448865241
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +1059,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &495312031
@@ -496,6 +1199,42 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &550827168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 550827169}
+  m_Layer: 5
+  m_Name: BackgroundMap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &550827169
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550827168}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 232828141}
+  m_Father: {fileID: 311403652}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -187, y: 50}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.49999985, y: 0.5}
 --- !u!1 &635775411
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,7 +1343,7 @@ RectTransform:
   m_Children:
   - {fileID: 862725459}
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -990,7 +1729,7 @@ RectTransform:
   - {fileID: 1344596195}
   - {fileID: 220121838}
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 32
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1016,6 +1755,204 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1115865903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1115865904}
+  - component: {fileID: 1115865910}
+  - component: {fileID: 1115865909}
+  - component: {fileID: 1115865908}
+  - component: {fileID: 1115865907}
+  - component: {fileID: 1115865906}
+  - component: {fileID: 1115865905}
+  m_Layer: 5
+  m_Name: Button - Cajero
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1115865904
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115865903}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 311403652}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 527.0001, y: 114}
+  m_SizeDelta: {x: 720.6183, y: 541.4}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1115865910
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115865903}
+  m_CullTransparentMesh: 1
+--- !u!114 &1115865909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115865903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 04e024c2e93dce143959717504ebc89b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1115865908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115865903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1115865909}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1115865907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115865903}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0.5514498, b: 1, a: 1}
+  m_EffectDistance: {x: 5, y: 5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1115865906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115865903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b7e19a6ce942af42b7fb41eac573a7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectionOutline: {fileID: 1115865907}
+  shiny: {fileID: 1115865905}
+  buildingButton: {fileID: 1115865908}
+  buildingData:
+    panelToOpen: {fileID: 4077217915810154196, guid: 870bb26b47e744d479fd46eb318deff9, type: 3}
+    panelIsPrefab: 1
+    panelHasInfoToDisplay: 1
+    storePanelAsPrevious: 1
+    infoTitle: Cajero
+    infoDescription: "El Despacho es el lugar en el que puedes ver todos tus tokens,
+      mejorarlos con potenciadores y decidir cu\xE1l es la alineaci\xF3n de tu Equipo
+      Competitivo"
+    buildingIcon: {fileID: -4923019924246146669, guid: ead46b0e50f8b37448b1520c58ad30b1, type: 3}
+  buildingId: Edf-Cajero
+  lightObject: {fileID: 0}
+--- !u!114 &1115865905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115865903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19b7e2285c104f6ca47d583f3e5444f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 300
+  m_EffectMaterial: {fileID: 2100000, guid: 9dc7e810a87b444ab96919f3215c2fe5, type: 2}
+  m_EffectFactor: 0
+  m_Width: 0.25
+  m_Rotation: 0
+  m_Softness: 1
+  m_Brightness: 1
+  m_Gloss: 1
+  m_EffectArea: 0
+  m_Player:
+    play: 0
+    initialPlayDelay: 0
+    duration: 1
+    loop: 1
+    loopDelay: 0
+    updateMode: 0
+  m_Play: 0
+  m_Loop: 0
+  m_Duration: 1
+  m_LoopDelay: 1
+  m_UpdateMode: 0
 --- !u!1 &1312776630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,7 +2023,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 32.9
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 300.95813, y: -565.5, z: 0.000024795532}
@@ -1291,6 +2228,7 @@ RectTransform:
   - {fileID: 3825061691003221859}
   - {fileID: 4194997279272132548}
   - {fileID: 4194997280522897465}
+  - {fileID: 2782666996524569712}
   - {fileID: 6017139094463385191}
   - {fileID: 4194997280273738145}
   - {fileID: 4194997279557366297}
@@ -1365,6 +2303,8 @@ MonoBehaviour:
   - {fileID: 4743825944686987041}
   - {fileID: 6976104140549141947}
   - {fileID: 791332042562583455}
+  - {fileID: 3646182935411256519}
+  - {fileID: 1999519070053066754}
   buildingDayOutline: {r: 0.909804, g: 0.1137255, b: 0.62352943, a: 1}
   buildingNightOutline: {r: 0.909804, g: 0.1137255, b: 0.62352943, a: 1}
 --- !u!1 &1524623116
@@ -1587,7 +2527,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 32.9
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -270.83282, y: -147.6637, z: 0.000024795532}
@@ -1664,7 +2604,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 32.9
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -369.71942, y: 30.683079, z: 0.000024795532}
@@ -1743,7 +2683,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 32.9
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 689.654, y: 353.92432, z: 0.000024795532}
@@ -1786,6 +2726,96 @@ MonoBehaviour:
   - {x: -2328.901, y: -935.54004, z: 0.000024795532}
   - {x: -2640.2563, y: -1140.17, z: 0.000024795532}
   - {x: -2642.7925, y: -1376.0464, z: 0.000024795532}
+--- !u!1 &1954711530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1954711531}
+  - component: {fileID: 1954711534}
+  - component: {fileID: 1954711533}
+  - component: {fileID: 1954711532}
+  m_Layer: 5
+  m_Name: Mask - Pavilion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1954711531
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954711530}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 311403652}
+  m_Father: {fileID: 262723336}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 1}
+--- !u!222 &1954711534
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954711530}
+  m_CullTransparentMesh: 1
+--- !u!114 &1954711533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954711530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1954711532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954711530}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 0
 --- !u!1 &1992073685
 GameObject:
   m_ObjectHideFlags: 0
@@ -2027,7 +3057,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 32.9
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -415.4772, y: -19.432632, z: 0.000024795532}
@@ -2105,7 +3135,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 32.9
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 173.80411, y: -381.833, z: 0.000024795532}
@@ -2217,7 +3247,7 @@ GameObject:
   - component: {fileID: 3646182935411256519}
   - component: {fileID: 4300969236360136225}
   m_Layer: 5
-  m_Name: Button - Mercadillo
+  m_Name: Button - JumbleSale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2235,12 +3265,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -459, y: -1727}
-  m_SizeDelta: {x: 342.086, y: 1107.3}
+  m_AnchoredPosition: {x: -1307, y: -1641}
+  m_SizeDelta: {x: 497.323, y: 586.826}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5491816770957745333
 CanvasRenderer:
@@ -2270,9 +3300,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4590301341185807919, guid: ecacf0211e7d3f94fa32e70b1624b9ec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1be084b9b456ae6459ccd5c419e96e6e, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2355,15 +3385,15 @@ MonoBehaviour:
   shiny: {fileID: 4300969236360136225}
   buildingButton: {fileID: 3836287158755005822}
   buildingData:
-    panelToOpen: {fileID: 4421051610246891801, guid: be53d562b2d59d440878578adee597b6, type: 3}
+    panelToOpen: {fileID: 1308204509849487109, guid: 252d1bbad3ff3b043b09a6e27786c37c, type: 3}
     panelIsPrefab: 1
     panelHasInfoToDisplay: 0
     storePanelAsPrevious: 0
-    infoTitle: acb Headquarters
-    infoDescription: "acb Headquarters es el lugar donde acudir para consultar rankings
-      y aprender m\xE1s sobre el juego"
-    buildingIcon: {fileID: -7917366761167587195, guid: 2a2739daee3ebd24a9efb14734b5de21, type: 3}
-  buildingId: Edf-HeadQuarters
+    infoTitle: Mercadillo
+    infoDescription: "En el mercadillo podr\xE1s comprar y vender objetos a otros
+      jugadores"
+    buildingIcon: {fileID: 21300000, guid: ebebbaa8e352f4448aef2aee14481489, type: 3}
+  buildingId: Edf - JumbleSale
   lightObject: {fileID: 0}
 --- !u!114 &4300969236360136225
 MonoBehaviour:
@@ -2935,7 +3965,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -11.133097, y: -8.244072, z: -0.000005722046}
@@ -3220,7 +4250,7 @@ RectTransform:
   - {fileID: 3600494024144517225}
   - {fileID: 6352552369412233328}
   m_Father: {fileID: 202279029969608225}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3335,7 +4365,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 32.471924, y: -45.5945, z: -0.000005722046}
@@ -3496,7 +4526,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 36.820095, y: -79.42283, z: 0.000024795532}
@@ -3580,7 +4610,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 32.471924, y: -45.5945, z: -0.000005722046}
@@ -4466,7 +5496,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 7.6755686, y: -65.90925, z: -0.000005722046}
@@ -4702,7 +5732,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 25.949678, y: -39.977745, z: -0.000005722046}
@@ -5093,7 +6123,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -5.159074, y: 89.821304, z: -0.000005722046}
@@ -5272,10 +6302,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (8)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &509493388971103942
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5289,7 +6319,7 @@ RectTransform:
   m_Children:
   - {fileID: 7117588772777259449}
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5420,7 +6450,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 8323137582846806549}
   image: {fileID: 1587599398836474716}
-  position: 8
+  position: 15
   mission:
     id: 0
     name: 
@@ -5815,7 +6845,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 7.367805, y: -17.94198, z: -0.000005722046}
@@ -5976,7 +7006,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 18.249783, y: -1.2294618, z: -0.000005722046}
@@ -6107,7 +7137,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6358,7 +7388,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 7.0261974, y: -9.0233965, z: -0.000005722046}
@@ -6759,10 +7789,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (9)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3840350155695710740
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6776,7 +7806,7 @@ RectTransform:
   m_Children:
   - {fileID: 4774943541447060681}
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6907,7 +7937,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 7839361141533607466}
   image: {fileID: 8165293972363670759}
-  position: 9
+  position: 4
   mission:
     id: 0
     name: 
@@ -7026,7 +8056,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 17.123173, y: -53.855736, z: -0.000005722046}
@@ -8012,7 +9042,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 21.1136, y: -55.78775, z: -0.000005722046}
@@ -9137,26 +10167,30 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 0.5
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: -77.22172, y: -167.5885, z: -0.000005722046}
-  - {x: 192.79326, y: -33.801453, z: -0.000005722046}
-  - {x: 190.86609, y: 29.383492, z: -0.000005722046}
-  - {x: 202.47536, y: 35.221676, z: -0.000005722046}
-  - {x: 202.73799, y: 49.936577, z: -0.000005722046}
-  - {x: 189.09624, y: 56.126003, z: -0.000005722046}
-  - {x: 190.59976, y: 380.7502, z: -0.000005722046}
-  - {x: 194.20047, y: 384.15796, z: -0.000005722046}
-  - {x: 192.5722, y: 401.52805, z: -0.000005722046}
-  - {x: 152.94661, y: 423.7834, z: -0.000005722046}
-  - {x: 151.58948, y: 435.45334, z: -0.000005722046}
-  - {x: 7.6255784, y: 504.3904, z: -0.000005722046}
-  - {x: -276.70297, y: 365.0779, z: -0.000005722046}
-  - {x: -275.31888, y: 346.0062, z: -0.000005722046}
-  - {x: -272.2171, y: 344.23392, z: -0.000005722046}
-  - {x: -274.07797, y: 18.138626, z: -0.000005722046}
-  - {x: -278.15576, y: 16.552582, z: -0.000005722046}
-  - {x: -278.3821, y: -4.5154867, z: -0.000005722046}
-  - {x: -274.53098, y: -8.366943, z: -0.000005722046}
-  - {x: -274.0115, y: -70.98232, z: -0.000005722046}
+  - {x: -18.174032, y: -183.69234, z: 0.000024795532}
+  - {x: 147.06558, y: -93.64979, z: -0.00007553624}
+  - {x: 163.16943, y: -93.64979, z: -0.00007553624}
+  - {x: 232.95299, y: -56.074135, z: -0.00007553624}
+  - {x: 245.47821, y: -38.180767, z: -0.00007553624}
+  - {x: 269.73422, y: -24.8547, z: 0.000024795532}
+  - {x: 265.16068, y: 328.63, z: -0.00007553624}
+  - {x: 184.64124, y: 375.15222, z: -0.00007553624}
+  - {x: 148.85489, y: 419.88535, z: -0.00007553624}
+  - {x: 80.86065, y: 441.35715, z: -0.00007553624}
+  - {x: 24.269318, y: 426.15027, z: 0.000024795532}
+  - {x: -9.854923, y: 393.26593, z: -0.00007553624}
+  - {x: -102.8689, y: 340.2472, z: 0.000024795532}
+  - {x: -101.754616, y: 133.07715, z: 0.000024795532}
+  - {x: -277.58505, y: 36.47089, z: 0.000024795532}
+  - {x: -279.37936, y: 7.7479095, z: 0.000024795532}
+  - {x: -321.73663, y: -43.548717, z: -0.00007553624}
+  - {x: -251.95308, y: -63.231403, z: -0.00007553624}
+  - {x: -205.43065, y: -120.48954, z: -0.00007553624}
+  - {x: -157.1191, y: -109.75364, z: -0.00007553624}
+  - {x: -141.01524, y: -120.48954, z: -0.00007553624}
+  - {x: -158.9084, y: -138.3829, z: -0.00007553624}
+  - {x: -80.17827, y: -159.8547, z: -0.00007553624}
+  - {x: -71.23168, y: -154.48676, z: -0.00007553624}
 --- !u!1 &1939145035186793330
 GameObject:
   m_ObjectHideFlags: 0
@@ -9544,7 +10578,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.867157, y: -0.8460404, z: -0.000005722046}
@@ -9648,10 +10682,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (3)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6359954838672417302
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9665,7 +10699,7 @@ RectTransform:
   m_Children:
   - {fileID: 5229247883279170730}
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9796,7 +10830,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 4569014183063599600}
   image: {fileID: 4313246106858563332}
-  position: 3
+  position: 1
   mission:
     id: 0
     name: 
@@ -10248,10 +11282,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (4)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7660396162199543329
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10265,7 +11299,7 @@ RectTransform:
   m_Children:
   - {fileID: 8378618580003816806}
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10396,7 +11430,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 4588969457883588294}
   image: {fileID: 1893123009583228519}
-  position: 4
+  position: 17
   mission:
     id: 0
     name: 
@@ -10617,10 +11651,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (16)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1733367911444030583
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10634,7 +11668,7 @@ RectTransform:
   m_Children:
   - {fileID: 6157859809150206732}
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10765,7 +11799,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 2228227588626909974}
   image: {fileID: 7877766149325848146}
-  position: 16
+  position: 11
   mission:
     id: 0
     name: 
@@ -11084,7 +12118,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.956334, y: -41.3025, z: -0.000005722046}
@@ -11244,7 +12278,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 21.745226, y: -57.810375, z: -0.000005722046}
@@ -11536,10 +12570,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (11)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6720599911515591907
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11553,7 +12587,7 @@ RectTransform:
   m_Children:
   - {fileID: 4373926911681000069}
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11684,7 +12718,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 418600837480171238}
   image: {fileID: 3146478791623364560}
-  position: 11
+  position: 5
   mission:
     id: 0
     name: 
@@ -12191,7 +13225,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 26.398865, y: -39.528584, z: -0.000005722046}
@@ -12352,7 +13386,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.867157, y: -0.8460404, z: -0.000005722046}
@@ -12435,7 +13469,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 18.249783, y: -1.2294618, z: -0.000005722046}
@@ -12485,7 +13519,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -512.6366, y: 42.87671}
+  m_AnchoredPosition: {x: -447.56787, y: 42.87671}
   m_SizeDelta: {x: 2030.1697, y: 2807.192}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &454417825730260789
@@ -12735,7 +13769,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 32.471924, y: -45.5945, z: -0.000005722046}
@@ -12899,7 +13933,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 25.949678, y: -39.977745, z: -0.000005722046}
@@ -13059,7 +14093,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 13.767702, y: -55.037342, z: -0.000005722046}
@@ -13145,7 +14179,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 18.637821, y: -53.855923, z: -0.000005722046}
@@ -13380,7 +14414,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 25.949678, y: -39.977745, z: -0.000005722046}
@@ -13741,6 +14775,7 @@ RectTransform:
   m_Children:
   - {fileID: 495312028}
   - {fileID: 3973323950131548054}
+  - {fileID: 262723336}
   - {fileID: 2294915160728737062}
   - {fileID: 758679449301922528}
   m_Father: {fileID: 0}
@@ -13984,7 +15019,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 15.151357, y: -54.137512, z: -0.000005722046}
@@ -14751,7 +15786,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 7.367805, y: -17.94198, z: -0.000005722046}
@@ -14910,7 +15945,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 25.949678, y: -39.977745, z: -0.000005722046}
@@ -15018,10 +16053,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (6)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &638159933832373865
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15035,7 +16070,7 @@ RectTransform:
   m_Children:
   - {fileID: 2100899915176947955}
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -15166,7 +16201,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 9110449761059100676}
   image: {fileID: 4281007435322334462}
-  position: 6
+  position: 16
   mission:
     id: 0
     name: 
@@ -15568,7 +16603,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 51.46923, y: -25.93585, z: 0.000024795532}
@@ -16124,7 +17159,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 17.123173, y: -53.855736, z: -0.000005722046}
@@ -16918,7 +17953,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.41757, y: -19.309069, z: -0.000005722046}
@@ -17243,7 +18278,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 19.029707, y: -51.79843, z: -0.000005722046}
@@ -17402,7 +18437,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -11.250046, y: -8.360848, z: -0.000005722046}
@@ -17492,7 +18527,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.956334, y: -41.3025, z: -0.000005722046}
@@ -17737,7 +18772,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 14.675036, y: 0.5578853, z: -0.000005722046}
@@ -17902,7 +18937,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.867157, y: -0.8460404, z: -0.000005722046}
@@ -18226,7 +19261,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 48.519535, y: -5.0866303, z: -0.000005722046}
@@ -18384,7 +19419,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -10.262973, y: -3.754298, z: -0.000005722046}
@@ -18543,7 +19578,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -12.1125345, y: -3.8578403, z: -0.000005722046}
@@ -18784,7 +19819,7 @@ RectTransform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -18899,7 +19934,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -9.52327, y: -4.6847153, z: -0.000005722046}
@@ -18945,7 +19980,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 30
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19025,7 +20060,7 @@ GameObject:
   - component: {fileID: 98025625}
   - component: {fileID: 1378510934}
   m_Layer: 5
-  m_Name: Button - Mision
+  m_Name: Button - Mision(0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19044,7 +20079,7 @@ RectTransform:
   m_Children:
   - {fileID: 9048352980366066797}
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19175,7 +20210,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 2946710808706259014}
   image: {fileID: 4194997279557366298}
-  position: 0
+  position: 19
   mission:
     id: 0
     name: 
@@ -19294,7 +20329,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -10.28416, y: 5.8679223, z: -0.000005722046}
@@ -19385,7 +20420,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -13.882723, y: -8.765841, z: -0.000005722046}
@@ -19468,7 +20503,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -11.153143, y: -7.207556, z: -0.000005722046}
@@ -19553,7 +20588,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -21.20287, y: 4.891366, z: -0.000005722046}
@@ -19639,7 +20674,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -9.491527, y: -5.341632, z: -0.000005722046}
@@ -19721,7 +20756,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 9.465065, y: -2.1159534, z: -0.000005722046}
@@ -19803,7 +20838,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -8.607867, y: -6.1188188, z: -0.000005722046}
@@ -19886,7 +20921,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -10.902665, y: -4.661061, z: -0.000005722046}
@@ -19969,7 +21004,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -12.06716, y: -8.182013, z: -0.000005722046}
@@ -20054,7 +21089,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -7.0513706, y: 6.051182, z: -0.000005722046}
@@ -20141,7 +21176,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -13.570473, y: -6.430143, z: -0.000005722046}
@@ -20173,10 +21208,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (2)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4194997280110749770
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20190,7 +21225,7 @@ RectTransform:
   m_Children:
   - {fileID: 1040921718488706706}
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -20321,7 +21356,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 4609185465097226703}
   image: {fileID: 4194997280110749775}
-  position: 2
+  position: 18
   mission:
     id: 0
     name: 
@@ -20388,10 +21423,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4194997280126767098
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20405,7 +21440,7 @@ RectTransform:
   m_Children:
   - {fileID: 3800541700560910116}
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -20536,7 +21571,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 1961578362447705364}
   image: {fileID: 4194997280126767103}
-  position: 1
+  position: 0
   mission:
     id: 0
     name: 
@@ -20655,7 +21690,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -7.560711, y: -1.3405488, z: -0.000005722046}
@@ -20701,7 +21736,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -20895,7 +21930,7 @@ RectTransform:
   - {fileID: 6751675471617873483}
   - {fileID: 1898575487717156694}
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 31
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -21147,7 +22182,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -12.617088, y: 6.984062, z: -0.000005722046}
@@ -21434,7 +22469,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -9.522005, y: 4.0109963, z: -0.000005722046}
@@ -21672,7 +22707,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.956334, y: -41.3025, z: -0.000005722046}
@@ -22538,7 +23573,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 26.923105, y: -37.739426, z: -0.000005722046}
@@ -23157,7 +24192,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 31.333668, y: -63.06649, z: -0.000005722046}
@@ -23315,7 +24350,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 9.162236, y: -50.732166, z: -0.000005722046}
@@ -23552,7 +24587,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 17.123173, y: -53.855736, z: -0.000005722046}
@@ -23745,10 +24780,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (17)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &287799523281500687
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23762,7 +24797,7 @@ RectTransform:
   m_Children:
   - {fileID: 8304381109233289200}
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -23893,7 +24928,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 642975725107862867}
   image: {fileID: 8002816301734809834}
-  position: 17
+  position: 8
   mission:
     id: 0
     name: 
@@ -24329,7 +25364,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.956334, y: -41.3025, z: -0.000005722046}
@@ -24412,7 +25447,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 5.6929708, y: -17.941965, z: -0.000005722046}
@@ -24446,10 +25481,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (13)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4944487043860158040
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24463,7 +25498,7 @@ RectTransform:
   m_Children:
   - {fileID: 7186890258060532757}
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -24594,7 +25629,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 1375660135856065351}
   image: {fileID: 3197760260359804225}
-  position: 13
+  position: 6
   mission:
     id: 0
     name: 
@@ -25070,7 +26105,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 37.79712, y: -79.63906, z: 0.000024795532}
@@ -25149,7 +26184,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 32.471924, y: -45.5945, z: -0.000005722046}
@@ -25339,10 +26374,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (14)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &193813146581093129
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25356,7 +26391,7 @@ RectTransform:
   m_Children:
   - {fileID: 6511020717279597744}
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -25487,7 +26522,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 5110673156591890946}
   image: {fileID: 7547799517704993206}
-  position: 14
+  position: 12
   mission:
     id: 0
     name: 
@@ -26161,7 +27196,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 7.367805, y: -17.94198, z: -0.000005722046}
@@ -26247,7 +27282,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 32.471924, y: -45.5945, z: -0.000005722046}
@@ -27992,7 +29027,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 24.7312, y: -21.707785, z: -0.000005722046}
@@ -28228,7 +29263,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.956334, y: -41.3025, z: -0.000005722046}
@@ -28465,7 +29500,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 7.0261974, y: -9.0233965, z: -0.000005722046}
@@ -29666,7 +30701,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 32.471924, y: -45.5945, z: -0.000005722046}
@@ -29906,7 +30941,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.41757, y: -19.309069, z: -0.000005722046}
@@ -30152,7 +31187,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 14.625495, y: -56.005424, z: -0.000005722046}
@@ -30559,7 +31594,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 23.743769, y: -25.594912, z: -0.000005722046}
@@ -30798,10 +31833,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (10)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2852384685487492341
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30814,7 +31849,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -30945,7 +31980,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 0}
   image: {fileID: 4902109232979132046}
-  position: 10
+  position: 14
   mission:
     id: 0
     name: 
@@ -31064,7 +32099,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 17.63444, y: -29.483213, z: -0.000005722046}
@@ -31175,10 +32210,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (15)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5749497340332708696
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31192,7 +32227,7 @@ RectTransform:
   m_Children:
   - {fileID: 6078592350948526560}
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -31323,7 +32358,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 7382818665796333652}
   image: {fileID: 6091555788504288045}
-  position: 15
+  position: 7
   mission:
     id: 0
     name: 
@@ -31996,7 +33031,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.956334, y: -41.3025, z: -0.000005722046}
@@ -33064,7 +34099,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 24.635132, y: -7.8992825, z: -0.000005722046}
@@ -33487,7 +34522,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 7.0261974, y: -9.0233965, z: -0.000005722046}
@@ -33571,7 +34606,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 21.745226, y: -57.810375, z: -0.000005722046}
@@ -33891,7 +34926,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 14.675036, y: 0.5578853, z: -0.000005722046}
@@ -34381,7 +35416,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.956334, y: -41.3025, z: -0.000005722046}
@@ -34464,7 +35499,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 32.471924, y: -45.5945, z: -0.000005722046}
@@ -34591,7 +35626,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 527, y: 114}
+  m_AnchoredPosition: {x: 527.0001, y: 114}
   m_SizeDelta: {x: 720.6183, y: 541.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9209256508080115634
@@ -34975,7 +36010,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 32.471924, y: -45.5945, z: -0.000005722046}
@@ -35134,7 +36169,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.867157, y: -0.8460404, z: -0.000005722046}
@@ -35451,7 +36486,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 22.534733, y: -14.793985, z: -0.000005722046}
@@ -35733,10 +36768,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (19)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4155210005167702559
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35749,7 +36784,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -35880,7 +36915,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 0}
   image: {fileID: 6454398673302387506}
-  position: 19
+  position: 10
   mission:
     id: 0
     name: 
@@ -36307,7 +37342,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 33.571045, y: -44.49542, z: -0.000005722046}
@@ -36341,10 +37376,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (7)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3426770876759818230
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36358,7 +37393,7 @@ RectTransform:
   m_Children:
   - {fileID: 4856576505905539618}
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -36489,7 +37524,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 2372101453655155562}
   image: {fileID: 6773431315192715357}
-  position: 7
+  position: 3
   mission:
     id: 0
     name: 
@@ -36710,10 +37745,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (12)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2422857138285867245
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36727,7 +37762,7 @@ RectTransform:
   m_Children:
   - {fileID: 9181264871473072797}
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -36858,7 +37893,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 8483268780390930908}
   image: {fileID: 1890094807153338244}
-  position: 12
+  position: 13
   mission:
     id: 0
     name: 
@@ -36977,7 +38012,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 25.949678, y: -39.977745, z: -0.000005722046}
@@ -37225,7 +38260,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.956334, y: -41.3025, z: -0.000005722046}
@@ -37308,7 +38343,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 26.149849, y: -47.933075, z: -0.000005722046}
@@ -37939,6 +38974,202 @@ MonoBehaviour:
   - {x: -98.63858, y: -107.339066, z: -0.000005722046}
   - {x: 104.45124, y: -8.162623, z: -0.000005722046}
   - {x: 100.56383, y: 116.00177, z: -0.000005722046}
+--- !u!1 &8328653799988072406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2782666996524569712}
+  - component: {fileID: 4167117916869241593}
+  - component: {fileID: 1317188007415934703}
+  - component: {fileID: 701143221467638311}
+  - component: {fileID: 2491915162738168840}
+  - component: {fileID: 1999519070053066754}
+  - component: {fileID: 2216638746140707254}
+  m_Layer: 5
+  m_Name: Button - Auditory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2782666996524569712
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8328653799988072406}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1468558392}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -515, y: 1240}
+  m_SizeDelta: {x: 620.966, y: 344.981}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &4167117916869241593
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8328653799988072406}
+  m_CullTransparentMesh: 1
+--- !u!114 &1317188007415934703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8328653799988072406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 3540390912957151569, guid: ecacf0211e7d3f94fa32e70b1624b9ec, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &701143221467638311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8328653799988072406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1317188007415934703}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2491915162738168840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8328653799988072406}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0.5514498, b: 1, a: 1}
+  m_EffectDistance: {x: 5, y: 5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1999519070053066754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8328653799988072406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b7e19a6ce942af42b7fb41eac573a7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectionOutline: {fileID: 2491915162738168840}
+  shiny: {fileID: 2216638746140707254}
+  buildingButton: {fileID: 701143221467638311}
+  buildingData:
+    panelToOpen: {fileID: 262723331}
+    panelIsPrefab: 0
+    panelHasInfoToDisplay: 1
+    storePanelAsPrevious: 0
+    infoTitle: Auditorio
+    infoDescription: "Descripci\xF3n del auditorio"
+    buildingIcon: {fileID: -7053241291496860252, guid: ead46b0e50f8b37448b1520c58ad30b1, type: 3}
+  buildingId: Edf-Auditorio
+  lightObject: {fileID: 0}
+--- !u!114 &2216638746140707254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8328653799988072406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19b7e2285c104f6ca47d583f3e5444f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 300
+  m_EffectMaterial: {fileID: 2100000, guid: 9dc7e810a87b444ab96919f3215c2fe5, type: 2}
+  m_EffectFactor: 0
+  m_Width: 0.25
+  m_Rotation: 0
+  m_Softness: 1
+  m_Brightness: 1
+  m_Gloss: 1
+  m_EffectArea: 0
+  m_Player:
+    play: 0
+    initialPlayDelay: 0
+    duration: 1
+    loop: 1
+    loopDelay: 0
+    updateMode: 0
+  m_Play: 0
+  m_Loop: 0
+  m_Duration: 1
+  m_LoopDelay: 1
+  m_UpdateMode: 0
 --- !u!1 &8333821467966289295
 GameObject:
   m_ObjectHideFlags: 0
@@ -38086,7 +39317,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.328716, y: -43.095993, z: -0.000005722046}
@@ -38172,7 +39403,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 8.766977, y: 89.35673, z: -0.000005722046}
@@ -38566,7 +39797,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 17.921602, y: -31.386923, z: 0.000024795532}
@@ -38649,7 +39880,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 18.249783, y: -1.2294618, z: -0.000005722046}
@@ -38814,7 +40045,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 27.259674, y: -32.03981, z: -0.000005722046}
@@ -39215,7 +40446,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 32.471924, y: -45.5945, z: -0.000005722046}
@@ -39562,7 +40793,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &758679449301922528
 RectTransform:
   m_ObjectHideFlags: 0
@@ -39578,7 +40809,7 @@ RectTransform:
   - {fileID: 2035295280}
   - {fileID: 5591247448899485869}
   m_Father: {fileID: 202279029969608225}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -39949,10 +41180,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (18)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4529613350516392738
 RectTransform:
   m_ObjectHideFlags: 0
@@ -39966,7 +41197,7 @@ RectTransform:
   m_Children:
   - {fileID: 4800757727989496212}
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -40097,7 +41328,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 1380598592400147961}
   image: {fileID: 3298810435115962517}
-  position: 18
+  position: 9
   mission:
     id: 0
     name: 
@@ -40293,7 +41524,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 25.234297, y: -39.237488, z: -0.000005722046}
@@ -40340,7 +41571,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -110.25809, y: 25}
+  m_AnchoredPosition: {x: -110.25812, y: 25}
   m_SizeDelta: {x: 199.4838, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4978058254585477723
@@ -40455,7 +41686,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 32.471924, y: -45.5945, z: -0.000005722046}
@@ -40484,10 +41715,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (5)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2179664217882039213
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40501,7 +41732,7 @@ RectTransform:
   m_Children:
   - {fileID: 1669092580735846483}
   m_Father: {fileID: 1468558392}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -40632,7 +41863,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 6719387546225411876}
   image: {fileID: 542350464080043001}
-  position: 5
+  position: 2
   mission:
     id: 0
     name: 
@@ -40826,7 +42057,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 25.234297, y: -39.237488, z: -0.000005722046}
@@ -41379,7 +42610,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 21.1136, y: -55.78775, z: -0.000005722046}
@@ -41847,7 +43078,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.956334, y: -41.3025, z: -0.000005722046}
