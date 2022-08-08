@@ -37,6 +37,8 @@ public class PanelConfirmPublish : Panel
     [SerializeField]
     [Tooltip("Descripción de alerta al publicar un item")]
     private string alertPublishDescription = "¿Se hará pública tu oferta. Si alguien complra tu token desaparecerá de tu lista. \n Recuerda que puedes eliminarla cuando quieras desde el detalle de tu oferta." ;
+    [SerializeField]
+    [Tooltip("costo del item")]
     private int itemPriceValue = 10;
     [Header("Potenciadores")]
     [SerializeField]

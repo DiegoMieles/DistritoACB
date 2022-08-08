@@ -79,7 +79,7 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
         }
 
         minipanelToOpen.gameObject.SetActive(true);
-
+        if (minipanelToOpen == generalBuyMinipanel) costInfoLayout.GetComponent<VerticalLayoutGroup>().padding.top = 22;
         minipanelToOpen.ShowMiniPanel(productSprite, itemData, itemData.description, Close);
     }
     /// <summary>
