@@ -152,10 +152,10 @@ public class PanelSkinsToPublish : Panel
     /// <param name="obj">Información de skins a vender se decodifica en la clase SkinsToSell</param>
     private void OnSuccess(DataSnapshot obj)
     {
-        if (obj.RawJson != "[]")
+        JsonConvert.PopulateObject(obj.RawJson, skinData);
+        if ((skinData != null && obj.RawJson != "[]" ) || (skinData.BODYACCESORY.Count > 0 && skinData.ARMACCESORY.Count > 0 && skinData.BACKGROUNDACCESORY.Count > 0 && skinData.EYEACCESORY.Count > 0 && skinData.HEADACCESORY.Count > 0))
         {
             textNoSkins.text = "";
-            JsonConvert.PopulateObject(obj.RawJson, skinData);
         }
         else
         {
@@ -171,6 +171,7 @@ public class PanelSkinsToPublish : Panel
     /// <param name="obj">causas de error</param>
     private void OnFailed(WebError obj)
     {
+        textNoSkins.text = textFail;
         Debug.LogError(obj);
     }
     /// <summary>

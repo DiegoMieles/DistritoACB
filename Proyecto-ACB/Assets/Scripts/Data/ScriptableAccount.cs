@@ -941,7 +941,7 @@ namespace Data
             public string updated;
             public string title;
             public string created;
-            public string background_img;
+            public string path_img_backcard;
         }
     }
     /// <summary>

@@ -170,6 +170,7 @@ public class PanelBoostersToSale : Panel
             ClosedSpinner();
         }, error =>
         {
+            CheckPotenciadores();
             onFailed.Invoke();
         });
     }
@@ -250,6 +251,7 @@ public class PanelBoostersToSale : Panel
 
         }, error =>
         {
+            CheckPotenciadores();
             onFailed.Invoke();
             ClosedSpinner();
         });
@@ -260,7 +262,7 @@ public class PanelBoostersToSale : Panel
     /// </summary>
     private void CheckPotenciadores()
     {
-        if (boosterDataContainer?.boosterData?.boosterItems?.Count == 0 && applyBoosterResponse?.boosterData?.boosterItems?.Count == 0 )
+        if (boosterDataContainer == null || (boosterDataContainer?.boosterData?.boosterItems?.Count == 0 && applyBoosterResponse?.boosterData?.boosterItems?.Count == 0) )
         {
             textNoPotenciadores.text = textFail;
             ClosedSpinner();
