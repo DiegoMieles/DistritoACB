@@ -315,7 +315,7 @@ public class BuyMiniPanelCard : BuyMiniPanel
         {
             panelBuyConfirmation.costInfoLayout.gameObject.SetActive(!publishedByPlayer && !cachedState);
             panelBuyConfirmation.deleteButton.transform.parent.gameObject.SetActive(publishedByPlayer && !cachedState);
-            titleText.transform.parent.gameObject.SetActive(!isHighlight && !cachedState);
+            titleText.transform.parent.gameObject.SetActive((!publishedByPlayer||!isHighlight) && !cachedState);
             descriptionText.transform.parent.gameObject.SetActive(!cachedState);
         }
        

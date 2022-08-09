@@ -941,6 +941,10 @@ namespace Data
             public string title;
             public string created;
             public string path_img_backcard;
+            //ACBalls properties
+            public int id;
+            public int acball_id;
+
         }
     }
     /// <summary>
