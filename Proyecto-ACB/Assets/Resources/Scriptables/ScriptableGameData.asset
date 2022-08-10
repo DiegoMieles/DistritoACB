@@ -62,15 +62,3 @@ MonoBehaviour:
     - id: Edf-Mercadillo
       title: Mercadillo
       info: En el Mercadillo puedes vender o comprar productos
-    - id: Edf-Auditorio
-      title: Auditorio
-      info: "Descripci\xF3n del auditorio"
-    - id: Edf-Cartelera
-      title: Cartelera
-      info: "Descripci\xF3n de cartelera"
-    - id: Edf-Acceso
-      title: Control de acceso
-      info: "Descripci\xF3n de acceso"
-    - id: Edf-Cajero
-      title: Cajero
-      info: "Descripci\xF3n de cajero"
