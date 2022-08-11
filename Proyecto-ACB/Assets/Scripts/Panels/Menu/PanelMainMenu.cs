@@ -31,6 +31,8 @@ public class PanelMainMenu : Panel
     private BuildingsManager worldBuildingsManager;
     [SerializeField] [Tooltip("Controlador de los edificios disponibles en el pabellón")]
     private BuildingsManager pavilionBuildingsManager;
+    [SerializeField] [Tooltip("Controlador de los edificios disponibles en el Auditorio")]
+    private BuildingsManager auditoryBuildingsManager;
     [SerializeField] [Tooltip("Controlador general de las luces del juego")]
     private LightsCircadianCycle lightsController;
     [Header("EVENTS")]
@@ -164,7 +166,8 @@ public class PanelMainMenu : Panel
             
             worldBuildingsManager.SetupBuildings(ACBSingleton.Instance.GameData.mainMenuData.transitionTime == TransitionTime.NIGHT, ACBSingleton.Instance.GameData.mainMenuData.buildInfoData);
             pavilionBuildingsManager.SetupBuildings(false, ACBSingleton.Instance.GameData.mainMenuData.buildInfoData);
-            
+            auditoryBuildingsManager.SetupBuildings(false, ACBSingleton.Instance.GameData.mainMenuData.buildInfoData);
+
             ACBSingleton.Instance.PanelBuildingSelection.OpenFirstTimeAvatarPanel(ACBSingleton.Instance.AccountData.avatarData.isFirstTime);
 
             isFirstTimeLoading = false;
@@ -264,6 +267,7 @@ public class PanelMainMenu : Panel
         
         worldBuildingsManager.SetupBuildings(ACBSingleton.Instance.GameData.mainMenuData.transitionTime == TransitionTime.NIGHT, ACBSingleton.Instance.GameData.mainMenuData.buildInfoData);
         pavilionBuildingsManager.SetupBuildings(false, ACBSingleton.Instance.GameData.mainMenuData.buildInfoData);
+        auditoryBuildingsManager.SetupBuildings(false, ACBSingleton.Instance.GameData.mainMenuData.buildInfoData);
         ACBSingleton.Instance.PanelBuildingSelection.OpenFirstTimeAvatarPanel(ACBSingleton.Instance.AccountData.avatarData.isFirstTime);
         mainMap.SetActive(true);
         CheckMission();
