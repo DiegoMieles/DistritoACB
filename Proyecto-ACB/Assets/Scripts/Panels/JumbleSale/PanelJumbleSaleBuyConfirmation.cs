@@ -109,7 +109,7 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
     /// </summary>
     protected void DeletePublication(JumbleSaleResult.JumbleItems itemData)
     {
-         ACBSingleton.Instance.AlertPanel.SetupPanel(alertDelete, alertDeleteDescription, true,()=> {
+         ACBSingleton.Instance.AlertPanel.SetupPanel(alertDelete, "", true,()=> {
              JumbleSaleResult.JumbleDeleteItemRequest body = new JumbleSaleResult.JumbleDeleteItemRequest() { item_id = itemData.id, user_id = WebProcedure.Instance.accessData.user };
              WebProcedure.Instance.DeleteJumbleSaleItem(JsonConvert.SerializeObject(body), (DataSnapshot obj) => {
                  ACBSingleton.Instance.AlertPanel.SetupPanel("Oferta eliminada", "", false,()=> { OnDeletePublish?.Invoke(); Close(); });
