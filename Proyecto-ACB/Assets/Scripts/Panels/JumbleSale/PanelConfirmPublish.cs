@@ -198,7 +198,7 @@ public class PanelConfirmPublish : Panel
     /// </summary>
     public void IncreasePriceValue()
     {
-        itemPriceValue += 5;
+        itemPriceValue += 1;
         UpdateUI();
     }
     /// <summary>
@@ -206,7 +206,7 @@ public class PanelConfirmPublish : Panel
     /// </summary>
     public void DecreasePriceValue()
     {
-        itemPriceValue -= 5;
+        itemPriceValue -= 1;
         UpdateUI();
     }
     /// <summary>
@@ -214,7 +214,7 @@ public class PanelConfirmPublish : Panel
     /// </summary>
     public void UpdateUI()
     {
-        itemPriceValue = Mathf.Clamp(itemPriceValue, 0, 9999);
+        itemPriceValue = Mathf.Clamp(itemPriceValue, 1, 9999);
         itemPrice.text = itemPriceValue.ToString();
     }
     /// <summary>

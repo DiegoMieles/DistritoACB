@@ -203,7 +203,7 @@ public class BuyMiniPanelCard : BuyMiniPanel
         else if(itemData.item_type == "TOKENHIGTHLIGHT")
         {
             isHighlight = true;
-            titleText.transform.parent.gameObject.SetActive(!publishedByPlayer);
+           // titleText.gameObject.SetActive(!publishedByPlayer);
             JumbleSaleResult.JumbleItemData cardData = new JumbleSaleResult.JumbleItemData();
             WebProcedure.Instance.GetJumbleSaleInfoItem(itemData.id.ToString(), (obj) =>
             {
@@ -313,10 +313,10 @@ public class BuyMiniPanelCard : BuyMiniPanel
         actualBackPart.SetActive(cachedState);
         if(isJumbleSale)
         {
-            panelBuyConfirmation.costInfoLayout.gameObject.SetActive(!publishedByPlayer && !cachedState);
-            panelBuyConfirmation.deleteButton.transform.parent.gameObject.SetActive(publishedByPlayer && !cachedState);
-            titleText.transform.parent.gameObject.SetActive((!publishedByPlayer||!isHighlight) && !cachedState);
-            descriptionText.transform.parent.gameObject.SetActive(!cachedState);
+           // panelBuyConfirmation.costInfoLayout.gameObject.SetActive(!publishedByPlayer && !cachedState);
+           // panelBuyConfirmation.deleteButton.transform.parent.gameObject.SetActive(publishedByPlayer && !cachedState);
+           // titleText.gameObject.SetActive((!publishedByPlayer||!isHighlight) && !cachedState);
+           // descriptionText.gameObject.SetActive(!cachedState);
         }
        
     }

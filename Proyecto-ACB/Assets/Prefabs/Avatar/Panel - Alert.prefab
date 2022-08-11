@@ -147,18 +147,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8efa2d6454125ef46bebc845f3a239d3, type: 3}
-    m_FontSize: 19
+    m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 135
-    m_Alignment: 4
+    m_Alignment: 1
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\xBFDeseas salir del editor? "
+  m_Text: "Esta operaci\xF3n te costar\xE1 10 acbcoins"
 --- !u!114 &8285155462212178055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,7 +338,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4272106427632108950
 RectTransform:
   m_ObjectHideFlags: 0
@@ -694,9 +694,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 25
-    m_Right: 25
-    m_Top: 31
+    m_Left: 0
+    m_Right: 0
+    m_Top: 18
     m_Bottom: 0
   m_ChildAlignment: 4
   m_Spacing: 0
@@ -838,10 +838,10 @@ RectTransform:
   m_Father: {fileID: 6392198163459120053}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -26}
-  m_SizeDelta: {x: 409.5665, y: 380.868}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 31.343409}
+  m_SizeDelta: {x: -117.0084, y: 328.1812}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6392198163608320921
 CanvasRenderer:
@@ -942,8 +942,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0017548, y: -159.98004}
-  m_SizeDelta: {x: 409.57, y: 77.2352}
+  m_AnchoredPosition: {x: 0.0018, y: -77}
+  m_SizeDelta: {x: 327.0244, y: 66.3754}
   m_Pivot: {x: 0.5, y: 0.50000006}
 --- !u!114 &2148150959860803174
 MonoBehaviour:
@@ -1044,13 +1044,13 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 35
-    m_Alignment: 4
+    m_Alignment: 1
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Est\xE1s seguro?"
+  m_Text: "Confirmaci\xF3n de compra"
 --- !u!114 &5800887546006157179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1067,7 +1067,7 @@ MonoBehaviour:
   m_MinWidth: -1
   m_MinHeight: -1
   m_PreferredWidth: -1
-  m_PreferredHeight: 87.4
+  m_PreferredHeight: 230.63
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
