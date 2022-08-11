@@ -647,9 +647,10 @@ MonoBehaviour:
   itemDescription: {fileID: 7776240873193996700}
   itemPrice: {fileID: 5651893116546200753}
   alertPublish: "\xBFEst\xE1s seguro?"
-  alertPublishDescription: "\xBFSe har\xE1 p\xFAblica tu oferta. Si alguien compra
-    tu token desaparecer\xE1 de tu lista. \n Recuerda que puedes eliminarla cuando
-    quieras desde el detalle de tu oferta."
+  alertPublishDescription: "Se har\xE1 p\xFAblica tu oferta. Si alguien compra tu
+    token desaparecer\xE1 de tu lista. \n Recuerda que puedes eliminarla cuando quieras
+    desde el detalle de tu oferta."
+  itemPriceValue: 10
   boosterStat: {fileID: 7394357795264935349}
   boosterIcon: {fileID: 7394357794249978566}
   team: {fileID: 7111838965055884954}

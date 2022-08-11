@@ -60,10 +60,7 @@ public class PanelAlert : MonoBehaviour
         acceptButtonText.text = customAcceptButtonText;
         cancelButtonText.text = customCancelButtonText;
         descriptionText.text = description;
-        if (string.IsNullOrEmpty(description))
-        {
-            descriptionText.gameObject.SetActive(false);
-        }
+        descriptionText.gameObject.SetActive(description.ToCharArray().Length > 0);
         StartCoroutine(ShowPanel(newText,needCancelButton,onSelectAcceptButton,onSelectCancelButton,delay));
     }
 
@@ -83,8 +80,6 @@ public class PanelAlert : MonoBehaviour
         alertText.text = newText;
         this.onSelectAcceptButton = onSelectAcceptButton;
         this.onSelectCancelButton = onSelectCancelButton;
-
-        descriptionText.gameObject.SetActive(!string.IsNullOrEmpty(descriptionText.text));
         cancelButton.gameObject.SetActive(needCancelButton);
         transform.SetAsLastSibling();
     }

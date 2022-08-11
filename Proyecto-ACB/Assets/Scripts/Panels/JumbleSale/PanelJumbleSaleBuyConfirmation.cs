@@ -112,8 +112,22 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
          ACBSingleton.Instance.AlertPanel.SetupPanel(alertDelete, "", true,()=> {
              JumbleSaleResult.JumbleDeleteItemRequest body = new JumbleSaleResult.JumbleDeleteItemRequest() { item_id = itemData.id, user_id = WebProcedure.Instance.accessData.user };
              WebProcedure.Instance.DeleteJumbleSaleItem(JsonConvert.SerializeObject(body), (DataSnapshot obj) => {
-                 ACBSingleton.Instance.AlertPanel.SetupPanel("Oferta eliminada", "", false,()=> { OnDeletePublish?.Invoke(); Close(); });
-                     }, (WebError obj) => { Debug.LogError(obj); });
+                 MissionAlreadyComplete error = new MissionAlreadyComplete();
+                 try
+                 {
+                     JsonConvert.PopulateObject(obj.RawJson, error);
+                     if (error.code == 400)
+                     {
+                         ACBSingleton.Instance.AlertPanel.SetupPanel("Este elemento ya ha sido vendido", "", false, () => { OnDeletePublish?.Invoke(); Close(); });
+                         return;
+                     }
+                 }
+                 catch
+                 {
+                     ACBSingleton.Instance.AlertPanel.SetupPanel("Oferta eliminada", "", false, () => { OnDeletePublish?.Invoke(); Close(); });
+                 }
+                     }, (WebError obj) => {
+                         Debug.LogError(obj); });
          });
        
        
