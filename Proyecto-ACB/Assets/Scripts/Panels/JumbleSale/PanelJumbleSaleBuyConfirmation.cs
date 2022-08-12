@@ -124,9 +124,10 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
                  }
                  catch
                  {
-                     ACBSingleton.Instance.AlertPanel.SetupPanel("Oferta eliminada", "", false, () => { OnDeletePublish?.Invoke(); Close(); });
+                    
                  }
-                     }, (WebError obj) => {
+                 ACBSingleton.Instance.AlertPanel.SetupPanel("Oferta eliminada", "", false, () => { OnDeletePublish?.Invoke(); Close(); });
+             }, (WebError obj) => {
                          Debug.LogError(obj); });
          });
        
