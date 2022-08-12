@@ -145,7 +145,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 32.9
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -105.273766, y: 137.46573, z: 0.000024795532}
@@ -356,7 +356,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &495312031
@@ -1086,7 +1086,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 32.9
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 300.95813, y: -565.5, z: 0.000024795532}
@@ -1365,6 +1365,7 @@ MonoBehaviour:
   - {fileID: 4743825944686987041}
   - {fileID: 6976104140549141947}
   - {fileID: 791332042562583455}
+  - {fileID: 3646182935411256519}
   buildingDayOutline: {r: 0.909804, g: 0.1137255, b: 0.62352943, a: 1}
   buildingNightOutline: {r: 0.909804, g: 0.1137255, b: 0.62352943, a: 1}
 --- !u!1 &1524623116
@@ -1587,7 +1588,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 32.9
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -270.83282, y: -147.6637, z: 0.000024795532}
@@ -1664,7 +1665,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 32.9
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -369.71942, y: 30.683079, z: 0.000024795532}
@@ -1743,7 +1744,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 32.9
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 689.654, y: 353.92432, z: 0.000024795532}
@@ -2027,7 +2028,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 32.9
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -415.4772, y: -19.432632, z: 0.000024795532}
@@ -2105,7 +2106,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 32.9
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 173.80411, y: -381.833, z: 0.000024795532}
@@ -2217,7 +2218,7 @@ GameObject:
   - component: {fileID: 3646182935411256519}
   - component: {fileID: 4300969236360136225}
   m_Layer: 5
-  m_Name: Button - Mercadillo
+  m_Name: Button - JumbleSale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2239,8 +2240,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -459, y: -1727}
-  m_SizeDelta: {x: 342.086, y: 1107.3}
+  m_AnchoredPosition: {x: -1307, y: -1641}
+  m_SizeDelta: {x: 497.323, y: 586.826}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5491816770957745333
 CanvasRenderer:
@@ -2270,9 +2271,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4590301341185807919, guid: ecacf0211e7d3f94fa32e70b1624b9ec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1be084b9b456ae6459ccd5c419e96e6e, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2355,15 +2356,15 @@ MonoBehaviour:
   shiny: {fileID: 4300969236360136225}
   buildingButton: {fileID: 3836287158755005822}
   buildingData:
-    panelToOpen: {fileID: 4421051610246891801, guid: be53d562b2d59d440878578adee597b6, type: 3}
+    panelToOpen: {fileID: 1308204509849487109, guid: 252d1bbad3ff3b043b09a6e27786c37c, type: 3}
     panelIsPrefab: 1
     panelHasInfoToDisplay: 0
     storePanelAsPrevious: 0
-    infoTitle: acb Headquarters
-    infoDescription: "acb Headquarters es el lugar donde acudir para consultar rankings
-      y aprender m\xE1s sobre el juego"
-    buildingIcon: {fileID: -7917366761167587195, guid: 2a2739daee3ebd24a9efb14734b5de21, type: 3}
-  buildingId: Edf-HeadQuarters
+    infoTitle: Mercadillo
+    infoDescription: "En el mercadillo podr\xE1s comprar y vender objetos a otros
+      jugadores"
+    buildingIcon: {fileID: 21300000, guid: ebebbaa8e352f4448aef2aee14481489, type: 3}
+  buildingId: Edf - JumbleSale
   lightObject: {fileID: 0}
 --- !u!114 &4300969236360136225
 MonoBehaviour:
@@ -2935,7 +2936,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -11.133097, y: -8.244072, z: -0.000005722046}
@@ -3335,7 +3336,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 32.471924, y: -45.5945, z: -0.000005722046}
@@ -3496,7 +3497,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 36.820095, y: -79.42283, z: 0.000024795532}
@@ -3580,7 +3581,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 32.471924, y: -45.5945, z: -0.000005722046}
@@ -4466,7 +4467,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 7.6755686, y: -65.90925, z: -0.000005722046}
@@ -4702,7 +4703,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 25.949678, y: -39.977745, z: -0.000005722046}
@@ -5093,7 +5094,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -5.159074, y: 89.821304, z: -0.000005722046}
@@ -5272,10 +5273,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (8)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &509493388971103942
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5420,7 +5421,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 8323137582846806549}
   image: {fileID: 1587599398836474716}
-  position: 8
+  position: 15
   mission:
     id: 0
     name: 
@@ -5815,7 +5816,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 7.367805, y: -17.94198, z: -0.000005722046}
@@ -5976,7 +5977,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 18.249783, y: -1.2294618, z: -0.000005722046}
@@ -6358,7 +6359,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 7.0261974, y: -9.0233965, z: -0.000005722046}
@@ -6759,10 +6760,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (9)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3840350155695710740
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6907,7 +6908,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 7839361141533607466}
   image: {fileID: 8165293972363670759}
-  position: 9
+  position: 4
   mission:
     id: 0
     name: 
@@ -7026,7 +7027,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 17.123173, y: -53.855736, z: -0.000005722046}
@@ -8012,7 +8013,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 21.1136, y: -55.78775, z: -0.000005722046}
@@ -9137,26 +9138,30 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 0.5
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: -77.22172, y: -167.5885, z: -0.000005722046}
-  - {x: 192.79326, y: -33.801453, z: -0.000005722046}
-  - {x: 190.86609, y: 29.383492, z: -0.000005722046}
-  - {x: 202.47536, y: 35.221676, z: -0.000005722046}
-  - {x: 202.73799, y: 49.936577, z: -0.000005722046}
-  - {x: 189.09624, y: 56.126003, z: -0.000005722046}
-  - {x: 190.59976, y: 380.7502, z: -0.000005722046}
-  - {x: 194.20047, y: 384.15796, z: -0.000005722046}
-  - {x: 192.5722, y: 401.52805, z: -0.000005722046}
-  - {x: 152.94661, y: 423.7834, z: -0.000005722046}
-  - {x: 151.58948, y: 435.45334, z: -0.000005722046}
-  - {x: 7.6255784, y: 504.3904, z: -0.000005722046}
-  - {x: -276.70297, y: 365.0779, z: -0.000005722046}
-  - {x: -275.31888, y: 346.0062, z: -0.000005722046}
-  - {x: -272.2171, y: 344.23392, z: -0.000005722046}
-  - {x: -274.07797, y: 18.138626, z: -0.000005722046}
-  - {x: -278.15576, y: 16.552582, z: -0.000005722046}
-  - {x: -278.3821, y: -4.5154867, z: -0.000005722046}
-  - {x: -274.53098, y: -8.366943, z: -0.000005722046}
-  - {x: -274.0115, y: -70.98232, z: -0.000005722046}
+  - {x: -18.174032, y: -183.69234, z: 0.000024795532}
+  - {x: 147.06558, y: -93.64979, z: -0.00007553624}
+  - {x: 163.16943, y: -93.64979, z: -0.00007553624}
+  - {x: 232.95299, y: -56.074135, z: -0.00007553624}
+  - {x: 245.47821, y: -38.180767, z: -0.00007553624}
+  - {x: 269.73422, y: -24.8547, z: 0.000024795532}
+  - {x: 265.16068, y: 328.63, z: -0.00007553624}
+  - {x: 184.64124, y: 375.15222, z: -0.00007553624}
+  - {x: 148.85489, y: 419.88535, z: -0.00007553624}
+  - {x: 80.86065, y: 441.35715, z: -0.00007553624}
+  - {x: 24.269318, y: 426.15027, z: 0.000024795532}
+  - {x: -9.854923, y: 393.26593, z: -0.00007553624}
+  - {x: -102.8689, y: 340.2472, z: 0.000024795532}
+  - {x: -101.754616, y: 133.07715, z: 0.000024795532}
+  - {x: -277.58505, y: 36.47089, z: 0.000024795532}
+  - {x: -279.37936, y: 7.7479095, z: 0.000024795532}
+  - {x: -321.73663, y: -43.548717, z: -0.00007553624}
+  - {x: -251.95308, y: -63.231403, z: -0.00007553624}
+  - {x: -205.43065, y: -120.48954, z: -0.00007553624}
+  - {x: -157.1191, y: -109.75364, z: -0.00007553624}
+  - {x: -141.01524, y: -120.48954, z: -0.00007553624}
+  - {x: -158.9084, y: -138.3829, z: -0.00007553624}
+  - {x: -80.17827, y: -159.8547, z: -0.00007553624}
+  - {x: -71.23168, y: -154.48676, z: -0.00007553624}
 --- !u!1 &1939145035186793330
 GameObject:
   m_ObjectHideFlags: 0
@@ -9544,7 +9549,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.867157, y: -0.8460404, z: -0.000005722046}
@@ -9648,10 +9653,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (3)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6359954838672417302
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9796,7 +9801,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 4569014183063599600}
   image: {fileID: 4313246106858563332}
-  position: 3
+  position: 1
   mission:
     id: 0
     name: 
@@ -10248,10 +10253,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (4)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7660396162199543329
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10396,7 +10401,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 4588969457883588294}
   image: {fileID: 1893123009583228519}
-  position: 4
+  position: 17
   mission:
     id: 0
     name: 
@@ -10617,10 +10622,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (16)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1733367911444030583
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10765,7 +10770,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 2228227588626909974}
   image: {fileID: 7877766149325848146}
-  position: 16
+  position: 11
   mission:
     id: 0
     name: 
@@ -11084,7 +11089,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.956334, y: -41.3025, z: -0.000005722046}
@@ -11244,7 +11249,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 21.745226, y: -57.810375, z: -0.000005722046}
@@ -11536,10 +11541,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (11)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6720599911515591907
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11684,7 +11689,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 418600837480171238}
   image: {fileID: 3146478791623364560}
-  position: 11
+  position: 5
   mission:
     id: 0
     name: 
@@ -12191,7 +12196,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 26.398865, y: -39.528584, z: -0.000005722046}
@@ -12352,7 +12357,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.867157, y: -0.8460404, z: -0.000005722046}
@@ -12435,7 +12440,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 18.249783, y: -1.2294618, z: -0.000005722046}
@@ -12485,7 +12490,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -512.6366, y: 42.87671}
+  m_AnchoredPosition: {x: -447.56787, y: 42.87671}
   m_SizeDelta: {x: 2030.1697, y: 2807.192}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &454417825730260789
@@ -12735,7 +12740,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 32.471924, y: -45.5945, z: -0.000005722046}
@@ -12899,7 +12904,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 25.949678, y: -39.977745, z: -0.000005722046}
@@ -13059,7 +13064,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 13.767702, y: -55.037342, z: -0.000005722046}
@@ -13145,7 +13150,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 18.637821, y: -53.855923, z: -0.000005722046}
@@ -13380,7 +13385,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 25.949678, y: -39.977745, z: -0.000005722046}
@@ -13984,7 +13989,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 15.151357, y: -54.137512, z: -0.000005722046}
@@ -14751,7 +14756,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 7.367805, y: -17.94198, z: -0.000005722046}
@@ -14910,7 +14915,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 25.949678, y: -39.977745, z: -0.000005722046}
@@ -15018,10 +15023,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (6)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &638159933832373865
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15166,7 +15171,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 9110449761059100676}
   image: {fileID: 4281007435322334462}
-  position: 6
+  position: 16
   mission:
     id: 0
     name: 
@@ -15568,7 +15573,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 51.46923, y: -25.93585, z: 0.000024795532}
@@ -16124,7 +16129,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 17.123173, y: -53.855736, z: -0.000005722046}
@@ -16918,7 +16923,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.41757, y: -19.309069, z: -0.000005722046}
@@ -17243,7 +17248,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 19.029707, y: -51.79843, z: -0.000005722046}
@@ -17402,7 +17407,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -11.250046, y: -8.360848, z: -0.000005722046}
@@ -17492,7 +17497,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.956334, y: -41.3025, z: -0.000005722046}
@@ -17737,7 +17742,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 14.675036, y: 0.5578853, z: -0.000005722046}
@@ -17902,7 +17907,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.867157, y: -0.8460404, z: -0.000005722046}
@@ -18226,7 +18231,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 48.519535, y: -5.0866303, z: -0.000005722046}
@@ -18384,7 +18389,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -10.262973, y: -3.754298, z: -0.000005722046}
@@ -18543,7 +18548,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -12.1125345, y: -3.8578403, z: -0.000005722046}
@@ -18899,7 +18904,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -9.52327, y: -4.6847153, z: -0.000005722046}
@@ -19025,7 +19030,7 @@ GameObject:
   - component: {fileID: 98025625}
   - component: {fileID: 1378510934}
   m_Layer: 5
-  m_Name: Button - Mision
+  m_Name: Button - Mision(0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19175,7 +19180,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 2946710808706259014}
   image: {fileID: 4194997279557366298}
-  position: 0
+  position: 19
   mission:
     id: 0
     name: 
@@ -19294,7 +19299,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -10.28416, y: 5.8679223, z: -0.000005722046}
@@ -19385,7 +19390,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -13.882723, y: -8.765841, z: -0.000005722046}
@@ -19468,7 +19473,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -11.153143, y: -7.207556, z: -0.000005722046}
@@ -19553,7 +19558,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -21.20287, y: 4.891366, z: -0.000005722046}
@@ -19639,7 +19644,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -9.491527, y: -5.341632, z: -0.000005722046}
@@ -19721,7 +19726,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 9.465065, y: -2.1159534, z: -0.000005722046}
@@ -19803,7 +19808,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -8.607867, y: -6.1188188, z: -0.000005722046}
@@ -19886,7 +19891,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -10.902665, y: -4.661061, z: -0.000005722046}
@@ -19969,7 +19974,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -12.06716, y: -8.182013, z: -0.000005722046}
@@ -20054,7 +20059,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -7.0513706, y: 6.051182, z: -0.000005722046}
@@ -20141,7 +20146,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -13.570473, y: -6.430143, z: -0.000005722046}
@@ -20173,10 +20178,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (2)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4194997280110749770
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20321,7 +20326,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 4609185465097226703}
   image: {fileID: 4194997280110749775}
-  position: 2
+  position: 18
   mission:
     id: 0
     name: 
@@ -20388,10 +20393,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4194997280126767098
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20536,7 +20541,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 1961578362447705364}
   image: {fileID: 4194997280126767103}
-  position: 1
+  position: 0
   mission:
     id: 0
     name: 
@@ -20655,7 +20660,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -7.560711, y: -1.3405488, z: -0.000005722046}
@@ -21147,7 +21152,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -12.617088, y: 6.984062, z: -0.000005722046}
@@ -21434,7 +21439,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -9.522005, y: 4.0109963, z: -0.000005722046}
@@ -21672,7 +21677,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.956334, y: -41.3025, z: -0.000005722046}
@@ -22538,7 +22543,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 26.923105, y: -37.739426, z: -0.000005722046}
@@ -23157,7 +23162,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 31.333668, y: -63.06649, z: -0.000005722046}
@@ -23315,7 +23320,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 9.162236, y: -50.732166, z: -0.000005722046}
@@ -23552,7 +23557,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 17.123173, y: -53.855736, z: -0.000005722046}
@@ -23745,10 +23750,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (17)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &287799523281500687
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23893,7 +23898,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 642975725107862867}
   image: {fileID: 8002816301734809834}
-  position: 17
+  position: 8
   mission:
     id: 0
     name: 
@@ -24329,7 +24334,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.956334, y: -41.3025, z: -0.000005722046}
@@ -24412,7 +24417,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 5.6929708, y: -17.941965, z: -0.000005722046}
@@ -24446,10 +24451,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (13)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4944487043860158040
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24594,7 +24599,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 1375660135856065351}
   image: {fileID: 3197760260359804225}
-  position: 13
+  position: 6
   mission:
     id: 0
     name: 
@@ -25070,7 +25075,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 37.79712, y: -79.63906, z: 0.000024795532}
@@ -25149,7 +25154,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 32.471924, y: -45.5945, z: -0.000005722046}
@@ -25339,10 +25344,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (14)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &193813146581093129
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25487,7 +25492,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 5110673156591890946}
   image: {fileID: 7547799517704993206}
-  position: 14
+  position: 12
   mission:
     id: 0
     name: 
@@ -26161,7 +26166,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 7.367805, y: -17.94198, z: -0.000005722046}
@@ -26247,7 +26252,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 32.471924, y: -45.5945, z: -0.000005722046}
@@ -27992,7 +27997,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 24.7312, y: -21.707785, z: -0.000005722046}
@@ -28228,7 +28233,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.956334, y: -41.3025, z: -0.000005722046}
@@ -28465,7 +28470,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 7.0261974, y: -9.0233965, z: -0.000005722046}
@@ -29666,7 +29671,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 32.471924, y: -45.5945, z: -0.000005722046}
@@ -29906,7 +29911,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.41757, y: -19.309069, z: -0.000005722046}
@@ -30152,7 +30157,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 14.625495, y: -56.005424, z: -0.000005722046}
@@ -30559,7 +30564,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 23.743769, y: -25.594912, z: -0.000005722046}
@@ -30798,10 +30803,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (10)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2852384685487492341
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30945,7 +30950,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 0}
   image: {fileID: 4902109232979132046}
-  position: 10
+  position: 14
   mission:
     id: 0
     name: 
@@ -31064,7 +31069,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 17.63444, y: -29.483213, z: -0.000005722046}
@@ -31175,10 +31180,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (15)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5749497340332708696
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31323,7 +31328,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 7382818665796333652}
   image: {fileID: 6091555788504288045}
-  position: 15
+  position: 7
   mission:
     id: 0
     name: 
@@ -31996,7 +32001,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.956334, y: -41.3025, z: -0.000005722046}
@@ -33064,7 +33069,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 24.635132, y: -7.8992825, z: -0.000005722046}
@@ -33487,7 +33492,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 7.0261974, y: -9.0233965, z: -0.000005722046}
@@ -33571,7 +33576,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 21.745226, y: -57.810375, z: -0.000005722046}
@@ -33891,7 +33896,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 14.675036, y: 0.5578853, z: -0.000005722046}
@@ -34381,7 +34386,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.956334, y: -41.3025, z: -0.000005722046}
@@ -34464,7 +34469,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 32.471924, y: -45.5945, z: -0.000005722046}
@@ -34591,7 +34596,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 527, y: 114}
+  m_AnchoredPosition: {x: 527.0001, y: 114}
   m_SizeDelta: {x: 720.6183, y: 541.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9209256508080115634
@@ -34975,7 +34980,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 32.471924, y: -45.5945, z: -0.000005722046}
@@ -35134,7 +35139,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.867157, y: -0.8460404, z: -0.000005722046}
@@ -35451,7 +35456,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 22.534733, y: -14.793985, z: -0.000005722046}
@@ -35733,10 +35738,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (19)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4155210005167702559
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35880,7 +35885,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 0}
   image: {fileID: 6454398673302387506}
-  position: 19
+  position: 10
   mission:
     id: 0
     name: 
@@ -36307,7 +36312,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 33.571045, y: -44.49542, z: -0.000005722046}
@@ -36341,10 +36346,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (7)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3426770876759818230
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36489,7 +36494,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 2372101453655155562}
   image: {fileID: 6773431315192715357}
-  position: 7
+  position: 3
   mission:
     id: 0
     name: 
@@ -36710,10 +36715,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (12)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2422857138285867245
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36858,7 +36863,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 8483268780390930908}
   image: {fileID: 1890094807153338244}
-  position: 12
+  position: 13
   mission:
     id: 0
     name: 
@@ -36977,7 +36982,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 25.949678, y: -39.977745, z: -0.000005722046}
@@ -37225,7 +37230,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.956334, y: -41.3025, z: -0.000005722046}
@@ -37308,7 +37313,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 26.149849, y: -47.933075, z: -0.000005722046}
@@ -38086,7 +38091,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.328716, y: -43.095993, z: -0.000005722046}
@@ -38172,7 +38177,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 8.766977, y: 89.35673, z: -0.000005722046}
@@ -38566,7 +38571,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 17.921602, y: -31.386923, z: 0.000024795532}
@@ -38649,7 +38654,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 18.249783, y: -1.2294618, z: -0.000005722046}
@@ -38814,7 +38819,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 27.259674, y: -32.03981, z: -0.000005722046}
@@ -39215,7 +39220,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 32.471924, y: -45.5945, z: -0.000005722046}
@@ -39949,10 +39954,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (18)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4529613350516392738
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40097,7 +40102,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 1380598592400147961}
   image: {fileID: 3298810435115962517}
-  position: 18
+  position: 9
   mission:
     id: 0
     name: 
@@ -40293,7 +40298,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 25.234297, y: -39.237488, z: -0.000005722046}
@@ -40340,7 +40345,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -110.25809, y: 25}
+  m_AnchoredPosition: {x: -110.25812, y: 25}
   m_SizeDelta: {x: 199.4838, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4978058254585477723
@@ -40455,7 +40460,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 32.471924, y: -45.5945, z: -0.000005722046}
@@ -40484,10 +40489,10 @@ GameObject:
   m_Layer: 5
   m_Name: Button - Mision (5)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2179664217882039213
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40632,7 +40637,7 @@ MonoBehaviour:
   buildingId: Edf-Misiones
   lightObject: {fileID: 6719387546225411876}
   image: {fileID: 542350464080043001}
-  position: 5
+  position: 2
   mission:
     id: 0
     name: 
@@ -40826,7 +40831,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 25.234297, y: -39.237488, z: -0.000005722046}
@@ -41379,7 +41384,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 21.1136, y: -55.78775, z: -0.000005722046}
@@ -41847,7 +41852,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 5.75
+  m_ShapeLightFalloffSize: 76.73
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: 11.956334, y: -41.3025, z: -0.000005722046}
