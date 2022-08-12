@@ -60,7 +60,7 @@ public class PanelAlert : MonoBehaviour
         acceptButtonText.text = customAcceptButtonText;
         cancelButtonText.text = customCancelButtonText;
         descriptionText.text = description;
-        descriptionText.gameObject.SetActive(description.ToCharArray().Length > 0);
+        descriptionText.gameObject.SetActive(description != "");
         StartCoroutine(ShowPanel(newText,needCancelButton,onSelectAcceptButton,onSelectCancelButton,delay));
     }
 
@@ -76,7 +76,6 @@ public class PanelAlert : MonoBehaviour
     private IEnumerator ShowPanel(string newText,  bool needCancelButton, Action onSelectAcceptButton, Action onSelectCancelButton = null, float delay = 0)
     {
         yield return new WaitForSeconds(delay);
-        descriptionText.gameObject.SetActive(false);
         alertText.text = newText;
         this.onSelectAcceptButton = onSelectAcceptButton;
         this.onSelectCancelButton = onSelectCancelButton;

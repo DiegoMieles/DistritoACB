@@ -4851,7 +4851,7 @@ MonoBehaviour:
   deleteButton: {fileID: 8707620105162457721}
   costInfoLayout: {fileID: 2959318434407866648}
   alertDelete: "\xBFEst\xE1s seguro de querer eliminar tu oferta?"
-  alertDeleteDescription: 
+  alertDeleteDescription: "Esta oferta se eliminar\xE1 autom\xE1ticamente"
   confirmationBuyText: "Esta operaci\xF3n te costar\xE1 "
 --- !u!1 &2959318433709846233
 GameObject:
