@@ -158,7 +158,7 @@ public class PanelSkinsToPublish : Panel
             {
                 JsonConvert.PopulateObject(obj.RawJson, skinData);
             }
-        if ((skinData != null && obj.RawJson != "[]" ) || (skinData.BODYACCESORY.Count > 0 && skinData.ARMACCESORY.Count > 0 && skinData.BACKGROUNDACCESORY.Count > 0 && skinData.EYEACCESORY.Count > 0 && skinData.HEADACCESORY.Count > 0))
+        if (skinData != null && obj.RawJson != "[]"  && (skinData.BODYACCESORY.Count > 0 || skinData.ARMACCESORY.Count > 0 || skinData.BACKGROUNDACCESORY.Count > 0 || skinData.EYEACCESORY.Count > 0 || skinData.HEADACCESORY.Count > 0))
         {
             textNoSkins.text = "";
         }

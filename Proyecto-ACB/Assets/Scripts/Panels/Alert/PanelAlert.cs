@@ -21,11 +21,14 @@ public class PanelAlert : MonoBehaviour
     private Text acceptButtonText;
     [SerializeField] [Tooltip("Texto del botón de cancelar")]
     private Text cancelButtonText;
-
+    [SerializeField]
+    [Tooltip("Layout que sostiene todo el panel de advertencia")]
+    private RectTransform LayoutPanel;
     private Action onSelectAcceptButton; //Acción que se ejecuta cuando se acepta la alerta
     private Action onSelectCancelButton; //Acción que se ejecuta cuando se cancela la alerta
 
     #region Unity Methods
+
 
     /// <summary>
     /// e ejecuta cuando el panel ha sido iniciado por primera vez en escena, añadiendo los eventos básicos de los botones disponibles en el panel
@@ -54,6 +57,9 @@ public class PanelAlert : MonoBehaviour
     public void SetupPanel(string newText, string description, bool needCancelButton, Action onSelectAcceptButton, Action onSelectCancelButton = null, float delay = 0,
         string customAcceptButtonText = "Aceptar", string customCancelButtonText = "Cancelar")
     {
+
+        float panelSize = 330f + (description.Length > 100 ? (description.Length - 100) * 2 : 0);
+        LayoutPanel.sizeDelta = new Vector2(LayoutPanel.sizeDelta.x, panelSize);
         descriptionText.gameObject.SetActive(true);
         gameObject.SetActive(true);
         transform.SetAsFirstSibling();
