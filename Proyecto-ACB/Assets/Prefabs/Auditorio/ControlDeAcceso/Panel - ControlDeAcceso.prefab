@@ -1764,6 +1764,7 @@ GameObject:
   - component: {fileID: 7017708460210295763}
   - component: {fileID: 4539900620625171343}
   - component: {fileID: 1815200607287278719}
+  - component: {fileID: 2906962030446819239}
   m_Layer: 5
   m_Name: Panel - ControlDeAcceso
   m_TagString: Untagged
@@ -1880,6 +1881,19 @@ MonoBehaviour:
   popupPrefab: {fileID: 0}
   canParentCanvas: 1
   popup: {fileID: 0}
+--- !u!114 &2906962030446819239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4539900620625171336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca4b575c844d3314bafa10e1a17a011c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundColor: {r: 0.039215688, g: 0.039215688, b: 0.039215688, a: 0.6}
 --- !u!1 &4685595538725815628
 GameObject:
   m_ObjectHideFlags: 0
@@ -2373,10 +2387,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2895607850849947528}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2906962030446819239}
+        m_TargetAssemblyTypeName: Panel, Assembly-CSharp
+        m_MethodName: Close
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

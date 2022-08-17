@@ -119,7 +119,7 @@ public class PanelQr : Panel
 	/// <summary>
 	/// Detiene la lectura del código QR y cierra el panel
 	/// </summary>
-	private void CloseQRPanel()
+	public void CloseQRPanel()
     {
 	    e_qrController.StopWork();
 	    Close();

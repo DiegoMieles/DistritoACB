@@ -68,6 +68,7 @@ namespace WebAPI
         private const string MarketplaceBuyUrl = "MarketplaceBuy?id={0}";
         private const string MarketplaceRemoveItemUrl = "MarketplaceRemoveItem?id={0}";
         private const string MarketplaceGetItemUrl = "MarketplaceGetItem?item_id={0}";
+        private const string DigitalizePassUrl = "DigitalizePass?item_id={0}";
 
         public const string CREDENTIALS = "CREDENTIALS";
         
@@ -1117,6 +1118,23 @@ namespace WebAPI
             var form = new WWWForm();
             var url = String.Format(MarketplaceGetItemUrl, item_id);
             StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
+        }
+        public void DigitalizePass(string json, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            try
+            {
+                var url = String.Format(DigitalizePassUrl, accessData.user, accessData.accessToken, accessData.refreshToken);
+                StartCoroutine(RequestCoroutine(url, json, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbPOST));
+            }
+            catch (WebException webEx)
+            {
+                onFailed?.Invoke(WebError.Create(webEx));
+            }
+            catch (Exception ex)
+            {
+                onFailed?.Invoke(new WebError(ex.Message));
+            }
+
         }
         #endregion
 

@@ -1194,6 +1194,16 @@ namespace Data
         public int price;
     }
 
+    /// <summary>
+    ///  petición para validar un QR de pase VIP del auditorio 
+    /// </summary>
+    [Serializable]
+    public class RequestQRTicket
+    {
+        public string code;
+        public string user_id;
+    }
+
 
     /// <summary>
     /// Contenedor con los datos de cartas de jugadores
