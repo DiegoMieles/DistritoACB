@@ -491,7 +491,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.0873, y: -0.000017166138}
+  m_AnchoredPosition: {x: 4.0872993, y: -0.000017166138}
   m_SizeDelta: {x: -8.1747, y: -10.4122}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1380353652845367777
@@ -970,7 +970,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5.2883, y: 0}
+  m_AnchoredPosition: {x: -5.2882996, y: 0}
   m_SizeDelta: {x: -10.5766, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9195995908574804856
@@ -1245,7 +1245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.7569, y: -12.700001}
+  m_AnchoredPosition: {x: -0.7569, y: -12.700003}
   m_SizeDelta: {x: 57.9824, y: 34.2483}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &757802119918420167
@@ -2190,9 +2190,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1766859327822621522, guid: de35366b518503a49808e2cabf48347e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1766859327822626546, guid: de35366b518503a49808e2cabf48347e, type: 3}
       propertyPath: m_Name
       value: Panel - ItemCartelera
+      objectReference: {fileID: 0}
+    - target: {fileID: 3604062035131020109, guid: de35366b518503a49808e2cabf48347e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00024414062
+      objectReference: {fileID: 0}
+    - target: {fileID: 5788368970908855604, guid: de35366b518503a49808e2cabf48347e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00024414062
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614684868358365614, guid: de35366b518503a49808e2cabf48347e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00024414062
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de35366b518503a49808e2cabf48347e, type: 3}

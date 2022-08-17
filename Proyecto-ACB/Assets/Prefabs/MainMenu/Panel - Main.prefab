@@ -154,7 +154,7 @@ MonoBehaviour:
   shiny: {fileID: 28144525}
   buildingButton: {fileID: 28144528}
   buildingData:
-    panelToOpen: {fileID: 7885220637714065018, guid: e723dd84f2b5e3d429e7988c6cfc3e9b, type: 3}
+    panelToOpen: {fileID: 4539900620625171336, guid: da550ce5ad6e8464ca36c6dce6088b18, type: 3}
     panelIsPrefab: 1
     panelHasInfoToDisplay: 0
     storePanelAsPrevious: 0
@@ -351,7 +351,7 @@ MonoBehaviour:
   shiny: {fileID: 101065528}
   buildingButton: {fileID: 101065531}
   buildingData:
-    panelToOpen: {fileID: 3732310476851415535, guid: a46958455eaa4804b89b4691a0a84b1a, type: 3}
+    panelToOpen: {fileID: 7885220637714065018, guid: 7acd04c9336573240a1473fe0285aeb9, type: 3}
     panelIsPrefab: 1
     panelHasInfoToDisplay: 0
     storePanelAsPrevious: 0
@@ -1909,7 +1909,7 @@ MonoBehaviour:
   shiny: {fileID: 1115865905}
   buildingButton: {fileID: 1115865908}
   buildingData:
-    panelToOpen: {fileID: 4077217915810154196, guid: 870bb26b47e744d479fd46eb318deff9, type: 3}
+    panelToOpen: {fileID: 1668510505012067705, guid: 57b9036c7eda71b458bf94f478f4c358, type: 3}
     panelIsPrefab: 1
     panelHasInfoToDisplay: 1
     storePanelAsPrevious: 1
@@ -14843,6 +14843,7 @@ MonoBehaviour:
   worldViewController: {fileID: 2097351994}
   worldBuildingsManager: {fileID: 778686471}
   pavilionBuildingsManager: {fileID: 454417825730260789}
+  auditoryBuildingsManager: {fileID: 311403653}
   lightsController: {fileID: 1195991500}
   onFailedGameDataLoad:
     m_PersistentCalls:
@@ -40793,7 +40794,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &758679449301922528
 RectTransform:
   m_ObjectHideFlags: 0

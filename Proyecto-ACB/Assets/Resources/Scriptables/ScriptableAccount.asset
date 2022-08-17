@@ -13,34 +13,36 @@ MonoBehaviour:
   m_Name: ScriptableAccount
   m_EditorClassIdentifier: 
   statsData:
-    coinsBalance: 0
-    acballsBalance: 0
-    acballsNotification: 0
+    coinsBalance: 9728
+    acballsBalance: 3
+    acballsNotification: 1
   avatarData:
-    nickName: 
-    skinColor: 0
-    bodyForm: 0
-    faceForm: 0
-    eyes: 0
-    ear: 0
-    nose: 0
-    mouth: 0
-    eyeBrow: 0
-    hairStyleFront: 0
-    hairStyleBack: 0
-    hairColor: 0
-    facialHair: 0
+    nickName: SisasNea
+    skinColor: 3
+    bodyForm: 139
+    faceForm: 42
+    eyes: 105
+    ear: 134
+    nose: 128
+    mouth: 30
+    eyeBrow: 67
+    hairStyleFront: 162
+    hairStyleBack: 171
+    hairColor: 12
+    facialHair: 197
     bodyAccessory: 0
-    headAccessory: 0
+    headAccessory: 114
     armAccessory: 0
     eyesAccessory: 0
     backGround: 0
     foreGround: 0
     isFirstTime: 0
+    img_small: https://donext-dev.s3.eu-west-3.amazonaws.com/resources/191c83c9-b95f-40df-b285-3f202e1aebf2_img_small.png
+    img_big: https://donext-dev.s3.eu-west-3.amazonaws.com/resources/191c83c9-b95f-40df-b285-3f202e1aebf2_img_big.png
     avatarItems: []
   stadiumData:
-    collectCoins: 0
-    lastCollectTime: 0
-    nextCollectTime: 0
+    collectCoins: 1
+    lastCollectTime: 1660700701
+    nextCollectTime: 1660700701
   missionsData:
     missionItems: []
