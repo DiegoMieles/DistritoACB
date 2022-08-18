@@ -21,6 +21,8 @@ public class PanelAlert : MonoBehaviour
     private Text acceptButtonText;
     [SerializeField] [Tooltip("Texto del botón de cancelar")]
     private Text cancelButtonText;
+    [SerializeField] [Tooltip("altura del panel")]
+    private float baseHeightPanel = 400f;
     [SerializeField]
     [Tooltip("Layout que sostiene todo el panel de advertencia")]
     private RectTransform LayoutPanel;
@@ -58,7 +60,7 @@ public class PanelAlert : MonoBehaviour
         string customAcceptButtonText = "Aceptar", string customCancelButtonText = "Cancelar")
     {
 
-        float panelSize = 330f + (description.Length > 100 ? (description.Length - 100) * 2 : 0);
+        float panelSize = baseHeightPanel + (description.Length > 100 ? (description.Length - 100) * 2 : 0);
         LayoutPanel.sizeDelta = new Vector2(LayoutPanel.sizeDelta.x, panelSize);
         descriptionText.gameObject.SetActive(true);
         gameObject.SetActive(true);

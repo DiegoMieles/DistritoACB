@@ -152,7 +152,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 22
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -573,8 +573,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 41.590607}
-  m_SizeDelta: {x: 0, y: -83.18121}
+  m_AnchoredPosition: {x: 0, y: 57.289703}
+  m_SizeDelta: {x: 0, y: -114.5795}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7443667051011654253
 MonoBehaviour:
@@ -803,6 +803,7 @@ MonoBehaviour:
   cancelButton: {fileID: 1691240617874780715}
   acceptButtonText: {fileID: 1707632109396685737}
   cancelButtonText: {fileID: 8005100879142752241}
+  baseHeightPanel: 360
   LayoutPanel: {fileID: 6392198163608320923}
 --- !u!1 &6392198163608320922
 GameObject:
@@ -943,7 +944,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 43}
+  m_AnchoredPosition: {x: 0, y: 70}
   m_SizeDelta: {x: -41.70883, y: 66.3754}
   m_Pivot: {x: 0.5, y: 0.50000006}
 --- !u!114 &2148150959860803174
