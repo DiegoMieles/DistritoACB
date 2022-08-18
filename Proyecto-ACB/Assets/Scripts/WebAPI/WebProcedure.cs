@@ -69,6 +69,7 @@ namespace WebAPI
         private const string MarketplaceRemoveItemUrl = "MarketplaceRemoveItem?id={0}";
         private const string MarketplaceGetItemUrl = "MarketplaceGetItem?item_id={0}";
         private const string DigitalizePassUrl = "DigitalizePass?item_id={0}";
+        private const string BillboardUrl = "Billboard?item_id={0}";
 
         public const string CREDENTIALS = "CREDENTIALS";
         
@@ -1119,6 +1120,9 @@ namespace WebAPI
             var url = String.Format(MarketplaceGetItemUrl, item_id);
             StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
         }
+        /// <summary>
+        /// Valida el código QR del Pase del auditorio
+        /// </summary>
         public void DigitalizePass(string json, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
         {
             try
@@ -1135,6 +1139,15 @@ namespace WebAPI
                 onFailed?.Invoke(new WebError(ex.Message));
             }
 
+        }
+        /// <summary>
+        /// Obtiene información de los contenidos del auditorio
+        /// </summary>
+        public void GetBillboardAuditory(Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            var form = new WWWForm();
+            var url = String.Format(BillboardUrl, accessData.user);
+            StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
         }
         #endregion
 

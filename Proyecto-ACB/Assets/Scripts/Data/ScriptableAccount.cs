@@ -856,7 +856,9 @@ namespace Data
         public string query ="";
 
     }
-
+    /// <summary>
+    /// retorna los items del mercadillo
+    /// </summary>
     public class JumbleSaleResult
     {
         public int total_items;
@@ -878,16 +880,25 @@ namespace Data
             public bool is_booster;
             public bool is_injured;
         }
+        /// <summary>
+        /// Petición para vender algo en el mercadillo
+        /// </summary>
         public class JumbleBuyRequest
         {
             public string user_id ;
             public int item_id ;
         }
+        /// <summary>
+        /// Elimina un elemento del mercadillo
+        /// </summary>
         public class JumbleDeleteItemRequest
         {
             public string user_id ;
             public int item_id ;
         }
+        /// <summary>
+        /// Información de un item del mercadillo
+        /// </summary>
         public class JumbleItemData
         {
             public JumbleCardData data;
@@ -1203,7 +1214,26 @@ namespace Data
         public string code;
         public string user_id;
     }
-
+    public class BillBoardReturn
+    {
+        public BillboardData[] data;
+        public class BillboardData
+        {
+            public int id;
+            public string type;
+            public string media_path;
+            public string title;
+            public string description;
+            public string init_date;
+            public string end_date;
+            public int capacity;
+            public bool status;
+            public int useradmin_id;
+            public string created;
+            public string updated;
+            public string Thumbnail;
+        }
+    }
 
     /// <summary>
     /// Contenedor con los datos de cartas de jugadores
