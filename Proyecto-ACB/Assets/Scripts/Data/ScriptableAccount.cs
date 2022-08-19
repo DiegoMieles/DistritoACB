@@ -1214,6 +1214,9 @@ namespace Data
         public string code;
         public string user_id;
     }
+    /// <summary>
+    /// Información que retorna de la petición de la cartelera del auditorio
+    /// </summary>
     public class BillBoardReturn
     {
         public BillboardData[] data;
@@ -1234,7 +1237,37 @@ namespace Data
             public string Thumbnail;
         }
     }
-
+    /// <summary>
+    /// Información que retorna la petición de los pases del jugador en el auditorio
+    /// </summary>
+     public class VIPPassesReturn
+    {
+        public VIPPass[] data;
+        public class VIPPass
+        {
+            public int id;
+            public string user_id;
+            public VIPPassData vip_pass;
+            public class VIPPassData
+            {
+                public int id;
+                public string code;
+                public string title;
+                public string description;
+                public string type;
+                public string media_id;
+            }
+        }
+    }
+    /// <summary>
+    ///  petición para validar un QR de pase VIP del auditorio 
+    /// </summary>
+    [Serializable]
+    public class RequestUseVIPPass
+    {
+        public string user_id;
+        public int userpass_id;
+    }
     /// <summary>
     /// Contenedor con los datos de cartas de jugadores
     /// </summary>
