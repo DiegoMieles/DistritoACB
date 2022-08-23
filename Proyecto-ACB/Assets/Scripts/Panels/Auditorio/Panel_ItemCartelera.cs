@@ -17,6 +17,9 @@ public class Panel_ItemCartelera : MonoBehaviour
     [Tooltip("Imagen que muestra que el video es un streaming")]
     private GameObject StreamingFlagImage;
     [SerializeField]
+    [Tooltip("Imagen del icono de play")]
+    private GameObject playIconImage;
+    [SerializeField]
     [Tooltip("Nombre del video")]
     private Text videoTitle;
     [SerializeField]
@@ -35,8 +38,13 @@ public class Panel_ItemCartelera : MonoBehaviour
     {
         if (videoData == null) return;
             data = videoData;
-        if (onPlayButtonPressed != null) VideoButton.onClick.AddListener(onPlayButtonPressed);
-        WebProcedure.Instance.GetSprite(videoData.Thumbnail, (obj) => { thumbnailImage.sprite = obj; }, (failed) => { Debug.Log("Failed loading back image"); });
+        playIconImage.SetActive(false);
+        if (onPlayButtonPressed != null)
+        {
+            VideoButton.onClick.AddListener(onPlayButtonPressed);
+            playIconImage.SetActive(true);
+        }
+        WebProcedure.Instance.GetSprite(videoData.thumbnail, (obj) => { thumbnailImage.sprite = obj; }, (failed) => { Debug.Log("Failed loading back image"); });
         StreamingFlagImage.SetActive(data.type != "video");
         videoTitle.text = data.title;
         VideoDescription.text = data.description;

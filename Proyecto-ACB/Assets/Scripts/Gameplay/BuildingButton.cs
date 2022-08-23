@@ -73,7 +73,7 @@ public class BuildingButton : MonoBehaviour, ISelectHandler, IDeselectHandler
     /// <param name="outlineColor">Color del contorno del edificio</param>
     public void SetupButton(Color outlineColor)
     {
-        buildingButton.image.alphaHitTestMinimumThreshold = 0.5f;
+        buildingButton.image.alphaHitTestMinimumThreshold = 1f;
         buildingButton.onClick.AddListener(OpenBuildingOptions);
         selectionOutline.effectColor = outlineColor;
         selectionOutline.enabled = false;

@@ -1234,7 +1234,7 @@ namespace Data
             public int useradmin_id;
             public string created;
             public string updated;
-            public string Thumbnail;
+            public string thumbnail;
         }
     }
     /// <summary>
@@ -1267,6 +1267,30 @@ namespace Data
     {
         public string user_id;
         public int userpass_id;
+    }  
+    /// <summary>
+    ///  petición para salir del auditorio
+    /// </summary>
+    [Serializable]
+    public class RequestLeaveAuditory
+    {
+        public string user_id;
+        public int seat_id;
+    }  
+    /// <summary>
+    ///  retorno de la petición de información del asiento en el auditorio
+    /// </summary>
+    [Serializable]
+    public class ReturnSeatInfoAuditory
+    {
+        public int id;
+        public string user_id;
+        public bool status;
+        public int projection_room_id;
+        public int userpass_id;
+        public string created;
+        public string updated;
+
     }
     /// <summary>
     /// Contenedor con los datos de cartas de jugadores

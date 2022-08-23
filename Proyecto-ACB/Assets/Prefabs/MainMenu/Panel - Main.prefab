@@ -156,8 +156,8 @@ MonoBehaviour:
   buildingData:
     panelToOpen: {fileID: 4539900620625171336, guid: da550ce5ad6e8464ca36c6dce6088b18, type: 3}
     panelIsPrefab: 1
-    panelHasInfoToDisplay: 0
-    storePanelAsPrevious: 0
+    panelHasInfoToDisplay: 1
+    storePanelAsPrevious: 1
     infoTitle: Control de acceso
     infoDescription: "En el Tabl\xF3n de Anuncios podr\xE1s publicar ofertas de desaf\xEDo
       y aceptar las de otros usuarios"
@@ -1911,13 +1911,13 @@ MonoBehaviour:
   buildingData:
     panelToOpen: {fileID: 1668510505012067705, guid: 57b9036c7eda71b458bf94f478f4c358, type: 3}
     panelIsPrefab: 1
-    panelHasInfoToDisplay: 1
-    storePanelAsPrevious: 1
+    panelHasInfoToDisplay: 0
+    storePanelAsPrevious: 0
     infoTitle: Cajero
     infoDescription: "El Despacho es el lugar en el que puedes ver todos tus tokens,
       mejorarlos con potenciadores y decidir cu\xE1l es la alineaci\xF3n de tu Equipo
       Competitivo"
-    buildingIcon: {fileID: -4923019924246146669, guid: ead46b0e50f8b37448b1520c58ad30b1, type: 3}
+    buildingIcon: {fileID: 21300000, guid: a4fb312f2b69f8e49aaa6fb1cfbc93ed, type: 3}
   buildingId: Edf-Cajero
   lightObject: {fileID: 0}
 --- !u!114 &1115865905
@@ -39135,7 +39135,7 @@ MonoBehaviour:
     storePanelAsPrevious: 0
     infoTitle: Auditorio
     infoDescription: "Descripci\xF3n del auditorio"
-    buildingIcon: {fileID: -7053241291496860252, guid: ead46b0e50f8b37448b1520c58ad30b1, type: 3}
+    buildingIcon: {fileID: 21300000, guid: e51b9d02ae06ed44e9facfd15b2368ec, type: 3}
   buildingId: Edf-Auditorio
   lightObject: {fileID: 0}
 --- !u!114 &2216638746140707254

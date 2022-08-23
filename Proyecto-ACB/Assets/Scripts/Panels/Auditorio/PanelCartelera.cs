@@ -23,11 +23,12 @@ public class PanelCartelera : Panel
         BillBoardReturn boardReturn = new BillBoardReturn();
         Debug.Log(obj.RawJson);
         JsonConvert.PopulateObject(obj.RawJson, boardReturn);
-        videosLayout.sizeDelta = new Vector2(videosLayout.sizeDelta.x, (videoPanelPrefab.GetComponent<RectTransform>().rect.height + videosLayout.GetComponent<VerticalLayoutGroup>().spacing + videosLayout.GetComponent<VerticalLayoutGroup>().padding.top) * boardReturn.data.Length);
+       // videosLayout.sizeDelta = new Vector2(videosLayout.sizeDelta.x, (videoPanelPrefab.GetComponent<RectTransform>().rect.height + videosLayout.GetComponent<VerticalLayoutGroup>().spacing + videosLayout.GetComponent<VerticalLayoutGroup>().padding.top) * boardReturn.data.Length);
         foreach(BillBoardReturn.BillboardData data in boardReturn.data)
         {
             Panel_ItemCartelera panel =  Instantiate(videoPanelPrefab, videosLayout.transform).GetComponent<Panel_ItemCartelera>();
             if (panel != null) panel.SetupVideoPanel(data);
+            videosLayout.sizeDelta = new Vector2(videosLayout.sizeDelta.x, (videosLayout.sizeDelta.y + panel.GetComponent<LayoutElement>().preferredHeight + videosLayout.GetComponent<VerticalLayoutGroup>().spacing + videosLayout.GetComponent<VerticalLayoutGroup>().padding.top));
         }
     }
 }

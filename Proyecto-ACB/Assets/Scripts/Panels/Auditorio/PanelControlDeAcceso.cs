@@ -8,6 +8,10 @@ using Newtonsoft.Json;
 using System.Linq;
 public class PanelControlDeAcceso : Panel
 {
+    /// <summary>
+    /// Segundos para sacar al jugador del auditorio
+    /// </summary>
+    static float SECONDS_TO_KICK_OUT_PLAYER = 60;
     [SerializeField]
     [Tooltip("layout donde están los asientos del auditorio")]
     private GameObject layoutAuditory;
@@ -18,15 +22,6 @@ public class PanelControlDeAcceso : Panel
     [Tooltip("layout del asiento en el auditorio")]
     private GameObject layoutBackSit;
     [SerializeField]
-    [Tooltip("layout de visualización del video")]
-    private GameObject videoPlayerLayout;
-    [SerializeField]
-    [Tooltip("Prefab del panel del video")]
-    private GameObject videoPanelPrefab;
-    [SerializeField]
-    [Tooltip("Layout que sostiene los videos")]
-    private RectTransform videosLayout;
-    [SerializeField]
     [Tooltip("prefab de los pases VIP")]
     private GameObject ticketsPrefabPanel;
     [SerializeField]
@@ -35,27 +30,26 @@ public class PanelControlDeAcceso : Panel
     [SerializeField]
     [Tooltip("contenedor de los pases VIP")]
     private Button useTicketVIPButton;
-
+    [SerializeField]
+    [Tooltip("encargado de abrir los paneles")]
+    private PanelOpener PanelOpener;
+    [SerializeField]
+    [Tooltip("panel donde se muestran los videos del ticket")]
+    private GameObject panelVideosPrefab;
+    /// <summary>
+    /// iD del asiento ocupado por el jugador 
+    /// </summary>
+    private int seatID;
+    /// <summary>
+    /// el jugador está dentro del auditorio? 
+    /// </summary>
+    private bool isInAuditory;
     private void OnEnable()
     {
         OpenVIPTicketsPanel();
+        layoutAuditory.SetActive(false);
     }
-    public void ShowVideos()
-    {
-        WebProcedure.Instance.GetBillboardAuditory(OnSucces, (WebError error) => { Debug.LogError(error); });
-    }
-    private void OnSucces(DataSnapshot obj)
-    {
-        BillBoardReturn boardReturn = new BillBoardReturn();
-        Debug.Log(obj.RawJson);
-        JsonConvert.PopulateObject(obj.RawJson, boardReturn);
-        videosLayout.sizeDelta = new Vector2(videosLayout.sizeDelta.x, (videoPanelPrefab.GetComponent<RectTransform>().rect.height + videosLayout.GetComponent<VerticalLayoutGroup>().spacing + videosLayout.GetComponent<VerticalLayoutGroup>().padding.top) * boardReturn.data.Length);
-        foreach (BillBoardReturn.BillboardData data in boardReturn.data)
-        {
-            Panel_ItemCartelera panel = Instantiate(videoPanelPrefab, videosLayout.transform).GetComponent<Panel_ItemCartelera>();
-            if (panel != null) panel.SetupVideoPanel(data);
-        }
-    }
+   
     /// <summary>
     /// Abre el panel de los pases VIP obtenidos
     /// </summary>
@@ -82,6 +76,8 @@ public class PanelControlDeAcceso : Panel
                         if (panelTicket != null) ;
                         panelTicket.SetupTicketPanel(ticket,true,GetComponent<ToggleGroup>(), UpdatePassButton);
                     }
+                    ACBSingleton.Instance.PanelBuildingSelection.innerBuildingName.text = ACBSingleton.Instance.PanelBuildingSelection.cachedBuildingsStack.Peek().previousBuildingData.infoTitle;
+                    ACBSingleton.Instance.PanelBuildingSelection.innerBuildingIcon.sprite = ACBSingleton.Instance.PanelBuildingSelection.cachedBuildingsStack.Peek().previousBuildingData.buildingIcon;
                 }
             }
             catch
@@ -91,6 +87,7 @@ public class PanelControlDeAcceso : Panel
         }, (WebError obj) => {
             Debug.LogError(obj);
         });
+
 
     }
     /// <summary>
@@ -134,11 +131,114 @@ public class PanelControlDeAcceso : Panel
     }
     public void OpenAuditoryRoom()
     {
-        layoutSits.SetActive(true);
+        StartCoroutine(KickOutPlayer());
+        isInAuditory = true;
         ACBSingleton.Instance.PanelBuildingSelection.transform.SetAsLastSibling();
+        WebProcedure.Instance.GetPlayerSeatInfo((DataSnapshot obj) => {
+            try
+            {
+                MissionAlreadyComplete error = new MissionAlreadyComplete();
+                JsonConvert.PopulateObject(obj.RawJson, error);
+                if (error.code == 400)
+                {
+                    ACBSingleton.Instance.AlertPanel.SetupPanel(error.message, "", false, () => { });
+                    return;
+                }
+                else
+                {
+                    ReturnSeatInfoAuditory seatInfo = new ReturnSeatInfoAuditory();
+                    JsonConvert.PopulateObject(obj.RawJson, seatInfo);
+                    if (seatInfo.id != 0)
+                    {
+                        seatID = seatInfo.id;
+                    }
+                    layoutAuditory.SetActive(true);
+                    layoutSits.SetActive(true);
+                }
+            }
+            catch
+            {
+
+            }
+        }, (WebError obj) => {
+            Debug.LogError(obj);
+        });
+
     }
     private void UpdatePassButton()
     {
         useTicketVIPButton.interactable = GetSelectedToggle() != null;
+    }
+    public void OpenBackSitPanel()
+    {
+        PanelOpener.popupPrefab = layoutBackSit;
+        PanelOpener.OpenPopup();
+        ACBSingleton.Instance.PanelBuildingSelection.transform.SetAsLastSibling();
+    }
+    private void OnApplicationQuit()
+    {
+        Close();
+    }
+    public void ExitButtonPressed()
+    {
+        ACBSingleton.Instance.PanelBuildingSelection.goBackButton.onClick.Invoke();
+    }
+    public override void Close()
+    {
+        if (seatID != 0)
+        {
+            RequestLeaveAuditory request = new RequestLeaveAuditory() { seat_id = seatID, user_id = WebProcedure.Instance.accessData.user };
+            WebProcedure.Instance.LeaveProjectionRoom(JsonConvert.SerializeObject(request), (DataSnapshot obj) =>
+            {
+                try
+                {
+                    MissionAlreadyComplete error = new MissionAlreadyComplete();
+                    JsonConvert.PopulateObject(obj.RawJson, error);
+                    if (error.code == 400)
+                    {
+                        ACBSingleton.Instance.AlertPanel.SetupPanel(error.message, "", false, () => { });
+                        return;
+                    }
+                    else
+                    {
+                        isInAuditory = false;
+                        StopAllCoroutines();
+                        base.Close();
+                    }
+                }
+                catch
+                {
+                    isInAuditory = false;
+                    StopAllCoroutines();
+                    base.Close();
+                }
+            }, (WebError obj) =>
+            {
+                Debug.LogError(obj);
+            });
+        }
+        else
+        {
+            base.Close();
+        }
+        
+    }
+    public void OpenVideoPanel()
+    {
+        if(PanelOpener != null)
+        {
+            PanelOpener.popupPrefab = panelVideosPrefab;
+            PanelOpener.OpenPopup();
+            PanelOpener.popup.GetComponent<PanelVideoRoomAuditory>().Populate(seatID);
+        }
+    }
+    public IEnumerator KickOutPlayer()
+    {
+        yield return new WaitForSeconds(SECONDS_TO_KICK_OUT_PLAYER);
+        if(PanelOpener != null && PanelOpener.popup != null)
+        {
+            PanelOpener.popup.GetComponent<Panel>().Close();
+        }
+        ExitButtonPressed();
     }
 }
