@@ -14,7 +14,7 @@ public class PanelTicketAuditory : MonoBehaviour
     public VIPPassesReturn.VIPPass data;
     [SerializeField]
     [Tooltip("Imagen del borde del ticket")]
-    private Image ticketBorder;
+    public Image ticketBorder;
     [SerializeField]
     [Tooltip("Sprite del borde del ticket General")]
     private Sprite ticketBorderGeneralSprite;

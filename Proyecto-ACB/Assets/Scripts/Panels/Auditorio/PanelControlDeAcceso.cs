@@ -36,6 +36,9 @@ public class PanelControlDeAcceso : Panel
     [SerializeField]
     [Tooltip("panel donde se muestran los videos del ticket")]
     private GameObject panelVideosPrefab;
+    [SerializeField]
+    [Tooltip("asientos dentro del auditorio")]
+    private List<Transform> sits;
     /// <summary>
     /// iD del asiento ocupado por el jugador 
     /// </summary>
@@ -55,7 +58,9 @@ public class PanelControlDeAcceso : Panel
     /// </summary>
     public void OpenVIPTicketsPanel()
     {
-        ACBSingleton.Instance.PanelBuildingSelection.transform.SetSiblingIndex(ACBSingleton.Instance.PanelBuildingSelection.transform.parent.childCount - 2);
+        ticketsContainerLayout.GetComponent<RectTransform>().sizeDelta = new Vector2(ticketsContainerLayout.GetComponent<RectTransform>().sizeDelta.x, 0);
+       ACBSingleton.Instance.PanelBuildingSelection.transform.SetSiblingIndex(ACBSingleton.Instance.PanelBuildingSelection.transform.parent.childCount - 2);
+        SetSpinnerState(true);
         WebProcedure.Instance.ViewPlayerPasses((DataSnapshot obj) => {
             try
             {
@@ -70,22 +75,30 @@ public class PanelControlDeAcceso : Panel
                 {
                     VIPPassesReturn passesReturn = new VIPPassesReturn();
                     JsonConvert.PopulateObject(obj.RawJson, passesReturn);
+                    foreach(Transform child in ticketsContainerLayout)
+                    {
+                        Destroy(child.gameObject);
+                    }
                     foreach (VIPPassesReturn.VIPPass ticket in passesReturn.data)
                     {
                         PanelTicketAuditory panelTicket = Instantiate(ticketsPrefabPanel, ticketsContainerLayout).GetComponent<PanelTicketAuditory>();
                         if (panelTicket != null) ;
                         panelTicket.SetupTicketPanel(ticket,true,GetComponent<ToggleGroup>(), UpdatePassButton);
+                        ticketsContainerLayout.GetComponent<RectTransform>().sizeDelta = new Vector2(ticketsContainerLayout.GetComponent<RectTransform>().sizeDelta.x, (ticketsContainerLayout.GetComponent<RectTransform>().sizeDelta.y + panelTicket.GetComponent<LayoutElement>().preferredHeight + ticketsContainerLayout.GetComponent<VerticalLayoutGroup>().spacing + ticketsContainerLayout.GetComponent<VerticalLayoutGroup>().padding.top));
                     }
                     ACBSingleton.Instance.PanelBuildingSelection.innerBuildingName.text = ACBSingleton.Instance.PanelBuildingSelection.cachedBuildingsStack.Peek().previousBuildingData.infoTitle;
                     ACBSingleton.Instance.PanelBuildingSelection.innerBuildingIcon.sprite = ACBSingleton.Instance.PanelBuildingSelection.cachedBuildingsStack.Peek().previousBuildingData.buildingIcon;
+                    SetSpinnerState(false);
                 }
             }
             catch
             {
                 Debug.LogError(obj);
+                SetSpinnerState(false);
             }
         }, (WebError obj) => {
             Debug.LogError(obj);
+            SetSpinnerState(false);
         });
 
 
@@ -95,6 +108,7 @@ public class PanelControlDeAcceso : Panel
     /// </summary>
     public void UseVIPPass()
     {
+        SetSpinnerState(true);
         RequestUseVIPPass request = new RequestUseVIPPass() { userpass_id = GetSelectedToggle().data.id, user_id = WebProcedure.Instance.accessData.user };
         WebProcedure.Instance.UseVIPPass(JsonConvert.SerializeObject(request), (DataSnapshot obj) => {
             try
@@ -117,6 +131,7 @@ public class PanelControlDeAcceso : Panel
             }
         }, (WebError obj) => {
             Debug.LogError(obj);
+            SetSpinnerState(false);
         });
     }
     /// <summary>
@@ -131,9 +146,11 @@ public class PanelControlDeAcceso : Panel
     }
     public void OpenAuditoryRoom()
     {
+        SetSpinnerState(false);
         StartCoroutine(KickOutPlayer());
         isInAuditory = true;
         ACBSingleton.Instance.PanelBuildingSelection.transform.SetAsLastSibling();
+        SetSpinnerState(true);
         WebProcedure.Instance.GetPlayerSeatInfo((DataSnapshot obj) => {
             try
             {
@@ -154,16 +171,29 @@ public class PanelControlDeAcceso : Panel
                     }
                     layoutAuditory.SetActive(true);
                     layoutSits.SetActive(true);
+                    foreach (Transform sit in sits)
+                    {
+                        sit.gameObject.SetActive(true);
+                    }
+                    int rnd = Random.Range(1, sits.Count - 1);
+                    for (int i = 0; i < rnd; i++)
+                    {
+                        List<Transform> availableSits = sits.FindAll(x => x.gameObject.activeInHierarchy);
+                        int rndNum = Random.Range(0, availableSits.Count);
+                        availableSits[rndNum].gameObject.SetActive(false);
+                    }
+                    SetSpinnerState(false);
                 }
             }
             catch
             {
-
+                SetSpinnerState(false);
             }
         }, (WebError obj) => {
             Debug.LogError(obj);
+            SetSpinnerState(false);
         });
-
+      
     }
     private void UpdatePassButton()
     {
@@ -240,5 +270,17 @@ public class PanelControlDeAcceso : Panel
             PanelOpener.popup.GetComponent<Panel>().Close();
         }
         ExitButtonPressed();
+    }
+    /// <summary>
+    /// Activa o desactiva el spinner de carga
+    /// </summary>
+    /// <param name="state">Estado de activación del spinner</param>
+    private void SetSpinnerState(bool state)
+    {
+        GameObject spinner = GameObject.Find("Spinner_TablonDesafio");
+        for (int i = 0; i < spinner.transform.childCount; i++)
+        {
+            spinner.transform.GetChild(i).gameObject.SetActive(state);
+        }
     }
 }
