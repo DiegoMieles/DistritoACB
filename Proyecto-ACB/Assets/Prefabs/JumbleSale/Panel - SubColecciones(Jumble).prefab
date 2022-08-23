@@ -991,7 +991,7 @@ MonoBehaviour:
     cardItems: []
   subcolectionHiglightDataContainer:
     items: []
-  textFail: No tienes subcolecciones disponibles
+  textFail: No tienes subcolecciones disponibles para publicar
   textNoSucolecciones: {fileID: 2850848812216756616}
   spinner: {fileID: 1944759419634548147}
 --- !u!1 &5858422298856255413

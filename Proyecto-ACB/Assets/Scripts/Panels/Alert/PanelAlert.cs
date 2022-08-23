@@ -21,11 +21,16 @@ public class PanelAlert : MonoBehaviour
     private Text acceptButtonText;
     [SerializeField] [Tooltip("Texto del botón de cancelar")]
     private Text cancelButtonText;
-
+    [SerializeField] [Tooltip("altura del panel")]
+    private float baseHeightPanel = 400f;
+    [SerializeField]
+    [Tooltip("Layout que sostiene todo el panel de advertencia")]
+    private RectTransform LayoutPanel;
     private Action onSelectAcceptButton; //Acción que se ejecuta cuando se acepta la alerta
     private Action onSelectCancelButton; //Acción que se ejecuta cuando se cancela la alerta
 
     #region Unity Methods
+
 
     /// <summary>
     /// e ejecuta cuando el panel ha sido iniciado por primera vez en escena, añadiendo los eventos básicos de los botones disponibles en el panel
@@ -54,11 +59,16 @@ public class PanelAlert : MonoBehaviour
     public void SetupPanel(string newText, string description, bool needCancelButton, Action onSelectAcceptButton, Action onSelectCancelButton = null, float delay = 0,
         string customAcceptButtonText = "Aceptar", string customCancelButtonText = "Cancelar")
     {
+
+        float panelSize = baseHeightPanel + (description.Length > 100 ? (description.Length - 100) * 2 : 0);
+        LayoutPanel.sizeDelta = new Vector2(LayoutPanel.sizeDelta.x, panelSize);
+        descriptionText.gameObject.SetActive(true);
         gameObject.SetActive(true);
         transform.SetAsFirstSibling();
         acceptButtonText.text = customAcceptButtonText;
         cancelButtonText.text = customCancelButtonText;
         descriptionText.text = description;
+        descriptionText.gameObject.SetActive(description != "");
         StartCoroutine(ShowPanel(newText,needCancelButton,onSelectAcceptButton,onSelectCancelButton,delay));
     }
 
@@ -74,12 +84,9 @@ public class PanelAlert : MonoBehaviour
     private IEnumerator ShowPanel(string newText,  bool needCancelButton, Action onSelectAcceptButton, Action onSelectCancelButton = null, float delay = 0)
     {
         yield return new WaitForSeconds(delay);
-        
         alertText.text = newText;
         this.onSelectAcceptButton = onSelectAcceptButton;
         this.onSelectCancelButton = onSelectCancelButton;
-
-        descriptionText.gameObject.SetActive(!string.IsNullOrEmpty(descriptionText.text));
         cancelButton.gameObject.SetActive(needCancelButton);
         transform.SetAsLastSibling();
     }

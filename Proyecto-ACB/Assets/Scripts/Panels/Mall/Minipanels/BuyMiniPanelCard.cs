@@ -77,6 +77,9 @@ public class BuyMiniPanelCard : BuyMiniPanel
     private Text highlightDescription;
     [SerializeField] [Tooltip("Imagen de la liga del highlight")]
     private Image leagueImage;
+    [SerializeField]
+    [Tooltip("Imagen de fondo de la parte de atrás del highlight")]
+    private Image highlightBackBackground;
 
     [Header("Other components")]
     [SerializeField] [Tooltip("Spinner de carga")]
@@ -91,9 +94,14 @@ public class BuyMiniPanelCard : BuyMiniPanel
     [SerializeField]
     [Tooltip("objeto que muestra que tiene heridas ")]
     private GameObject injuredFlag;
+    [SerializeField]
+    [Tooltip("panel padre que contiene este minipanel")]
+    private PanelJumbleSaleBuyConfirmation panelBuyConfirmation;
 
     private GameObject actualBackPart; //Parte reversa de la carta actual
-
+    private bool publishedByPlayer = true;
+    private bool isHighlight ;
+    private bool isJumbleSale ;
     #endregion
 
     #region Public Methods
@@ -161,7 +169,8 @@ public class BuyMiniPanelCard : BuyMiniPanel
     public override void ShowMiniPanel(Sprite productSprite, JumbleSaleResult.JumbleItems itemData, string description, Action onFailedLoading)
     {
         base.ShowMiniPanel(productSprite, itemData, description, onFailedLoading);
-
+        isJumbleSale = true;
+           publishedByPlayer = itemData.seller_user_id == WebProcedure.Instance.accessData.user;
         frontCardView.SetActive(true);
         backCardView.SetActive(false);
         backHighlightView.SetActive(false);
@@ -185,12 +194,16 @@ public class BuyMiniPanelCard : BuyMiniPanel
             {
                 Debug.Log($"Card data = { obj.RawJson}");
                 JsonConvert.PopulateObject(obj.RawJson, cardData);
+                cardData.data.name = itemData.name;
+                cardData.data.description = itemData.description;
                 SetCardData(cardData);
             },
             (error) => { ACBSingleton.Instance.AlertPanel.SetupPanel(error.Message, "", false, onFailedLoading); });
         }
         else if(itemData.item_type == "TOKENHIGTHLIGHT")
         {
+            isHighlight = true;
+           // titleText.gameObject.SetActive(!publishedByPlayer);
             JumbleSaleResult.JumbleItemData cardData = new JumbleSaleResult.JumbleItemData();
             WebProcedure.Instance.GetJumbleSaleInfoItem(itemData.id.ToString(), (obj) =>
             {
@@ -247,15 +260,15 @@ public class BuyMiniPanelCard : BuyMiniPanel
         cardNameTexts.ForEach(card => card.text = cardData.data.name);
         WebProcedure.Instance.GetSprite(cardData.data.path_img_back, (obj) => { picImage.sprite = obj; }, (failed) => { Debug.Log("Failed loading thumbnail image"); });
         threePointerBase.text = cardData.data.st_triples;
-        threePointerWithBoost.text = cardData.data.st_triples;
+        threePointerWithBoost.text = cardData.data.triples;
         reboundBase.text = cardData.data.st_rebounds;
-        reboundWithBoost.text = cardData.data.st_rebounds;
+        reboundWithBoost.text = cardData.data.rebounds;
         freeThrowBase.text = cardData.data.st_freeshots;
-        freeThrowWithBoost.text = cardData.data.st_freeshots;
+        freeThrowWithBoost.text = cardData.data.freeshots;
         assistsBase.text = cardData.data.st_assists;
-        assistsWithBoost.text = cardData.data.st_assists;
+        assistsWithBoost.text = cardData.data.assists;
         scoreBase.text = cardData.data.st_points;
-        scoreWithBoost.text = cardData.data.st_points;
+        scoreWithBoost.text = cardData.data.points;
         injuryBackground.color = cardData.data.isInjured ? Color.red : Color.black;
         injuryBackground.color = Color.white;
         injuryText.text = cardData.data.textInjured;
@@ -280,12 +293,14 @@ public class BuyMiniPanelCard : BuyMiniPanel
     /// <param name="highlightData">Datos de la carta tipo highlight</param>
     private void SetHighlightData(JumbleSaleResult.JumbleItemData highlightData)
     {
+      
         WebProcedure.Instance.GetSprite(highlightData.data.path_img, (obj) => { frontCardImage.sprite = obj; spinner.gameObject.SetActive(false); flipCardButton.interactable = true; }, (error) => { });
         highlightName.text = highlightData.data.title;
         highlightDate.text = !string.IsNullOrEmpty(highlightData.data.created) ? "Creación " + highlightData.data.created.ToString() : "";
         //highlightDate.text = !string.IsNullOrEmpty(highlightData.data.) ? "Creación " + highlightData.publication_date : "";
         highlightDescription.text = highlightData.data.description;
         WebProcedure.Instance.GetSprite(highlightData.data.path_img_leauge, (obj) => { leagueImage.sprite = obj; }, (error) => { });
+        if(highlightBackBackground) WebProcedure.Instance.GetSprite(highlightData.data.path_img_backcard, (obj) => { highlightBackBackground.sprite = obj; }, (error) => { });
     }
 
     /// <summary>
@@ -296,6 +311,14 @@ public class BuyMiniPanelCard : BuyMiniPanel
         bool cachedState = frontCardView.activeInHierarchy;
         frontCardView.SetActive(actualBackPart.activeInHierarchy);
         actualBackPart.SetActive(cachedState);
+        if(isJumbleSale)
+        {
+           // panelBuyConfirmation.costInfoLayout.gameObject.SetActive(!publishedByPlayer && !cachedState);
+           // panelBuyConfirmation.deleteButton.transform.parent.gameObject.SetActive(publishedByPlayer && !cachedState);
+           // titleText.gameObject.SetActive((!publishedByPlayer||!isHighlight) && !cachedState);
+           // descriptionText.gameObject.SetActive(!cachedState);
+        }
+       
     }
 
     /// <summary>
@@ -323,6 +346,7 @@ public class BuyMiniPanelCard : BuyMiniPanel
         rarityText.text = imageRarity.ToString().ToUpper();
         rarityImage.sprite = Resources.Load<Sprite>(path);
     }
+
 
     #endregion
 }

@@ -12,6 +12,9 @@ public class PanelPotenciador : MonoBehaviour
     private Button button;
     [SerializeField] [Tooltip("Muestra estadísticas del potenciador")]
     private Text textStat;
+    [SerializeField]
+    [Tooltip("Muestra descripción del potenciador")]
+    private Text textDescription;
     [SerializeField] [Tooltip("Imagen del potenciador")]
     public Image imageBooter;
     [HideInInspector] [Tooltip("Información del potenciador")]
@@ -26,6 +29,7 @@ public class PanelPotenciador : MonoBehaviour
     {
         if (boosterdata != null) boostData = boosterdata;
         textStat.text = boosterdata.value;
+        if (textDescription) textDescription.text = "Potenciador " + boosterdata.name + " " + boosterdata.value;
         if (!string.IsNullOrEmpty(boosterdata.path_img))
         {
             if (imageBooter)

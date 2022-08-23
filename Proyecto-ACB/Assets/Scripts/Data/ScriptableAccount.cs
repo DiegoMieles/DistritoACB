@@ -918,7 +918,7 @@ namespace Data
             public string triples;
             public string freeshots;
             public string rebounds;
-            public string assits;
+            public string assists;
             public string points;
             public string st_triples;
             public string st_freeshots;
@@ -951,6 +951,11 @@ namespace Data
             public string updated;
             public string title;
             public string created;
+            public string path_img_backcard;
+            //ACBalls properties
+            public int id;
+            public int acball_id;
+
         }
     }
     /// <summary>
@@ -1016,6 +1021,7 @@ namespace Data
         {
             public int id;
             public string token;
+            public string name;
             public int idType;
             [JsonConverter(typeof(StringEnumConverter))]
             public BoosterType type;

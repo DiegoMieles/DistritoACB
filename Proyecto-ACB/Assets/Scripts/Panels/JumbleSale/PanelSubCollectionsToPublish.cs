@@ -72,7 +72,7 @@ namespace Panels
                 {
                     JsonConvert.PopulateObject(snapshot.RawJson, subcolectionDataContainer);
                     Debug.Log(snapshot.RawJson);
-                    if (subcolectionDataContainer.cardItems != null)
+                    if ( subcolectionDataContainer.cardItems != null && subcolectionDataContainer.cardItems.Count > 0)
                     {
                         foreach (var subcolecciondata in subcolectionDataContainer.cardItems)
                         {
@@ -97,6 +97,7 @@ namespace Panels
                     }
                 }, error =>
                 {
+                    textNoSucolecciones.text = textFail;
                     onFailed.Invoke();
                     ClosedSpinner();
                 });

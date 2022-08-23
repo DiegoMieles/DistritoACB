@@ -16,7 +16,7 @@ public class BuyMiniPanel : MonoBehaviour
     [SerializeField] [Tooltip("Imagen del producto")]
     protected Image productImage;
     [SerializeField] [Tooltip("Texto del título a mostrar en el minipanel")]
-    private Text titleText;
+    protected Text titleText;
     [SerializeField] [Tooltip("Texto de descripción del minipanel")]
     protected Text descriptionText;
     [SerializeField]
@@ -133,8 +133,14 @@ public class BuyMiniPanel : MonoBehaviour
     public virtual void ShowMiniPanel(Sprite productSprite, JumbleSaleResult.JumbleItems itemData, string description, Action onFailedLoading)
     {
         gameObject.SetActive(true);
+        if (!string.IsNullOrEmpty(description) && descriptionText != null)
+        {
+            descriptionText.text = itemData.item_type == "TOKENHIGTHLIGHT" ? itemData.name : description;
+        }
+
         if (itemData.seller_user_id == WebProcedure.Instance.accessData.user)
         {
+            descriptionText.resizeTextForBestFit = itemData.item_type != "TOKENHIGTHLIGHT";
             if (publicationDate)
             {
                 publicationDate.gameObject.SetActive(true);
@@ -145,16 +151,10 @@ public class BuyMiniPanel : MonoBehaviour
                 ownedItemPrice.transform.parent.gameObject.SetActive(true);
                 ownedItemPrice.text = itemData.price;
             }
-
-            if (!string.IsNullOrEmpty(description) && descriptionText != null)
-            { 
-            descriptionText.text = itemData.item_type == "TOKENHIGTHLIGHT" ? itemData.name : description;
-            }
-
         }
         else
         {
-            descriptionText.gameObject.SetActive(itemData.item_type != "TOKENHIGTHLIGHT");
+            descriptionText.transform.parent.gameObject.SetActive(itemData.item_type != "TOKENHIGTHLIGHT");
         }
         if (productImage != null)
         {

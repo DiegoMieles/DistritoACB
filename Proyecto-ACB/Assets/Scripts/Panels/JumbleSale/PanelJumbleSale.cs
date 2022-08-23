@@ -178,9 +178,11 @@ public class PanelJumbleSale : Panel
                 order.Add(new string[] { "price", "ASC" });
                 break;
         }
+        SetSpinnerNewState(true);
         JumbleSaleRequest page = new JumbleSaleRequest() { page = counter, num_items = 20, types = filters.ToArray(), order = order, user_id = ""};
         WebProcedure.Instance.GetJumbleSaleItems(JsonConvert.SerializeObject(page), OnSuccessLoadingMallData, OnFailedLoadingMallData);
         UpdateFilterButtons();
+       
     }
 
     /// <summary>
@@ -328,7 +330,7 @@ public class PanelJumbleSale : Panel
         JsonConvert.PopulateObject(obj.RawJson, mallData);
         if(mallData != null )
         {
-            coinAmount.text = mallData.balance.ToString();
+           if(mallData.balance > 0) coinAmount.text = mallData.balance.ToString();
             if (mallData.items.Count <= 0)
             {
                 allItemsLoaded = true;
@@ -454,7 +456,7 @@ public class PanelJumbleSale : Panel
     {
         isWriting = true;
         StopAllCoroutines();
-        StartCoroutine(TimertoSearch(researchWord, 1.5f));
+        StartCoroutine(TimertoSearch(researchWord, 0.75f));
 
     }
     /// <summary>
@@ -505,7 +507,8 @@ public class PanelJumbleSale : Panel
                     break;
             }
             JumbleSaleRequest page = new JumbleSaleRequest() { page = counter, num_items = 20, types = filters.ToArray(), order = order, user_id = "", query = researchWord };
-            WebProcedure.Instance.GetJumbleSaleItems(JsonConvert.SerializeObject(page), OnSuccessLoadingMallData, OnFailedLoadingMallData);
+        SetSpinnerNewState(true);
+        WebProcedure.Instance.GetJumbleSaleItems(JsonConvert.SerializeObject(page), OnSuccessLoadingMallData, OnFailedLoadingMallData);
         
     }
     #endregion

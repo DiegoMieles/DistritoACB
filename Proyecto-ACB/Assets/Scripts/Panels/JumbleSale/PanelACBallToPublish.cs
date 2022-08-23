@@ -94,7 +94,7 @@ public class PanelACBallToPublish : Panel
             SetSpinnerNewState(true);
             isLoadingNewACBalls = true;
             page = new PageBody() { page = counter };
-            WebProcedure.Instance.GetACBallsToSell(JsonConvert.SerializeObject(page), OnSuccessLoadingMoreACBalls, (error) => { isLoadingNewACBalls = false; });
+            WebProcedure.Instance.GetACBallsToSell(JsonConvert.SerializeObject(page), OnSuccessLoadingMoreACBalls, (error) => { isLoadingNewACBalls = false; textNoACBalls.text = textFail; });
         }
     }
 
@@ -118,7 +118,7 @@ public class PanelACBallToPublish : Panel
             }
         }
         
-        if(acballsContainer.items.Count <= 0)
+        if(acballButtonContainer == null || acballsContainer.items.Count <= 0)
         {
             textNoACBalls.text = textFail;
             SetSpinnerNewState(false);
@@ -170,6 +170,7 @@ public class PanelACBallToPublish : Panel
     /// <param name="obj">Clase con los datos de error que devuelve backend</param>
     private void OnFailed(WebError obj)
     {
+        textNoACBalls.text = textFail;
         ACBSingleton.Instance.AlertPanel.SetupPanel("Hubo un error cargando los datos de las acballs, por favor intenta nuevamente", "", false, Close);
     }
 
