@@ -100,7 +100,7 @@ public class PanelCajero : Panel
             QRController = Instantiate(QRReaderPanel, QRLayoutPanel.transform).GetComponent<QRCodeDecodeController>();
             if (QRController != null)
             {
-                UnityEditor.Events.UnityEventTools.RemovePersistentListener(QRController.onQRScanFinished, 0);
+              QRController.onQRScanFinished.RemoveAllListeners();
                 QRController.onQRScanFinished.AddListener(OnQRDecoded);
             }
         }

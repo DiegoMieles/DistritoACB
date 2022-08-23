@@ -1554,19 +1554,7 @@ MonoBehaviour:
   e_DeviceController: {fileID: 289028428}
   onQRScanFinished:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5797595175684579960}
-        m_TargetAssemblyTypeName: PanelQr, Assembly-CSharp
-        m_MethodName: qrScanFinished
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &5797595175684579960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1583,7 +1571,6 @@ MonoBehaviour:
   e_qrController: {fileID: 289028429}
   resetBtn: {fileID: 333264753343316294}
   scanLineObj: {fileID: 333264754976292499}
-  torchImage: {fileID: 333264755027029629}
   exitButton: {fileID: 333264754815434955}
   currentMissionData:
     id: 0
