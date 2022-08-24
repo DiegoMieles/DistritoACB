@@ -203,7 +203,7 @@ public class BuyMiniPanelCard : BuyMiniPanel
         else if(itemData.item_type == "TOKENHIGTHLIGHT")
         {
             isHighlight = true;
-            titleText.transform.parent.gameObject.SetActive(!publishedByPlayer);
+           // titleText.gameObject.SetActive(!publishedByPlayer);
             JumbleSaleResult.JumbleItemData cardData = new JumbleSaleResult.JumbleItemData();
             WebProcedure.Instance.GetJumbleSaleInfoItem(itemData.id.ToString(), (obj) =>
             {
@@ -260,15 +260,15 @@ public class BuyMiniPanelCard : BuyMiniPanel
         cardNameTexts.ForEach(card => card.text = cardData.data.name);
         WebProcedure.Instance.GetSprite(cardData.data.path_img_back, (obj) => { picImage.sprite = obj; }, (failed) => { Debug.Log("Failed loading thumbnail image"); });
         threePointerBase.text = cardData.data.st_triples;
-        threePointerWithBoost.text = cardData.data.st_triples;
+        threePointerWithBoost.text = cardData.data.triples;
         reboundBase.text = cardData.data.st_rebounds;
-        reboundWithBoost.text = cardData.data.st_rebounds;
+        reboundWithBoost.text = cardData.data.rebounds;
         freeThrowBase.text = cardData.data.st_freeshots;
-        freeThrowWithBoost.text = cardData.data.st_freeshots;
+        freeThrowWithBoost.text = cardData.data.freeshots;
         assistsBase.text = cardData.data.st_assists;
-        assistsWithBoost.text = cardData.data.st_assists;
+        assistsWithBoost.text = cardData.data.assists;
         scoreBase.text = cardData.data.st_points;
-        scoreWithBoost.text = cardData.data.st_points;
+        scoreWithBoost.text = cardData.data.points;
         injuryBackground.color = cardData.data.isInjured ? Color.red : Color.black;
         injuryBackground.color = Color.white;
         injuryText.text = cardData.data.daysOrTextInjured;
@@ -313,10 +313,10 @@ public class BuyMiniPanelCard : BuyMiniPanel
         actualBackPart.SetActive(cachedState);
         if(isJumbleSale)
         {
-            panelBuyConfirmation.costInfoLayout.gameObject.SetActive(!publishedByPlayer && !cachedState);
-            panelBuyConfirmation.deleteButton.transform.parent.gameObject.SetActive(publishedByPlayer && !cachedState);
-            titleText.transform.parent.gameObject.SetActive(!isHighlight && !cachedState);
-            descriptionText.transform.parent.gameObject.SetActive(!cachedState);
+           // panelBuyConfirmation.costInfoLayout.gameObject.SetActive(!publishedByPlayer && !cachedState);
+           // panelBuyConfirmation.deleteButton.transform.parent.gameObject.SetActive(publishedByPlayer && !cachedState);
+           // titleText.gameObject.SetActive((!publishedByPlayer||!isHighlight) && !cachedState);
+           // descriptionText.gameObject.SetActive(!cachedState);
         }
        
     }

@@ -6623,7 +6623,7 @@ MonoBehaviour:
   panelOpener: {fileID: 669471493848818801}
   videoPanelPrefab: {fileID: 3441262283023046251, guid: a702cc5683171c84b9780f132257b185, type: 3}
   actualborderCard: {fileID: 21300000, guid: 29ba46e25e44069459bdad0a866c2df6, type: 3}
-  clasicborderCard: {fileID: 21300000, guid: 0b327dcebdb96e847b03d5c9f1cdb2c6, type: 3}
+  clasicborderCard: {fileID: 21300000, guid: 1f78f0154e6f43844be5df317e62dd3b, type: 3}
   cardBorders:
   - {fileID: 273750668675692757}
   - {fileID: 6958840857128198118}

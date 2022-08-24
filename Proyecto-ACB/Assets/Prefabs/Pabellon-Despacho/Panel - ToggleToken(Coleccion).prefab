@@ -471,7 +471,7 @@ MonoBehaviour:
   toggle: {fileID: 4519004146905056222}
   imageThumbnail: {fileID: 4519004146905055625}
   imageBorder: {fileID: 4519004146905055499}
-  clasicBorderSprite: {fileID: -611028203908382085, guid: ead46b0e50f8b37448b1520c58ad30b1, type: 3}
+  clasicBorderSprite: {fileID: 21300000, guid: 0e40132a8099a25488609a24acf6cdfe, type: 3}
   actualBorderSprite: {fileID: -216139874681259050, guid: 6c3a0cb3ea3587c47889bb67de971fc4, type: 3}
   imageThumbnailHighlight: {fileID: 0}
   textName: {fileID: 4519004146905056055}
@@ -523,6 +523,8 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+    daysOrTextInjured: 
+    is_clasic: 1
   currentHighLight:
     id: 0
     token: 

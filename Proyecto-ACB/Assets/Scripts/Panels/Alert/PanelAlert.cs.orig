@@ -21,15 +21,17 @@ public class PanelAlert : MonoBehaviour
     private Text acceptButtonText;
     [SerializeField] [Tooltip("Texto del botón de cancelar")]
     private Text cancelButtonText;
-
+<<<<<<< HEAD
     [SerializeField] [Tooltip("Imagen que aparece arriba del título si es seteada")]
     private Image imagePanel;
 
+=======
     [SerializeField] [Tooltip("altura del panel")]
     private float baseHeightPanel = 400f;
     [SerializeField]
     [Tooltip("Layout que sostiene todo el panel de advertencia")]
     private RectTransform LayoutPanel;
+>>>>>>> Development
     private Action onSelectAcceptButton; //Acción que se ejecuta cuando se acepta la alerta
     private Action onSelectCancelButton; //Acción que se ejecuta cuando se cancela la alerta
 
@@ -63,20 +65,27 @@ public class PanelAlert : MonoBehaviour
     public void SetupPanel(string newText, string description, bool needCancelButton, Action onSelectAcceptButton, Action onSelectCancelButton = null, float delay = 0,
         string customAcceptButtonText = "Aceptar", string customCancelButtonText = "Cancelar", Sprite panelImageSprite = null)
     {
-        descriptionText.gameObject.SetActive(true);
+<<<<<<< HEAD
+=======
+
         float panelSize = baseHeightPanel + (description.Length > 100 ? (description.Length - 100) * 2 : 0);
-        LayoutPanel.sizeDelta = new Vector2(LayoutPanel.sizeDelta.x, panelSize);        gameObject.SetActive(true);
-gameObject.SetActive(true);
+        LayoutPanel.sizeDelta = new Vector2(LayoutPanel.sizeDelta.x, panelSize);
+        descriptionText.gameObject.SetActive(true);
+>>>>>>> Development
+        gameObject.SetActive(true);
         transform.SetAsFirstSibling();
         acceptButtonText.text = customAcceptButtonText;
         cancelButtonText.text = customCancelButtonText;
         descriptionText.text = description;
+<<<<<<< HEAD
         if(panelImageSprite && imagePanel)
         {
             imagePanel.sprite = panelImageSprite;
             imagePanel.transform.parent.gameObject.SetActive(true);
         }
+=======
         descriptionText.gameObject.SetActive(description != "");
+>>>>>>> Development
         StartCoroutine(ShowPanel(newText,needCancelButton,onSelectAcceptButton,onSelectCancelButton,delay));
     }
 
@@ -92,11 +101,13 @@ gameObject.SetActive(true);
     private IEnumerator ShowPanel(string newText,  bool needCancelButton, Action onSelectAcceptButton, Action onSelectCancelButton = null, float delay = 0)
     {
         yield return new WaitForSeconds(delay);
+<<<<<<< HEAD
+        
+=======
+>>>>>>> Development
         alertText.text = newText;
         this.onSelectAcceptButton = onSelectAcceptButton;
         this.onSelectCancelButton = onSelectCancelButton;
-
-        descriptionText.gameObject.SetActive(!string.IsNullOrEmpty(descriptionText.text));
         cancelButton.gameObject.SetActive(needCancelButton);
         transform.SetAsLastSibling();
     }

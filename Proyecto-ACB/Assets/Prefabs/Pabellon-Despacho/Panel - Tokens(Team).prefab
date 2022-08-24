@@ -170,7 +170,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1901231750
 RectTransform:
   m_ObjectHideFlags: 0
@@ -265,7 +265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2069171859
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1204,8 +1204,8 @@ MonoBehaviour:
       tokenItems: []
   alertAdds: "\xBFQuieres a\xF1adir el token a tu Equipo Competitivo?"
   alertFailAdds: "Elige el token que quieres a\xF1adir a tu Equipo."
-  clasicLeagueIcon: {fileID: -4625379203041903168, guid: 339e31cbd14dcb846a31c62c32a99eec, type: 3}
-  actualLeagueIcon: {fileID: 9189745415076915908, guid: 6c3a0cb3ea3587c47889bb67de971fc4, type: 3}
+  clasicLeagueIcon: {fileID: 21300000, guid: 7c232ee1afcb6184bab6c32f18b25fd9, type: 3}
+  actualLeagueIcon: {fileID: 21300000, guid: 787d3ddc8b2d4834c9c245161bafa0de, type: 3}
   dragableTargetPosition: {fileID: 0}
   playerCard: {fileID: 0}
   Spinner: {fileID: 0}

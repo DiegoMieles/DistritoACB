@@ -67,7 +67,9 @@ public class PanelSkinsToPublish : Panel
     [SerializeField]
     [Tooltip("botón para publicar la skin seleccionada")]
     private Button publishButton;
-
+    [SerializeField]
+    [Tooltip("Spinner de carga")]
+    private GameObject spinner;
     private PageBody page; //Clase que contiene los datos principales de una página de ACBalls
     private SkinsToSell skinData = new SkinsToSell(); // Skins del jugador para vender
 
@@ -152,8 +154,11 @@ public class PanelSkinsToPublish : Panel
     /// <param name="obj">Información de skins a vender se decodifica en la clase SkinsToSell</param>
     private void OnSuccess(DataSnapshot obj)
     {
-        JsonConvert.PopulateObject(obj.RawJson, skinData);
-        if ((skinData != null && obj.RawJson != "[]" ) || (skinData.BODYACCESORY.Count > 0 && skinData.ARMACCESORY.Count > 0 && skinData.BACKGROUNDACCESORY.Count > 0 && skinData.EYEACCESORY.Count > 0 && skinData.HEADACCESORY.Count > 0))
+            if (obj.RawJson != "[]")
+            {
+                JsonConvert.PopulateObject(obj.RawJson, skinData);
+            }
+        if (skinData != null && obj.RawJson != "[]"  && (skinData.BODYACCESORY.Count > 0 || skinData.ARMACCESORY.Count > 0 || skinData.BACKGROUNDACCESORY.Count > 0 || skinData.EYEACCESORY.Count > 0 || skinData.HEADACCESORY.Count > 0))
         {
             textNoSkins.text = "";
         }
@@ -164,6 +169,7 @@ public class PanelSkinsToPublish : Panel
    
         publishButton.onClick.AddListener(PublishClick);
         UpdateData();
+        ClosedSpinner();
     }
     /// <summary>
     /// No encontró información de las skins
@@ -171,6 +177,7 @@ public class PanelSkinsToPublish : Panel
     /// <param name="obj">causas de error</param>
     private void OnFailed(WebError obj)
     {
+        ClosedSpinner();
         textNoSkins.text = textFail;
         Debug.LogError(obj);
     }
@@ -211,5 +218,15 @@ public class PanelSkinsToPublish : Panel
     private void OnToggleValueChanged(bool status)
     {
         publishButton.interactable = GetSelectedToggle();
+    }
+    /// <summary>
+    /// Oculta spinner de carga
+    /// </summary>
+    private void ClosedSpinner()
+    {
+        for (int i = 0; i < spinner.transform.childCount; i++)
+        {
+            spinner.transform.GetChild(i).gameObject.SetActive(false);
+        }
     }
 }

@@ -1531,6 +1531,8 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+    daysOrTextInjured: 
+    is_clasic: 1
   tokenButton: {fileID: 7704105039993889578}
   panelOpener: {fileID: 9011836489770768701}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -1959,6 +1961,8 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+    daysOrTextInjured: 
+    is_clasic: 1
   tokenButton: {fileID: 6616947286435175752}
   panelOpener: {fileID: 5133238776166466246}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -2968,6 +2972,8 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+    daysOrTextInjured: 
+    is_clasic: 1
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -3946,6 +3952,8 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+    daysOrTextInjured: 
+    is_clasic: 1
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -4153,6 +4161,8 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+    daysOrTextInjured: 
+    is_clasic: 1
   tokenButton: {fileID: 5933777932709028387}
   panelOpener: {fileID: 1959171602323631975}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -4510,6 +4520,8 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+    daysOrTextInjured: 
+    is_clasic: 1
   tokenButton: {fileID: 7408529533092933934}
   panelOpener: {fileID: 8490094708332770495}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -5186,6 +5198,8 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+    daysOrTextInjured: 
+    is_clasic: 1
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -5333,6 +5347,8 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+    daysOrTextInjured: 
+    is_clasic: 1
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -5632,8 +5648,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 7c232ee1afcb6184bab6c32f18b25fd9, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6534,6 +6550,8 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+    daysOrTextInjured: 
+    is_clasic: 1
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -6894,6 +6912,8 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+    daysOrTextInjured: 
+    is_clasic: 1
   tokenButton: {fileID: 4056709819052955223}
   panelOpener: {fileID: 730493622400667485}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -7512,6 +7532,8 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+    daysOrTextInjured: 
+    is_clasic: 1
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -8206,6 +8228,8 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+    daysOrTextInjured: 
+    is_clasic: 1
   tokenButton: {fileID: 8415789603516802952}
   panelOpener: {fileID: 81491802530928376}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -9848,8 +9872,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00061035156, y: -216}
-  m_SizeDelta: {x: -0.95, y: 123.3}
+  m_AnchoredPosition: {x: -0.00061035156, y: -197.2}
+  m_SizeDelta: {x: -0.95, y: 160.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2626736914390676126
 MonoBehaviour:
@@ -9871,8 +9895,8 @@ MonoBehaviour:
   m_ChildAlignment: 1
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 130, y: 130}
-  m_Spacing: {x: 121.5, y: 0}
+  m_CellSize: {x: 200, y: 200}
+  m_Spacing: {x: 50, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &5045039904679619216
@@ -10089,7 +10113,7 @@ MonoBehaviour:
     teamData:
       teamItems: []
   spinner: {fileID: 628157636}
-  classicborderCard: {fileID: -611028203908382085, guid: ead46b0e50f8b37448b1520c58ad30b1, type: 3}
+  classicborderCard: {fileID: 21300000, guid: 0e40132a8099a25488609a24acf6cdfe, type: 3}
   actualborderCard: {fileID: -216139874681259050, guid: 6c3a0cb3ea3587c47889bb67de971fc4, type: 3}
   actualLeagueButton: {fileID: 3933117709107568308}
   classicLeagueButton: {fileID: 1837982146682168488}
@@ -10311,6 +10335,8 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+    daysOrTextInjured: 
+    is_clasic: 1
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -12999,6 +13025,8 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+    daysOrTextInjured: 
+    is_clasic: 1
   tokenButton: {fileID: 4149195557292748973}
   panelOpener: {fileID: 6969938864100423635}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -13372,6 +13400,8 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+    daysOrTextInjured: 
+    is_clasic: 1
   tokenButton: {fileID: 8106074719126308838}
   panelOpener: {fileID: 1613691757964371657}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -14740,6 +14770,8 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+    daysOrTextInjured: 
+    is_clasic: 1
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -15106,6 +15138,8 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+    daysOrTextInjured: 
+    is_clasic: 1
   tokenButton: {fileID: 97059002}
   panelOpener: {fileID: 97059001}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -15176,8 +15210,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 787d3ddc8b2d4834c9c245161bafa0de, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -15625,6 +15659,8 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+    daysOrTextInjured: 
+    is_clasic: 1
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -16225,6 +16261,8 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+    daysOrTextInjured: 
+    is_clasic: 1
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -16585,6 +16623,8 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+    daysOrTextInjured: 
+    is_clasic: 1
   tokenButton: {fileID: 5804736485565311086}
   panelOpener: {fileID: 5571399513383767415}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
