@@ -124,10 +124,12 @@ public class PanelControlDeAcceso : Panel
                 {
                     OpenAuditoryRoom();
                 }
+                SetSpinnerState(false);
             }
             catch
             {
                 OpenAuditoryRoom();
+                SetSpinnerState(false);
             }
         }, (WebError obj) => {
             Debug.LogError(obj);
