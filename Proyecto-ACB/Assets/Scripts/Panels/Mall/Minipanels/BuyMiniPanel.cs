@@ -155,7 +155,7 @@ public class BuyMiniPanel : MonoBehaviour
         }
         else
         {
-            descriptionText.transform.parent.gameObject.SetActive(false);
+            descriptionText.transform.parent.gameObject.SetActive(itemData.item_type != "TOKENHIGTHLIGHT" && itemData.item_type != "TOKENCARD" );
         }
         if (productImage != null)
         {
