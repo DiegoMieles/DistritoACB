@@ -140,6 +140,7 @@ public class BuyMiniPanel : MonoBehaviour
 
         if (itemData.seller_user_id == WebProcedure.Instance.accessData.user)
         {
+            descriptionText.transform.parent.gameObject.SetActive(true);
             descriptionText.resizeTextForBestFit = itemData.item_type != "TOKENHIGTHLIGHT";
             if (publicationDate)
             {
@@ -154,7 +155,7 @@ public class BuyMiniPanel : MonoBehaviour
         }
         else
         {
-            descriptionText.transform.parent.gameObject.SetActive(itemData.item_type != "TOKENHIGTHLIGHT");
+            descriptionText.transform.parent.gameObject.SetActive(itemData.item_type != "TOKENHIGTHLIGHT" && itemData.item_type != "TOKENCARD" );
         }
         if (productImage != null)
         {
