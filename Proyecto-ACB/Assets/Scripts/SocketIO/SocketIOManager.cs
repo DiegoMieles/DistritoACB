@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Newtonsoft.Json;
+using SocketIOClient;
+using System;
 
 public class SocketIOManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public SocketIOUnity actualSocket;
+    public void InitSocket()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        var uri = new Uri("https://www.example.com");
+        actualSocket = new SocketIOUnity(uri, new SocketIOOptions
+        {
+            Query = new Dictionary<string, string>
+        {
+            {"token", "UNITY" }
+        }
+        ,
+            Transport = SocketIOClient.Transport.TransportProtocol.WebSocket
+        });
     }
 }
