@@ -1689,6 +1689,7 @@ MonoBehaviour:
   - {fileID: 1737003510277137167}
   - {fileID: 3257225080134205585}
   - {fileID: 5601841897334846539}
+  AuditorySocketManager: {fileID: 9119835140235873168}
 --- !u!114 &3251468478966540184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1714,6 +1715,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: accfb6892d5c34343a9e9b8c7ae5f2ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  url: http://distritoacb.seguimientooperativo.site:3000/
+  PanelControlAcceso: {fileID: 2906962030446819239}
 --- !u!1 &4893496967485023639
 GameObject:
   m_ObjectHideFlags: 0
@@ -2522,7 +2525,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.20031738, y: -66.09198}
+  m_AnchoredPosition: {x: 0.20031738, y: -66.09204}
   m_SizeDelta: {x: 0.41010365, y: -132.1842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4194985154796020831

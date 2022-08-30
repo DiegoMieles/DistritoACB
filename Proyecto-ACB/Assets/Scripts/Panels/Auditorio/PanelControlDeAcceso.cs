@@ -11,7 +11,7 @@ public class PanelControlDeAcceso : Panel
     /// <summary>
     /// Segundos para sacar al jugador del auditorio
     /// </summary>
-    static float SECONDS_TO_KICK_OUT_PLAYER = 60;
+    static float SECONDS_TO_KICK_OUT_PLAYER = 3;
     [SerializeField]
     [Tooltip("layout donde están los asientos del auditorio")]
     private GameObject layoutAuditory;
@@ -39,6 +39,9 @@ public class PanelControlDeAcceso : Panel
     [SerializeField]
     [Tooltip("asientos dentro del auditorio")]
     private List<Transform> sits;
+    [SerializeField]
+    [Tooltip("Manejador del socket")]
+    private SocketIOManager AuditorySocketManager;
     /// <summary>
     /// iD del asiento ocupado por el jugador 
     /// </summary>
@@ -146,10 +149,13 @@ public class PanelControlDeAcceso : Panel
         PanelTicketAuditory ticket = toggles.FirstOrDefault(t => t.isOn).GetComponent<PanelTicketAuditory>();
         return ticket;
     }
+    /// <summary>
+    /// Abre el auditorio donde están las sillas 
+    /// </summary>
     public void OpenAuditoryRoom()
     {
+        
         SetSpinnerState(false);
-        StartCoroutine(KickOutPlayer());
         isInAuditory = true;
         ACBSingleton.Instance.PanelBuildingSelection.transform.SetAsLastSibling();
         SetSpinnerState(true);
@@ -170,6 +176,8 @@ public class PanelControlDeAcceso : Panel
                     if (seatInfo.id != 0)
                     {
                         seatID = seatInfo.id;
+                        print("OnResponseAdded");
+                        AuditorySocketManager.SetupAuditorySocket(seatID);
                     }
                     layoutAuditory.SetActive(true);
                     layoutSits.SetActive(true);
@@ -195,7 +203,7 @@ public class PanelControlDeAcceso : Panel
             Debug.LogError(obj);
             SetSpinnerState(false);
         });
-      
+        
     }
     private void UpdatePassButton()
     {
@@ -213,6 +221,10 @@ public class PanelControlDeAcceso : Panel
     }
     public void ExitButtonPressed()
     {
+        if (PanelOpener != null && PanelOpener.popup != null)
+        {
+            PanelOpener.popup.GetComponent<Panel>().Close();
+        }
         ACBSingleton.Instance.PanelBuildingSelection.goBackButton.onClick.Invoke();
     }
     public override void Close()
@@ -234,14 +246,12 @@ public class PanelControlDeAcceso : Panel
                     else
                     {
                         isInAuditory = false;
-                        StopAllCoroutines();
                         base.Close();
                     }
                 }
                 catch
                 {
                     isInAuditory = false;
-                    StopAllCoroutines();
                     base.Close();
                 }
             }, (WebError obj) =>
@@ -253,8 +263,10 @@ public class PanelControlDeAcceso : Panel
         {
             base.Close();
         }
-        
     }
+    /// <summary>
+    /// Abre el panel de video
+    /// </summary>
     public void OpenVideoPanel()
     {
         if(PanelOpener != null)
@@ -264,15 +276,7 @@ public class PanelControlDeAcceso : Panel
             PanelOpener.popup.GetComponent<PanelVideoRoomAuditory>().Populate(seatID);
         }
     }
-    public IEnumerator KickOutPlayer()
-    {
-        yield return new WaitForSeconds(SECONDS_TO_KICK_OUT_PLAYER);
-        if(PanelOpener != null && PanelOpener.popup != null)
-        {
-            PanelOpener.popup.GetComponent<Panel>().Close();
-        }
-        ExitButtonPressed();
-    }
+
     /// <summary>
     /// Activa o desactiva el spinner de carga
     /// </summary>
@@ -283,6 +287,14 @@ public class PanelControlDeAcceso : Panel
         for (int i = 0; i < spinner.transform.childCount; i++)
         {
             spinner.transform.GetChild(i).gameObject.SetActive(state);
+        }
+    }
+    private void Update()
+    {
+        if (AuditorySocketManager.receivedMessage && !AuditorySocketManager.sended)
+        {
+            ExitButtonPressed();
+            AuditorySocketManager.sended = true;
         }
     }
 }
