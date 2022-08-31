@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using Newtonsoft.Json;
+using TMPro;
 
 /// <summary>
 /// Controlador de minipanel general de la tienda que controla los productos más básicos
@@ -24,7 +25,7 @@ public class BuyMiniPanel : MonoBehaviour
     protected Text publicationDate;
     [SerializeField]
     [Tooltip("Texto del costo de la publicación")]
-    protected Text ownedItemPrice;
+    protected TextMeshProUGUI ownedItemPrice;
 
     [Space(5)]
     [Header("Title text according item type")]
@@ -150,7 +151,7 @@ public class BuyMiniPanel : MonoBehaviour
             if(ownedItemPrice)
             {
                 ownedItemPrice.transform.parent.gameObject.SetActive(true);
-                ownedItemPrice.text = itemData.price;
+                ownedItemPrice.text = itemData.item_type == "TOKENHIGTHLIGHT" || itemData.item_type == "TOKENCARD" ? "<sprite=3>"  + itemData.price : itemData.price + "<sprite=4>";
             }
         }
         else
