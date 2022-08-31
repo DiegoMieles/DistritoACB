@@ -47,7 +47,7 @@ public class PanelACBallOpenConfirmation : Panel
     /// <param name="acballItemData">Datos de los items de ACBall a mostrar</param>
     /// <param name="onFinishedOpeningACBall">Método que se llama al terminar de abrir un ACBall</param>
     /// <param name="onGoBack">"Método que se ejecuta al cerrar el panel"</param>
-    public void SetupPanel(AcbBallContainer.AcbBallsData.AcBallsItems acballItemData, Action onFinishedOpeningACBall, Action onGoBack)
+    public void SetupPanel(AcbBallContainer.AcbBallsData.AcBallsItems acballItemData, Action onFinishedOpeningACBall, Action onGoBack,bool isJumbleSale = false)
     {
         this.onFinishedOpeningACBall = onFinishedOpeningACBall;
         acballPossibleRewardsList = new List<GameObject>();
@@ -55,7 +55,8 @@ public class PanelACBallOpenConfirmation : Panel
         closePanelButton.onClick.AddListener(() => { onGoBack?.Invoke(); Close(); });
         acballCostText.text = acballItemData.cost.ToString();
         this.acballItemData = acballItemData;
-        WebProcedure.Instance.GetSprite(acballItemData.path_img, OnSuccessLoadingACBallImage, OnFailedLoadingACBallImage);
+        if(isJumbleSale) WebProcedure.Instance.GetJumbleSaleInfoItem(acballItemData.id.ToString(), OnSuccessLoadingItemDataJumbleSale, (error) => { ACBSingleton.Instance.AlertPanel.SetupPanel(error.Message, "", false,null); });
+        else WebProcedure.Instance.GetSprite(acballItemData.path_img, OnSuccessLoadingACBallImage, OnFailedLoadingACBallImage);
     }
 
     #endregion
@@ -157,6 +158,54 @@ public class PanelACBallOpenConfirmation : Panel
     public void ClosingSpinner()
     {
         spinner.gameObject.SetActive(false);
+    }
+
+    /// <summary>
+    /// Método que se ejecuta cuando se ha cargado la imagen de la ACBall exitosamente en el mercadillo
+    /// </summary>
+    /// <param name="obj">Datos de la ACBall cargados</param>
+    private void OnSuccessLoadingItemDataJumbleSale(DataSnapshot obj)
+    {
+        WebProcedure.Instance.GetSprite(acballItemData.path_img, (Sprite obj) =>
+        {
+            acballImage.sprite = obj;
+            openACBallButton.onClick.AddListener(OpenACBallRewardPanel);
+            actualACBCoins.text = Mathf.Clamp(ACBSingleton.Instance.AccountData.statsData.coinsBalance, 0, limit).ToString();
+
+            imagePrefabContainer.sizeDelta = new Vector2(0, imagePrefabContainer.sizeDelta.y);
+        }, (WebError error) => { print(error); });
+
+        JumbleSaleResult.JumbleItemData acballJumbleData = new JumbleSaleResult.JumbleItemData();
+        JsonConvert.PopulateObject(obj.RawJson, acballJumbleData);
+        Debug.Log($"ACBall data = { obj.RawJson}");
+
+        imagePrefabContainer.sizeDelta = new Vector2(0, imagePrefabContainer.sizeDelta.y);
+        if (acballJumbleData.data == null) return;
+        foreach (var url in from assets in acballJumbleData.data.assets.Keys
+                            select acballJumbleData.data.assets.ContainsKey(assets) ? acballJumbleData.data.assets[assets] : null)
+        {
+            if (!string.IsNullOrEmpty(url))
+            {
+                GameObject rewardImage = Instantiate(rewardImagePrefab, imagePrefabContainer);
+                rewardImage.GetComponent<ACBallReward>().SetupRewardImage(url);
+                acballPossibleRewardsList.Add(rewardImage);
+                imagePrefabContainer.sizeDelta += new Vector2(rewardImage.GetComponent<LayoutElement>().preferredWidth, 0);
+            }
+        }
+
+        int buttonPos = 0;
+
+        foreach (var title in from tit_elements in acballJumbleData.data.tit_elements.Keys
+                              select acballJumbleData.data.tit_elements.ContainsKey(tit_elements) ? acballJumbleData.data.tit_elements[tit_elements] : null)
+        {
+            if (!string.IsNullOrEmpty(title))
+            {
+                acballPossibleRewardsList[buttonPos].GetComponentInChildren<Button>().onClick.AddListener(() => { if (innerRewardsName) { innerRewardsName.text = title; } });
+                buttonPos++;
+            }
+        }
+
+
     }
 
     #endregion
