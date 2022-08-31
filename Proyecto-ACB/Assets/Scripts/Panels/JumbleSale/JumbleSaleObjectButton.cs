@@ -13,6 +13,9 @@ public class JumbleSaleObjectButton : MallObjectButton
     [Tooltip("texto de la fecha de publicación ")]
     public Text publishDateText;
     [SerializeField]
+    [Tooltip("texto del nombre del jugador ")]
+    public Text playerName;
+    [SerializeField]
     [Tooltip("color que tendrán las letras de las publicaciones posteadas por el jugador")]
     private Color publicationOwnedColor;
     [Header("Cards")]

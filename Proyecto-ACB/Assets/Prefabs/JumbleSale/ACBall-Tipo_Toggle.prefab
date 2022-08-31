@@ -531,10 +531,11 @@ MonoBehaviour:
   acballImage: {fileID: 7347878471374576521}
   acballTitleText: {fileID: 3849594049419892797}
   acballDescriptionText: {fileID: 5295834550526323901}
-  openConfirmationPanelButton: {fileID: 1103890587528326033}
+  openConfirmationPanelButton: {fileID: 7491739961895215847}
   bubble: {fileID: 1672853009435740451}
   panelOpener: {fileID: 5163982202295006401}
   confirmationPanelPrefab: {fileID: 2840942316626349556, guid: 5453661d3eef815478fc5d264762fd3d, type: 3}
+  isJumbleSale: 1
 --- !u!114 &5163982202295006401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -746,7 +747,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 380.6053, y: -72.5}
+  m_AnchoredPosition: {x: 439.1341, y: -72.5}
   m_SizeDelta: {x: 25.3, y: 145}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2583126193682163290
@@ -1046,7 +1047,7 @@ GameObject:
   - component: {fileID: 1123635192910857647}
   - component: {fileID: 7347878471374576521}
   - component: {fileID: 1292566059388987209}
-  - component: {fileID: 1103890587528326033}
+  - component: {fileID: 7491739961895215847}
   m_Layer: 5
   m_Name: Image - ACBall
   m_TagString: Untagged
@@ -1132,7 +1133,7 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &1103890587528326033
+--- !u!114 &7491739961895215847
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
