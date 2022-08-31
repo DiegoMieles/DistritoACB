@@ -856,7 +856,32 @@ namespace Data
         public string query ="";
 
     }
-
+    public class JumbleUser
+    {
+        public int id;
+        public string user_id;
+        public string nickName;
+        public int skinColor;
+        public int faceForm;
+        public int eyes;
+        public int ear;
+        public int nose;
+        public int mouth;
+        public int eyeBrow;
+        public int hairStyleFront;
+        public int facialHair;
+        public int bodyAccessory;
+        public int headAccessory;
+        public int armAccessory;
+        public int eyesAccessory;
+        public int backGround;
+        public int foreGround;
+        public int hairStyleBack;
+        public int bodyForm;
+        public int hairColor;
+        public int points;
+        public int frozencoins;
+    }
     public class JumbleSaleResult
     {
         public int total_items;
@@ -877,6 +902,7 @@ namespace Data
             public string path_img;
             public bool is_booster;
             public bool is_injured;
+            public JumbleUser user;
         }
         public class JumbleBuyRequest
         {
