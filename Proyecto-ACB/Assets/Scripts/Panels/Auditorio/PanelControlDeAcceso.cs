@@ -157,7 +157,6 @@ public class PanelControlDeAcceso : Panel
         
         SetSpinnerState(false);
         isInAuditory = true;
-        ACBSingleton.Instance.PanelBuildingSelection.transform.SetAsLastSibling();
         SetSpinnerState(true);
         WebProcedure.Instance.GetPlayerSeatInfo((DataSnapshot obj) => {
             try
@@ -181,6 +180,7 @@ public class PanelControlDeAcceso : Panel
                     }
                     layoutAuditory.SetActive(true);
                     layoutSits.SetActive(true);
+                    ACBSingleton.Instance.PanelBuildingSelection.transform.SetAsLastSibling();
                     foreach (Transform sit in sits)
                     {
                         sit.gameObject.SetActive(true);
