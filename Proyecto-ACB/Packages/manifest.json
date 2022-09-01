@@ -9,7 +9,6 @@
     }
   ],
   "dependencies": {
-    "com.itisnajim.socketiounity": "https://github.com/itisnajim/SocketIOUnity.git",
     "com.ptc.vuforia.engine": "file:com.ptc.vuforia.engine-10.5.5.tgz",
     "com.unity.2d.animation": "5.0.10",
     "com.unity.2d.pixel-perfect": "4.0.1",

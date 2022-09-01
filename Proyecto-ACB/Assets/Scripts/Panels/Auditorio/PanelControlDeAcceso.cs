@@ -246,6 +246,7 @@ public class PanelControlDeAcceso : Panel
                     else
                     {
                         isInAuditory = false;
+                        print("exitAuditory");
                         base.Close();
                     }
                 }
