@@ -166,14 +166,14 @@ public class BuyMiniPanel : MonoBehaviour
                 case "BOOSTER":
                     if (productImage != null)
                         productImage.sprite = productSprite;
-
+                    titleText.transform.parent.gameObject.SetActive(itemData.seller_user_id != WebProcedure.Instance.accessData.user);
 
                     break;
 
                 case "SKIN":
                     if (productImage != null)
                         productImage.sprite = productSprite;
-
+                    titleText.transform.parent.gameObject.SetActive(itemData.seller_user_id != WebProcedure.Instance.accessData.user);
                     break;
 
                 default:
@@ -183,7 +183,7 @@ public class BuyMiniPanel : MonoBehaviour
 
         }
         titleText.text = TitleTextFromItemType(itemData.item_type, itemData.seller_user_id == WebProcedure.Instance.accessData.user);
-
+       
           
     }
 
