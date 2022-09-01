@@ -27,34 +27,14 @@ public class SocketIOManager : MonoBehaviour
     {
         InitSocket();
         actualSocket.Socket.On("connect", () => SetupEvents(AuditorySitID));
-        actualSocket.Socket.On<ConnectResponse>(SocketIOEventTypes.Connect, (ConnectResponse callback)=> { print("conetau"); });
         actualSocket.Open();
-        /*   actualSocket.Socket.On(SocketIOEventTypes.Connect, (s, p, a) =>
-          {
-              print("connectado");
-          });
-          actualSocket.Socket.On(SocketIOEventTypes.Disconnect, (s, p, a) =>
-          {
-              print("desconnectado");
-          });
-          actualSocket.Socket.On("check_seat", (s, p, a) => { print("seat"); });*/
-
-       
-       
-    }
-    /// <summary>
-    /// error en la ejecución del socket
-    /// </summary>
-    private void ActualSocket_OnError(object sender, string e)
-    {
-      throw new NotImplementedException();
     }
     /// <summary>
     /// inicialización del socket
     /// </summary>
     private void InitSocket()
     {
-       var uri = new Uri(url);
+        var uri = new Uri(url);
         actualSocket = new SocketManager(uri);
     }
     /// <summary>
@@ -74,7 +54,7 @@ public class SocketIOManager : MonoBehaviour
     public void FinishSocket()
     {
       print("finishSocket");
-      //  actualSocket?.Disconnect();
+        actualSocket.Close();
         receivedMessage = true;
     }
 
