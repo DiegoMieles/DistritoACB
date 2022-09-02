@@ -116,7 +116,7 @@ public class PanelCardCompetitiveTeam : Panel
         {
             ACBSingleton.Instance.AlertPanel.SetupPanel(snapshot.MessageCustom, string.Empty, false, () =>
             {
-                var team =  JsonConvert.DeserializeObject<TokenContainer>(snapshot.RawJson);
+                var team =  JsonConvert.DeserializeObject<AllTokensContainer>(snapshot.RawJson);
                 if (snapshot.Code == 200)
                 {
                     PanelTeamCompetitivo.OnDeleteOrAdd?.Invoke(team);
@@ -146,7 +146,7 @@ public class PanelCardCompetitiveTeam : Panel
         {
             ACBSingleton.Instance.AlertPanel.SetupPanel(snapshot.MessageCustom, string.Empty, false, () =>
             {
-                var team = JsonConvert.DeserializeObject<TokenContainer>(snapshot.RawJson);
+                var team = JsonConvert.DeserializeObject<AllTokensContainer>(snapshot.RawJson);
                 if (snapshot.Code == 200)
                 {
                     PanelTeamCompetitivo.OnDeleteOrAdd?.Invoke(team);

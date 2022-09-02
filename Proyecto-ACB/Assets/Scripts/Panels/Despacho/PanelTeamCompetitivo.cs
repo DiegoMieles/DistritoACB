@@ -13,14 +13,26 @@ using WebAPI;
 /// </summary>
 public class PanelTeamCompetitivo : Panel
 {
+    [SerializeField]
+    [Tooltip("Lista de cartas en el equipo actual")]
+    private Transform actualTokensLayout;
+    [SerializeField]
+    [Tooltip("Lista de cartas en el equipo clásico")]
+    private Transform classicTokensLayout;
     [SerializeField] [Tooltip("Lista de cartas en el equipo en la vista superior")]
     private List<PanelTokenItem> panelTokenItemTop;
     [SerializeField] [Tooltip("Lista de cartas en el equipo en la vista inferior")]
     private List<PanelTokenItem> panelTokenItemButtom;
+    [SerializeField]
+    [Tooltip("Lista de cartas en el equipo en la vista superior de la liga clásica")]
+    private List<PanelTokenItem> panelTokenclassicItemTop;
+    [SerializeField]
+    [Tooltip("Lista de cartas en el equipo en la vista inferior de la liga clásica")]
+    private List<PanelTokenItem> panelTokenclassicItemButtom;
     [SerializeField] [Tooltip("Se ejecuta cuando la traida de datos es fallida")]
     private UnityEvent onFailed;
     [SerializeField] [Tooltip("Contenedor de las cartas")]
-    private TokenContainer tokenContainer = new TokenContainer();
+    private AllTokensContainer tokenContainer = new AllTokensContainer();
     [SerializeField] [Tooltip("Spinner de carga")]
     private GameObject spinner;
     [SerializeField]
@@ -38,7 +50,7 @@ public class PanelTeamCompetitivo : Panel
     [Tooltip("está mostrando la liga actual?")]
     private bool isActualLeague = true;
 
-    public static Action<TokenContainer> OnDeleteOrAdd; //Acción que se encarga de añadir o eliminar una carta según corresponda
+    public static Action<AllTokensContainer> OnDeleteOrAdd; //Acción que se encarga de añadir o eliminar una carta según corresponda
     public static Action OnClose; //Acción que se ejecuta al cerrar el panel
 
     /// <summary>
@@ -47,7 +59,8 @@ public class PanelTeamCompetitivo : Panel
     private void OnEnable()
     {
         SwitchLeague(isActualLeague);
-         OnDeleteOrAdd += (TokenContainer obj) => { if (isActualLeague) CallInfoActualLeague(obj); else CallInfoClassicLeague(obj); } ;
+         OnDeleteOrAdd += (AllTokensContainer obj) => {CallInfoActualLeague(obj); } ;
+        CallInfoActualLeague();
     }
 
     /// <summary>
@@ -55,13 +68,14 @@ public class PanelTeamCompetitivo : Panel
     /// </summary>
     private void OnDestroy()
     {
-        OnDeleteOrAdd -= (TokenContainer obj) => { if (isActualLeague) CallInfoActualLeague(obj); else CallInfoClassicLeague(obj); };
+        OnDeleteOrAdd -= (AllTokensContainer obj) => {CallInfoActualLeague(obj); };
     }
     //cambia la liga que se va a mostrar , clasica o actual
     public void SwitchLeague(bool searchActualLeague)
     {
         isActualLeague = searchActualLeague;
-        if (isActualLeague) CallInfoActualLeague(); else CallInfoClassicLeague();
+        classicTokensLayout.gameObject.SetActive(!isActualLeague);
+        actualTokensLayout.gameObject.SetActive(isActualLeague);
         actualLeagueButton.image.color = isActualLeague ? new Color(1,1,1,1): new Color(1, 1, 1,0.5f);
         classicLeagueButton.image.color = !isActualLeague ? new Color(1, 1, 1, 1) : new Color(1, 1, 1, 0.5f);
     }
@@ -71,31 +85,47 @@ public class PanelTeamCompetitivo : Panel
     /// </summary>
     private void CallInfoActualLeague()
     {
+        spinner.SetActive(true);
         panelTokenItemTop.ForEach(t=>t.ResetToken());
         panelTokenItemButtom.ForEach(t=>t.ResetToken());
         panelTokenItemTop.ForEach(t=> t.booster.transform.parent.GetComponent<Image>().sprite = actualborderCard) ;
-        panelTokenItemButtom.ForEach(t => t.booster.transform.parent.GetComponent<Image>().sprite = actualborderCard);
+        panelTokenItemButtom.ForEach(t => t.booster.transform.parent.GetComponent<Image>().sprite = actualborderCard);        
+        panelTokenclassicItemTop.ForEach(t=>t.ResetToken());
+        panelTokenclassicItemButtom.ForEach(t=>t.ResetToken());
+        panelTokenclassicItemTop.ForEach(t=> t.booster.transform.parent.GetComponent<Image>().sprite = classicborderCard) ;
+        panelTokenclassicItemButtom.ForEach(t => t.booster.transform.parent.GetComponent<Image>().sprite = classicborderCard);
         WebProcedure.Instance.GetCurrentTeamCompetitiveUser(snapshot =>
         {
             Debug.Log("Cards states" + snapshot.RawJson);
-            tokenContainer = new TokenContainer();
+            tokenContainer = new AllTokensContainer();
             JsonConvert.PopulateObject(snapshot.RawJson, tokenContainer);
 
-            if (tokenContainer.teamData.teamItems != null && tokenContainer.teamData.teamItems.Count > 0)
-            {
-                for (var i = 0; i < tokenContainer.teamData.teamItems.Count; i++)
+                if (tokenContainer.current != null && tokenContainer.current.Count > 0)
                 {
-                    var top = panelTokenItemTop.ElementAtOrDefault(i);
-                    var down = panelTokenItemButtom.ElementAtOrDefault(i);
-                    var data =  tokenContainer.teamData.teamItems.ElementAtOrDefault(i);
-                    top?.ShowInfo(data, CallInfoActualLeague,spinner);
-                    down?.ShowInfo(data, CallInfoActualLeague,spinner);
+                    for (var i = 0; i < tokenContainer.current.Count; i++)
+                    {
+                        var top = panelTokenItemTop.ElementAtOrDefault(i);
+                        var down = panelTokenItemButtom.ElementAtOrDefault(i);
+                        var data = tokenContainer.current.ElementAtOrDefault(i);
+                        top?.ShowInfo(data, CallInfoActualLeague, spinner);
+                        down?.ShowInfo(data, CallInfoActualLeague, spinner);
+                    }
+                }            
+                if (tokenContainer.classical != null && tokenContainer.classical.Count > 0)
+                {
+                    for (var i = 0; i < tokenContainer.classical.Count; i++)
+                    {
+                        var top = panelTokenclassicItemTop.ElementAtOrDefault(i);
+                        var down = panelTokenclassicItemButtom.ElementAtOrDefault(i);
+                        var data = tokenContainer.classical.ElementAtOrDefault(i);
+                        top?.ShowInfo(data, CallInfoActualLeague, spinner);
+                        down?.ShowInfo(data, CallInfoActualLeague, spinner);
+                    }
                 }
-            }
-            else
-            {
-                spinner.SetActive(false);
-            }
+                else
+                {
+                    spinner.SetActive(false);
+                }
             
         }, error =>
         {
@@ -108,95 +138,46 @@ public class PanelTeamCompetitivo : Panel
     /// Trae la información del panel del equipo competitivo de la liga actual
     /// </summary>
     /// <param name="team">Contenedor de cartas</param>
-    private void CallInfoActualLeague(TokenContainer team)
+    private void CallInfoActualLeague(AllTokensContainer team)
     {
-        panelTokenItemTop.ForEach(t=>t.ResetToken());
-        panelTokenItemButtom.ForEach(t=>t.ResetToken());
         tokenContainer = team;
+        panelTokenItemTop.ForEach(t => t.ResetToken());
+        panelTokenItemButtom.ForEach(t => t.ResetToken());
         panelTokenItemTop.ForEach(t => t.booster.transform.parent.GetComponent<Image>().sprite = actualborderCard);
         panelTokenItemButtom.ForEach(t => t.booster.transform.parent.GetComponent<Image>().sprite = actualborderCard);
-        if (tokenContainer.teamData.teamItems != null && tokenContainer.teamData.teamItems.Count > 0)
+        panelTokenclassicItemTop.ForEach(t => t.ResetToken());
+        panelTokenclassicItemButtom.ForEach(t => t.ResetToken());
+        panelTokenclassicItemTop.ForEach(t => t.booster.transform.parent.GetComponent<Image>().sprite = classicborderCard);
+        panelTokenclassicItemButtom.ForEach(t => t.booster.transform.parent.GetComponent<Image>().sprite = classicborderCard);
+        if (tokenContainer.current != null && tokenContainer.current.Count > 0)
         {
-            for (var i = 0; i < tokenContainer.teamData.teamItems.Count; i++)
+            for (var i = 0; i < tokenContainer.current.Count; i++)
             {
                 var top = panelTokenItemTop.ElementAtOrDefault(i);
                 var down = panelTokenItemButtom.ElementAtOrDefault(i);
-                var data =  tokenContainer.teamData.teamItems.ElementAtOrDefault(i);
-                top?.ShowInfo(data, CallInfoActualLeague,spinner);
-                down?.ShowInfo(data, CallInfoActualLeague,spinner);
+                var data = tokenContainer.current.ElementAtOrDefault(i);
+                top?.ShowInfo(data, CallInfoActualLeague, spinner);
+                down?.ShowInfo(data, CallInfoActualLeague, spinner);
+            }
+        }
+        if (tokenContainer.classical != null && tokenContainer.classical.Count > 0)
+        {
+            for (var i = 0; i < tokenContainer.classical.Count; i++)
+            {
+                var top = panelTokenclassicItemTop.ElementAtOrDefault(i);
+                var down = panelTokenclassicItemButtom.ElementAtOrDefault(i);
+                var data = tokenContainer.classical.ElementAtOrDefault(i);
+                top?.ShowInfo(data, CallInfoActualLeague, spinner);
+                down?.ShowInfo(data, CallInfoActualLeague, spinner);
             }
         }
         else
         {
             spinner.SetActive(false);
         }
+
     }
 
-    /// <summary>
-    /// Trae la información del panel del equipo competitivo de la liga clásica
-    /// </summary>
-    private void CallInfoClassicLeague()
-    {
-        panelTokenItemTop.ForEach(t => t.ResetToken());
-        panelTokenItemButtom.ForEach(t => t.ResetToken());
-        panelTokenItemTop.ForEach(t => t.booster.transform.parent.GetComponent<Image>().sprite = classicborderCard);
-        panelTokenItemButtom.ForEach(t => t.booster.transform.parent.GetComponent<Image>().sprite = classicborderCard);
-        WebProcedure.Instance.GetCurrentTeamCompetitiveUser(snapshot =>
-        {
-            Debug.Log("Cards states" + snapshot.RawJson);
-            tokenContainer = new TokenContainer();
-            JsonConvert.PopulateObject(snapshot.RawJson, tokenContainer);
-
-            if (tokenContainer.teamData.teamItems != null && tokenContainer.teamData.teamItems.Count > 0)
-            {
-                for (var i = 0; i < tokenContainer.teamData.teamItems.Count; i++)
-                {
-                    var top = panelTokenItemTop.ElementAtOrDefault(i);
-                    var down = panelTokenItemButtom.ElementAtOrDefault(i);
-                    var data = tokenContainer.teamData.teamItems.ElementAtOrDefault(i);
-                    top?.ShowInfo(data, CallInfoClassicLeague, spinner);
-                    down?.ShowInfo(data, CallInfoClassicLeague, spinner);
-                }
-            }
-            else
-            {
-                spinner.SetActive(false);
-            }
-
-        }, error =>
-        {
-            onFailed?.Invoke();
-            spinner.SetActive(false);
-        });
-    }
-
-    /// <summary>
-    /// Trae la información del panel del equipo competitivo de la liga clásica
-    /// </summary>
-    /// <param name="team">Contenedor de cartas</param>
-    private void CallInfoClassicLeague(TokenContainer team)
-    {
-        panelTokenItemTop.ForEach(t => t.ResetToken());
-        panelTokenItemButtom.ForEach(t => t.ResetToken());
-        tokenContainer = team;
-        panelTokenItemTop.ForEach(t => t.booster.transform.parent.GetComponent<Image>().sprite = classicborderCard);
-        panelTokenItemButtom.ForEach(t => t.booster.transform.parent.GetComponent<Image>().sprite = classicborderCard);
-        if (tokenContainer.teamData.teamItems != null && tokenContainer.teamData.teamItems.Count > 0)
-        {
-            for (var i = 0; i < tokenContainer.teamData.teamItems.Count; i++)
-            {
-                var top = panelTokenItemTop.ElementAtOrDefault(i);
-                var down = panelTokenItemButtom.ElementAtOrDefault(i);
-                var data = tokenContainer.teamData.teamItems.ElementAtOrDefault(i);
-                top?.ShowInfo(data, CallInfoClassicLeague, spinner);
-                down?.ShowInfo(data, CallInfoClassicLeague, spinner);
-            }
-        }
-        else
-        {
-            spinner.SetActive(false);
-        }
-    }
     /// <summary>
     /// Muestra las carta en el centro de la pantalla
     /// </summary>

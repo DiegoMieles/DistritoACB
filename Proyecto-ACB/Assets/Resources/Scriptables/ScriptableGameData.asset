@@ -24,7 +24,7 @@ MonoBehaviour:
     url_android: https://play.google.com/store/apps/details?id=com.acb.www&gl=ES
     url_ios: https://apps.apple.com/es/app/acb/id437202587
   mainMenuData:
-    transitionTime: 0
+    transitionTime: 1
     buildInfoData:
     - id: Edf-Banco
       title: Banco
@@ -59,9 +59,6 @@ MonoBehaviour:
     - id: Edf-Mall
       title: Tienda
       info: "En la Tienda podr\xE1s comprar nuevos tokens\n\xA1Atento a las oportunidades!"
-    - id: Edf-Mercadillo
-      title: Mercadillo
-      info: En el Mercadillo puedes vender o comprar productos
     - id: Edf-Cartelera
       title: Cartelera
       info: "Esta es la informaci\xF3n de la cartelera"
@@ -74,3 +71,6 @@ MonoBehaviour:
     - id: Edf-Auditorio
       title: Auditorio
       info: "Esta es la informaci\xF3n sobre el aditorio"
+    - id: Edf-Mercadillo
+      title: Mercadillo
+      info: "Esta es la informaci\xF3n del mercadillo"

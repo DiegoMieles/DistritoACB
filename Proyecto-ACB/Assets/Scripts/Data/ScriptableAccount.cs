@@ -1201,7 +1201,15 @@ namespace Data
         public int price;
     }
 
-
+    /// <summary>
+    /// Contenedor con los datos de cartas de jugadores
+    /// </summary>
+    [Serializable]
+    public class AllTokensContainer
+    {
+        public List<TokenItemData> classical = new List<TokenItemData>();
+        public List<TokenItemData> current = new List<TokenItemData>();
+    }
     /// <summary>
     /// Contenedor con los datos de cartas de jugadores
     /// </summary>
