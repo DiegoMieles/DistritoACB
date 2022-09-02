@@ -50,7 +50,7 @@ public class SubPanelStartChallenge : MonoBehaviour
     {
         titleText.text = titleString;
         this.onFinishAnimation = onFinishAnimation;
-        StartCoroutine(ShowLeague());
+        StartCoroutine(ShowLeague(!FindObjectOfType<Panels.PanelTablonDesafio>(true).isClasicLeague));
     }
 
     #endregion
@@ -68,25 +68,44 @@ public class SubPanelStartChallenge : MonoBehaviour
     /// Corrutina que se encarga de mostrar el logo de la liga antes de empezar la partida
     /// </summary>
     /// <returns></returns>
-    private IEnumerator ShowLeague()
+    private IEnumerator ShowLeague(bool isActualLeague)
     {
-        clasicLeaguePanel.SetActive(true);
-        clasicLeaguePanel.transform.parent.gameObject.SetActive(true);
-        clasicLeaguePanel.GetComponent<Image>().DOFade(1, 0.2f);
-        yield return new WaitForSeconds(1f);
-             clasicLeaguePanel.GetComponent<Image>().DOFade(0, 0.5f).OnComplete(() =>
-             {
+        if(isActualLeague)
+        {
+            actualLeaguePanel.SetActive(true);
+            actualLeaguePanel.transform.parent.gameObject.SetActive(true);
+            actualLeaguePanel.GetComponent<Image>().DOFade(1, 0.2f);
+            yield return new WaitForSeconds(1f);
+            actualLeaguePanel.GetComponent<Image>().DOFade(0, 0.5f).OnComplete(() =>
+            {
 
-                 ACBallPanel.SetActive(true);
-                 clasicLeaguePanel.SetActive(false);
-                 clasicLeaguePanel.transform.parent.gameObject.SetActive(false);
-                 acballTransform.anchoredPosition = startPosition.anchoredPosition;
-                 acballTransform.DOAnchorPos(middlePosition.anchoredPosition, 1f).OnComplete(() => { EndAnimation(); });
-             }
-             );
-         
+                ACBallPanel.SetActive(true);
+                actualLeaguePanel.SetActive(false);
+                actualLeaguePanel.transform.parent.gameObject.SetActive(false);
+                acballTransform.anchoredPosition = startPosition.anchoredPosition;
+                acballTransform.DOAnchorPos(middlePosition.anchoredPosition, 1f).OnComplete(() => { EndAnimation(); });
+            }
+            );
+        }
+        else
+        {
+            clasicLeaguePanel.SetActive(true);
+            clasicLeaguePanel.transform.parent.gameObject.SetActive(true);
+            clasicLeaguePanel.GetComponent<Image>().DOFade(1, 0.2f);
+            yield return new WaitForSeconds(1f);
+            clasicLeaguePanel.GetComponent<Image>().DOFade(0, 0.5f).OnComplete(() =>
+            {
 
+                ACBallPanel.SetActive(true);
+                clasicLeaguePanel.SetActive(false);
+                clasicLeaguePanel.transform.parent.gameObject.SetActive(false);
+                acballTransform.anchoredPosition = startPosition.anchoredPosition;
+                acballTransform.DOAnchorPos(middlePosition.anchoredPosition, 1f).OnComplete(() => { EndAnimation(); });
+            }
+            );
+        }
     }
+
     /// <summary>
     /// Corrutina que se encarga de la finalización de la animación de la ACBall
     /// </summary>

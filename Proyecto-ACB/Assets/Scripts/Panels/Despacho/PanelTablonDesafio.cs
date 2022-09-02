@@ -52,7 +52,7 @@ namespace Panels
         private string mensaje;
 
         private List<GameObject> postedChallenges; //Lista de desafios publicados
-        private bool isClasicLeague;
+        public bool isClasicLeague;
 
         #endregion
 
@@ -126,7 +126,7 @@ namespace Panels
             {
                 onFailed.Invoke();
                 SetSpinnerState(false);
-            });
+            },!isClasicLeague);
         }
 
 
@@ -175,7 +175,7 @@ namespace Panels
             {
                 onFailed.Invoke();
                 SetSpinnerState(false);
-            });
+            }, !isClasicLeague);
         }
         /// <summary>
         /// Llama a la alerta de confirmación de creación de desafio
@@ -232,7 +232,7 @@ namespace Panels
                 Debug.Log("Challenge created");
                 
             }, (error) =>
-                ACBSingleton.Instance.AlertPanel.SetupPanel(CreationErrorText, "", false, null)); 
+                ACBSingleton.Instance.AlertPanel.SetupPanel(CreationErrorText, "", false, null), !isClasicLeague); 
 
         }
 

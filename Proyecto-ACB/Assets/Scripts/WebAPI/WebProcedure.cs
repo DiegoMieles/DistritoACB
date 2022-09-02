@@ -32,15 +32,15 @@ namespace WebAPI
         private const string GetUserCardTCUrl = "GetUserCardTC?id={0}&accessToken={1}&refreshToken={2}";
         private const string GetUserCardTokenTCUrl = "GetUserCardTokenTC?id={0}&accessToken={1}&refreshToken={2}";
         private const string GetUserHigthlightTokenUrl = "GetUserHigthlightToken?id={0}&accessToken={1}&refreshToken={2}";
-        private const string PostCreateChallengeUrl = "PostCreateChallenge?id={0}&accessToken={1}&refreshToken={2}"; 
-        private const string GetChallengesTablonUrl = "GetChallengesTablon?id={0}&accessToken={1}&refreshToken={2}"; 
+        private const string PostCreateChallengeUrl = "PostCreateChallenge?id={0}&accessToken={1}&refreshToken={2}&current={3}"; 
+        private const string GetChallengesTablonUrl = "GetChallengesTablon?id={0}&accessToken={1}&refreshToken={2}&current={3}"; 
         private const string GetCurrentTeamCompetitiveUserUrl = "GetCurrentTeamCompetitiveUser?id={0}&accessToken={1}&refreshToken={2}"; 
         private const string PostAddTokenToTeamUrl = "PostAddTokenToTeam?id={0}&accessToken={1}&refreshToken={2}"; 
         private const string DelRemoveTokenOfTeamUrl = "DelRemoveTokenOfTeam?id={0}&accessToken={1}&refreshToken={2}&tokenCard={3}"; 
         private const string GetCollectionCLUrl = "GetCollectionCL?id={0}&accessToken={1}&refreshToken={2}";
         private const string GetSubCollectionCLUrl = "GetSubCollectionCL?id={0}&accessToken={1}&refreshToken={2}";
         private const string GetCardCLUrl = "GetCardCL?id={0}&accessToken={1}&refreshToken={2}";
-        private const string GetChallengesCanchaUrl = "GetChallengesCancha?id={0}&accessToken={1}&refreshToken={2}";
+        private const string GetChallengesCanchaUrl = "GetChallengesCancha?id={0}&accessToken={1}&refreshToken={2}&current={3}";
         private const string GetUserBoosterByTypeUrl = "GetUserBoosterByType?id={0}&accessToken={1}&refreshToken={2}";
         private const string PostApplyUserBoosterToTokenCardUrl = "PostApplyUserBoosterToTokenCard?id={0}&accessToken={1}&refreshToken={2}";
         private const string PostAcceptChallengeUrl = "PostAcceptChallenge?id={0}&accessToken={1}&refreshToken={2}";
@@ -78,12 +78,12 @@ namespace WebAPI
         /// </summary>
         /// 
 
-        public void GetChallengesCancha(string json, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        public void GetChallengesCancha(string json, Action<DataSnapshot> onSuccess, Action<WebError> onFailed,bool isActualLeague)
         {
             try
             {
                 var form = new WWWForm();
-                var url = String.Format(GetChallengesCanchaUrl, accessData.user, accessData.accessToken, accessData.refreshToken);
+                var url = String.Format(GetChallengesCanchaUrl, accessData.user, accessData.accessToken, accessData.refreshToken, isActualLeague.ToString().ToLower());
                 StartCoroutine(RequestCoroutine(url, json, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbPUT));
             }
             catch (WebException webEx)
@@ -571,12 +571,12 @@ namespace WebAPI
         /// <summary>
         /// Crea un desafio en el tablon.
         /// </summary>.
-        public void PostCreateChallenge(Action< DataSnapshot> onSuccess, Action<WebError> onFailed)
+        public void PostCreateChallenge(Action< DataSnapshot> onSuccess, Action<WebError> onFailed,bool isActualLeague)
         {
             try
             {
                 var form = new WWWForm();
-                var url = String.Format(PostCreateChallengeUrl, accessData.user,accessData.accessToken,accessData.refreshToken);
+                var url = String.Format(PostCreateChallengeUrl, accessData.user,accessData.accessToken,accessData.refreshToken,isActualLeague.ToString().ToLower());
                 StartCoroutine(RequestCoroutine(url,  form, onSuccess, onFailed,null, UnityWebRequest.kHttpVerbPOST));
             }
             catch (WebException webEx)
@@ -613,12 +613,12 @@ namespace WebAPI
         /// Obtiene la lista de desafios en el tablon.
         /// </summary>.
         /// 
-        public  void  GetChallengesTablon (Action< DataSnapshot> onSuccess, Action<WebError> onFailed)
+        public  void  GetChallengesTablon (Action< DataSnapshot> onSuccess, Action<WebError> onFailed,bool isActualLeague)
         {
             try
             {
                 var form = new WWWForm();
-                var url = String.Format(GetChallengesTablonUrl, accessData.user,accessData.accessToken,accessData.refreshToken);
+                var url = String.Format(GetChallengesTablonUrl, accessData.user,accessData.accessToken,accessData.refreshToken, isActualLeague.ToString().ToLower());
                 StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
             }
             catch (WebException webEx)

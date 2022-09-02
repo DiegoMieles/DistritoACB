@@ -67,7 +67,8 @@ public class PanelPavilionField : Panel
     /// </summary>
     public void SwitchLEague(bool isClasic)
     {
-        if(isClasic != isclasicLeague) counter = 1;
+        counter = 1;
+        if (isClasic != isclasicLeague) 
         isclasicLeague = isClasic;
         if (isclasicLeague) UpdatePavilionViewClasicLeague(); else UpdatePavilionViewActualLeague();
         clasicLeagueButton.image.color = isclasicLeague ? new Color(1f, 1f, 1f, 1f) : new Color(1f, 1f, 1f, 0.5f);
@@ -120,7 +121,7 @@ public class PanelPavilionField : Panel
         isLoadingNewItems = true;
         allItemsAreLoaded = false;
         PageBody initialPage = new PageBody() { page = counter };
-        WebProcedure.Instance.GetChallengesCancha(JsonConvert.SerializeObject(initialPage), OnSuccess, OnFailed);
+        WebProcedure.Instance.GetChallengesCancha(JsonConvert.SerializeObject(initialPage), OnSuccess, OnFailed,!isclasicLeague);
     }
 
     
@@ -183,7 +184,7 @@ public class PanelPavilionField : Panel
         isLoadingNewItems = true;
         allItemsAreLoaded = false;
         PageBody initialPage = new PageBody() { page = counter };
-        WebProcedure.Instance.GetChallengesCancha(JsonConvert.SerializeObject(initialPage), OnSuccess, OnFailed);
+        WebProcedure.Instance.GetChallengesCancha(JsonConvert.SerializeObject(initialPage), OnSuccess, OnFailed,!isclasicLeague);
     }
     /// <summary>
     /// Método que se ejecuta cuando los desafios han sido correctamente cargados desde backend

@@ -185,10 +185,18 @@ public class PanelTeamCompetitivo : Panel
     /// Muestra las carta en el centro de la pantalla
     /// </summary>
     /// <param name="index">Índice de la carta</param>
-    public void ShowPivot(int index)
+    public void ShowPivotActualLeague(int index)
     {
         panelTokenItemButtom.ForEach(i=> i.ShowPivot(false));
         panelTokenItemButtom[index].ShowPivot(true);
+    }   /// <summary>
+    /// Muestra las carta en el centro de la pantalla
+    /// </summary>
+    /// <param name="index">Índice de la carta</param>
+    public void ShowPivotClassicLeague(int index)
+    {
+        panelTokenclassicItemButtom.ForEach(i=> i.ShowPivot(false));
+        panelTokenclassicItemButtom[index].ShowPivot(true);
     }
     
     public void SearchForPlayer(bool isActualLeague)

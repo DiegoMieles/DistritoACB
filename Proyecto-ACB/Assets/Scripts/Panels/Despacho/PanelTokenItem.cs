@@ -145,7 +145,7 @@ public class PanelTokenItem : MonoBehaviour
     /// </summary>
     public void ResetToken()
     {
-        imageThumbnail.gameObject.SetActive(false);
+       if(imageThumbnail) imageThumbnail.gameObject.SetActive(false);
 
         if(tokenButton != null)
             tokenButton.interactable = false;

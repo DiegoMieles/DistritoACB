@@ -2912,7 +2912,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3625046861359311347}
         m_TargetAssemblyTypeName: PanelTeamCompetitivo, Assembly-CSharp
-        m_MethodName: ShowPivot
+        m_MethodName: ShowPivotClassicLeague
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28070,7 +28070,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3625046861359311347}
         m_TargetAssemblyTypeName: PanelTeamCompetitivo, Assembly-CSharp
-        m_MethodName: ShowPivot
+        m_MethodName: ShowPivotActualLeague
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
