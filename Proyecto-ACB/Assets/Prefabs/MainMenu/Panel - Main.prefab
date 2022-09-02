@@ -156,12 +156,12 @@ MonoBehaviour:
   buildingData:
     panelToOpen: {fileID: 4539900620625171336, guid: da550ce5ad6e8464ca36c6dce6088b18, type: 3}
     panelIsPrefab: 1
-    panelHasInfoToDisplay: 1
-    storePanelAsPrevious: 1
+    panelHasInfoToDisplay: 0
+    storePanelAsPrevious: 0
     infoTitle: Control de acceso
     infoDescription: "En el Tabl\xF3n de Anuncios podr\xE1s publicar ofertas de desaf\xEDo
       y aceptar las de otros usuarios"
-    buildingIcon: {fileID: -2247894414512913946, guid: ead46b0e50f8b37448b1520c58ad30b1, type: 3}
+    buildingIcon: {fileID: 21300000, guid: 4d166a86a4459a1438b3b63a754ba77c, type: 3}
   buildingId: Edf-Acceso
   lightObject: {fileID: 0}
 --- !u!114 &28144525
@@ -357,7 +357,7 @@ MonoBehaviour:
     storePanelAsPrevious: 0
     infoTitle: Cartelera
     infoDescription: "Esta es la informaci\xF3n sobre el tabl\xF3n"
-    buildingIcon: {fileID: 9125022375614917940, guid: ead46b0e50f8b37448b1520c58ad30b1, type: 3}
+    buildingIcon: {fileID: 21300000, guid: 4838c83f557eceb4f9e567241475431c, type: 3}
   buildingId: Edf-Cartelera
   lightObject: {fileID: 0}
 --- !u!114 &101065528
@@ -834,7 +834,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 329.7337, y: 258.8102}
+  m_AnchoredPosition: {x: 329.7337, y: 258.81018}
   m_SizeDelta: {x: 3395.3516, y: 2807.192}
   m_Pivot: {x: 0.7843906, y: 0.75017214}
 --- !u!114 &311403653
@@ -39134,7 +39134,8 @@ MonoBehaviour:
     panelHasInfoToDisplay: 1
     storePanelAsPrevious: 0
     infoTitle: Auditorio
-    infoDescription: "Descripci\xF3n del auditorio"
+    infoDescription: " En el Auditorio podr\xE1s ver contenidos exclusivos en streaming
+      o grabados. Consigue tu pase VIP para poder acceder."
     buildingIcon: {fileID: 21300000, guid: e51b9d02ae06ed44e9facfd15b2368ec, type: 3}
   buildingId: Edf-Auditorio
   lightObject: {fileID: 0}

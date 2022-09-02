@@ -121,6 +121,7 @@ public class PanelControlDeAcceso : Panel
                 if (error.code == 400)
                 {
                     ACBSingleton.Instance.AlertPanel.SetupPanel(error.message, "", false, () => { });
+                    SetSpinnerState(false);
                     return;
                 }
                 else
@@ -229,7 +230,7 @@ public class PanelControlDeAcceso : Panel
     }
     public override void Close()
     {
-        if (AuditorySocketManager.sended == false)
+        if (AuditorySocketManager.sended == false && seatID != 0)
         {
             RequestLeaveAuditory request = new RequestLeaveAuditory() { seat_id = seatID, user_id = WebProcedure.Instance.accessData.user };
             WebProcedure.Instance.LeaveProjectionRoom(JsonConvert.SerializeObject(request), (DataSnapshot obj) =>
