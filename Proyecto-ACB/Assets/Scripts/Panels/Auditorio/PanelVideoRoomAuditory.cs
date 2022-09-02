@@ -36,6 +36,7 @@ public class PanelVideoRoomAuditory : Panel
     {
         seatID = seat_id;
         videoPlayer.prepareCompleted += (VideoPlayer source) => { StartCoroutine(closeSpinnerTimer(0.5f)); };
+        videoPlayer.loopPointReached += (VideoPlayer source) => { CloseVideoPlayer(); };
     }
     public void ShowVideos()
     {
@@ -60,6 +61,7 @@ public class PanelVideoRoomAuditory : Panel
     /// </summary>
     public void OpenVideoURL(BillBoardReturn.BillboardData data)
     {
+       
         videoPlayer.url = data.media_path;
         if(!string.IsNullOrEmpty( videoPlayer.url))
         {
@@ -95,5 +97,9 @@ public class PanelVideoRoomAuditory : Panel
             spinner.transform.GetChild(i).gameObject.SetActive(state);
         }
     }
-    
+    private void OnDestroy()
+    {
+        videoPlayer.prepareCompleted -= (VideoPlayer source) => { StartCoroutine(closeSpinnerTimer(0.5f)); };
+        videoPlayer.loopPointReached -= (VideoPlayer source) => { CloseVideoPlayer(); };
+    }
 }
