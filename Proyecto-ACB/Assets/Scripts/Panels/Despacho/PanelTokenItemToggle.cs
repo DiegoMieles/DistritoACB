@@ -128,6 +128,9 @@ public class PanelTokenItemToggle : MonoBehaviour
     /// <param name="onBoosterSet">Acción que se ejecuta cuando a la carta se le aplica un potenciador</param>
     public void ShowInfo(TokenItemData tokendata, GameObject objectivePosition = null, Action onDraggedPosition = null, Action onBoosterSet = null, UnityAction<bool> onToggleClicked = null)
     {
+        bool isActualLeague = false;
+        PanelTeamCompetitivo addTeamPanel = FindObjectOfType<PanelTeamCompetitivo>(true);
+        if (addTeamPanel) isActualLeague = addTeamPanel.isActualLeague;
         currentToken = tokendata;
         this.onBoosterSet = onBoosterSet;
         team.SetActive(currentToken.isTeam);
@@ -135,7 +138,7 @@ public class PanelTokenItemToggle : MonoBehaviour
         injured.SetActive(currentToken.isInjured);
         textName.text = tokendata.name;
         textHash.text = tokendata.token;
-        if(imageBorder)imageBorder.sprite = tokendata.is_clasic ? clasicBorderSprite:actualBorderSprite ;
+        if(imageBorder)imageBorder.sprite =isActualLeague ? actualBorderSprite:clasicBorderSprite ;
         if (onToggleClicked != null)
         {
             GetComponent<Toggle>().onValueChanged.AddListener(onToggleClicked);

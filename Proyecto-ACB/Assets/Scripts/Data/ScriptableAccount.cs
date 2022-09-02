@@ -1200,6 +1200,16 @@ namespace Data
         public int item_id;
         public int price;
     }
+    /// <summary>
+    /// mensaje luego de agregar un jugador
+    /// </summary>
+    [Serializable]
+    public class PostSetTeam
+    {
+        public int code;
+        public string message;
+        public AllTokensContainer data = new AllTokensContainer();
+    }
 
     /// <summary>
     /// Contenedor con los datos de cartas de jugadores

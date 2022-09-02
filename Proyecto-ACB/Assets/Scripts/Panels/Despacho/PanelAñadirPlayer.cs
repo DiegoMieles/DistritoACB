@@ -207,7 +207,7 @@ public class PanelAñadirPlayer : Panel
     {
         if (GetSelectedToggle())
         {
-            ACBSingleton.Instance.AlertPanel.SetupPanel(alertAdds, string.Empty, true, CallTeam,null,0,"Aceptar","Cancelar", GetSelectedToggle().GetComponent<PanelTokenItemToggle>().CurrentToken.is_clasic ? clasicLeagueIcon: actualLeagueIcon );
+            ACBSingleton.Instance.AlertPanel.SetupPanel(alertAdds, string.Empty, true, CallTeam,null,0,"Aceptar","Cancelar", FindObjectOfType<PanelTeamCompetitivo>(true).isActualLeague ?  actualLeagueIcon:clasicLeagueIcon);
         }
         else
         {
@@ -227,10 +227,10 @@ public class PanelAñadirPlayer : Panel
             Debug.Log(snapshot.RawJson);
             ACBSingleton.Instance.AlertPanel.SetupPanel(snapshot.MessageCustom, string.Empty, false, () =>
             {
-                var team =  JsonConvert.DeserializeObject<AllTokensContainer>(snapshot.RawJson);
+                var team =  JsonConvert.DeserializeObject<PostSetTeam>(snapshot.RawJson);
                 if (snapshot.Code == 200)
                 {
-                    PanelTeamCompetitivo.OnDeleteOrAdd?.Invoke(team);
+                    PanelTeamCompetitivo.OnDeleteOrAdd?.Invoke(team.data);
                     PanelTeamCompetitivo.OnClose?.Invoke();
                 }
             }, null, 0, "Volver");  
@@ -252,10 +252,10 @@ public class PanelAñadirPlayer : Panel
         {
             ACBSingleton.Instance.AlertPanel.SetupPanel(snapshot.MessageCustom, string.Empty, false, () =>
             {
-                var team = JsonConvert.DeserializeObject<AllTokensContainer>(snapshot.RawJson);
+                var team = JsonConvert.DeserializeObject<PostSetTeam>(snapshot.RawJson);
                 if (snapshot.Code == 200)
                 {
-                    PanelTeamCompetitivo.OnDeleteOrAdd?.Invoke(team);
+                    PanelTeamCompetitivo.OnDeleteOrAdd?.Invoke(team.data);
                     PanelTeamCompetitivo.OnClose?.Invoke();
                     Close();
                 }
@@ -264,7 +264,7 @@ public class PanelAñadirPlayer : Panel
         }, error =>
         {
             ClosedSpinner();
-        });
+        }, GetSelectedToggle().GetComponent<PanelTokenItemToggle>().CurrentToken.token);
     }
 
     /// <summary>

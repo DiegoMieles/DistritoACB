@@ -371,17 +371,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5398882594272845891}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPopup
-        m_Mode: 1
+      - m_Target: {fileID: 3625046861359311347}
+        m_TargetAssemblyTypeName: PanelTeamCompetitivo, Assembly-CSharp
+        m_MethodName: SearchForPlayer
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &5398882594272845891
 MonoBehaviour:
@@ -4188,10 +4188,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9162267691630388929}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPopup
-        m_Mode: 1
+      - m_Target: {fileID: 3625046861359311347}
+        m_TargetAssemblyTypeName: PanelTeamCompetitivo, Assembly-CSharp
+        m_MethodName: SearchForPlayer
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11691,7 +11691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -12625,7 +12625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -18913,6 +18913,7 @@ GameObject:
   - component: {fileID: 5242378206206059316}
   - component: {fileID: 1814088190413357824}
   - component: {fileID: 3625046861359311347}
+  - component: {fileID: 1128084660891885872}
   m_Layer: 5
   m_Name: Panel - TeamCompetitivo
   m_TagString: Untagged
@@ -19053,6 +19054,23 @@ MonoBehaviour:
   actualborderCard: {fileID: -216139874681259050, guid: 6c3a0cb3ea3587c47889bb67de971fc4, type: 3}
   actualLeagueButton: {fileID: 3933117709107568308}
   classicLeagueButton: {fileID: 1837982146682168488}
+  panelOpener: {fileID: 1128084660891885872}
+  isActualLeague: 1
+--- !u!114 &1128084660891885872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5138590404579885915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5303e1a7d9d25864286d6f0a184047e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popupPrefab: {fileID: 5057177399179702113, guid: 71046e26bba3762468ce6bfe215cbc8a, type: 3}
+  canParentCanvas: 1
+  popup: {fileID: 0}
 --- !u!1 &5215349423896277739
 GameObject:
   m_ObjectHideFlags: 0

@@ -47,8 +47,11 @@ public class PanelTeamCompetitivo : Panel
     [SerializeField]
     [Tooltip("botón de la liga clásica")]
     private Button classicLeagueButton;
+    [SerializeField]
+    [Tooltip("Lista de cartas en el equipo actual")]
+    private PanelOpener panelOpener;
     [Tooltip("está mostrando la liga actual?")]
-    private bool isActualLeague = true;
+    public bool isActualLeague = true;
 
     public static Action<AllTokensContainer> OnDeleteOrAdd; //Acción que se encarga de añadir o eliminar una carta según corresponda
     public static Action OnClose; //Acción que se ejecuta al cerrar el panel
@@ -188,5 +191,12 @@ public class PanelTeamCompetitivo : Panel
         panelTokenItemButtom[index].ShowPivot(true);
     }
     
-
+    public void SearchForPlayer(bool isActualLeague)
+    {
+        if(panelOpener)
+        {
+            panelOpener.OpenPopup();
+            panelOpener.popup.GetComponent<Panels.PanelAñadirEquipoCol>().isActualLeague = isActualLeague;
+        }
+    }
 }

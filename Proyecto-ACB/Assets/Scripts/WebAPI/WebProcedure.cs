@@ -27,7 +27,7 @@ namespace WebAPI
         private const string GetPostMallUrl = "GetPostMall?id={0}&accessToken={1}&refreshToken={2}";
         private const string PostMallBuyUrl = "PostMallBuy?id={0}&accessToken={1}&refreshToken={2}";
         private const string GetBoosterUserUrl = "GetBoosterUser?id={0}&accessToken={1}&refreshToken={2}";
-        private const string GetUserCollectionTCUrl = "GetUserCollectionTC?id={0}&accessToken={1}&refreshToken={2}";
+        private const string GetUserCollectionTCUrl = "GetUserCollectionTC?id={0}&accessToken={1}&refreshToken={2}&current={3}";
         private const string GetUserSubCollectionTCUrl = "GetUserSubCollectionTC?id={0}&accessToken={1}&refreshToken={2}";
         private const string GetUserCardTCUrl = "GetUserCardTC?id={0}&accessToken={1}&refreshToken={2}";
         private const string GetUserCardTokenTCUrl = "GetUserCardTokenTC?id={0}&accessToken={1}&refreshToken={2}";
@@ -36,7 +36,7 @@ namespace WebAPI
         private const string GetChallengesTablonUrl = "GetChallengesTablon?id={0}&accessToken={1}&refreshToken={2}"; 
         private const string GetCurrentTeamCompetitiveUserUrl = "GetCurrentTeamCompetitiveUser?id={0}&accessToken={1}&refreshToken={2}"; 
         private const string PostAddTokenToTeamUrl = "PostAddTokenToTeam?id={0}&accessToken={1}&refreshToken={2}"; 
-        private const string DelRemoveTokenOfTeamUrl = "DelRemoveTokenOfTeam?id={0}&accessToken={1}&refreshToken={2}"; 
+        private const string DelRemoveTokenOfTeamUrl = "DelRemoveTokenOfTeam?id={0}&accessToken={1}&refreshToken={2}&tokenCard={3}"; 
         private const string GetCollectionCLUrl = "GetCollectionCL?id={0}&accessToken={1}&refreshToken={2}";
         private const string GetSubCollectionCLUrl = "GetSubCollectionCL?id={0}&accessToken={1}&refreshToken={2}";
         private const string GetCardCLUrl = "GetCardCL?id={0}&accessToken={1}&refreshToken={2}";
@@ -386,12 +386,12 @@ namespace WebAPI
         /// <summary>
         /// Obtiene la lista de colecciones del team competitivo.
         /// </summary>.
-        public  void  GetUserCollectionTC (Action< DataSnapshot> onSuccess, Action<WebError> onFailed)
+        public  void  GetUserCollectionTC (Action< DataSnapshot> onSuccess, Action<WebError> onFailed,bool isActualLeague)
         {
             try
             {
                 var form = new WWWForm();
-                var url = String.Format(GetUserCollectionTCUrl, accessData.user,accessData.accessToken,accessData.refreshToken);
+                var url = String.Format(GetUserCollectionTCUrl, accessData.user,accessData.accessToken,accessData.refreshToken, isActualLeague.ToString().ToLower());
                 StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
             }
             catch (WebException webEx)
@@ -695,11 +695,11 @@ namespace WebAPI
         /// elimina una carta del team competitivo.
         /// </summary>.
         /// 
-        public void DelRemoveTokenOfTeam(string json, Action< DataSnapshot> onSuccess, Action<WebError> onFailed)
+        public void DelRemoveTokenOfTeam(string json, Action< DataSnapshot> onSuccess, Action<WebError> onFailed,string cardToken)
         {
             try
             {
-                var url = String.Format(DelRemoveTokenOfTeamUrl, accessData.user,accessData.accessToken,accessData.refreshToken);
+                var url = String.Format(DelRemoveTokenOfTeamUrl, accessData.user,accessData.accessToken,accessData.refreshToken, cardToken);
                 StartCoroutine(RequestCoroutine(url,  json, onSuccess, onFailed,null, UnityWebRequest.kHttpVerbDELETE));
             }
             catch (WebException webEx)
