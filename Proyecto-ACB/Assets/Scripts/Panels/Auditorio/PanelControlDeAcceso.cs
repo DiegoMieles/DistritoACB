@@ -229,7 +229,7 @@ public class PanelControlDeAcceso : Panel
     }
     public override void Close()
     {
-        if (seatID != 0)
+        if (AuditorySocketManager.sended == false)
         {
             RequestLeaveAuditory request = new RequestLeaveAuditory() { seat_id = seatID, user_id = WebProcedure.Instance.accessData.user };
             WebProcedure.Instance.LeaveProjectionRoom(JsonConvert.SerializeObject(request), (DataSnapshot obj) =>
@@ -294,8 +294,9 @@ public class PanelControlDeAcceso : Panel
     {
         if (AuditorySocketManager.receivedMessage && !AuditorySocketManager.sended)
         {
-            ExitButtonPressed();
             AuditorySocketManager.sended = true;
+            ExitButtonPressed();
+         
         }
     }
 }

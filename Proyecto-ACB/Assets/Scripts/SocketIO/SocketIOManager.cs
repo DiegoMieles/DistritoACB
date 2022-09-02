@@ -45,7 +45,7 @@ public class SocketIOManager : MonoBehaviour
        actualSocket.Socket.Emit("check_seat", AuditorySitID);
         actualSocket.Socket.On<string>("check_seat", (response) =>
        {
-           if(response == "True")
+           if(response.ToLower() == "true")
            {
                FinishSocket();
            }
