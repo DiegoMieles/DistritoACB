@@ -17,17 +17,17 @@ public class PanelTeamCompetitivo : Panel
     [Tooltip("Lista de cartas en el equipo actual")]
     private Transform actualTokensLayout;
     [SerializeField]
-    [Tooltip("Lista de cartas en el equipo clásico")]
+    [Tooltip("Lista de cartas en el equipo cl?sico")]
     private Transform classicTokensLayout;
     [SerializeField] [Tooltip("Lista de cartas en el equipo en la vista superior")]
     private List<PanelTokenItem> panelTokenItemTop;
     [SerializeField] [Tooltip("Lista de cartas en el equipo en la vista inferior")]
     private List<PanelTokenItem> panelTokenItemButtom;
     [SerializeField]
-    [Tooltip("Lista de cartas en el equipo en la vista superior de la liga clásica")]
+    [Tooltip("Lista de cartas en el equipo en la vista superior de la liga cl?sica")]
     private List<PanelTokenItem> panelTokenclassicItemTop;
     [SerializeField]
-    [Tooltip("Lista de cartas en el equipo en la vista inferior de la liga clásica")]
+    [Tooltip("Lista de cartas en el equipo en la vista inferior de la liga cl?sica")]
     private List<PanelTokenItem> panelTokenclassicItemButtom;
     [SerializeField] [Tooltip("Se ejecuta cuando la traida de datos es fallida")]
     private UnityEvent onFailed;
@@ -36,28 +36,28 @@ public class PanelTeamCompetitivo : Panel
     [SerializeField] [Tooltip("Spinner de carga")]
     private GameObject spinner;
     [SerializeField]
-    [Tooltip("borde de las cartas de la liga clásica")]
+    [Tooltip("borde de las cartas de la liga cl?sica")]
     private Sprite classicborderCard;
     [SerializeField]
     [Tooltip("borde de las cartas de la liga actual")]
     private Sprite actualborderCard;
     [SerializeField]
-    [Tooltip("botón de la liga actual")]
+    [Tooltip("bot?n de la liga actual")]
     private Button actualLeagueButton;
     [SerializeField]
-    [Tooltip("botón de la liga clásica")]
+    [Tooltip("bot?n de la liga cl?sica")]
     private Button classicLeagueButton;
     [SerializeField]
     [Tooltip("Lista de cartas en el equipo actual")]
     private PanelOpener panelOpener;
-    [Tooltip("está mostrando la liga actual?")]
+    [Tooltip("est? mostrando la liga actual?")]
     public bool isActualLeague = true;
 
-    public static Action<AllTokensContainer> OnDeleteOrAdd; //Acción que se encarga de añadir o eliminar una carta según corresponda
-    public static Action OnClose; //Acción que se ejecuta al cerrar el panel
+    public static Action<AllTokensContainer> OnDeleteOrAdd; //Acci?n que se encarga de a?adir o eliminar una carta seg?n corresponda
+    public static Action OnClose; //Acci?n que se ejecuta al cerrar el panel
 
     /// <summary>
-    /// Suscribe acción de cerrar panel del equipo competitivo y trae los datos del equipo competitivo
+    /// Suscribe acci?n de cerrar panel del equipo competitivo y trae los datos del equipo competitivo
     /// </summary>
     private void OnEnable()
     {
@@ -84,7 +84,7 @@ public class PanelTeamCompetitivo : Panel
     }
 
     /// <summary>
-    /// Trae la información del panel del equipo competitivo de la liga actual
+    /// Trae la informaci?n del panel del equipo competitivo de la liga actual
     /// </summary>
     private void CallInfoActualLeague()
     {
@@ -138,7 +138,7 @@ public class PanelTeamCompetitivo : Panel
     }
 
     /// <summary>
-    /// Trae la información del panel del equipo competitivo de la liga actual
+    /// Trae la informaci?n del panel del equipo competitivo de la liga actual
     /// </summary>
     /// <param name="team">Contenedor de cartas</param>
     private void CallInfoActualLeague(AllTokensContainer team)
@@ -184,7 +184,7 @@ public class PanelTeamCompetitivo : Panel
     /// <summary>
     /// Muestra las carta en el centro de la pantalla
     /// </summary>
-    /// <param name="index">Índice de la carta</param>
+    /// <param name="index">?ndice de la carta</param>
     public void ShowPivotActualLeague(int index)
     {
         panelTokenItemButtom.ForEach(i=> i.ShowPivot(false));
@@ -192,7 +192,7 @@ public class PanelTeamCompetitivo : Panel
     }   /// <summary>
     /// Muestra las carta en el centro de la pantalla
     /// </summary>
-    /// <param name="index">Índice de la carta</param>
+    /// <param name="index">?ndice de la carta</param>
     public void ShowPivotClassicLeague(int index)
     {
         panelTokenclassicItemButtom.ForEach(i=> i.ShowPivot(false));
@@ -204,7 +204,7 @@ public class PanelTeamCompetitivo : Panel
         if(panelOpener)
         {
             panelOpener.OpenPopup();
-            panelOpener.popup.GetComponent<Panels.PanelAñadirEquipoCol>().isActualLeague = isActualLeague;
+            panelOpener.popup.GetComponent<Panels.PanelAÃ±adirEquipoCol>().isActualLeague = isActualLeague;
         }
     }
 }
