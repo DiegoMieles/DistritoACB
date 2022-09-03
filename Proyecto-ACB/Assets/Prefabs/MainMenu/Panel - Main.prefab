@@ -156,8 +156,8 @@ MonoBehaviour:
   buildingData:
     panelToOpen: {fileID: 4539900620625171336, guid: da550ce5ad6e8464ca36c6dce6088b18, type: 3}
     panelIsPrefab: 1
-    panelHasInfoToDisplay: 0
-    storePanelAsPrevious: 0
+    panelHasInfoToDisplay: 1
+    storePanelAsPrevious: 1
     infoTitle: Control de acceso
     infoDescription: "En el Tabl\xF3n de Anuncios podr\xE1s publicar ofertas de desaf\xEDo
       y aceptar las de otros usuarios"
