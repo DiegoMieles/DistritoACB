@@ -44,7 +44,7 @@ public class PanelPavilionField : Panel
     [Tooltip("botón de la liga clásica")]
     private Button clasicLeagueButton;
     [Tooltip("se está mostrando la liga clásica? ")]
-    private bool isclasicLeague;
+    public  bool isclasicLeague;
     #endregion
 
     #region Unity Methods
@@ -67,8 +67,8 @@ public class PanelPavilionField : Panel
     /// </summary>
     public void SwitchLEague(bool isClasic)
     {
-        counter = 1;
-        if (isClasic != isclasicLeague) 
+        
+        if (isClasic != isclasicLeague) counter = 1;
         isclasicLeague = isClasic;
         if (isclasicLeague) UpdatePavilionViewClasicLeague(); else UpdatePavilionViewActualLeague();
         clasicLeagueButton.image.color = isclasicLeague ? new Color(1f, 1f, 1f, 1f) : new Color(1f, 1f, 1f, 0.5f);

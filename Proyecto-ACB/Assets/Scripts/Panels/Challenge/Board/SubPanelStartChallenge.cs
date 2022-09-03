@@ -50,7 +50,14 @@ public class SubPanelStartChallenge : MonoBehaviour
     {
         titleText.text = titleString;
         this.onFinishAnimation = onFinishAnimation;
-        StartCoroutine(ShowLeague(!FindObjectOfType<Panels.PanelTablonDesafio>(true).isClasicLeague));
+        if(FindObjectOfType<Panels.PanelTablonDesafio>())
+        {
+            StartCoroutine(ShowLeague(!FindObjectOfType<Panels.PanelTablonDesafio>(true).isClasicLeague));
+        }
+        if (FindObjectOfType<PanelPavilionField>())
+        {
+            StartCoroutine(ShowLeague(!FindObjectOfType<PanelPavilionField>(true).isclasicLeague));
+        }
     }
 
     #endregion
