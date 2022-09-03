@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using Newtonsoft.Json;
+using TMPro;
 
 /// <summary>
 /// Controlador de minipanel general de la tienda que controla los productos más básicos
@@ -24,7 +25,7 @@ public class BuyMiniPanel : MonoBehaviour
     protected Text publicationDate;
     [SerializeField]
     [Tooltip("Texto del costo de la publicación")]
-    protected Text ownedItemPrice;
+    protected TextMeshProUGUI ownedItemPrice;
 
     [Space(5)]
     [Header("Title text according item type")]
@@ -140,7 +141,8 @@ public class BuyMiniPanel : MonoBehaviour
 
         if (itemData.seller_user_id == WebProcedure.Instance.accessData.user)
         {
-            descriptionText.resizeTextForBestFit = itemData.item_type != "TOKENHIGTHLIGHT";
+            if(descriptionText != null)descriptionText.transform.parent.gameObject.SetActive(true);
+             if(descriptionText != null)descriptionText.resizeTextForBestFit = itemData.item_type != "TOKENHIGTHLIGHT";
             if (publicationDate)
             {
                 publicationDate.gameObject.SetActive(true);
@@ -149,12 +151,12 @@ public class BuyMiniPanel : MonoBehaviour
             if(ownedItemPrice)
             {
                 ownedItemPrice.transform.parent.gameObject.SetActive(true);
-                ownedItemPrice.text = itemData.price;
+                ownedItemPrice.text = itemData.item_type == "TOKENHIGTHLIGHT" || itemData.item_type == "TOKENCARD" ? "<sprite=3>"  + itemData.price : itemData.price + "<sprite=4>";
             }
         }
         else
         {
-            descriptionText.transform.parent.gameObject.SetActive(itemData.item_type != "TOKENHIGTHLIGHT");
+            if (descriptionText != null) descriptionText.transform.parent.gameObject.SetActive(itemData.item_type != "TOKENHIGTHLIGHT" && itemData.item_type != "TOKENCARD" );
         }
         if (productImage != null)
         {
@@ -164,14 +166,14 @@ public class BuyMiniPanel : MonoBehaviour
                 case "BOOSTER":
                     if (productImage != null)
                         productImage.sprite = productSprite;
-
+                    titleText.transform.parent.gameObject.SetActive(itemData.seller_user_id != WebProcedure.Instance.accessData.user);
 
                     break;
 
                 case "SKIN":
                     if (productImage != null)
                         productImage.sprite = productSprite;
-
+                    titleText.transform.parent.gameObject.SetActive(itemData.seller_user_id != WebProcedure.Instance.accessData.user);
                     break;
 
                 default:
@@ -181,7 +183,7 @@ public class BuyMiniPanel : MonoBehaviour
 
         }
         titleText.text = TitleTextFromItemType(itemData.item_type, itemData.seller_user_id == WebProcedure.Instance.accessData.user);
-
+       
           
     }
 

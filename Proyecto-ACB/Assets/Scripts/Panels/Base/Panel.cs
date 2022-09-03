@@ -23,7 +23,7 @@ public class Panel : MonoBehaviour
     /// <summary>
     /// Cierra panel
     /// </summary>
-    public void Close()
+    public virtual void Close()
     {
         var animator = GetComponent<Animator>();
 

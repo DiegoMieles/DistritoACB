@@ -91,11 +91,11 @@ public class PanelBuildingSelection : Panel
     [SerializeField] [Tooltip("Lista de componentes UI del edificio")]
     private List<GameObject> innerBuildingsUIComponents;
     [SerializeField] [Tooltip("Ícono del edificio")]
-    private Image innerBuildingIcon;
+    public Image innerBuildingIcon;
     [SerializeField] [Tooltip("Texto del edificio")]
-    private Text innerBuildingName;
+    public Text innerBuildingName;
     [SerializeField] [Tooltip("Botón de volver a un panel anterior")]
-    private Button goBackButton;
+    public Button goBackButton;
     [SerializeField] [Tooltip("Vista principal de la ciudad")]
     private GameObject mainMenuWorldView;
 
@@ -111,7 +111,7 @@ public class PanelBuildingSelection : Panel
     private GameObject cachedInnerBuildingObject; //Objeto del edificio actual
     private MissionsData.MissionItemData cachedMissionData; //Data de la misión actual
     
-    private Stack<BuildingCachedData> cachedBuildingsStack; //Pila de edificios visitados dentro de otros
+    public Stack<BuildingCachedData> cachedBuildingsStack {get; private set; } //Pila de edificios visitados dentro de otros
     private BuildingCachedData buildingCachedData; //Datos almacenados de edificio
 
     #endregion

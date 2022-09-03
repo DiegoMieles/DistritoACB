@@ -79,11 +79,11 @@ public class PanelJumbleSale : Panel
     private bool isLoadingNewItems; //Determina si se encuentra cargando más objetos de la tienda
     private PageBody page; //Página actual de los objetos de tienda cargados
     private int counter; //Contador de paginas de objetos mostrados
-    private bool isWriting; //true cuando el jugador está escribiendo 
     
     private const float DistanceToRecalcVisibility = 400.0f; //Distancia para recargar la visibilidad de los objetos de la tienda
     private const float DistanceMarginForLoad = 600.0f; //Distancia para iniciar cargado de objetos
     private float lastPos = Mathf.Infinity; //Última posición donde se encuentra el objeto arrastrable
+    private string researchWord; //Palabra que se usará para buscar entre el mercadillo
 
     #endregion
 
@@ -179,7 +179,7 @@ public class PanelJumbleSale : Panel
                 break;
         }
         SetSpinnerNewState(true);
-        JumbleSaleRequest page = new JumbleSaleRequest() { page = counter, num_items = 20, types = filters.ToArray(), order = order, user_id = ""};
+        JumbleSaleRequest page = new JumbleSaleRequest() { page = counter, num_items = 20, types = filters.ToArray(), order = order, user_id = "", query = researchWord };
         WebProcedure.Instance.GetJumbleSaleItems(JsonConvert.SerializeObject(page), OnSuccessLoadingMallData, OnFailedLoadingMallData);
         UpdateFilterButtons();
        
@@ -312,7 +312,7 @@ public class PanelJumbleSale : Panel
                     order.Add(new string[] { "price", "ASC" });
                     break;
             }
-            JumbleSaleRequest page = new JumbleSaleRequest() { page = counter, num_items = 20, types = filters.ToArray(), order = order,user_id = ""};
+            JumbleSaleRequest page = new JumbleSaleRequest() { page = counter, num_items = 20, types = filters.ToArray(), order = order,user_id = "", query = researchWord };
             WebProcedure.Instance.GetJumbleSaleItems(JsonConvert.SerializeObject(page), OnSuccessScrollLoadingMallData, OnFailedLoadingMallData);
         }
     }
@@ -454,7 +454,6 @@ public class PanelJumbleSale : Panel
     /// </summary>
     public void OnSearchBarChanged(string researchWord)
     {
-        isWriting = true;
         StopAllCoroutines();
         StartCoroutine(TimertoSearch(researchWord, 0.75f));
 
@@ -463,9 +462,9 @@ public class PanelJumbleSale : Panel
     /// Temporizador que luego de x segundos si el jugador no está escribiendo , hace una búsqueda de los items del mercadillo
     /// </summary>
     /// <returns></returns>
-    IEnumerator TimertoSearch(string researchWord,float time)
+    IEnumerator TimertoSearch(string m_researchWord,float time)
     {
-
+        researchWord = m_researchWord;
        yield return new WaitForSeconds(time);
         counter = 1;
         List<string> filters = new List<string>();

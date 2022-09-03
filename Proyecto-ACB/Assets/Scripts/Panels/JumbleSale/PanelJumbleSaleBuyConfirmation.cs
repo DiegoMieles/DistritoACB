@@ -28,6 +28,10 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
     [SerializeField][TextArea]
     [Tooltip("Descripción de alerta al eliminar un item")]
     private string confirmationBuyText ;
+    [Header("Mini panels")]
+    [SerializeField]
+    [Tooltip("Minipanel que muestra la información de la acball publicado junto con lo que esta puede traer dentro")]
+    protected BuyMiniPanelACBall acballMinipanelOwned;
     /// <summary>
     /// Configura los datos a mostrar del producto a comprar
     /// </summary>
@@ -57,15 +61,7 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
         switch (itemData.item_type)
         {
             case "ACBALL":
-                 if (itemData.seller_user_id == WebProcedure.Instance.accessData.user)
-                {
-                    minipanelToOpen = generalBuyMinipanel;
-                }
-                else
-                {
-                    minipanelToOpen = acballMinipanel;
-                }
-             
+                minipanelToOpen = itemData.seller_user_id == WebProcedure.Instance.accessData.user ? acballMinipanelOwned : acballMinipanel ;
                 break;
             case "TOKENCARD":
                 minipanelToOpen = cardBuyMinipanel;

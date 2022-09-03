@@ -130,12 +130,12 @@ public class BuyMiniPanelACBall : BuyMiniPanel
 
         int buttonPos = 0;
 
-        foreach (var title in from tit_elements in acballData.element.tit_elements.Keys
-                              select acballData.element.tit_elements.ContainsKey(tit_elements) ? acballData.element.tit_elements[tit_elements] : null)
+        foreach (var title in from tit_elements in acballJumbleData.data.tit_elements.Keys
+                              select acballJumbleData.data.tit_elements.ContainsKey(tit_elements) ? acballJumbleData.data.tit_elements[tit_elements] : null)
         {
             if (!string.IsNullOrEmpty(title))
             {
-                acballPossibleRewardsList[buttonPos].GetComponentInChildren<Button>().onClick.AddListener(() => { descriptionText.text = title; });
+                acballPossibleRewardsList[buttonPos].GetComponentInChildren<Button>().onClick.AddListener(() => { if (descriptionText) { descriptionText.text = title; } });
                 buttonPos++;
             }
         }

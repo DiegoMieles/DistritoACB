@@ -32,7 +32,7 @@ public class ACBallButton : MonoBehaviour
     private Action onFinishedOpeningACBall; //Acción que se llama una vez una ACBall es abierta
     private Action onGoBack; //Acción que se llama al retroceder en la opción de selecionar si se abre o no una ACBall
     public AcbBallContainer.AcbBallsData.AcBallsItems acballItemData { get; private set; } //Clase con los datos de los items que se encuentran dentro de la ACBall
-
+    public bool isJumbleSale; //si es true este acball está siendo mostrado en los acballs para publicar en el mercadillo
     #region Public Methods
 
     /// <summary>
@@ -91,7 +91,7 @@ public class ACBallButton : MonoBehaviour
     {
         panelOpener.popupPrefab = confirmationPanelPrefab;
         panelOpener.OpenPopup();
-        panelOpener.popup.GetComponent<PanelACBallOpenConfirmation>().SetupPanel(acballItemData, onFinishedOpeningACBall, onGoBack);
+        panelOpener.popup.GetComponent<PanelACBallOpenConfirmation>().SetupPanel(acballItemData, onFinishedOpeningACBall, onGoBack, isJumbleSale);
 
         AcbBallContainer.ACBallUpdateShowBody body = new AcbBallContainer.ACBallUpdateShowBody() { acball_id = acballItemData.id };
 

@@ -13,6 +13,9 @@ public class JumbleSaleObjectButton : MallObjectButton
     [Tooltip("texto de la fecha de publicación ")]
     public Text publishDateText;
     [SerializeField]
+    [Tooltip("texto del nombre del jugador ")]
+    public Text playerName;
+    [SerializeField]
     [Tooltip("color que tendrán las letras de las publicaciones posteadas por el jugador")]
     private Color publicationOwnedColor;
     [Header("Cards")]
@@ -44,10 +47,13 @@ public class JumbleSaleObjectButton : MallObjectButton
         buttonImage.gameObject.SetActive(false);
         tokenCardImage.transform.parent.gameObject.SetActive(false);
         tokenHighlightCardImage.transform.parent.gameObject.SetActive(false);
+        playerName.text = itemData.user.nickName;
         if (itemData.seller_user_id == WebProcedure.Instance.accessData.user)
         {
             publishDateText.color = publicationOwnedColor;
             productName.color = publicationOwnedColor;
+            playerName.color = publicationOwnedColor;
+            playerName.transform.parent.GetComponent<Text>().color = publicationOwnedColor;
         }
        
         publishDateText.text = itemData.publication_date;

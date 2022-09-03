@@ -857,7 +857,35 @@ namespace Data
         public string query ="";
 
     }
-
+    /// <summary>
+    /// retorna los items del mercadillo
+    /// </summary>
+    public class JumbleUser
+    {
+        public int id;
+        public string user_id;
+        public string nickName;
+        public int skinColor;
+        public int faceForm;
+        public int eyes;
+        public int ear;
+        public int nose;
+        public int mouth;
+        public int eyeBrow;
+        public int hairStyleFront;
+        public int facialHair;
+        public int bodyAccessory;
+        public int headAccessory;
+        public int armAccessory;
+        public int eyesAccessory;
+        public int backGround;
+        public int foreGround;
+        public int hairStyleBack;
+        public int bodyForm;
+        public int hairColor;
+        public int points;
+        public int frozencoins;
+    }
     public class JumbleSaleResult
     {
         public int total_items;
@@ -878,17 +906,27 @@ namespace Data
             public string path_img;
             public bool is_booster;
             public bool is_injured;
+            public JumbleUser user;
         }
+        /// <summary>
+        /// Petición para vender algo en el mercadillo
+        /// </summary>
         public class JumbleBuyRequest
         {
             public string user_id ;
             public int item_id ;
         }
+        /// <summary>
+        /// Elimina un elemento del mercadillo
+        /// </summary>
         public class JumbleDeleteItemRequest
         {
             public string user_id ;
             public int item_id ;
         }
+        /// <summary>
+        /// Información de un item del mercadillo
+        /// </summary>
         public class JumbleItemData
         {
             public JumbleCardData data;
@@ -1212,6 +1250,92 @@ namespace Data
     }
 
     /// <summary>
+    ///  petición para validar un QR de pase VIP del auditorio 
+    /// </summary>
+    [Serializable]
+    public class RequestQRTicket
+    {
+        public string code;
+        public string user_id;
+    }
+    /// <summary>
+    /// Información que retorna de la petición de la cartelera del auditorio
+    /// </summary>
+    public class BillBoardReturn
+    {
+        public BillboardData[] data;
+        public class BillboardData
+        {
+            public int id;
+            public string type;
+            public string media_path;
+            public string title;
+            public string description;
+            public string init_date;
+            public string end_date;
+            public int capacity;
+            public bool status;
+            public int useradmin_id;
+            public string created;
+            public string updated;
+            public string thumbnail;
+        }
+    }
+    /// <summary>
+    /// Información que retorna la petición de los pases del jugador en el auditorio
+    /// </summary>
+     public class VIPPassesReturn
+    {
+        public VIPPass[] data;
+        public class VIPPass
+        {
+            public int id;
+            public string user_id;
+            public VIPPassData vip_pass;
+            public class VIPPassData
+            {
+                public int id;
+                public string code;
+                public string title;
+                public string description;
+                public string type;
+                public string media_id;
+            }
+        }
+    }
+    /// <summary>
+    ///  petición para validar un QR de pase VIP del auditorio 
+    /// </summary>
+    [Serializable]
+    public class RequestUseVIPPass
+    {
+        public string user_id;
+        public int userpass_id;
+    }  
+    /// <summary>
+    ///  petición para salir del auditorio
+    /// </summary>
+    [Serializable]
+    public class RequestLeaveAuditory
+    {
+        public string user_id;
+        public int seat_id;
+    }  
+    /// <summary>
+    ///  retorno de la petición de información del asiento en el auditorio
+    /// </summary>
+    [Serializable]
+    public class ReturnSeatInfoAuditory
+    {
+        public int id;
+        public string user_id;
+        public bool status;
+        public int projection_room_id;
+        public int userpass_id;
+        public string created;
+        public string updated;
+
+    /// <summary>
     /// Contenedor con los datos de cartas de jugadores
     /// </summary>
     [Serializable]
@@ -1219,6 +1343,7 @@ namespace Data
     {
         public List<TokenItemData> classical = new List<TokenItemData>();
         public List<TokenItemData> current = new List<TokenItemData>();
+    }
     }
     /// <summary>
     /// Contenedor con los datos de cartas de jugadores
