@@ -1335,6 +1335,7 @@ namespace Data
         public string created;
         public string updated;
 
+    }
     /// <summary>
     /// Contenedor con los datos de cartas de jugadores
     /// </summary>
@@ -1344,7 +1345,7 @@ namespace Data
         public List<TokenItemData> classical = new List<TokenItemData>();
         public List<TokenItemData> current = new List<TokenItemData>();
     }
-    }
+   
     /// <summary>
     /// Contenedor con los datos de cartas de jugadores
     /// </summary>
