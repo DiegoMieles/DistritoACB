@@ -155,7 +155,8 @@ public class PlayerCard : MonoBehaviour
     {
         bool isActualLeague = false;
         PanelTeamCompetitivo addTeamPanel = FindObjectOfType<PanelTeamCompetitivo>(true);
-        if(addTeamPanel)isActualLeague = addTeamPanel.isActualLeague;
+        if (addTeamPanel) isActualLeague = addTeamPanel.isActualLeague;
+        else isActualLeague = tokenData.card.subcollection.collection.edition.current;
         cardBorders.ForEach(t => t.sprite = isActualLeague ? actualborderCard:clasicborderCard );
         this.tokenData = tokenData;
         this.doFillAnimation = doFillAnimation;
@@ -220,7 +221,7 @@ public class PlayerCard : MonoBehaviour
         
         if (tokenData != null)
         {
-            WebProcedure.Instance.GetSprite(tokenData?.pathImgFront, OnSuccess, (failed) => { Debug.Log("Failed loading front image"); });
+            WebProcedure.Instance.GetSprite(tokenData?.card.pathImgFront, OnSuccess, (failed) => { Debug.Log("Failed loading front image"); });
             flipCardButton.interactable = !doFillAnimation;
             frontCardImage.fillAmount = doFillAnimation ? 0f : 1f;
         }
@@ -240,7 +241,7 @@ public class PlayerCard : MonoBehaviour
             SetRarityImage(tokenData.rarity);
             victoriesText.text = tokenData.victories;
             cardNameTexts.ForEach(card => card.text = tokenData.name);
-            WebProcedure.Instance.GetSprite(tokenData.pathThumbnail, (obj) => { picImage.sprite = obj; }, (failed) => { Debug.Log("Failed loading thumbnail image"); });
+            WebProcedure.Instance.GetSprite(tokenData.card.pathThumbnail, (obj) => { picImage.sprite = obj; }, (failed) => { Debug.Log("Failed loading thumbnail image"); });
             threePointerBase.text = tokenData.st_triples;
             threePointerWithBoost.text = tokenData.triples;
             reboundBase.text = tokenData.st_rebounds;
@@ -258,10 +259,10 @@ public class PlayerCard : MonoBehaviour
             isInjure.gameObject?.SetActive(tokenData.isInjured);
             isBooster.gameObject?.SetActive(tokenData.isBooster);
             isTeam.gameObject?.SetActive(tokenData.isTeam);
-            WebProcedure.Instance.GetSprite(tokenData.pathImgCol, (obj) => { imageLeague.sprite = obj; }, (failed) => { Debug.Log("Failed loading col image"); });
+            WebProcedure.Instance.GetSprite(tokenData.card.subcollection.collection.pathImgCol, (obj) => { imageLeague.sprite = obj; }, (failed) => { Debug.Log("Failed loading col image"); });
             var backimg = backCardView.GetComponent<Image>();
             backimg.color= Color.white;
-            WebProcedure.Instance.GetSprite(tokenData.pathImgBack, (obj) => { backimg.sprite = obj; }, (failed) => { Debug.Log("Failed loading back image"); });
+            WebProcedure.Instance.GetSprite(tokenData.card.subcollection.collection.pathImgBack, (obj) => { backimg.sprite = obj; }, (failed) => { Debug.Log("Failed loading back image"); });
         }
         else if(cardData != null)
         {

@@ -131,6 +131,7 @@ public class PanelTokenItemToggle : MonoBehaviour
         bool isActualLeague = false;
         PanelTeamCompetitivo addTeamPanel = FindObjectOfType<PanelTeamCompetitivo>(true);
         if (addTeamPanel) isActualLeague = addTeamPanel.isActualLeague;
+        else isActualLeague = tokendata.card.subcollection.collection.edition.current;
         currentToken = tokendata;
         this.onBoosterSet = onBoosterSet;
         team.SetActive(currentToken.isTeam);
@@ -138,7 +139,7 @@ public class PanelTokenItemToggle : MonoBehaviour
         injured.SetActive(currentToken.isInjured);
         textName.text = tokendata.name;
         textHash.text = tokendata.token;
-        if(imageBorder)imageBorder.sprite =isActualLeague ? actualBorderSprite:clasicBorderSprite ;
+        if (imageBorder)imageBorder.sprite =isActualLeague ? actualBorderSprite:clasicBorderSprite ;
         if (onToggleClicked != null)
         {
             GetComponent<Toggle>().onValueChanged.AddListener(onToggleClicked);
@@ -146,9 +147,9 @@ public class PanelTokenItemToggle : MonoBehaviour
         if (objectivePosition != null)
             dragable.SetupDragable(objectivePosition, onDraggedPosition);
 
-        if (!string.IsNullOrEmpty(currentToken.pathThumbnail))
+        if (!string.IsNullOrEmpty(currentToken.card.pathThumbnail))
         {
-            WebProcedure.Instance.GetSprite(currentToken.pathThumbnail, sprite =>
+            WebProcedure.Instance.GetSprite(currentToken.card.pathThumbnail, sprite =>
             {
                 imageThumbnail.sprite = sprite;
                 imageThumbnail.gameObject.SetActive(true);

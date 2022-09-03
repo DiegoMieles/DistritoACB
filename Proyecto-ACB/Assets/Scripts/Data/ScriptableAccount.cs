@@ -850,11 +850,11 @@ namespace Data
     public class JumbleSaleRequest
     {
         public string[] types;
-        public int num_items ;
+        public int num_items;
         public int page;
         public string user_id;
         public List<string[]> order = new List<string[]>();
-        public string query ="";
+        public string query = "";
 
     }
     /// <summary>
@@ -913,16 +913,16 @@ namespace Data
         /// </summary>
         public class JumbleBuyRequest
         {
-            public string user_id ;
-            public int item_id ;
+            public string user_id;
+            public int item_id;
         }
         /// <summary>
         /// Elimina un elemento del mercadillo
         /// </summary>
         public class JumbleDeleteItemRequest
         {
-            public string user_id ;
-            public int item_id ;
+            public string user_id;
+            public int item_id;
         }
         /// <summary>
         /// Información de un item del mercadillo
@@ -1284,7 +1284,7 @@ namespace Data
     /// <summary>
     /// Información que retorna la petición de los pases del jugador en el auditorio
     /// </summary>
-     public class VIPPassesReturn
+    public class VIPPassesReturn
     {
         public VIPPass[] data;
         public class VIPPass
@@ -1311,7 +1311,7 @@ namespace Data
     {
         public string user_id;
         public int userpass_id;
-    }  
+    }
     /// <summary>
     ///  petición para salir del auditorio
     /// </summary>
@@ -1320,7 +1320,7 @@ namespace Data
     {
         public string user_id;
         public int seat_id;
-    }  
+    }
     /// <summary>
     ///  retorno de la petición de información del asiento en el auditorio
     /// </summary>
@@ -1345,7 +1345,7 @@ namespace Data
         public List<TokenItemData> classical = new List<TokenItemData>();
         public List<TokenItemData> current = new List<TokenItemData>();
     }
-   
+
     /// <summary>
     /// Contenedor con los datos de cartas de jugadores
     /// </summary>
@@ -1407,7 +1407,7 @@ namespace Data
     {
         public int highlight_id;
     }
-    
+
     /// <summary>
     /// Dato de la carta
     /// </summary>
@@ -1479,7 +1479,40 @@ namespace Data
         public List<CardVideoData> videos = new List<CardVideoData>();
         public string daysOrTextInjured;
         public bool is_clasic = true;
+        public CardTokenData card = new CardTokenData();
+    }
+    [Serializable]
+    public class CardTokenData
+    {
+    public string player_name;
+    public string description;
+    public string pathImgFront;
+    public string pathThumbnail;
+    public string st_triples;
+    public string st_freeshots;
+    public string st_rebounds;
+    public string st_assists;
+    public string st_points;
+    public string subcollection_id;
+    public SubCollectionInfo subcollection = new SubCollectionInfo();
+    }
 
+    public class SubCollectionInfo
+    {
+    public int id;
+    public CollectionInfo collection = new CollectionInfo();    
+    }
+
+    public class CollectionInfo
+    {
+    public string pathImgBack;
+    public string pathImgCol;
+    public Edition edition = new Edition();
+    }
+  [Serializable]
+    public class Edition
+    {
+       public bool current;
     }
 
     /// <summary>
