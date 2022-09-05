@@ -158,18 +158,22 @@ public class PanelBuildingSelection : Panel
 
         cachedMissionData = null;
         buildingOptions.SetActive(true);
-        cachedBuildingData = buildingData;
+        if (ACBSingleton.Instance.GameData.mainMenuData.buildInfoData.Find(x => x.title == buildingData.infoTitle).id != "Edf-Cajero" && ACBSingleton.Instance.GameData.mainMenuData.buildInfoData.Find(x => x.title == buildingData.infoTitle).id != "Edf-Cartelera")
+        {
+            cachedBuildingData = buildingData;
+        }
+
         buildingNameText.text = buildingData.infoTitle;
         buildingIcon.sprite = buildingData.buildingIcon;
         
         background.SetActive(true);
 
-        if (cachedBuildingData.panelToOpen != null)
+        if (buildingData.panelToOpen != null)
         {
-            panelOpener.popupPrefab = cachedBuildingData.panelToOpen;
+            panelOpener.popupPrefab = buildingData.panelToOpen;
 
             if (buildingData.panelIsPrefab)
-                buildingEnterButton.onClick.AddListener(OpenBuildingPrefabPanel);
+                buildingEnterButton.onClick.AddListener(()=> { OpenBuildingPrefabPanel(buildingData.panelToOpen, buildingData.panelHasInfoToDisplay); });
             else
             {
                 cachedInnerBuildingObject = buildingData.panelToOpen;
@@ -177,7 +181,7 @@ public class PanelBuildingSelection : Panel
             }
         }
 
-        buildingEnterButton.transform.parent.gameObject.SetActive(cachedBuildingData.panelToOpen != null);
+        buildingEnterButton.transform.parent.gameObject.SetActive(buildingData.panelToOpen != null);
         buildingInfoButton.onClick.AddListener(OpenInfobuildingPanel);
     }
 
@@ -240,22 +244,22 @@ public class PanelBuildingSelection : Panel
     /// <summary>
     /// Abre el prefab del panel del edificio seleccionado
     /// </summary>
-    private void OpenBuildingPrefabPanel()
+    private void OpenBuildingPrefabPanel(GameObject prefabToOpen,bool panelHasInfoToDisplay)
     {
-        Debug.Log(cachedBuildingData.panelToOpen.name);
-        if (WebProcedure.Instance.IsUserNull() && !cachedBuildingData.panelToOpen.GetComponent<PanelHeadquarter>())
+        Debug.Log(prefabToOpen.name);
+        if (WebProcedure.Instance.IsUserNull() && !prefabToOpen.GetComponent<PanelHeadquarter>())
         {
             ACBSingleton.Instance.NoUserInfo();
         }
         else
         {
-            panelOpener.popupPrefab = cachedBuildingData.panelToOpen;
+            panelOpener.popupPrefab = prefabToOpen;
             panelOpener.OpenPopup();
 
             if(cachedMissionData != null)
                 panelOpener.popup.GetComponent<PanelMision>().ShowInfo(cachedMissionData);
 
-            if (cachedBuildingData.panelHasInfoToDisplay)
+            if (panelHasInfoToDisplay)
             {
                 buildingCachedData.AddPanelToClose(panelOpener.popup.GetComponent<Panel>());
                 SetNewGoBackAction(buildingCachedData.buildingPanel.Close);
