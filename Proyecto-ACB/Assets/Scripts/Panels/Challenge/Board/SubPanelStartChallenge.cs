@@ -27,7 +27,15 @@ public class SubPanelStartChallenge : MonoBehaviour
     private RectTransform endPosition;
     [SerializeField] [Tooltip("Texto que se debe mostrar en el título")]
     private string titleString;
-
+    [SerializeField]
+    [Tooltip("panel que muestra el logo de la liga actual")]
+    private GameObject actualLeaguePanel;
+    [SerializeField]
+    [Tooltip("panel que muestra el logo de la liga clásica")]
+    private GameObject clasicLeaguePanel;
+    [SerializeField]
+    [Tooltip("panel que muestra el logo de la liga actual")]
+    private GameObject ACBallPanel;
     private Action onFinishAnimation; //Acción que se ejecuta al finaliza la animación de la ACBall
 
     #endregion
@@ -42,8 +50,14 @@ public class SubPanelStartChallenge : MonoBehaviour
     {
         titleText.text = titleString;
         this.onFinishAnimation = onFinishAnimation;
-        acballTransform.anchoredPosition = startPosition.anchoredPosition;
-        acballTransform.DOAnchorPos(middlePosition.anchoredPosition, 1f).OnComplete(() => { EndAnimation(); });
+        if(FindObjectOfType<Panels.PanelTablonDesafio>())
+        {
+            StartCoroutine(ShowLeague(!FindObjectOfType<Panels.PanelTablonDesafio>(true).isClasicLeague));
+        }
+        if (FindObjectOfType<PanelPavilionField>())
+        {
+            StartCoroutine(ShowLeague(!FindObjectOfType<PanelPavilionField>(true).isclasicLeague));
+        }
     }
 
     #endregion
@@ -56,6 +70,47 @@ public class SubPanelStartChallenge : MonoBehaviour
     private void EndAnimation()
     {
         StartCoroutine(WaitForAnimationEnd());
+    }
+    /// <summary>
+    /// Corrutina que se encarga de mostrar el logo de la liga antes de empezar la partida
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator ShowLeague(bool isActualLeague)
+    {
+        if(isActualLeague)
+        {
+            actualLeaguePanel.SetActive(true);
+            actualLeaguePanel.transform.parent.gameObject.SetActive(true);
+            actualLeaguePanel.GetComponent<Image>().DOFade(1, 0.2f);
+            yield return new WaitForSeconds(1f);
+            actualLeaguePanel.GetComponent<Image>().DOFade(0, 0.5f).OnComplete(() =>
+            {
+
+                ACBallPanel.SetActive(true);
+                actualLeaguePanel.SetActive(false);
+                actualLeaguePanel.transform.parent.gameObject.SetActive(false);
+                acballTransform.anchoredPosition = startPosition.anchoredPosition;
+                acballTransform.DOAnchorPos(middlePosition.anchoredPosition, 1f).OnComplete(() => { EndAnimation(); });
+            }
+            );
+        }
+        else
+        {
+            clasicLeaguePanel.SetActive(true);
+            clasicLeaguePanel.transform.parent.gameObject.SetActive(true);
+            clasicLeaguePanel.GetComponent<Image>().DOFade(1, 0.2f);
+            yield return new WaitForSeconds(1f);
+            clasicLeaguePanel.GetComponent<Image>().DOFade(0, 0.5f).OnComplete(() =>
+            {
+
+                ACBallPanel.SetActive(true);
+                clasicLeaguePanel.SetActive(false);
+                clasicLeaguePanel.transform.parent.gameObject.SetActive(false);
+                acballTransform.anchoredPosition = startPosition.anchoredPosition;
+                acballTransform.DOAnchorPos(middlePosition.anchoredPosition, 1f).OnComplete(() => { EndAnimation(); });
+            }
+            );
+        }
     }
 
     /// <summary>

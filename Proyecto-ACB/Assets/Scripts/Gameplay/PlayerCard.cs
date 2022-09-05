@@ -26,6 +26,15 @@ public class PlayerCard : MonoBehaviour
     private PanelOpener panelOpener;
     [SerializeField] [Tooltip("Prefab del panel donde se ven los videos que contiene la carta")]
     private GameObject videoPanelPrefab;
+    [SerializeField]
+    [Tooltip("borde de las cartas de la liga actual")]
+    private Sprite actualborderCard;
+    [SerializeField]
+    [Tooltip("borde de las cartas de la liga clásica")]
+    private Sprite clasicborderCard;
+    [SerializeField]
+    [Tooltip("botón de la liga actual")]
+    private List<Image> cardBorders;
 
     [Space(5)]
     [Header("Front Card components")]
@@ -144,6 +153,11 @@ public class PlayerCard : MonoBehaviour
     /// <param name="onBoosterAdded">Acción que se ejecuta cuando un potenciador se ha añadido a la carta</param>
     public void SetupCardData(TokenItemData tokenData, Action onClickBackPartCardButton, bool canScroll = true, bool isDeletingAction = true, bool doFillAnimation = false, bool change = true, Action onBoosterAdded = null)
     {
+        bool isActualLeague = false;
+        PanelTeamCompetitivo addTeamPanel = FindObjectOfType<PanelTeamCompetitivo>(true);
+        if (addTeamPanel) isActualLeague = addTeamPanel.isActualLeague;
+        else isActualLeague = tokenData.card.subcollection.collection.edition.current;
+        cardBorders.ForEach(t => t.sprite = isActualLeague ? actualborderCard:clasicborderCard );
         this.tokenData = tokenData;
         this.doFillAnimation = doFillAnimation;
         this.onBoosterAdded = onBoosterAdded;
@@ -174,6 +188,7 @@ public class PlayerCard : MonoBehaviour
     /// <param name="onBoosterAdded">Acción que se ejecuta cuando un potenciador se ha añadido a la carta</param>
     public void SetupCardData(ChallengeAcceptedData.CardChallengeData.CardItems cardData, Action onBoosterAdded = null)
     {
+        cardBorders.ForEach(t => t.sprite = cardData.is_clasic ? clasicborderCard: actualborderCard );
         this.cardData = cardData;
         this.onBoosterAdded = onBoosterAdded;
         LoadFrontCardPart();
@@ -206,7 +221,7 @@ public class PlayerCard : MonoBehaviour
         
         if (tokenData != null)
         {
-            WebProcedure.Instance.GetSprite(tokenData?.pathImgFront, OnSuccess, (failed) => { Debug.Log("Failed loading front image"); });
+            WebProcedure.Instance.GetSprite(tokenData.card.pathImgFront == null ? tokenData.pathImgFront:tokenData.card.pathImgFront, OnSuccess, (failed) => { Debug.Log("Failed loading front image"); });
             flipCardButton.interactable = !doFillAnimation;
             frontCardImage.fillAmount = doFillAnimation ? 0f : 1f;
         }
@@ -226,7 +241,7 @@ public class PlayerCard : MonoBehaviour
             SetRarityImage(tokenData.rarity);
             victoriesText.text = tokenData.victories;
             cardNameTexts.ForEach(card => card.text = tokenData.name);
-            WebProcedure.Instance.GetSprite(tokenData.pathThumbnail, (obj) => { picImage.sprite = obj; }, (failed) => { Debug.Log("Failed loading thumbnail image"); });
+            WebProcedure.Instance.GetSprite(tokenData.card.pathThumbnail == null ? tokenData.pathThumbnail : tokenData.card.pathThumbnail, (obj) => { picImage.sprite = obj; }, (failed) => { Debug.Log("Failed loading thumbnail image"); });
             threePointerBase.text = tokenData.st_triples;
             threePointerWithBoost.text = tokenData.triples;
             reboundBase.text = tokenData.st_rebounds;
@@ -238,16 +253,16 @@ public class PlayerCard : MonoBehaviour
             scoreBase.text = tokenData.st_points;
             scoreWithBoost.text = tokenData.points;
             injuryBackground.color = tokenData.isInjured ? Color.red : Color.black;
-            injuryText.text = tokenData.textInjured;
+            injuryText.text = tokenData.daysOrTextInjured;
             playerName.text = tokenData.name;
 
             isInjure.gameObject?.SetActive(tokenData.isInjured);
             isBooster.gameObject?.SetActive(tokenData.isBooster);
             isTeam.gameObject?.SetActive(tokenData.isTeam);
-            WebProcedure.Instance.GetSprite(tokenData.pathImgCol, (obj) => { imageLeague.sprite = obj; }, (failed) => { Debug.Log("Failed loading col image"); });
+            WebProcedure.Instance.GetSprite(tokenData.card.subcollection.collection.pathImgCol == null ? tokenData.pathImgCol:tokenData.card.subcollection.collection.pathImgCol, (obj) => { imageLeague.sprite = obj; }, (failed) => { Debug.Log("Failed loading col image"); });
             var backimg = backCardView.GetComponent<Image>();
             backimg.color= Color.white;
-            WebProcedure.Instance.GetSprite(tokenData.pathImgBack, (obj) => { backimg.sprite = obj; }, (failed) => { Debug.Log("Failed loading back image"); });
+            WebProcedure.Instance.GetSprite(tokenData.card.subcollection.collection.pathImgBack == null ? tokenData.pathImgBack:tokenData.card.subcollection.collection.pathImgBack, (obj) => { backimg.sprite = obj; }, (failed) => { Debug.Log("Failed loading back image"); });
         }
         else if(cardData != null)
         {
@@ -266,7 +281,7 @@ public class PlayerCard : MonoBehaviour
             scoreBase.text = cardData.st_points;
             scoreWithBoost.text = cardData.points;
             injuryBackground.color = cardData.isInjured ? Color.red : Color.black;
-            injuryText.text = cardData.textInjured;
+            injuryText.text = cardData.daysOrTextInjured;
             playerName.text = cardData.name;
 
             isInjure.gameObject?.SetActive(cardData.isInjured);

@@ -5,14 +5,14 @@ using UnityEngine.UI;
 using WebAPI;
 
 /// <summary>
-/// Controla el bot髇 de desafio en la cancha
+/// Controla el bot贸n de desafio en la cancha
 /// </summary>
 public class ChallengeFieldButton : MonoBehaviour
 {
     #region Fields and properties
 
     [Header("Main components")]
-    [SerializeField] [Tooltip("B髏on de entrar a la simulaci髇 del desafio")]
+    [SerializeField] [Tooltip("B贸ton de entrar a la simulaci贸n del desafio")]
     private Button enterChallengeButton;
     [SerializeField] [Tooltip("Texto con el nombre del jugador")]
     private Text playerName;
@@ -26,12 +26,13 @@ public class ChallengeFieldButton : MonoBehaviour
     private Image playerToken;
     [SerializeField] [Tooltip("Vista del avatar")]
     private AvatarImageView playerView;
-
+    [SerializeField] [Tooltip("Sprite del lugar")]
+    private Sprite spritePlace;
     [Space(5)]
     [Header("Panel to open components")]
     [SerializeField] [Tooltip("Clase que controla la apertura de nuevos paneles a mostrar")]
     private PanelOpener panelOpener;
-    [SerializeField] [Tooltip("Prefab del panel de simulaci髇 del desafio")]
+    [SerializeField] [Tooltip("Prefab del panel de simulaci贸n del desafio")]
     private GameObject panelPrefab;
 
     [Space(5)]
@@ -43,12 +44,19 @@ public class ChallengeFieldButton : MonoBehaviour
 
     private ChallengesField.ChallengeFieldData.ChallengesFieldItem challengeFieldData; //Datos del desafio
 
+    private bool loaded; //Determina si los datos del objeto han sido cargados exitosamente
+    private bool imageloaded; //Determina si la imagen del objeto ha sido cargada
+    private bool loaded2; //Determina si los datos del objeto han sido cargados exitosamente
+    private bool imageloaded2; //Determina si la imagen del objeto ha sido cargada
+    private Coroutine _coroutine; //Corrutina de carga de imagen del objeto de la cancha
+    private Coroutine _coroutine2; //Corrutina de carga de imagen del objeto de la cancha
+    
     #endregion
 
     #region Public Methods
 
     /// <summary>
-    /// Configura el bot髇 con los datos del desafio
+    /// Configura el bot贸n con los datos del desafio
     /// </summary>
     /// <param name="challengeFieldData">Datos de desafio</param>
     public void SetupChallengeButton(ChallengesField.ChallengeFieldData.ChallengesFieldItem challengeFieldData)
@@ -62,12 +70,85 @@ public class ChallengeFieldButton : MonoBehaviour
 
         winStateImage.sprite = playerHasWon ? checkImage : loseImage;
         winState.text = playerHasWon ? "GANASTE" : "PERDISTE";
-        WebProcedure.Instance.GetSprite(challengeFieldData.pathThumbnail, (obj) => { playerToken.sprite = obj; }, (error) => { });
+        WebProcedure.Instance.GetSprite(challengeFieldData.pathThumbnail, (obj) => { if(playerToken)playerToken.sprite = obj; }, (error) => { });
         enterChallengeButton.onClick.AddListener(LoadBackendData);
-        
-       SetActiveSpinner(false);
+        SetActiveSpinner(false);
+        loaded = true;
+        loaded2 = true;
     }
 
+    public void LoadImage()
+    {
+        
+        if (!loaded) 
+            return;
+        if (imageloaded) 
+            return;
+        if (playerToken.sprite != spritePlace) 
+            return;
+        
+        imageloaded = true;
+        playerToken.sprite  = spritePlace;
+        
+        _coroutine = StartCoroutine(WebProcedure.Instance.GetSpriteCoroutine(challengeFieldData.pathThumbnail, (obj) => { playerToken.sprite = obj; },
+                (error) => { }));
+        
+    }
+
+    public void LoadImageAvatar()
+    {
+        if (!loaded2) 
+            return;
+        if (imageloaded2) 
+            return;
+        if (  playerView.BackendLoadedImage.sprite != spritePlace) 
+            return;
+        
+        imageloaded2 = true;
+        playerView.BackendLoadedImage.sprite  = spritePlace;
+        
+        _coroutine2 = StartCoroutine(WebProcedure.Instance.GetSpriteCoroutine(challengeFieldData.img_small, (obj) => {   playerView.BackendLoadedImage.sprite = obj; },
+            (error) => { }));
+    }
+
+    public void DestroyImage()
+    {
+        if (!loaded)
+            return;
+        
+        if (playerToken.sprite == spritePlace) 
+            return;
+        
+        DestroyImmediate(playerToken.sprite);
+        playerToken.sprite = spritePlace;
+        
+        imageloaded = false;
+        
+        if (_coroutine != null)
+        {
+            StopCoroutine(_coroutine); 
+        }
+    }
+
+    public void DestroyImageAvatar()
+    {
+        if (!loaded2)
+            return;
+        
+        if ( playerView.BackendLoadedImage.sprite == spritePlace) 
+            return;
+        
+        DestroyImmediate(  playerView.BackendLoadedImage.sprite);
+        playerView.BackendLoadedImage.sprite = spritePlace;
+        
+        imageloaded2 = false;
+        
+        if (_coroutine2 != null)
+        {
+            StopCoroutine(_coroutine2); 
+        }
+    }
+    
     #endregion
 
     #region Inner Methods
@@ -83,7 +164,7 @@ public class ChallengeFieldButton : MonoBehaviour
     }
 
     /// <summary>
-    /// Abre panel de simulaci髇 del desafio
+    /// Abre panel de simulaci贸n del desafio
     /// </summary>
     /// <param name="obj">Datos del desafio</param>
     private void OpenPrefabPanel(DataSnapshot obj)
@@ -98,19 +179,19 @@ public class ChallengeFieldButton : MonoBehaviour
     }
 
     /// <summary>
-    /// Este m閠odo se activa cuando no se ha podido traer los datos de desafio desde backend
+    /// Este m茅todo se activa cuando no se ha podido traer los datos de desafio desde backend
     /// </summary>
     /// <param name="obj">Clase con los datos de error</param>
     private void OnFailedGettingChallenge(WebError obj)
     {
         SetActiveSpinner(false);
-        ACBSingleton.Instance.AlertPanel.SetupPanel("No se pudo ver este desafio intenta m醩 tarde", string.Empty, false, null);
+        ACBSingleton.Instance.AlertPanel.SetupPanel("No se pudo ver este desafio intenta m谩s tarde", string.Empty, false, null);
     }
     
     /// <summary>
     /// Activa o desactiva el spinner de carga de acuerdo al estado
     /// </summary>
-    /// <param name="state">Estado de activaci髇 del spinner de carga</param>
+    /// <param name="state">Estado de activaci贸n del spinner de carga</param>
     private void SetActiveSpinner(bool state)
     {
         GameObject spinner = GameObject.Find("Spinner_cancha");

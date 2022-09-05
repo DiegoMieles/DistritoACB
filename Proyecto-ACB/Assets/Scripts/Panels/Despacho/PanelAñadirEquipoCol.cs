@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using WebAPI;
-
+using System.Collections;
 namespace Panels
 {
     /// <summary>
@@ -30,13 +30,13 @@ namespace Panels
         private string textFail;
         [SerializeField] [Tooltip("Texto que se muestra cuando no hay datos de colección")]
         private Text textNoColeccion;
-
+        public bool isActualLeague; //es la liga actual la que se está buscando? 
         /// <summary>
         /// Suscribe acción de cerrar panel del equipo competitivo
         /// </summary>
         private void OnEnable()
         {
-            CallInfo();
+            StartCoroutine(CallInfoTimer());
             if(canClose)
                 PanelTeamCompetitivo.OnClose += Close;
         }
@@ -49,7 +49,12 @@ namespace Panels
             if (canClose)
                 PanelTeamCompetitivo.OnClose -= Close;
         }
-
+        IEnumerator CallInfoTimer()
+        {
+            yield return new WaitForSeconds(0.2f);
+            CallInfo();
+        }
+        
         /// <summary>
         /// Carga la información del panel de colecciones
         /// </summary>
@@ -112,7 +117,8 @@ namespace Panels
                 {
                     onFailed.Invoke();
                     ClosedSpinner();
-                });
+                },
+                isActualLeague);
             }
         }
 

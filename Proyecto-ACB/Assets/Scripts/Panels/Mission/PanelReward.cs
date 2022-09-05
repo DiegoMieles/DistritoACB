@@ -172,7 +172,7 @@ public class PanelReward : Panel
         gameObject.SetActive(true);
         rewardACBallImage.gameObject.SetActive(true);
         transform.SetAsFirstSibling();
-
+        //
         this.onShownReward = onShownReward;
         titleText.text = rewardText;
 
@@ -209,7 +209,7 @@ public class PanelReward : Panel
                 Firebase.Analytics.FirebaseAnalytics.LogEvent("win_card", param);
                 Debug.Log("Analytic win_card logged");
 
-                rewardTextName.text = highlight.element.description;
+                rewardTextName.text = highlight.element.name;
                 break;
 
             case ItemType.SKIN:

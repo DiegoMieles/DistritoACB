@@ -27,20 +27,20 @@ namespace WebAPI
         private const string GetPostMallUrl = "GetPostMall?id={0}&accessToken={1}&refreshToken={2}";
         private const string PostMallBuyUrl = "PostMallBuy?id={0}&accessToken={1}&refreshToken={2}";
         private const string GetBoosterUserUrl = "GetBoosterUser?id={0}&accessToken={1}&refreshToken={2}";
-        private const string GetUserCollectionTCUrl = "GetUserCollectionTC?id={0}&accessToken={1}&refreshToken={2}";
+        private const string GetUserCollectionTCUrl = "GetUserCollectionTC?id={0}&accessToken={1}&refreshToken={2}&current={3}";
         private const string GetUserSubCollectionTCUrl = "GetUserSubCollectionTC?id={0}&accessToken={1}&refreshToken={2}";
         private const string GetUserCardTCUrl = "GetUserCardTC?id={0}&accessToken={1}&refreshToken={2}";
         private const string GetUserCardTokenTCUrl = "GetUserCardTokenTC?id={0}&accessToken={1}&refreshToken={2}";
         private const string GetUserHigthlightTokenUrl = "GetUserHigthlightToken?id={0}&accessToken={1}&refreshToken={2}";
-        private const string PostCreateChallengeUrl = "PostCreateChallenge?id={0}&accessToken={1}&refreshToken={2}"; 
-        private const string GetChallengesTablonUrl = "GetChallengesTablon?id={0}&accessToken={1}&refreshToken={2}"; 
+        private const string PostCreateChallengeUrl = "PostCreateChallenge?id={0}&accessToken={1}&refreshToken={2}&current={3}"; 
+        private const string GetChallengesTablonUrl = "GetChallengesTablon?id={0}&accessToken={1}&refreshToken={2}&current={3}"; 
         private const string GetCurrentTeamCompetitiveUserUrl = "GetCurrentTeamCompetitiveUser?id={0}&accessToken={1}&refreshToken={2}"; 
         private const string PostAddTokenToTeamUrl = "PostAddTokenToTeam?id={0}&accessToken={1}&refreshToken={2}"; 
-        private const string DelRemoveTokenOfTeamUrl = "DelRemoveTokenOfTeam?id={0}&accessToken={1}&refreshToken={2}"; 
+        private const string DelRemoveTokenOfTeamUrl = "DelRemoveTokenOfTeam?id={0}&accessToken={1}&refreshToken={2}&tokenCard={3}"; 
         private const string GetCollectionCLUrl = "GetCollectionCL?id={0}&accessToken={1}&refreshToken={2}";
         private const string GetSubCollectionCLUrl = "GetSubCollectionCL?id={0}&accessToken={1}&refreshToken={2}";
         private const string GetCardCLUrl = "GetCardCL?id={0}&accessToken={1}&refreshToken={2}";
-        private const string GetChallengesCanchaUrl = "GetChallengesCancha?id={0}&accessToken={1}&refreshToken={2}";
+        private const string GetChallengesCanchaUrl = "GetChallengesCancha?id={0}&accessToken={1}&refreshToken={2}&current={3}";
         private const string GetUserBoosterByTypeUrl = "GetUserBoosterByType?id={0}&accessToken={1}&refreshToken={2}";
         private const string PostApplyUserBoosterToTokenCardUrl = "PostApplyUserBoosterToTokenCard?id={0}&accessToken={1}&refreshToken={2}";
         private const string PostAcceptChallengeUrl = "PostAcceptChallenge?id={0}&accessToken={1}&refreshToken={2}";
@@ -68,21 +68,30 @@ namespace WebAPI
         private const string MarketplaceBuyUrl = "MarketplaceBuy?id={0}";
         private const string MarketplaceRemoveItemUrl = "MarketplaceRemoveItem?id={0}";
         private const string MarketplaceGetItemUrl = "MarketplaceGetItem?item_id={0}";
+        private const string DigitalizePassUrl = "DigitalizePass?item_id={0}";
+        private const string BillboardUrl = "Billboard?item_id={0}";
+        private const string ViewPassesUrl = "ViewPasses?id={0}";
+        private const string TakeSeatUrl = "TakeSeat?id={0}";
+        private const string GetSeatDetailUrl = "GetSeatDetails?id={0}";
+        private const string LeaveFromProjectionRoomUrl = "LeaveFromProjectionRoom?id={0}";
+        private const string GetVideoDetailsUrl = "GetVideoDetails?id={0}&seat_id={1}&media_id={2}";
 
         public const string CREDENTIALS = "CREDENTIALS";
-        
+
         #region USERS  
-        
+
         /// <summary>
         /// Obtiene lista de desafios de la cancha.
         /// </summary>
-        public  void  GetChallengesCancha (Action< DataSnapshot> onSuccess, Action<WebError> onFailed)
+        /// 
+
+        public void GetChallengesCancha(string json, Action<DataSnapshot> onSuccess, Action<WebError> onFailed,bool isActualLeague)
         {
             try
             {
                 var form = new WWWForm();
-                var url = String.Format(GetChallengesCanchaUrl, accessData.user,accessData.accessToken,accessData.refreshToken);
-                StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
+                var url = String.Format(GetChallengesCanchaUrl, accessData.user, accessData.accessToken, accessData.refreshToken, isActualLeague.ToString().ToLower());
+                StartCoroutine(RequestCoroutine(url, json, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbPUT));
             }
             catch (WebException webEx)
             {
@@ -384,12 +393,12 @@ namespace WebAPI
         /// <summary>
         /// Obtiene la lista de colecciones del team competitivo.
         /// </summary>.
-        public  void  GetUserCollectionTC (Action< DataSnapshot> onSuccess, Action<WebError> onFailed)
+        public  void  GetUserCollectionTC (Action< DataSnapshot> onSuccess, Action<WebError> onFailed,bool isActualLeague)
         {
             try
             {
                 var form = new WWWForm();
-                var url = String.Format(GetUserCollectionTCUrl, accessData.user,accessData.accessToken,accessData.refreshToken);
+                var url = String.Format(GetUserCollectionTCUrl, accessData.user,accessData.accessToken,accessData.refreshToken, isActualLeague.ToString().ToLower());
                 StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
             }
             catch (WebException webEx)
@@ -569,12 +578,12 @@ namespace WebAPI
         /// <summary>
         /// Crea un desafio en el tablon.
         /// </summary>.
-        public void PostCreateChallenge(Action< DataSnapshot> onSuccess, Action<WebError> onFailed)
+        public void PostCreateChallenge(Action< DataSnapshot> onSuccess, Action<WebError> onFailed,bool isActualLeague)
         {
             try
             {
                 var form = new WWWForm();
-                var url = String.Format(PostCreateChallengeUrl, accessData.user,accessData.accessToken,accessData.refreshToken);
+                var url = String.Format(PostCreateChallengeUrl, accessData.user,accessData.accessToken,accessData.refreshToken,isActualLeague.ToString().ToLower());
                 StartCoroutine(RequestCoroutine(url,  form, onSuccess, onFailed,null, UnityWebRequest.kHttpVerbPOST));
             }
             catch (WebException webEx)
@@ -611,12 +620,12 @@ namespace WebAPI
         /// Obtiene la lista de desafios en el tablon.
         /// </summary>.
         /// 
-        public  void  GetChallengesTablon (Action< DataSnapshot> onSuccess, Action<WebError> onFailed)
+        public  void  GetChallengesTablon (Action< DataSnapshot> onSuccess, Action<WebError> onFailed,bool isActualLeague)
         {
             try
             {
                 var form = new WWWForm();
-                var url = String.Format(GetChallengesTablonUrl, accessData.user,accessData.accessToken,accessData.refreshToken);
+                var url = String.Format(GetChallengesTablonUrl, accessData.user,accessData.accessToken,accessData.refreshToken, isActualLeague.ToString().ToLower());
                 StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
             }
             catch (WebException webEx)
@@ -693,11 +702,11 @@ namespace WebAPI
         /// elimina una carta del team competitivo.
         /// </summary>.
         /// 
-        public void DelRemoveTokenOfTeam(string json, Action< DataSnapshot> onSuccess, Action<WebError> onFailed)
+        public void DelRemoveTokenOfTeam(string json, Action< DataSnapshot> onSuccess, Action<WebError> onFailed,string cardToken)
         {
             try
             {
-                var url = String.Format(DelRemoveTokenOfTeamUrl, accessData.user,accessData.accessToken,accessData.refreshToken);
+                var url = String.Format(DelRemoveTokenOfTeamUrl, accessData.user,accessData.accessToken,accessData.refreshToken, cardToken);
                 StartCoroutine(RequestCoroutine(url,  json, onSuccess, onFailed,null, UnityWebRequest.kHttpVerbDELETE));
             }
             catch (WebException webEx)
@@ -1117,6 +1126,102 @@ namespace WebAPI
             var form = new WWWForm();
             var url = String.Format(MarketplaceGetItemUrl, item_id);
             StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
+        }
+        /// <summary>
+        /// Valida el código QR del Pase del auditorio
+        /// </summary>
+        public void DigitalizePass(string json, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            try
+            {
+                var url = String.Format(DigitalizePassUrl, accessData.user, accessData.accessToken, accessData.refreshToken);
+                StartCoroutine(RequestCoroutine(url, json, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbPOST));
+            }
+            catch (WebException webEx)
+            {
+                onFailed?.Invoke(WebError.Create(webEx));
+            }
+            catch (Exception ex)
+            {
+                onFailed?.Invoke(new WebError(ex.Message));
+            }
+
+        }
+        /// <summary>
+        /// Obtiene información de los contenidos del auditorio
+        /// </summary>
+        public void GetBillboardAuditory(Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            var form = new WWWForm();
+            var url = String.Format(BillboardUrl, accessData.user);
+            StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
+        }    
+        /// <summary>
+        /// Obtiene los pases VIP del auditorio obtenidos
+        /// </summary>
+        public void ViewPlayerPasses(Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            var form = new WWWForm();
+            var url = String.Format(ViewPassesUrl, accessData.user);
+            StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
+        }
+        /// <summary>
+        ///Intenta usar un pase VIP para el Auditorio
+        /// </summary>
+        public void UseVIPPass(string json, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            try
+            {
+                var url = String.Format(TakeSeatUrl, accessData.user, accessData.accessToken, accessData.refreshToken);
+                StartCoroutine(RequestCoroutine(url, json, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbPOST));
+            }
+            catch (WebException webEx)
+            {
+                onFailed?.Invoke(WebError.Create(webEx));
+            }
+            catch (Exception ex)
+            {
+                onFailed?.Invoke(new WebError(ex.Message));
+            }
+
+        }
+        /// <summary>
+        /// Obtiene la información de asiento del jugador
+        /// </summary>
+        public void GetPlayerSeatInfo(Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            var form = new WWWForm();
+            var url = String.Format(GetSeatDetailUrl, accessData.user);
+            StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
+        }
+        /// <summary>
+        /// Obtiene la información de asiento del jugador
+        /// </summary>
+        public void GetVideoDetails(int seat_id,int media_id, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            var form = new WWWForm();
+            var url = String.Format(GetVideoDetailsUrl, accessData.user, seat_id,media_id);
+            StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
+        }
+        /// <summary>
+        ///Intenta usar un pase VIP para el Auditorio
+        /// </summary>
+        public void LeaveProjectionRoom(string json, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            try
+            {
+                var url = String.Format(LeaveFromProjectionRoomUrl, accessData.user, accessData.accessToken, accessData.refreshToken);
+                StartCoroutine(RequestCoroutine(url, json, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbPOST));
+            }
+            catch (WebException webEx)
+            {
+                onFailed?.Invoke(WebError.Create(webEx));
+            }
+            catch (Exception ex)
+            {
+                onFailed?.Invoke(new WebError(ex.Message));
+            }
+
         }
         #endregion
 

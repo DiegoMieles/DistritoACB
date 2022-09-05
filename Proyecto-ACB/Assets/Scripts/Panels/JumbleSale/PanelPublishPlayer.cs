@@ -244,57 +244,8 @@ public class PanelPublishPlayer : Panel
         panelOpener.popup.GetComponent<PanelConfirmPublish>().Populate(highlight);
         panelOpener.popup.GetComponent<PanelConfirmPublish>().OnConfirmedPublish += () => { OnConfirmedPublish?.Invoke(); Close(); };
     }
-    /// <summary>
-    /// Carga los datos de la carta
-    /// </summary>
-    private void CallTeam()
-    {
-        Debug.Log("Token data " + GetSelectedToggle().GetComponent<PanelTokenItemToggle>().CurrentToken.token);
-        var cardbody = JsonConvert.SerializeObject(new BodyTokenCard(){ tokenCard = GetSelectedToggle().GetComponent<PanelTokenItemToggle>().CurrentToken.token}) ;
-        WebProcedure.Instance.PostAddTokenToTeam(cardbody, snapshot =>
-        {
-            Debug.Log(snapshot.RawJson);
-            ACBSingleton.Instance.AlertPanel.SetupPanel(snapshot.MessageCustom, string.Empty, false, () =>
-            {
-                var team =  JsonConvert.DeserializeObject<TokenContainer>(snapshot.RawJson);
-                if (snapshot.Code == 200)
-                {
-                    PanelTeamCompetitivo.OnDeleteOrAdd?.Invoke(team);
-                    PanelTeamCompetitivo.OnClose?.Invoke();
-                }
-            }, null, 0, "Volver");  
-        }, error =>
-        {
-            onFailed.Invoke();
-            ClosedSpinner();
-        });
-    }
 
-    /// <summary>
-    /// Elimina la carta del equipo competitivo
-    /// </summary>
-    private void DeleteCardFromTeam()
-    {
-        var cardbody = JsonConvert.SerializeObject(new BodyTokenCard() { tokenCard = GetSelectedToggle().GetComponent<PanelTokenItemToggle>().CurrentToken.token });
 
-        WebProcedure.Instance.DelRemoveTokenOfTeam(cardbody, snapshot =>
-        {
-            ACBSingleton.Instance.AlertPanel.SetupPanel(snapshot.MessageCustom, string.Empty, false, () =>
-            {
-                var team = JsonConvert.DeserializeObject<TokenContainer>(snapshot.RawJson);
-                if (snapshot.Code == 200)
-                {
-                    PanelTeamCompetitivo.OnDeleteOrAdd?.Invoke(team);
-                    PanelTeamCompetitivo.OnClose?.Invoke();
-                    Close();
-                }
-            });
-
-        }, error =>
-        {
-            ClosedSpinner();
-        });
-    }
 
     /// <summary>
     /// Obtiene el objeto arrastrable seleccionado
@@ -316,9 +267,9 @@ public class PanelPublishPlayer : Panel
         if (this.draggedToogle != null)
             this.draggedToogle.Dragable.ResetDragable();
 
-        Action actionView = DeleteCardFromTeam;
+        Action actionView = null;
         if (!cardNewData.isTeam)
-            actionView = CallTeam;
+            actionView = null;
 
         playerCard.SetupCardData(cardNewData, actionView, true, cardNewData.isTeam, true, true, () => { CallInfo(cardId, title); });
         gridLayoutGroupCards.CalculateLayoutInputHorizontal();

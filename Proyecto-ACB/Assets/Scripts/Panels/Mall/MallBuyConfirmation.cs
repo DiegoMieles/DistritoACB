@@ -114,7 +114,7 @@ public class MallBuyConfirmation : Panel
     /// Método que controla si el jugador puede comprar un item o no de acuerdo a la cantidad de ACBCoins que tenga
     /// </summary>
     /// <param name="itemData">Clase con los datos del producto que se quiere comprar</param>
-    protected virtual void CheckIfCanBuyItem(MallContainerData.MallData.MallItems itemData)
+    protected void CheckIfCanBuyItem(MallContainerData.MallData.MallItems itemData)
     {
         spinner.gameObject.SetActive(true);
         if (itemData.price > ACBSingleton.Instance.AccountData.statsData.coinsBalance)
@@ -154,38 +154,45 @@ public class MallBuyConfirmation : Panel
                 case ItemType.SKIN:
 
                     MallContainerData.MallData.MallItemsAvatar skinData = (MallContainerData.MallData.MallItemsAvatar)itemData.ChangeType(ItemType.SKIN);
+                    JsonConvert.PopulateObject(obj.RawJson,skinData);
                     Debug.Log("Analytic buy_skin logged");
 
-                    switch(skinData.element.itemType)
+                    switch(skinData.element.type)
                     {
                         case ItemType.ARMACCESORY:
                             param = new Firebase.Analytics.Parameter("type", ItemType.ARMACCESORY.ToString());
                             Firebase.Analytics.FirebaseAnalytics.LogEvent("buy_skin", param);
+                            Debug.Log("Analytic buy_skin logged"+ItemType.ARMACCESORY.ToString());
                             break;
 
                         case ItemType.BACKGROUNDACCESORY:
                             param = new Firebase.Analytics.Parameter("type", ItemType.BACKGROUNDACCESORY.ToString());
                             Firebase.Analytics.FirebaseAnalytics.LogEvent("buy_skin", param);
+                            Debug.Log("Analytic buy_skin logged"+ItemType.BACKGROUNDACCESORY.ToString());
                             break;
 
                         case ItemType.BODYACCESORY:
                             param = new Firebase.Analytics.Parameter("type", ItemType.BODYACCESORY.ToString());
                             Firebase.Analytics.FirebaseAnalytics.LogEvent("buy_skin", param);
+                            Debug.Log("Analytic buy_skin logged"+ItemType.BODYACCESORY.ToString());
                             break;
 
                         case ItemType.EYEACCESORY:
                             param = new Firebase.Analytics.Parameter("type", ItemType.EYEACCESORY.ToString());
                             Firebase.Analytics.FirebaseAnalytics.LogEvent("buy_skin", param);
+                            Debug.Log("Analytic buy_skin logged"+ItemType.EYEACCESORY.ToString());
                             break;
 
                         case ItemType.FOREGROUNDACCESORY:
                             param = new Firebase.Analytics.Parameter("type", ItemType.FOREGROUNDACCESORY.ToString());
                             Firebase.Analytics.FirebaseAnalytics.LogEvent("buy_skin", param);
+                            Debug.Log("Analytic buy_skin logged"+ItemType.FOREGROUNDACCESORY.ToString());
                             break;
 
                         case ItemType.HEADACCESORY:
                             param = new Firebase.Analytics.Parameter("type", ItemType.HEADACCESORY.ToString());
                             Firebase.Analytics.FirebaseAnalytics.LogEvent("buy_skin", param);
+                            Debug.Log("Analytic buy_skin logged"+ItemType.HEADACCESORY.ToString());
                             break;
                     }
                     break;

@@ -245,8 +245,8 @@ public class BuyMiniPanelCard : BuyMiniPanel
         scoreWithBoost.text = cardData.element.st_points;
         injuryBackground.color = cardData.element.isInjured ? Color.red : Color.black;
         injuryBackground.color = Color.white;
-        injuryText.text = cardData.element.textInjured;
-        
+        injuryText.text = cardData.element.daysOrTextInjured;
+
     }
     /// <summary>
     /// Asigna datos de carta del jugador en el mercadillo
@@ -271,8 +271,8 @@ public class BuyMiniPanelCard : BuyMiniPanel
         scoreWithBoost.text = cardData.data.points;
         injuryBackground.color = cardData.data.isInjured ? Color.red : Color.black;
         injuryBackground.color = Color.white;
-        injuryText.text = cardData.data.textInjured;
-        
+        injuryText.text = cardData.data.daysOrTextInjured;
+
     }
 
     /// <summary>

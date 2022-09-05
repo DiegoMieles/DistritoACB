@@ -19,7 +19,7 @@ public class PanelTokenItem : MonoBehaviour
     [SerializeField] [Tooltip("Imagen de la carta en el equipo competitivo")]
     private GameObject team;
     [SerializeField] [Tooltip("Imagen de potenciador activo en la carta")]
-    private GameObject booster;
+    public GameObject booster;
     [SerializeField] [Tooltip("Imagen de carta con lesi�n")]
     private GameObject injured;
     [SerializeField] [Tooltip("Punto central de la carta")]
@@ -145,7 +145,7 @@ public class PanelTokenItem : MonoBehaviour
     /// </summary>
     public void ResetToken()
     {
-        imageThumbnail.gameObject.SetActive(false);
+       if(imageThumbnail) imageThumbnail.gameObject.SetActive(false);
 
         if(tokenButton != null)
             tokenButton.interactable = false;

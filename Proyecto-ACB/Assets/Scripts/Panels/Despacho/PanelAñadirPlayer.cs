@@ -32,7 +32,12 @@ public class PanelAñadirPlayer : Panel
     private string alertAdds = "¿Quieres añadir el token a tu Equipo Competitivo?";
     [SerializeField] [Tooltip("Segundo título de alerta para añadir carta al equipo competitivo")]
     private string alertFailAdds = "Elige el token que quieres añadir a tu Equipo.";
-
+    [SerializeField]
+    [Tooltip("icono de la liga clásica")]
+    private Sprite clasicLeagueIcon;
+    [SerializeField]
+    [Tooltip("icono de la liga actual")]
+    private Sprite actualLeagueIcon;
     [Space(10)]
     [Header("Dragable reference")]
     [SerializeField] [Tooltip("Posición final de objetos arrastrables")]
@@ -202,7 +207,7 @@ public class PanelAñadirPlayer : Panel
     {
         if (GetSelectedToggle())
         {
-            ACBSingleton.Instance.AlertPanel.SetupPanel(alertAdds, string.Empty, true, CallTeam);
+            ACBSingleton.Instance.AlertPanel.SetupPanel(alertAdds, string.Empty, true, CallTeam,null,0,"Aceptar","Cancelar", FindObjectOfType<PanelTeamCompetitivo>(true).isActualLeague ?  actualLeagueIcon:clasicLeagueIcon);
         }
         else
         {
@@ -222,10 +227,10 @@ public class PanelAñadirPlayer : Panel
             Debug.Log(snapshot.RawJson);
             ACBSingleton.Instance.AlertPanel.SetupPanel(snapshot.MessageCustom, string.Empty, false, () =>
             {
-                var team =  JsonConvert.DeserializeObject<TokenContainer>(snapshot.RawJson);
+                var team =  JsonConvert.DeserializeObject<PostSetTeam>(snapshot.RawJson);
                 if (snapshot.Code == 200)
                 {
-                    PanelTeamCompetitivo.OnDeleteOrAdd?.Invoke(team);
+                    PanelTeamCompetitivo.OnDeleteOrAdd?.Invoke(team.data);
                     PanelTeamCompetitivo.OnClose?.Invoke();
                 }
             }, null, 0, "Volver");  
@@ -247,10 +252,10 @@ public class PanelAñadirPlayer : Panel
         {
             ACBSingleton.Instance.AlertPanel.SetupPanel(snapshot.MessageCustom, string.Empty, false, () =>
             {
-                var team = JsonConvert.DeserializeObject<TokenContainer>(snapshot.RawJson);
+                var team = JsonConvert.DeserializeObject<PostSetTeam>(snapshot.RawJson);
                 if (snapshot.Code == 200)
                 {
-                    PanelTeamCompetitivo.OnDeleteOrAdd?.Invoke(team);
+                    PanelTeamCompetitivo.OnDeleteOrAdd?.Invoke(team.data);
                     PanelTeamCompetitivo.OnClose?.Invoke();
                     Close();
                 }
@@ -259,7 +264,7 @@ public class PanelAñadirPlayer : Panel
         }, error =>
         {
             ClosedSpinner();
-        });
+        }, GetSelectedToggle().GetComponent<PanelTokenItemToggle>().CurrentToken.token);
     }
 
     /// <summary>

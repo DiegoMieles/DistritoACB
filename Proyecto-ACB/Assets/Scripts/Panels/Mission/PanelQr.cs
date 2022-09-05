@@ -24,12 +24,16 @@ public class PanelQr : Panel
 	[HideInInspector] 
 	public MissionsData.MissionItemData currentMissionData; //Datos de la misión actual (la seleccionada por el jugador)
 
-	#region Unity Methods
+    #region Unity Methods
 
-	/// <summary>
-	/// Se ejecuta cuando el panel ha sido iniciado por primera vez en escena, configurando el botón de cerrado de panel
-	/// </summary>
-	private void Start()
+    private void Awake()
+    {
+		GetComponent<QRCodeDecodeController>().onQRScanFinished.AddListener(qrScanFinished);
+	}
+    /// <summary>
+    /// Se ejecuta cuando el panel ha sido iniciado por primera vez en escena, configurando el botón de cerrado de panel
+    /// </summary>
+    private void Start()
     {
 	    exitButton.onClick.AddListener(() => { CloseQRPanel(); });
     }
@@ -119,7 +123,7 @@ public class PanelQr : Panel
 	/// <summary>
 	/// Detiene la lectura del código QR y cierra el panel
 	/// </summary>
-	private void CloseQRPanel()
+	public void CloseQRPanel()
     {
 	    e_qrController.StopWork();
 	    Close();

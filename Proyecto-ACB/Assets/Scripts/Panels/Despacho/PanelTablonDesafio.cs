@@ -28,7 +28,12 @@ namespace Panels
         private Button closePanelButton;
         [SerializeField] [Tooltip("Datos con los desafios publicados")]
         private ChallengeContainer challengeContainer = new ChallengeContainer();
-
+        [SerializeField]
+        [Tooltip("botón de la liga actual")]
+        private Button actualLeagueButton ;
+        [SerializeField]
+        [Tooltip("botón de la liga clásica")]
+        private Button clasicLeagueButton;
         [Space(5)]
         [Header("Panel opener data")]
         [SerializeField] [Tooltip("Clase que controla la apertura de nuevos paneles a mostrar")]
@@ -47,6 +52,7 @@ namespace Panels
         private string mensaje;
 
         private List<GameObject> postedChallenges; //Lista de desafios publicados
+        public bool isClasicLeague;
 
         #endregion
 
@@ -59,19 +65,29 @@ namespace Panels
         {
             postedChallenges = new List<GameObject>();
             closePanelButton.onClick.AddListener(() => { ACBSingleton.Instance.PanelBuildingSelection.ResetCachedMapData(); Close(); });
-            CallInfo();
+            SwitchLeague(false);
+            createChallengeButton.onClick.AddListener(CreateChallenge);
         }
 
         #endregion
 
         #region Private Methods
-
+        /// <summary>
+        /// Carga la liga seleccionada
+        /// </summary>
+        public void SwitchLeague(bool isClasic)
+        {
+            isClasicLeague = isClasic;
+            clasicLeagueButton.image.color = isClasicLeague ? new Color(1f,1f,1f,1f) : new Color(1f, 1f, 1f, 0.5f);
+            actualLeagueButton.image.color = isClasicLeague ? new Color(1f, 1f, 1f, 0.5f):new Color(1f, 1f, 1f, 1f) ;
+            if (isClasicLeague) CallInfoClasicLeague(); else CallInfoActualLeague();
+        }
         /// <summary>
         /// Actualiza la información de los desafios que se van a mostrar en panel
         /// </summary>
-        private void CallInfo()
+        private void CallInfoActualLeague()
         {
-            createChallengeButton.onClick.AddListener(CreateChallenge);
+          
 
             if(postedChallenges.Count > 0)
             {
@@ -110,9 +126,57 @@ namespace Panels
             {
                 onFailed.Invoke();
                 SetSpinnerState(false);
-            });
+            },!isClasicLeague);
         }
 
+
+        /// <summary>
+        /// Actualiza la información de los desafios que se van a mostrar en panel
+        /// </summary>
+        private void CallInfoClasicLeague()
+        {
+
+        
+
+            if (postedChallenges.Count > 0)
+            {
+                postedChallenges.ForEach(challenge => Destroy(challenge));
+                postedChallenges.Clear();
+            }
+
+            postedChallenges = new List<GameObject>();
+            challengeContainer = new ChallengeContainer();
+
+            WebProcedure.Instance.GetChallengesTablon(snapshot =>
+            {
+                JsonConvert.PopulateObject(snapshot.RawJson, challengeContainer);
+                Debug.Log(snapshot.RawJson);
+
+                createChallengeButton.gameObject.SetActive(true);
+
+                if (challengeContainer.challengeData.challengeItems != null && challengeContainer.challengeData.challengeItems.Count > 0)
+                {
+                    challengeDataContainer.sizeDelta = new Vector2(challengeDataContainer.sizeDelta.x, PaneltabloDesafioData.GetComponent<LayoutElement>().preferredHeight * challengeContainer.challengeData.challengeItems.Count);
+
+                    foreach (var transactionData in challengeContainer.challengeData.challengeItems)
+                    {
+                        GameObject prefab = Instantiate(PaneltabloDesafioData, challengeDataContainer.transform);
+                        prefab.GetComponent<PanelTabloDesafioData>().ShowInfo(transactionData, challengeContainer.challengeData.TeamComplete, Close, challengeContainer.challengeData.canAcceptChallenge,
+                            challengeContainer.challengeData.challengeFree, challengeContainer.challengeData.challengeFreeMessage, challengeContainer.challengeData.canAcceptChallengeMessage);
+                        postedChallenges.Add(prefab);
+                    }
+                }
+                else
+                {
+                    SetSpinnerState(false);
+                }
+
+            }, error =>
+            {
+                onFailed.Invoke();
+                SetSpinnerState(false);
+            }, !isClasicLeague);
+        }
         /// <summary>
         /// Llama a la alerta de confirmación de creación de desafio
         /// </summary>
@@ -168,7 +232,7 @@ namespace Panels
                 Debug.Log("Challenge created");
                 
             }, (error) =>
-                ACBSingleton.Instance.AlertPanel.SetupPanel(CreationErrorText, "", false, null)); 
+                ACBSingleton.Instance.AlertPanel.SetupPanel(CreationErrorText, "", false, null), !isClasicLeague); 
 
         }
 
@@ -184,13 +248,20 @@ namespace Panels
                 Firebase.Analytics.FirebaseAnalytics.LogEvent("deal_publish_ok");
                 Debug.Log("Analytic deal_publish_ok logged");
                 Debug.Log("Desafio");
-                ACBSingleton.Instance.AlertPanel.SetupPanel(obj.MessageCustom, "", false, CallInfo, null, 0, "Volver");
+                ACBSingleton.Instance.AlertPanel.SetupPanel(obj.MessageCustom, "", false, UpdateLeague, null, 0, "Volver");
             }
             else
                 ACBSingleton.Instance.AlertPanel.SetupPanel(obj.MessageCustom, "", false, null, null, 0, "Volver");
                 SetSpinnerState(false);
         }
 
+        /// <summary>
+        /// carga la liga seleccionada
+        /// </summary>
+        private void UpdateLeague()
+        {
+            if (isClasicLeague) CallInfoClasicLeague(); else CallInfoActualLeague();
+        }
         /// <summary>
         /// Activa o desactiva el spinner de carga
         /// </summary>
