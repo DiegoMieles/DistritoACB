@@ -48,6 +48,6 @@ public class Panel_ItemCartelera : MonoBehaviour
         StreamingFlagImage.SetActive(data.type != "video");
         videoTitle.text = data.title;
         VideoDescription.text = data.description;
-        videoDate.text = data.created;
+        videoDate.text = data.init_date;
     }
 }
