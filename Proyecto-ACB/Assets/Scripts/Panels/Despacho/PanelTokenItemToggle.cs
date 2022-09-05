@@ -146,10 +146,10 @@ public class PanelTokenItemToggle : MonoBehaviour
         }
         if (objectivePosition != null)
             dragable.SetupDragable(objectivePosition, onDraggedPosition);
-
-        if (!string.IsNullOrEmpty(currentToken.card.pathThumbnail))
+        string pathThumbnail = !string.IsNullOrEmpty(currentToken.card.pathThumbnail) ? currentToken.card.pathThumbnail : currentToken.pathThumbnail;
+        if (!string.IsNullOrEmpty(pathThumbnail))
         {
-            WebProcedure.Instance.GetSprite(currentToken.card.pathThumbnail, sprite =>
+            WebProcedure.Instance.GetSprite(pathThumbnail, sprite =>
             {
                 imageThumbnail.sprite = sprite;
                 imageThumbnail.gameObject.SetActive(true);
