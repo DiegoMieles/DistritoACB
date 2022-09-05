@@ -66,7 +66,7 @@ public class ACBallButton : MonoBehaviour
         openConfirmationPanelButton.onClick.AddListener(OpenConfirmationPanel);
         acballImage.sprite = obj;
         acballTitleText.text = acballItemData.name;
-        acballDescriptionText.text = acballItemData.description+ " \n " +"Id: "+acballItemData.id;
+        acballDescriptionText.text = "Id: "+acballItemData.id;
         GameObject spinner = GameObject.Find("Spinner_ACBall");
         for(int i=0; i<spinner.transform.childCount; i++)
         {
