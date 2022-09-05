@@ -973,7 +973,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Equipo competitivo
+  m_Text: Equipos
 --- !u!1 &4077217915685829613
 GameObject:
   m_ObjectHideFlags: 0
@@ -2894,6 +2894,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4297781926247207437, guid: 6606cb4997857dc43bc47aa5695cf4f9, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4297781927633437676, guid: 6606cb4997857dc43bc47aa5695cf4f9, type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4686405145307540740, guid: 6606cb4997857dc43bc47aa5695cf4f9, type: 3}

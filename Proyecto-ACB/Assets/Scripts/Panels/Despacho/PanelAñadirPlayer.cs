@@ -231,9 +231,9 @@ public class PanelAñadirPlayer : Panel
                 if (snapshot.Code == 200)
                 {
                     PanelTeamCompetitivo.OnDeleteOrAdd?.Invoke(team.data);
-                    PanelTeamCompetitivo.OnClose?.Invoke();
                 }
-            }, null, 0, "Volver");  
+                PanelTeamCompetitivo.OnClose?.Invoke();
+            }, null, 0, "Aceptar");  
         }, error =>
         {
             onFailed.Invoke();

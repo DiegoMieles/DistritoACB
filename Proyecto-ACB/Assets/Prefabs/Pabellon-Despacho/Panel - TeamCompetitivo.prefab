@@ -1985,6 +1985,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 7704105039993889578}
   panelOpener: {fileID: 9011836489770768701}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -2493,6 +2504,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 6616947286435175752}
   panelOpener: {fileID: 5133238776166466246}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -2642,6 +2664,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -3553,6 +3586,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -3852,6 +3896,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -4061,6 +4116,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 1465209855933428444}
   panelOpener: {fileID: 8426472183437734512}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -5131,6 +5197,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 786963032420463932}
   panelOpener: {fileID: 5228015816656894282}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -5358,6 +5435,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -5657,6 +5745,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -6562,6 +6661,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 8621123762283792286}
   panelOpener: {fileID: 1192176304953615999}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -6861,6 +6971,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -7370,6 +7491,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 1336804308738246568}
   panelOpener: {fileID: 2340263180232556230}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -7519,6 +7651,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -7728,6 +7871,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 5933777932709028387}
   panelOpener: {fileID: 1959171602323631975}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -7952,6 +8106,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -8389,6 +8554,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 7408529533092933934}
   panelOpener: {fileID: 8490094708332770495}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -9776,6 +9952,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -9925,6 +10112,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -10209,6 +10407,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 6073731538838141716}
   panelOpener: {fileID: 3690868271839773027}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -10535,7 +10744,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Equipo Competitivo
+  m_Text: Equipos Competitivos
 --- !u!1 &3021687720594217493
 GameObject:
   m_ObjectHideFlags: 0
@@ -10681,6 +10890,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -11172,6 +11392,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 2945528089005786333}
   panelOpener: {fileID: 5378685808342332586}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -12560,6 +12791,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -13027,6 +13269,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -13630,6 +13883,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 4056709819052955223}
   panelOpener: {fileID: 730493622400667485}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -14491,6 +14755,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -15337,6 +15612,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 8415789603516802952}
   panelOpener: {fileID: 81491802530928376}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -16528,6 +16814,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 7952049044324372362}
   panelOpener: {fileID: 5085888277699575594}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -16812,6 +17109,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 3547164565831377978}
   panelOpener: {fileID: 8507564788100836633}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -17666,6 +17974,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -19291,6 +19610,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -24038,6 +24368,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -25792,6 +26133,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 4149195557292748973}
   panelOpener: {fileID: 6969938864100423635}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -26392,6 +26744,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 8106074719126308838}
   panelOpener: {fileID: 1613691757964371657}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -27100,6 +27463,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 8921408974365522164}
   panelOpener: {fileID: 1328327502408011884}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -27775,6 +28149,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 970941692422337684}
   panelOpener: {fileID: 2284600398301215458}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -28888,6 +29273,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -29256,6 +29652,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 97059002}
   panelOpener: {fileID: 97059001}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
@@ -30005,6 +30412,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -31470,6 +31888,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 0}
   panelOpener: {fileID: 0}
   competitiveCardViewPrefab: {fileID: 0}
@@ -31907,6 +32336,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   tokenButton: {fileID: 5804736485565311086}
   panelOpener: {fileID: 5571399513383767415}
   competitiveCardViewPrefab: {fileID: 8605266640662393444, guid: 611b5207653cff74a8933e4b81200890, type: 3}
