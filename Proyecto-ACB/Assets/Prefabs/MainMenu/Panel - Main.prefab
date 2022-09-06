@@ -161,7 +161,7 @@ MonoBehaviour:
     infoTitle: Control de acceso
     infoDescription: "En el Tabl\xF3n de Anuncios podr\xE1s publicar ofertas de desaf\xEDo
       y aceptar las de otros usuarios"
-    buildingIcon: {fileID: 21300000, guid: 4d166a86a4459a1438b3b63a754ba77c, type: 3}
+    buildingIcon: {fileID: 21300000, guid: 1c8a9fd5fee89dc44a41b4bc9b2d7851, type: 3}
   buildingId: Edf-Acceso
   lightObject: {fileID: 0}
 --- !u!114 &28144525
@@ -357,7 +357,7 @@ MonoBehaviour:
     storePanelAsPrevious: 0
     infoTitle: Cartelera
     infoDescription: "Esta es la informaci\xF3n sobre el tabl\xF3n"
-    buildingIcon: {fileID: 21300000, guid: 4838c83f557eceb4f9e567241475431c, type: 3}
+    buildingIcon: {fileID: 21300000, guid: abe154f741337e44597ce47970f1c7a3, type: 3}
   buildingId: Edf-Cartelera
   lightObject: {fileID: 0}
 --- !u!114 &101065528
@@ -834,7 +834,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 329.7337, y: 258.81018}
+  m_AnchoredPosition: {x: 329.73364, y: 258.81018}
   m_SizeDelta: {x: 3395.3516, y: 2807.192}
   m_Pivot: {x: 0.7843906, y: 0.75017214}
 --- !u!114 &311403653
@@ -3389,11 +3389,10 @@ MonoBehaviour:
     panelIsPrefab: 1
     panelHasInfoToDisplay: 0
     storePanelAsPrevious: 0
-    infoTitle: Mercadillo
-    infoDescription: "En el mercadillo podr\xE1s comprar y vender objetos a otros
-      jugadores"
+    infoTitle: Mercado
+    infoDescription: "En el mercado podr\xE1s comprar y vender objetos a otros jugadores"
     buildingIcon: {fileID: 21300000, guid: ebebbaa8e352f4448aef2aee14481489, type: 3}
-  buildingId: Edf - JumbleSale
+  buildingId: Edf-Mercado
   lightObject: {fileID: 0}
 --- !u!114 &4300969236360136225
 MonoBehaviour:

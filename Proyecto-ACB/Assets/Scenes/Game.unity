@@ -3685,10 +3685,6 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1905995843}
-    - target: {fileID: 311403652, guid: 409c8021210b6b74f8c0609e89360105, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 329.73364
-      objectReference: {fileID: 0}
     - target: {fileID: 202279029969608225, guid: 409c8021210b6b74f8c0609e89360105, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

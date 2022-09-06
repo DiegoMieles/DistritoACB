@@ -63,7 +63,7 @@ public class PanelCardItem : MonoBehaviour
         
         if (!string.IsNullOrEmpty(currentToken.pathThumbnail))
         {
-            if((isJumbleSale && tokendata.enter ) || !isJumbleSale)
+            if( tokendata.enter )
             {
                 WebProcedure.Instance.GetSprite(currentToken.pathThumbnail, sprite =>
                 {

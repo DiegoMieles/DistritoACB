@@ -52,6 +52,12 @@ public class PanelTeamCompetitivo : Panel
     private PanelOpener panelOpener;
     [Tooltip("est? mostrando la liga actual?")]
     public bool isActualLeague = true;
+    [SerializeField]
+    [Tooltip("Nombre del jugador en la liga actual")]
+    private Text actualLeaguePlayerName;
+    [SerializeField]
+    [Tooltip("Nombre del jugador en la liga clasica")]
+    private Text classicLeaguePlayerName;
 
     public static Action<AllTokensContainer> OnDeleteOrAdd; //Acci?n que se encarga de a?adir o eliminar una carta seg?n corresponda
     public static Action OnClose; //Acci?n que se ejecuta al cerrar el panel
@@ -129,7 +135,8 @@ public class PanelTeamCompetitivo : Panel
                 {
                     spinner.SetActive(false);
                 }
-            
+            ShowActualPlayerName(0);
+            ShowClassicPlayerName(0);
         }, error =>
         {
             onFailed?.Invoke();
@@ -146,12 +153,8 @@ public class PanelTeamCompetitivo : Panel
         tokenContainer = team;
         panelTokenItemTop.ForEach(t => t.ResetToken());
         panelTokenItemButtom.ForEach(t => t.ResetToken());
-        panelTokenItemTop.ForEach(t => t.booster.transform.parent.GetComponent<Image>().sprite = actualborderCard);
-        panelTokenItemButtom.ForEach(t => t.booster.transform.parent.GetComponent<Image>().sprite = actualborderCard);
         panelTokenclassicItemTop.ForEach(t => t.ResetToken());
         panelTokenclassicItemButtom.ForEach(t => t.ResetToken());
-        panelTokenclassicItemTop.ForEach(t => t.booster.transform.parent.GetComponent<Image>().sprite = classicborderCard);
-        panelTokenclassicItemButtom.ForEach(t => t.booster.transform.parent.GetComponent<Image>().sprite = classicborderCard);
         if (tokenContainer.current != null && tokenContainer.current.Count > 0)
         {
             for (var i = 0; i < tokenContainer.current.Count; i++)
@@ -178,7 +181,8 @@ public class PanelTeamCompetitivo : Panel
         {
             spinner.SetActive(false);
         }
-
+        ShowActualPlayerName(0);
+        ShowClassicPlayerName(0);
     }
 
     /// <summary>
@@ -198,7 +202,22 @@ public class PanelTeamCompetitivo : Panel
         panelTokenclassicItemButtom.ForEach(i=> i.ShowPivot(false));
         panelTokenclassicItemButtom[index].ShowPivot(true);
     }
-    
+    /// <summary>
+    /// obtiene el nombre del jugador en la liga actual
+    /// </summary>
+    /// <param name="index"></param>
+    public void ShowActualPlayerName(int index)
+    {
+        actualLeaguePlayerName.text = tokenContainer.current[index].name;
+    }
+    /// <summary>
+    /// Obiene el nombre del jugador en la liga clasica
+    /// </summary>
+    /// <param name="index"></param>
+    public void ShowClassicPlayerName(int index)
+    {
+        classicLeaguePlayerName.text = tokenContainer.classical[index].name;
+    }
     public void SearchForPlayer(bool isActualLeague)
     {
         if(panelOpener)

@@ -57,7 +57,7 @@ public class AvatarImageView : MonoBehaviour
     {
         string imageUrl = isBigImage ? challengeData.img_big : challengeData.img_small;
         WebProcedure.Instance.GetSprite(imageUrl,
-            (obj) => { backendLoadedImage.sprite = obj; },
+            (obj) => { if(backendLoadedImage) backendLoadedImage.sprite = obj; },
             (error) => { });
     }
 

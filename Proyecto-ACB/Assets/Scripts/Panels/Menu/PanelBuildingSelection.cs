@@ -107,6 +107,7 @@ public class PanelBuildingSelection : Panel
     private GameObject background;
 
     private BuildingData cachedBuildingData; //Datos del edificio actual
+    private BuildingData actualBuildingData; //Datos del edificio actual
     private BuildingData cachedBuildingMapData; //Datos del escenario actual (Ciudad/Pabellón)
     private GameObject cachedInnerBuildingObject; //Objeto del edificio actual
     private MissionsData.MissionItemData cachedMissionData; //Data de la misión actual
@@ -162,7 +163,7 @@ public class PanelBuildingSelection : Panel
         {
             cachedBuildingData = buildingData;
         }
-
+        actualBuildingData = buildingData;
         buildingNameText.text = buildingData.infoTitle;
         buildingIcon.sprite = buildingData.buildingIcon;
         
@@ -323,7 +324,7 @@ public class PanelBuildingSelection : Panel
     {
         panelOpener.popupPrefab = buildingInfoPanelPrefab;
         panelOpener.OpenPopup();
-        panelOpener.popup.GetComponent<PanelBuildingInfo>().SetBuildingInfo(cachedBuildingData);
+        panelOpener.popup.GetComponent<PanelBuildingInfo>().SetBuildingInfo(actualBuildingData);
         HidePanelOptions();
     }
 

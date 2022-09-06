@@ -1564,8 +1564,8 @@ namespace Data
         public class ChallengesTablonItem
         {
             public int challenge_id;
-            public DateTime created;
-            public DateTime expiration;
+            public string created;
+            public string expiration;
             public string user_id;
             public string nickName;
             public int skinColor;
@@ -1785,7 +1785,7 @@ namespace Data
             public class ChallengesFieldItem
             {
                 public int challenge_id;
-                public DateTime jugado;
+                public string jugado;
                 public string rival;
                 public string nickName;
                 public int skinColor;
