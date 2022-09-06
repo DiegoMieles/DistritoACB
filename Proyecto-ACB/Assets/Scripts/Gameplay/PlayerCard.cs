@@ -240,21 +240,24 @@ public class PlayerCard : MonoBehaviour
         {
             SetRarityImage(tokenData.rarity);
             victoriesText.text = tokenData.victories;
-            cardNameTexts.ForEach(card => card.text = tokenData.name);
+            foreach(Text nameText in cardNameTexts)
+            {
+                nameText.text = tokenData.name == null ? tokenData.card.player_name : tokenData.name; 
+            }
             WebProcedure.Instance.GetSprite(tokenData.card.pathThumbnail == null ? tokenData.pathThumbnail : tokenData.card.pathThumbnail, (obj) => { picImage.sprite = obj; }, (failed) => { Debug.Log("Failed loading thumbnail image"); });
-            threePointerBase.text = tokenData.st_triples;
+            threePointerBase.text = tokenData.st_triples == null ? tokenData.card.st_triples: tokenData.st_triples;
             threePointerWithBoost.text = tokenData.triples;
-            reboundBase.text = tokenData.st_rebounds;
+            reboundBase.text = tokenData.st_rebounds == null?tokenData.card.st_rebounds : tokenData.st_rebounds;
             reboundWithBoost.text = tokenData.rebounds;
-            freeThrowBase.text = tokenData.st_freeshots;
+            freeThrowBase.text = tokenData.st_freeshots == null? tokenData.card.st_freeshots: tokenData.st_freeshots;
             freeThrowWithBoost.text = tokenData.freeshots;
-            assistsBase.text = tokenData.st_assists;
+            assistsBase.text = tokenData.st_assists == null? tokenData.card.st_assists : tokenData.st_assists;
             assistsWithBoost.text = tokenData.assits;
-            scoreBase.text = tokenData.st_points;
+            scoreBase.text = tokenData.st_points == null? tokenData.card.st_points: tokenData.st_points;
             scoreWithBoost.text = tokenData.points;
             injuryBackground.color = tokenData.isInjured ? Color.red : Color.black;
             injuryText.text = tokenData.daysOrTextInjured;
-            playerName.text = tokenData.name;
+            playerName.text = tokenData.name == null ? tokenData.card.player_name : tokenData.name;
 
             isInjure.gameObject?.SetActive(tokenData.isInjured);
             isBooster.gameObject?.SetActive(tokenData.isBooster);

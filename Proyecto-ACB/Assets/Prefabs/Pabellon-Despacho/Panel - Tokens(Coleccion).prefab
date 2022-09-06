@@ -8395,6 +8395,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   currentHighLight:
     id: 0
     token: 
@@ -14572,7 +14583,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8508656053701702794
 RectTransform:
   m_ObjectHideFlags: 0
