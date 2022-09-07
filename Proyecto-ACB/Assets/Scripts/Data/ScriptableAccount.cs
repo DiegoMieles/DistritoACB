@@ -524,8 +524,40 @@ namespace Data
             public int page;
             public int balance;
             public int count;
-            public List<AcbBallsData.AcBallsItems> items = new List<AcbBallsData.AcBallsItems>();
-        }
+            public List<AcBallsItems> items = new List<AcBallsItems>();
+
+            [Serializable]
+            public class AcBallsItems
+            {
+                public int id;
+                public string path_img;
+                public acball acball = new acball();
+                public OpenAcBallReward content =  new OpenAcBallReward();
+                public string status;
+                public bool show;
+            }
+            [Serializable]
+            public class acball
+            {
+                public int id;
+                public string name;
+                public string info;
+                public string path_img;
+                public string q_elementype;
+             //   public Dictionary<ItemType, string> v_elemcontent;
+                public Dictionary<ItemType, string> img_elements;
+                public Dictionary<ItemType, string> tit_elements;
+                public Dictionary<ItemType, string> desc_elements;
+                public int cost;
+            }
+            public class OpenAcBallReward
+            {
+                public ItemType elemenType = ItemType.NONE;
+                public string elementId;
+                public string img;
+                public ACBallItemsBooster.ACBallBoosterData element = new ACBallItemsBooster.ACBallBoosterData();
+            }
+            }
         [Serializable]
         public class ACBallItemsCoin : OpenAcBallReward
         {

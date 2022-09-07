@@ -32,6 +32,7 @@ public class ACBallButton : MonoBehaviour
     private Action onFinishedOpeningACBall; //Acción que se llama una vez una ACBall es abierta
     private Action onGoBack; //Acción que se llama al retroceder en la opción de selecionar si se abre o no una ACBall
     public AcbBallContainer.AcbBallsData.AcBallsItems acballItemData { get; private set; } //Clase con los datos de los items que se encuentran dentro de la ACBall
+    public AcbBallContainer.ACBallsToSell.AcBallsItems acballMarketItemData { get; private set; } //Clase con los datos de los items que se encuentran dentro de la ACBall
     public bool isJumbleSale; //si es true este acball está siendo mostrado en los acballs para publicar en el mercadillo
     #region Public Methods
 
@@ -49,6 +50,32 @@ public class ACBallButton : MonoBehaviour
         this.onFinishedOpeningACBall = onFinishedOpeningACBall;
         onClickedButton?.Invoke();
         WebProcedure.Instance.GetSprite(acballItemData.path_img, OnSuccess, OnFailed);
+    }
+    /// <summary>
+    /// Método que configura el botón con sus respectivas acciones al abrir, no abrir y recibir un item de una ACBall
+    /// </summary>
+    /// <param name="acballItemData">Datos de los items dentro de la ACBall</param>
+    /// <param name="onFinishedOpeningACBall">Acción que se llama al abrir una ACBall</param>
+    /// <param name="onGoBack">Acción que se llama al no abrir una ACBall</param>
+    /// <param name="onClickedButton">Acción que se ejecuta al seleccionar el botón de la ACBall</param>
+    public void SetupButton(AcbBallContainer.ACBallsToSell.AcBallsItems acballItemData, Action onFinishedOpeningACBall, Action onGoBack, Action onClickedButton)
+    {
+        this.onGoBack = onGoBack;
+        this.acballMarketItemData = acballItemData;
+        this.onFinishedOpeningACBall = onFinishedOpeningACBall;
+        onClickedButton?.Invoke();
+        WebProcedure.Instance.GetSprite(acballMarketItemData.path_img,(Sprite obj) => {
+            bubble?.SetActive(!acballMarketItemData.show);
+            openConfirmationPanelButton.onClick.AddListener(OpenConfirmationPanel);
+            acballImage.sprite = obj;
+            acballTitleText.text = acballMarketItemData.acball.name;
+            acballDescriptionText.text = "Id: " + acballMarketItemData.id;
+            GameObject spinner = GameObject.Find("Spinner_ACBall");
+            for (int i = 0; i < spinner.transform.childCount; i++)
+            {
+                spinner.transform.GetChild(i).gameObject.SetActive(false);
+            }
+        }, OnFailed);
     }
 
     #endregion
@@ -91,7 +118,10 @@ public class ACBallButton : MonoBehaviour
     {
         panelOpener.popupPrefab = confirmationPanelPrefab;
         panelOpener.OpenPopup();
+        if(acballItemData != null)
         panelOpener.popup.GetComponent<PanelACBallOpenConfirmation>().SetupPanel(acballItemData, onFinishedOpeningACBall, onGoBack, isJumbleSale);
+        else
+            panelOpener.popup.GetComponent<PanelACBallOpenConfirmation>().SetupPanel(acballMarketItemData, onFinishedOpeningACBall, onGoBack, isJumbleSale);
 
         AcbBallContainer.ACBallUpdateShowBody body = new AcbBallContainer.ACBallUpdateShowBody() { acball_id = acballItemData.id };
 

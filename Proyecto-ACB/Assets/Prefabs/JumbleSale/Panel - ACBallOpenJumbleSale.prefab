@@ -1020,6 +1020,18 @@ MonoBehaviour:
     cost: 0
     status: 
     show: 0
+  acballToSellItemData:
+    id: 0
+    path_img: 
+    acball:
+      id: 0
+      name: 
+      info: 
+      path_img: 
+      q_elementype: 
+      cost: 0
+    status: 
+    show: 0
   spinner: {fileID: 5850027069476963647}
 --- !u!1 &3728660418976485134
 GameObject:
@@ -1150,7 +1162,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1625,7 +1637,7 @@ MonoBehaviour:
   m_MinWidth: -1
   m_MinHeight: -1
   m_PreferredWidth: -1
-  m_PreferredHeight: 90
+  m_PreferredHeight: 275.8
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1

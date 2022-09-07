@@ -33,6 +33,8 @@ public class PanelACBallOpenConfirmation : Panel
     private Text innerRewardsName;
     [SerializeField] [Tooltip("Clase con los datos de los items dentro de la ACBall")]
     private AcbBallContainer.AcbBallsData.AcBallsItems acballItemData;
+    [SerializeField] [Tooltip("Clase con los datos de los items dentro de la ACBall")]
+    private AcbBallContainer.ACBallsToSell.AcBallsItems acballToSellItemData;
     [SerializeField] [Tooltip("Referencia al Spinner de carga")]
     private GameObject spinner;
 
@@ -59,6 +61,57 @@ public class PanelACBallOpenConfirmation : Panel
         else WebProcedure.Instance.GetSprite(acballItemData.path_img, OnSuccessLoadingACBallImage, OnFailedLoadingACBallImage);
     }
 
+    /// <summary>
+    /// Configura el panel con los datos de la ACBall que se quiere abrir
+    /// </summary>
+    /// <param name="acballItemData">Datos de los items de ACBall a mostrar</param>
+    /// <param name="onFinishedOpeningACBall">Método que se llama al terminar de abrir un ACBall</param>
+    /// <param name="onGoBack">"Método que se ejecuta al cerrar el panel"</param>
+    public void SetupPanel(AcbBallContainer.ACBallsToSell.AcBallsItems acballItemData, Action onFinishedOpeningACBall, Action onGoBack, bool isJumbleSale = false)
+    {
+        this.onFinishedOpeningACBall = onFinishedOpeningACBall;
+        acballPossibleRewardsList = new List<GameObject>();
+        Debug.Log(JsonConvert.SerializeObject(acballItemData));
+        closePanelButton.onClick.AddListener(() => { onGoBack?.Invoke(); Close(); });
+        acballCostText.text = acballItemData.acball.cost.ToString();
+        this.acballToSellItemData = acballItemData;
+
+        WebProcedure.Instance.GetSprite(acballToSellItemData.path_img, (Sprite obj) =>
+        {
+            acballImage.sprite = obj;
+            openACBallButton.onClick.AddListener(OpenACBallRewardPanel);
+            actualACBCoins.text = Mathf.Clamp(ACBSingleton.Instance.AccountData.statsData.coinsBalance, 0, limit).ToString();
+
+            imagePrefabContainer.sizeDelta = new Vector2(0, imagePrefabContainer.sizeDelta.y);
+        }, (WebError error) => { print(error); });
+
+
+        imagePrefabContainer.sizeDelta = new Vector2(0, imagePrefabContainer.sizeDelta.y);
+        if (acballItemData.acball == null) return;
+        foreach (var url in from assets in acballItemData.acball.img_elements.Keys
+                            select acballItemData.acball.img_elements.ContainsKey(assets) ? acballItemData.acball.img_elements[assets] : null)
+        {
+            if (!string.IsNullOrEmpty(url))
+            {
+                GameObject rewardImage = Instantiate(rewardImagePrefab, imagePrefabContainer);
+                rewardImage.GetComponent<ACBallReward>().SetupRewardImage(url);
+                acballPossibleRewardsList.Add(rewardImage);
+                imagePrefabContainer.sizeDelta += new Vector2(rewardImage.GetComponent<LayoutElement>().preferredWidth, 0);
+            }
+        }
+
+        int buttonPos = 0;
+
+        foreach (var title in from tit_elements in acballItemData.acball.tit_elements.Keys
+                              select acballItemData.acball.tit_elements.ContainsKey(tit_elements) ? acballItemData.acball.tit_elements[tit_elements] : null)
+        {
+            if (!string.IsNullOrEmpty(title))
+            {
+                acballPossibleRewardsList[buttonPos].GetComponentInChildren<Button>().onClick.AddListener(() => { if (innerRewardsName) { innerRewardsName.text = title; } });
+                buttonPos++;
+            }
+        }
+    }
     #endregion
 
     #region Inner Methods

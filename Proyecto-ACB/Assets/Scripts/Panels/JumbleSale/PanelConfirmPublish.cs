@@ -121,7 +121,7 @@ public class PanelConfirmPublish : Panel
     /// Recibe la información del ACBall y la dibuja
     /// </summary>
     /// <param name="ACBallData"></param>
-    public void Populate(AcbBallContainer.AcbBallsData.AcBallsItems ACBallData)
+    public void Populate(AcbBallContainer.ACBallsToSell.AcBallsItems ACBallData)
     {
         m_item_id = ACBallData.id;
         m_type = itemTypes.ACBALL;
@@ -130,7 +130,7 @@ public class PanelConfirmPublish : Panel
             itemIcon.gameObject.SetActive(true);
             WebProcedure.Instance.GetSprite(ACBallData.path_img, OnSuccess, (WebError error) => { Debug.LogError(error); });
         }
-        if (itemDescription) itemDescription.text = ACBallData.description;
+        if (itemDescription) itemDescription.text = ACBallData.acball.info;
         UpdateUI();
     }  
     /// <summary>

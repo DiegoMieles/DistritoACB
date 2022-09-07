@@ -206,7 +206,7 @@ public class PanelACBallToPublish : Panel
     /// Muestra el panel de confirmación para publicar el item en el mercadillo
     /// </summary>
     /// <param name="itemData">Datos de la ACBall</param>
-    public void ShowDialogConfirmation(AcbBallContainer.AcbBallsData.AcBallsItems ACBallData)
+    public void ShowDialogConfirmation(AcbBallContainer.ACBallsToSell.AcBallsItems ACBallData)
     {
         panelOpener.popupPrefab = confirmPanelPrefab;
         panelOpener.OpenPopup();
@@ -220,7 +220,7 @@ public class PanelACBallToPublish : Panel
     {
         if (GetSelectedToggle())
         {
-            ShowDialogConfirmation(GetSelectedToggle().GetComponent<ACBallButton>().acballItemData);
+            ShowDialogConfirmation(GetSelectedToggle().GetComponent<ACBallButton>().acballMarketItemData);
         }
     }
     #endregion
