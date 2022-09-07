@@ -681,7 +681,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "A\xF1adir equipo"
+  m_Text: "A\xF1adir a equipo"
 --- !u!1 &4564244588846499209
 GameObject:
   m_ObjectHideFlags: 0

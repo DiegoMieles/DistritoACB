@@ -788,7 +788,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Publicar desaf\xEDo"
+  m_Text: "Crear un desaf\xEDo"
 --- !u!1 &1010849852436202026
 GameObject:
   m_ObjectHideFlags: 0
@@ -2288,6 +2288,7 @@ MonoBehaviour:
   createChallengeText: "Confirmaci\xF3n de publicaci\xF3n de desaf\xEDo"
   CreationErrorText: Algo ha salido mal, por favor intenta de nuevo
   mensaje: "Esta operaci\xF3n te costar\xE1 "
+  isClasicLeague: 0
 --- !u!114 &8135640815636264916
 MonoBehaviour:
   m_ObjectHideFlags: 0

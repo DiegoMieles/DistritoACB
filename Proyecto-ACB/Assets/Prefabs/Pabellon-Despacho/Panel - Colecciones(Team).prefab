@@ -457,7 +457,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "A\xF1adir equipo"
+  m_Text: "A\xF1adir a equipo"
 --- !u!1 &4193265043217631128
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,6 +844,7 @@ MonoBehaviour:
   canClose: 1
   textFail: "No tienes ninguna card\r que a\xF1adir a tu equipo"
   textNoColeccion: {fileID: 2215551666223996575}
+  isActualLeague: 0
 --- !u!1 &6128430763923816543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1180,7 +1181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -236.3732, y: 427.08002}
+  m_AnchoredPosition: {x: -236.3732, y: 1167.0798}
   m_SizeDelta: {x: 472.7464, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8083894040779917405
@@ -1491,7 +1492,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.2600098, y: -50.950012}
+  m_AnchoredPosition: {x: 2.2600098, y: -50.94995}
   m_SizeDelta: {x: -4.8900146, y: -102.53003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8385831041572050478

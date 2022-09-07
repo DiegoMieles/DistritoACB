@@ -252,7 +252,7 @@ public class PlayerCard : MonoBehaviour
             freeThrowBase.text = tokenData.st_freeshots == null? tokenData.card.st_freeshots: tokenData.st_freeshots;
             freeThrowWithBoost.text = tokenData.freeshots;
             assistsBase.text = tokenData.st_assists == null? tokenData.card.st_assists : tokenData.st_assists;
-            assistsWithBoost.text = tokenData.assits;
+            assistsWithBoost.text = tokenData.assists;
             scoreBase.text = tokenData.st_points == null? tokenData.card.st_points: tokenData.st_points;
             scoreWithBoost.text = tokenData.points;
             injuryBackground.color = tokenData.isInjured ? Color.red : Color.black;
