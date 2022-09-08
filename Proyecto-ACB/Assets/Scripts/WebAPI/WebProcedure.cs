@@ -57,6 +57,7 @@ namespace WebAPI
         private const string GetBoostersToSellUrl = "GetBoostersToSell?id={0}";
         private const string GetACBallsToSellUrl = "GetACBallsToSell?id={0}";
         private const string GetCollectionsToSellUrl = "MarketplaceCollectionsCL?id={0}";
+        private const string MarketplaceGetAllCollectionsUrl = "MarketplaceGetAllCollections?id={0}";
         private const string GetSubCollectionsToSellUrl = "MarketplaceSubcollectionsCL?id={0}";
         private const string GetTokenCardsToSellUrl = "MarketplaceTokenCards?id={0}";
         private const string GetTokenCardsUserToSellUrl = "MarketplaceTokenCardsUser?id={0}";
@@ -936,6 +937,15 @@ namespace WebAPI
         {
             var form = new WWWForm();
             var url = String.Format(GetCollectionsToSellUrl, accessData.user);
+            StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
+        }
+        /// <summary>
+        /// Obtiene las colecciones disponibles para publicar en el mercadillo
+        /// </summary>
+        public void GetAllCollectionsToSell(Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            var form = new WWWForm();
+            var url = String.Format(MarketplaceGetAllCollectionsUrl, accessData.user);
             StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
         }
         /// <summary>

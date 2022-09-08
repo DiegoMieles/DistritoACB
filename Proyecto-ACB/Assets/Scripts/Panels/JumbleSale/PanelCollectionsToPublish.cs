@@ -23,7 +23,7 @@ namespace Panels
         [SerializeField] [Tooltip("Acción que se ejecuta al fallar un llamado a backend")]
         private UnityEvent onFailed;
         [SerializeField] [Tooltip("Datos de la colección")]
-        private CollectionData colectionDataContainer = new CollectionData();
+        private AllCollectionsContainer colectionDataContainer = new AllCollectionsContainer();
         [SerializeField]
         [Tooltip("Datos de la colección de highlights")]
         private HighlightCollectionData highlightColectionDataContainer = new HighlightCollectionData();
@@ -62,20 +62,20 @@ namespace Panels
         {
             if (isColeccion)
             {
-                WebProcedure.Instance.GetCollectionsToSell(snapshot =>
+                WebProcedure.Instance.GetAllCollectionsToSell(snapshot =>
                 {
                     Debug.Log(snapshot.RawJson);
                     JsonConvert.PopulateObject(snapshot.RawJson, colectionDataContainer);
 
-                    if (colectionDataContainer.collectionItems != null && colectionDataContainer.collectionItems.Count > 0)
+                    if (colectionDataContainer.data != null && colectionDataContainer.data.Count > 0)
                     {
-                        foreach (var collecionData in colectionDataContainer.collectionItems)
+                        foreach (var collecionData in colectionDataContainer.data)
                         {
                             if (scrollRectTransactions)
                             {
                                 var prefab = Instantiate(panelColeccionData, scrollRectTransactions.transform);
                                 prefab.GetComponent<PanelColeccionData>().OnConfirmedPublish += () => { OnConfirmedPublish?.Invoke(); Close(); };
-                                prefab.ShowInfo(collecionData, true);
+                                prefab.ShowInfo(collecionData, true,collecionData.type == ItemType.H);
                                 textNoColeccion.text = string.Empty;
                             }
                         }

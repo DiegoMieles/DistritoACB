@@ -5921,7 +5921,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3554908976493402696
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15727,7 +15727,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -15756,6 +15756,17 @@ MonoBehaviour:
     videos: []
     daysOrTextInjured: 
     is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   removeCardButton: {fileID: 9047111527991523728}
   clasicLeagueIcon: {fileID: 21300000, guid: 7c232ee1afcb6184bab6c32f18b25fd9, type: 3}
   actualLeagueIcon: {fileID: 21300000, guid: 787d3ddc8b2d4834c9c245161bafa0de, type: 3}

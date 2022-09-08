@@ -1126,6 +1126,7 @@ namespace Data
             public bool hasSubcollections = true;
             [JsonConverter(typeof(StringEnumConverter))]
             public ItemType type;
+            public bool current;
         }
 
     }
@@ -1137,6 +1138,14 @@ namespace Data
     public class HighlightCollectionData
     {
         public List<CollectionData.CollectionItemData> items = new List<CollectionData.CollectionItemData>();
+    }
+    /// <summary>
+    /// Datos de los items de colección de highlights para vender
+    /// </summary>
+    [Serializable]
+    public class AllCollectionsContainer
+    {
+        public List<CollectionData.CollectionItemData> data = new List<CollectionData.CollectionItemData>();
     }
     /// <summary>
     /// Datos de subcolección de un equipo
@@ -1847,6 +1856,9 @@ namespace Data
                 public string win_status;
                 public string img_small;
                 public string img_big;
+                public bool isTeam;
+                public bool isInjured;
+                public bool isBooster;
             }
         }
     }

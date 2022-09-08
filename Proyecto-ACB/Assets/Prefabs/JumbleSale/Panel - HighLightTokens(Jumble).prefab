@@ -681,7 +681,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Cards
+  m_Text: 'Colecciones
+
+'
 --- !u!1 &4564244588846499209
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,7 +1218,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -1243,6 +1245,21 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+    daysOrTextInjured: 
+    is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
+  tokenHighlightsContainer:
+    items: []
   alertAdds: "\xBFQuieres publicar este token?"
   alertFailAdds: Elige el token que quieres publicar.
   panelOpener: {fileID: 1649777347}
@@ -1917,4 +1934,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Nikola Mirotic
+  m_Text: Highlights Legends

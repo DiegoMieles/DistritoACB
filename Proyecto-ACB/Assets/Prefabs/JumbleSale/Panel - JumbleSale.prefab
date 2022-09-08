@@ -1976,7 +1976,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.39047736, y: 0.5}
-  m_AnchoredPosition: {x: -4.3706055, y: -0.63597107}
+  m_AnchoredPosition: {x: -4.3706665, y: -0.63597107}
   m_SizeDelta: {x: -34.741302, y: -18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1677323562
@@ -3146,7 +3146,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 314.62616, y: -408.79996}
+  m_AnchoredPosition: {x: 146.17538, y: -408.79996}
   m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3204556794078621481
@@ -5184,7 +5184,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 94.226166, y: -196}
+  m_AnchoredPosition: {x: 146.17538, y: -196}
   m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9168922699883941489
@@ -7104,7 +7104,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 94.226166, y: -408.8}
+  m_AnchoredPosition: {x: 586.9754, y: -196}
   m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4644947321487886107
@@ -7191,7 +7191,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6317682349854948403}
         m_TargetAssemblyTypeName: PanelJumbleSale, Assembly-CSharp
-        m_MethodName: OpenHighlights
+        m_MethodName: OpenCardsCollection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7422,7 +7422,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 314.62616, y: -196}
+  m_AnchoredPosition: {x: 366.57538, y: -196}
   m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3778172034690310201

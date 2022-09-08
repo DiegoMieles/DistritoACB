@@ -42,6 +42,21 @@ public class ChallengeFieldButton : MonoBehaviour
     [SerializeField] [Tooltip("Imagen de la cruz")]
     private Sprite loseImage;
 
+    [SerializeField]
+    [Tooltip("simbolo de booster")]
+    private GameObject boosterMark;
+    [SerializeField]
+    [Tooltip("simbolo de herida")]
+    private GameObject isInjuredMark;
+    [SerializeField]
+    [Tooltip("simbolo de equipoCompetitivo")]
+    private GameObject isInTeamMark;
+    [SerializeField]
+    [Tooltip("borde del jugador")]
+    private Image border;
+    [SerializeField]
+    [Tooltip("sprites de bordes de jugador")]
+    private Sprite classicBorder, actualBorder;
     private ChallengesField.ChallengeFieldData.ChallengesFieldItem challengeFieldData; //Datos del desafio
 
     private bool loaded; //Determina si los datos del objeto han sido cargados exitosamente
@@ -75,6 +90,10 @@ public class ChallengeFieldButton : MonoBehaviour
         SetActiveSpinner(false);
         loaded = true;
         loaded2 = true;
+        if (boosterMark != null) boosterMark.SetActive(challengeFieldData.isBooster);
+        if (isInjuredMark != null) boosterMark.SetActive(challengeFieldData.isInjured);
+        if (isInTeamMark != null) boosterMark.SetActive(challengeFieldData.isTeam);
+        border.sprite =GameObject.FindObjectOfType<PanelPavilionField>().isclasicLeague ? classicBorder : actualBorder;
     }
 
     public void LoadImage()

@@ -90,11 +90,11 @@ public class PanelACBallToPublish : Panel
     {
         if (scrollNormalizedPos.y <= 0.1f && !allAcballsLoaded && !isLoadingNewACBalls)
         {
-            counter++;
+           // counter++;
             SetSpinnerNewState(true);
             isLoadingNewACBalls = true;
             page = new PageBody() { page = counter };
-            WebProcedure.Instance.GetACBallsToSell(JsonConvert.SerializeObject(page), OnSuccessLoadingMoreACBalls, (error) => { isLoadingNewACBalls = false; textNoACBalls.text = textFail; });
+          //  WebProcedure.Instance.GetACBallsToSell(JsonConvert.SerializeObject(page), OnSuccessLoadingMoreACBalls, (error) => { isLoadingNewACBalls = false; textNoACBalls.text = textFail; });
         }
     }
 

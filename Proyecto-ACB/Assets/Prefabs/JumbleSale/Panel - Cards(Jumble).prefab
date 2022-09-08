@@ -929,6 +929,8 @@ MonoBehaviour:
       m_Calls: []
   cardContainer:
     items: []
+  subcolectionHiglightDataContainer:
+    items: []
   higthlightContainer:
     higthlightData:
       higthlightItems: []
@@ -1462,7 +1464,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Cards
+  m_Text: Colecciones
 --- !u!1 &6420406046882314360
 GameObject:
   m_ObjectHideFlags: 0

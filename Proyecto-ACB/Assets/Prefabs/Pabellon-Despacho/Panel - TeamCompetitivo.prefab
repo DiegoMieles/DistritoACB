@@ -1956,7 +1956,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -2475,7 +2475,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -2635,7 +2635,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -3569,7 +3569,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -3879,7 +3879,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -4099,7 +4099,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -5180,7 +5180,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -5418,7 +5418,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -5728,7 +5728,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -6644,7 +6644,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -6954,7 +6954,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -7474,7 +7474,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -7634,7 +7634,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -7854,7 +7854,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -8089,7 +8089,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -8537,7 +8537,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -9935,7 +9935,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -10095,7 +10095,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -10390,7 +10390,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -10713,7 +10713,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -23}
-  m_SizeDelta: {x: 0, y: -14.5807}
+  m_SizeDelta: {x: 0, y: -76.3156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8327009441087856139
 CanvasRenderer:
@@ -10747,9 +10747,9 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: ebc95ca1201998c408fe619ba9beaa35, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 256
+    m_MaxSize: 30
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -10873,7 +10873,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -11375,7 +11375,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -12775,7 +12775,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -13254,7 +13254,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -13868,7 +13868,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -14740,7 +14740,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -15597,7 +15597,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -16799,7 +16799,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -17094,7 +17094,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -17959,7 +17959,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -19676,7 +19676,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -24434,7 +24434,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -26199,7 +26199,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -26810,7 +26810,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -27608,7 +27608,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -28294,7 +28294,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -29430,7 +29430,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -29809,7 +29809,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -30569,7 +30569,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -32045,7 +32045,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 
@@ -32493,7 +32493,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
-    assits: 
+    assists: 
     points: 
     st_triples: 
     st_freeshots: 

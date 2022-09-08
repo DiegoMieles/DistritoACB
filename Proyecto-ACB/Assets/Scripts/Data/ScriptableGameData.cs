@@ -75,7 +75,9 @@ namespace Data
         COINS, 
         SKIN,
         HIGTHLIGHT,
-        SUBCOLECTION
+        SUBCOLECTION,
+            CH,
+            H
     }
 
     /// <summary>

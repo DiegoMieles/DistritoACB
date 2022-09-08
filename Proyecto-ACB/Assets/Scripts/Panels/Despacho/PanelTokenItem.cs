@@ -150,9 +150,9 @@ public class PanelTokenItem : MonoBehaviour
         if(tokenButton != null)
             tokenButton.interactable = false;
         
-        team.SetActive(false);
-        booster.SetActive(false);
-        injured.SetActive(false);
+       if(team != null) team.SetActive(false);
+        if (booster != null) booster.SetActive(false);
+        if (injured != null) injured.SetActive(false);
     }
     
     /// <summary>

@@ -65,7 +65,7 @@ public class ACBallButton : MonoBehaviour
         this.onFinishedOpeningACBall = onFinishedOpeningACBall;
         onClickedButton?.Invoke();
         WebProcedure.Instance.GetSprite(acballMarketItemData.path_img,(Sprite obj) => {
-            bubble?.SetActive(!acballMarketItemData.show);
+            if(bubble != null)bubble.SetActive(!acballMarketItemData.show);
             openConfirmationPanelButton.onClick.AddListener(OpenConfirmationPanel);
             acballImage.sprite = obj;
             acballTitleText.text = acballMarketItemData.acball.name;
