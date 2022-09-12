@@ -22,6 +22,8 @@ public class PanelAvatar : Panel
     private List<Button> editAvatarButtons;
     [SerializeField] [Tooltip("Botón de salir de la partida")]
     private Button logOutButton;
+    [SerializeField] [Tooltip("Botón de salir de la partida")]
+    private Button editAccountButton;
     [SerializeField] [Tooltip("Prefab de la vista del avatar")]
     private GameObject avatarViewPrefab;
     [SerializeField] [Tooltip("Prefab del panel de cambio de nombre del jugador")]

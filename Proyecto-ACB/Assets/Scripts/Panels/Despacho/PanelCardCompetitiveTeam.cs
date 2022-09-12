@@ -116,13 +116,11 @@ public class PanelCardCompetitiveTeam : Panel
         {
             ACBSingleton.Instance.AlertPanel.SetupPanel(snapshot.MessageCustom, string.Empty, false, () =>
             {
-                var team =  JsonConvert.DeserializeObject<PostSetTeam>(snapshot.RawJson);
-                if (snapshot.Code == 200)
-                {
-                    PanelTeamCompetitivo.OnDeleteOrAdd?.Invoke(team.data);
-                    PanelTeamCompetitivo.OnClose?.Invoke();   
-                    Close();
-                }
+                if(GameObject.FindObjectOfType<PanelTeamCompetitivo>() != null)
+                PanelTeamCompetitivo.OnDeleteOrAddNoTeam?.Invoke();
+                PanelTeamCompetitivo.OnClose?.Invoke();
+                        Close();
+          
             },null,0,"Aceptar","Cancelar", FindObjectOfType<PanelTeamCompetitivo>(true).isActualLeague ?actualLeagueIcon: clasicLeagueIcon);
      
         }, error =>
@@ -146,12 +144,9 @@ public class PanelCardCompetitiveTeam : Panel
         {
             ACBSingleton.Instance.AlertPanel.SetupPanel(snapshot.MessageCustom, string.Empty, false, () =>
             {
-                var team = JsonConvert.DeserializeObject<AllTokensContainer>(snapshot.RawJson);
-                if (snapshot.Code == 200)
-                {
-                    PanelTeamCompetitivo.OnDeleteOrAdd?.Invoke(team);
-                    PanelTeamCompetitivo.OnClose?.Invoke();
-                }
+                if(GameObject.FindObjectOfType<PanelTeamCompetitivo>() != null)
+                PanelTeamCompetitivo.OnDeleteOrAddNoTeam?.Invoke();
+
             });
         }, error =>
         {

@@ -227,11 +227,8 @@ public class PanelAñadirPlayer : Panel
             Debug.Log(snapshot.RawJson);
             ACBSingleton.Instance.AlertPanel.SetupPanel(snapshot.MessageCustom, string.Empty, false, () =>
             {
-                var team =  JsonConvert.DeserializeObject<PostSetTeam>(snapshot.RawJson);
-                if (snapshot.Code == 200)
-                {
-                    PanelTeamCompetitivo.OnDeleteOrAdd?.Invoke(team.data);
-                }
+                if(GameObject.FindObjectOfType<PanelTeamCompetitivo>() != null)
+                PanelTeamCompetitivo.OnDeleteOrAddNoTeam?.Invoke();
                 PanelTeamCompetitivo.OnClose?.Invoke();
             }, null, 0, "Aceptar");  
         }, error =>
@@ -252,13 +249,10 @@ public class PanelAñadirPlayer : Panel
         {
             ACBSingleton.Instance.AlertPanel.SetupPanel(snapshot.MessageCustom, string.Empty, false, () =>
             {
-                var team = JsonConvert.DeserializeObject<PostSetTeam>(snapshot.RawJson);
-                if (snapshot.Code == 200)
-                {
-                    PanelTeamCompetitivo.OnDeleteOrAdd?.Invoke(team.data);
-                    PanelTeamCompetitivo.OnClose?.Invoke();
+                if(GameObject.FindObjectOfType<PanelTeamCompetitivo>() != null)
+                PanelTeamCompetitivo.OnDeleteOrAddNoTeam?.Invoke();
+                PanelTeamCompetitivo.OnClose?.Invoke();
                     Close();
-                }
             });
 
         }, error =>

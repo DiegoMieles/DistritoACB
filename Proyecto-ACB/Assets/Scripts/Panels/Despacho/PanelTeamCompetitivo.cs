@@ -60,6 +60,7 @@ public class PanelTeamCompetitivo : Panel
     private Text classicLeaguePlayerName;
 
     public static Action<AllTokensContainer> OnDeleteOrAdd; //Acci?n que se encarga de a?adir o eliminar una carta seg?n corresponda
+    public static Action OnDeleteOrAddNoTeam; //Acci?n que se encarga de a?adir o eliminar una carta seg?n corresponda
     public static Action OnClose; //Acci?n que se ejecuta al cerrar el panel
 
     /// <summary>
@@ -68,7 +69,8 @@ public class PanelTeamCompetitivo : Panel
     private void OnEnable()
     {
         SwitchLeague(isActualLeague);
-         OnDeleteOrAdd += (AllTokensContainer obj) => {CallInfoActualLeague(obj); } ;
+        OnDeleteOrAdd += (AllTokensContainer obj) => { CallInfoActualLeague(obj); };
+        OnDeleteOrAddNoTeam += () => { CallInfoActualLeague(); };
         CallInfoActualLeague();
     }
 
@@ -77,6 +79,7 @@ public class PanelTeamCompetitivo : Panel
     /// </summary>
     private void OnDestroy()
     {
+        OnDeleteOrAddNoTeam -= () => { CallInfoActualLeague(); };
         OnDeleteOrAdd -= (AllTokensContainer obj) => {CallInfoActualLeague(obj); };
     }
     //cambia la liga que se va a mostrar , clasica o actual
@@ -94,7 +97,7 @@ public class PanelTeamCompetitivo : Panel
     /// </summary>
     private void CallInfoActualLeague()
     {
-        spinner.SetActive(true);
+     if(spinner != null)   spinner.SetActive(true);
         panelTokenItemTop.ForEach(t=>t.ResetToken());
         panelTokenItemButtom.ForEach(t=>t.ResetToken());
         panelTokenItemTop.ForEach(t=> t.booster.transform.parent.GetComponent<Image>().sprite = actualborderCard) ;
@@ -208,7 +211,9 @@ public class PanelTeamCompetitivo : Panel
     /// <param name="index"></param>
     public void ShowActualPlayerName(int index)
     {
-        actualLeaguePlayerName.text = tokenContainer.current[index].name;
+        if (tokenContainer.current.Count > index)
+            actualLeaguePlayerName.text = tokenContainer.current[index].name;
+        else actualLeaguePlayerName.text = "";
     }
     /// <summary>
     /// Obiene el nombre del jugador en la liga clasica

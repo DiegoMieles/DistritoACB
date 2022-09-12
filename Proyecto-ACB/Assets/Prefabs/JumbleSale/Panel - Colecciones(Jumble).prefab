@@ -843,7 +843,7 @@ MonoBehaviour:
     items: []
   spinner: {fileID: 1902524327}
   canClose: 1
-  textFail: No tienes card players para publicar
+  textFail: No tienes card players ni highlights para publicar
   textNoColeccion: {fileID: 2215551666223996575}
 --- !u!1 &6128430763923816543
 GameObject:
@@ -1181,7 +1181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -236.3732, y: 527.08026}
+  m_AnchoredPosition: {x: -236.3732, y: 287.08005}
   m_SizeDelta: {x: 472.7464, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8083894040779917405
