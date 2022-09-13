@@ -244,7 +244,7 @@ public class PlayerCard : MonoBehaviour
             {
                 nameText.text = tokenData.name == null ? tokenData.card.player_name : tokenData.name; 
             }
-            WebProcedure.Instance.GetSprite(tokenData.card.pathThumbnail == null ? tokenData.pathThumbnail : tokenData.card.pathThumbnail, (obj) => { picImage.sprite = obj; }, (failed) => { Debug.Log("Failed loading thumbnail image"); });
+            WebProcedure.Instance.GetSprite(tokenData.card.pathThumbnail == null ? tokenData.pathThumbnail : tokenData.card.pathThumbnail, (obj) => { if(picImage) picImage.sprite = obj; }, (failed) => { Debug.Log("Failed loading thumbnail image"); });
             threePointerBase.text = tokenData.st_triples == null ? tokenData.card.st_triples: tokenData.st_triples;
             threePointerWithBoost.text = tokenData.triples;
             reboundBase.text = tokenData.st_rebounds == null?tokenData.card.st_rebounds : tokenData.st_rebounds;
@@ -262,17 +262,17 @@ public class PlayerCard : MonoBehaviour
             isInjure.gameObject?.SetActive(tokenData.isInjured);
             isBooster.gameObject?.SetActive(tokenData.isBooster);
             isTeam.gameObject?.SetActive(tokenData.isTeam);
-            WebProcedure.Instance.GetSprite(tokenData.card.subcollection.collection.pathImgCol == null ? tokenData.pathImgCol:tokenData.card.subcollection.collection.pathImgCol, (obj) => { imageLeague.sprite = obj; }, (failed) => { Debug.Log("Failed loading col image"); });
+            WebProcedure.Instance.GetSprite(tokenData.card.subcollection.collection.pathImgCol == null ? tokenData.pathImgCol:tokenData.card.subcollection.collection.pathImgCol, (obj) => { if(imageLeague)imageLeague.sprite = obj; }, (failed) => { Debug.Log("Failed loading col image"); });
             var backimg = backCardView.GetComponent<Image>();
             backimg.color= Color.white;
-            WebProcedure.Instance.GetSprite(tokenData.card.subcollection.collection.pathImgBack == null ? tokenData.pathImgBack:tokenData.card.subcollection.collection.pathImgBack, (obj) => { backimg.sprite = obj; }, (failed) => { Debug.Log("Failed loading back image"); });
+            WebProcedure.Instance.GetSprite(tokenData.card.subcollection.collection.pathImgBack == null ? tokenData.pathImgBack:tokenData.card.subcollection.collection.pathImgBack, (obj) => { if(backimg)backimg.sprite = obj; }, (failed) => { Debug.Log("Failed loading back image"); });
         }
         else if(cardData != null)
         {
             SetRarityImage(cardData.rarity);
             victoriesText.text = cardData.victories;
             cardNameTexts.ForEach(card => card.text = cardData.name);
-            WebProcedure.Instance.GetSprite(cardData.pathThumbnail, (obj) => { picImage.sprite = obj; }, (failed) => { Debug.Log("Failed loading thumbnail image"); });
+            WebProcedure.Instance.GetSprite(cardData.pathThumbnail, (obj) => { if(picImage)picImage.sprite = obj; }, (failed) => { Debug.Log("Failed loading thumbnail image"); });
             threePointerBase.text = cardData.st_triples;
             threePointerWithBoost.text = cardData.triples;
             reboundBase.text = cardData.st_rebounds;
@@ -290,10 +290,10 @@ public class PlayerCard : MonoBehaviour
             isInjure.gameObject?.SetActive(cardData.isInjured);
             isBooster.gameObject?.SetActive(cardData.isBooster);
             isTeam.gameObject?.SetActive(cardData.isTeam);
-            WebProcedure.Instance.GetSprite(cardData.pathImgCol, (obj) => { imageLeague.sprite = obj; }, (failed) => { Debug.Log("Failed loading col image"); });
+            WebProcedure.Instance.GetSprite(cardData.pathImgCol, (obj) => { if(imageLeague)imageLeague.sprite = obj; }, (failed) => { Debug.Log("Failed loading col image"); });
             var backimg = backCardView.GetComponent<Image>();
             backimg.color= Color.white;
-            WebProcedure.Instance.GetSprite(cardData.pathImgBack, (obj) => {    backimg.sprite = obj; }, (failed) => { Debug.Log("Failed loading back image"); });
+            WebProcedure.Instance.GetSprite(cardData.pathImgBack, (obj) => {    if(backimg)backimg.sprite = obj; }, (failed) => { Debug.Log("Failed loading back image"); });
         }
 
         SwipeText.SetActive(tokenData != null);

@@ -228,8 +228,13 @@ public class PanelAñadirPlayer : Panel
             ACBSingleton.Instance.AlertPanel.SetupPanel(snapshot.MessageCustom, string.Empty, false, () =>
             {
                 if(GameObject.FindObjectOfType<PanelTeamCompetitivo>() != null)
-                PanelTeamCompetitivo.OnDeleteOrAddNoTeam?.Invoke();
-                PanelTeamCompetitivo.OnClose?.Invoke();
+                {
+                    GameObject.FindObjectOfType<PanelTeamCompetitivo>().CallInfoActualLeague(); 
+                    PanelTeamCompetitivo.OnClose?.Invoke();
+                }
+                else
+                Close();
+
             }, null, 0, "Aceptar");  
         }, error =>
         {
@@ -250,8 +255,11 @@ public class PanelAñadirPlayer : Panel
             ACBSingleton.Instance.AlertPanel.SetupPanel(snapshot.MessageCustom, string.Empty, false, () =>
             {
                 if(GameObject.FindObjectOfType<PanelTeamCompetitivo>() != null)
-                PanelTeamCompetitivo.OnDeleteOrAddNoTeam?.Invoke();
-                PanelTeamCompetitivo.OnClose?.Invoke();
+                {
+                    GameObject.FindObjectOfType<PanelTeamCompetitivo>().CallInfoActualLeague();
+                    PanelTeamCompetitivo.OnClose?.Invoke();
+                }
+                else
                     Close();
             });
 

@@ -117,10 +117,13 @@ public class PanelCardCompetitiveTeam : Panel
             ACBSingleton.Instance.AlertPanel.SetupPanel(snapshot.MessageCustom, string.Empty, false, () =>
             {
                 if(GameObject.FindObjectOfType<PanelTeamCompetitivo>() != null)
-                PanelTeamCompetitivo.OnDeleteOrAddNoTeam?.Invoke();
-                PanelTeamCompetitivo.OnClose?.Invoke();
-                        Close();
-          
+                {
+                    GameObject.FindObjectOfType<PanelTeamCompetitivo>().CallInfoActualLeague();
+                    PanelTeamCompetitivo.OnClose?.Invoke();
+                }
+                else
+                    Close();
+
             },null,0,"Aceptar","Cancelar", FindObjectOfType<PanelTeamCompetitivo>(true).isActualLeague ?actualLeagueIcon: clasicLeagueIcon);
      
         }, error =>
@@ -145,7 +148,9 @@ public class PanelCardCompetitiveTeam : Panel
             ACBSingleton.Instance.AlertPanel.SetupPanel(snapshot.MessageCustom, string.Empty, false, () =>
             {
                 if(GameObject.FindObjectOfType<PanelTeamCompetitivo>() != null)
-                PanelTeamCompetitivo.OnDeleteOrAddNoTeam?.Invoke();
+                    GameObject.FindObjectOfType<PanelTeamCompetitivo>().CallInfoActualLeague();
+                else
+                    Close();
 
             });
         }, error =>

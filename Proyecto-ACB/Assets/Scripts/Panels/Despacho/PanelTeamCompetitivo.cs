@@ -62,12 +62,15 @@ public class PanelTeamCompetitivo : Panel
     public static Action<AllTokensContainer> OnDeleteOrAdd; //Acci?n que se encarga de a?adir o eliminar una carta seg?n corresponda
     public static Action OnDeleteOrAddNoTeam; //Acci?n que se encarga de a?adir o eliminar una carta seg?n corresponda
     public static Action OnClose; //Acci?n que se ejecuta al cerrar el panel
-
+    private int actualIndexPlayerActLeague;// Index del espacio seleccionado en la liga actual
+    private int actualIndexPlayerClaLeague;// Index del espacio seleccionado en la liga clasica
     /// <summary>
     /// Suscribe acci?n de cerrar panel del equipo competitivo y trae los datos del equipo competitivo
     /// </summary>
     private void OnEnable()
     {
+        actualIndexPlayerClaLeague = 0;
+        actualIndexPlayerActLeague = 0;
         SwitchLeague(isActualLeague);
         OnDeleteOrAdd += (AllTokensContainer obj) => { CallInfoActualLeague(obj); };
         OnDeleteOrAddNoTeam += () => { CallInfoActualLeague(); };
@@ -95,7 +98,7 @@ public class PanelTeamCompetitivo : Panel
     /// <summary>
     /// Trae la informaci?n del panel del equipo competitivo de la liga actual
     /// </summary>
-    private void CallInfoActualLeague()
+    public void CallInfoActualLeague()
     {
      if(spinner != null)   spinner.SetActive(true);
         panelTokenItemTop.ForEach(t=>t.ResetToken());
@@ -138,8 +141,8 @@ public class PanelTeamCompetitivo : Panel
                 {
                     spinner.SetActive(false);
                 }
-            ShowActualPlayerName(0);
-            ShowClassicPlayerName(0);
+            ShowActualPlayerName(actualIndexPlayerActLeague);
+            ShowClassicPlayerName(actualIndexPlayerClaLeague);
         }, error =>
         {
             onFailed?.Invoke();
@@ -184,8 +187,8 @@ public class PanelTeamCompetitivo : Panel
         {
             spinner.SetActive(false);
         }
-        ShowActualPlayerName(0);
-        ShowClassicPlayerName(0);
+        ShowActualPlayerName(actualIndexPlayerActLeague);
+        ShowClassicPlayerName(actualIndexPlayerClaLeague);
     }
 
     /// <summary>
@@ -211,6 +214,7 @@ public class PanelTeamCompetitivo : Panel
     /// <param name="index"></param>
     public void ShowActualPlayerName(int index)
     {
+        actualIndexPlayerActLeague = index;
         if (tokenContainer.current.Count > index)
             actualLeaguePlayerName.text = tokenContainer.current[index].name;
         else actualLeaguePlayerName.text = "";
@@ -221,8 +225,14 @@ public class PanelTeamCompetitivo : Panel
     /// <param name="index"></param>
     public void ShowClassicPlayerName(int index)
     {
-        classicLeaguePlayerName.text = tokenContainer.classical[index].name;
+        actualIndexPlayerClaLeague = index;
+        if (tokenContainer.classical.Count > index)
+            classicLeaguePlayerName.text = tokenContainer.classical[index].name;
+        else classicLeaguePlayerName.text = "";
     }
+    /// <summary>
+    /// Abre el panel para buscar jugadores 
+    /// </summary>
     public void SearchForPlayer(bool isActualLeague)
     {
         if(panelOpener)
