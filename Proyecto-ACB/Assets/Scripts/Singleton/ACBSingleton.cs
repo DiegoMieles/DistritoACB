@@ -62,6 +62,9 @@ public class ACBSingleton : BASESingleton<ACBSingleton>
 
     [Tooltip("Acción a ejecutar cuando el usuario ha sido autenticado")]
     public Action onUserAuthenticated;
+
+    [Tooltip("Acción a ejecutar cuando el usuario ha sido eliminado")]
+    public Action onUserDeleted;
     [Tooltip("Texto de autenticación")]
     public const string AUTHENTICATION_STRING = "Authenticated";
 

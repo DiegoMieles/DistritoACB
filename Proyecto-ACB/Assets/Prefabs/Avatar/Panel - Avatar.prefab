@@ -592,7 +592,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Editar cuenta acbID.
+  m_Text: Editar cuenta acbID
 --- !u!114 &8753558898909853880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -725,6 +725,7 @@ MonoBehaviour:
   editAccountButton: {fileID: 8753558898909853880}
   avatarViewPrefab: {fileID: 6107316572402955671, guid: 4cd192bd350a8334d86143897e13601a, type: 3}
   changeNamePanelPrefab: {fileID: 5828315620198742948, guid: a48d956dbcb6a3e4fab8866eeb276056, type: 3}
+  editAccountPanelPrefab: {fileID: 3969678080769990492, guid: 0ab378e0af92c6b46bec1c3dff44c0f5, type: 3}
   avatarView: {fileID: 3621823832835527159}
   panelOpenerAvatarEditor: {fileID: -2275579022780259446}
   canvasGroup: {fileID: 1936751673764284575}

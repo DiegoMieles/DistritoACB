@@ -823,7 +823,25 @@ namespace WebAPI
                 onFailed?.Invoke(new WebError(ex.Message));
             }
         }
-        
+
+        public void PostDeletedAccount(string deleteStatus, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            try
+            {
+                print(deleteStatus + "webProcedure");
+                //var form = new WWWForm();
+               // var url = String.Format(PostacbiSetCodeUrl, code, token);
+               // StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbPOST));
+            }
+            catch (WebException webEx)
+            {
+               // onFailed?.Invoke(WebError.Create(webEx));
+            }
+            catch (Exception ex)
+            {
+               // onFailed?.Invoke(new WebError(ex.Message));
+            }
+        }
         /// <summary>
         /// obtiene la informacion de un item de la tienda
         /// </summary>.

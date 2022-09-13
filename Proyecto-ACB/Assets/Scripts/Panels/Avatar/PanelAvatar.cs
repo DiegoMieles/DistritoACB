@@ -28,6 +28,8 @@ public class PanelAvatar : Panel
     private GameObject avatarViewPrefab;
     [SerializeField] [Tooltip("Prefab del panel de cambio de nombre del jugador")]
     private GameObject changeNamePanelPrefab;
+    [SerializeField] [Tooltip("Prefab del panel de edición de la cuentar")]
+    private GameObject editAccountPanelPrefab;
     [SerializeField] [Tooltip("Imagen del avatar dek jugador")]
     private AvatarImageView avatarView;
     [SerializeField] [Tooltip("Clase que controla la apertura de nuevos paneles a mostrar")]
@@ -121,6 +123,15 @@ public class PanelAvatar : Panel
         panelOpenerAvatarEditor.popupPrefab = changeNamePanelPrefab;
         panelOpenerAvatarEditor.OpenPopup();
         panelOpenerAvatarEditor.popup.GetComponent<PanelChangeName>().OpenChangeNameView(() => { UpdateAccountData(); });
+    }
+
+    /// <summary>
+    /// Abre panel de edición de la cuenta
+    /// </summary>
+    public void OpenEditAccountPanel()
+    {
+        panelOpenerAvatarEditor.popupPrefab = editAccountPanelPrefab;
+        panelOpenerAvatarEditor.OpenPopup();
     }
     
     /// <summary>

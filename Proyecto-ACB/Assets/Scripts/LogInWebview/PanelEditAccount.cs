@@ -12,7 +12,7 @@ public class PanelEditAccount : Panel
     /// </summary>
     public void OnEnable()
     {
-        ACBSingleton.Instance.onUserAuthenticated += OnAuthenticate;
+        ACBSingleton.Instance.onUserDeleted += OnDeleted;
     }
 
     /// <summary>
@@ -20,22 +20,13 @@ public class PanelEditAccount : Panel
     /// </summary>
     public void OnDestroy()
     {
-        ACBSingleton.Instance.onUserAuthenticated -= OnAuthenticate;
-    }
-
-    /// <summary>
-    /// Método con fines de prueba para pasar sin autenticar al jugador
-    /// </summary>
-    public void PassWithOutUser()
-    {
-        ACBSingleton.Instance.PassWithOutUser();
-        OnAuthenticate();
+        ACBSingleton.Instance.onUserDeleted -= OnDeleted;
     }
 
     /// <summary>
     /// Cierra el panel al autenticar al jugador
     /// </summary>
-    private void OnAuthenticate()
+    private void OnDeleted()
     {
         Close();
     }

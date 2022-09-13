@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598e18fb001004a81960f552978ecf4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  urlOnStart: https://id.acb.com/iniciar-sesion?redirect_url=https://www.acb.com
+  urlOnStart: https://id-devel.acb.com/panel?delete_redirect_url=https://www.acb.com/delete_callback/
   showOnStart: 1
   fullScreen: 0
   useToolbar: 0
@@ -143,7 +143,6 @@ GameObject:
   - component: {fileID: 466780189925283526}
   - component: {fileID: 6112850291580499817}
   - component: {fileID: 6504169613189663922}
-  - component: {fileID: 4330653391196395376}
   - component: {fileID: 565087821875947106}
   m_Layer: 5
   m_Name: Panel - EditAccount
@@ -248,19 +247,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f34d06338f9bac4d87daee6573a0f80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniWebView: {fileID: 8878012126048737992}
---- !u!114 &4330653391196395376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3969678080769990492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3c0ca93fcfee204aaa604512e07d12a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   uniWebView: {fileID: 8878012126048737992}

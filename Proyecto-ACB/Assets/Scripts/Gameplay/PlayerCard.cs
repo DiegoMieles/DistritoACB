@@ -364,7 +364,7 @@ public class PlayerCard : MonoBehaviour
     /// <param name="obj"></param>
     private void OnSuccess(Sprite obj)
     {
-        frontCardImage.sprite = obj;
+        if(frontCardImage)frontCardImage.sprite = obj;
         if (doFillAnimation)
         {
             StopAllCoroutines();

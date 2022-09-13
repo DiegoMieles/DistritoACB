@@ -69,20 +69,20 @@ namespace UniWebViews
             Debug.LogError(message);
             if (message.Path.Equals("www.acb.com"))
             {
-                if(message.Args.ContainsKey("code"))
+                if(message.Args.ContainsKey("delete_status"))
                 {
-                    Debug.LogError("code: "+message.Args["code"]);
+                    Debug.LogError("delete_status: " + message.Args["delete_status"]);
                     
                     Firebase.Messaging.FirebaseMessaging.GetTokenAsync().ContinueWithOnMainThread(
                         task => {
                             var  token = task.Result;
-                            WebProcedure.Instance.PostacbiSetCode(message.Args["code"], token, ONSuccess, ONFailed );
+                            WebProcedure.Instance.PostDeletedAccount(message.Args["delete_status"], ONSuccess, ONFailed );
                         }
                     );
                 }
                 else
                 {
-                    Debug.LogError("No trabajo el code: "+webview.Url);
+                    Debug.LogError("No devolvió mensaje: "+webview.Url);
                 }
             }
         }
@@ -107,13 +107,7 @@ namespace UniWebViews
             {
                 Debug.Log("Todo Bien: " +obj.RawJson);
 
-                JsonConvert.PopulateObject(obj.RawJson,  WebProcedure.Instance.accessData);
-                
-                Debug.LogError("  CurrentUser.accessToken: "+   WebProcedure.Instance.accessData.accessToken);
-                Debug.LogError("  CurrentUser.refreshToken: "+   WebProcedure.Instance.accessData.refreshToken);
-            
-                PlayerPrefs.SetString(WebProcedure.CREDENTIALS, obj.RawJson);
-                ACBSingleton.Instance.onUserAuthenticated?.Invoke();
+                ACBSingleton.Instance.onUserDeleted?.Invoke();
                 
             }
             else
