@@ -242,7 +242,7 @@ public class PanelConfirmPublish : Panel
         try
         {
             JsonConvert.PopulateObject(obj.RawJson, error);
-            if (error.code != 200 && error.message != "")
+            if (error.code != 200 && !string.IsNullOrEmpty( error.message))
             {
                 ACBSingleton.Instance.AlertPanel.SetupPanel(error.message, "", false, () => {  OnConfirmedPublish?.Invoke(); Close(); });
                 return;

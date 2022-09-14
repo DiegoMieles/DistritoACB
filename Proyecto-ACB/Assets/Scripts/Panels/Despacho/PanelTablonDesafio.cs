@@ -87,9 +87,9 @@ namespace Panels
         /// </summary>
         private void CallInfoActualLeague()
         {
-          
+            SetSpinnerState(true);
 
-            if(postedChallenges.Count > 0)
+            if (postedChallenges.Count > 0)
             {
                 postedChallenges.ForEach(challenge => Destroy(challenge));
                 postedChallenges.Clear();
@@ -135,8 +135,8 @@ namespace Panels
         /// </summary>
         private void CallInfoClasicLeague()
         {
+            SetSpinnerState(true);
 
-        
 
             if (postedChallenges.Count > 0)
             {

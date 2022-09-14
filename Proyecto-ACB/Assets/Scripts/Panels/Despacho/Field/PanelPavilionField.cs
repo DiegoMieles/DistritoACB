@@ -67,7 +67,7 @@ public class PanelPavilionField : Panel
     /// </summary>
     public void SwitchLEague(bool isClasic)
     {
-        
+        SetNewSpinnerActiveState(false);
         if (isClasic != isclasicLeague) counter = 1;
         isclasicLeague = isClasic;
         if (isclasicLeague) UpdatePavilionViewClasicLeague(); else UpdatePavilionViewActualLeague();
