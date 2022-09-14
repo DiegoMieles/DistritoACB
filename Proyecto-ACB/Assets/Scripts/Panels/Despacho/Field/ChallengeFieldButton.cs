@@ -85,7 +85,7 @@ public class ChallengeFieldButton : MonoBehaviour
 
         winStateImage.sprite = playerHasWon ? checkImage : loseImage;
         winState.text = playerHasWon ? "GANASTE" : "PERDISTE";
-        WebProcedure.Instance.GetSprite(challengeFieldData.pathThumbnail, (obj) => { if(playerToken)playerToken.sprite = obj; }, (error) => { });
+        WebProcedure.Instance.GetSprite(challengeFieldData.pathThumbnail, (obj) => { if(playerToken)playerToken.sprite = obj; GameObject.FindObjectOfType<PanelPavilionField>().allItemsAreLoaded = true; }, (error) => { });
         enterChallengeButton.onClick.AddListener(LoadBackendData);
         SetActiveSpinner(false);
         loaded = true;

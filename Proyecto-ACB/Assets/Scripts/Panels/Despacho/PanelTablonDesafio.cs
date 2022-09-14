@@ -77,9 +77,12 @@ namespace Panels
         /// </summary>
         public void SwitchLeague(bool isClasic)
         {
+            SetSpinnerState(true);
             isClasicLeague = isClasic;
             clasicLeagueButton.image.color = isClasicLeague ? new Color(1f,1f,1f,1f) : new Color(1f, 1f, 1f, 0.5f);
+            clasicLeagueButton.interactable = !isClasicLeague;
             actualLeagueButton.image.color = isClasicLeague ? new Color(1f, 1f, 1f, 0.5f):new Color(1f, 1f, 1f, 1f) ;
+            actualLeagueButton.interactable = isClasicLeague;
             if (isClasicLeague) CallInfoClasicLeague(); else CallInfoActualLeague();
         }
         /// <summary>
@@ -87,8 +90,6 @@ namespace Panels
         /// </summary>
         private void CallInfoActualLeague()
         {
-            SetSpinnerState(true);
-
             if (postedChallenges.Count > 0)
             {
                 postedChallenges.ForEach(challenge => Destroy(challenge));
@@ -135,9 +136,6 @@ namespace Panels
         /// </summary>
         private void CallInfoClasicLeague()
         {
-            SetSpinnerState(true);
-
-
             if (postedChallenges.Count > 0)
             {
                 postedChallenges.ForEach(challenge => Destroy(challenge));
