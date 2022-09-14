@@ -19,7 +19,7 @@ using UnityEngine.Android;
 public class PanelMainMenu : Panel
 {
     [Header("Gameplay components")]
-    [SerializeField] [Tooltip("Texto de versión del juego")]
+    [SerializeField] [Tooltip("Texto de versiï¿½n del juego")]
     private Text textVersion;
     [SerializeField] [Tooltip("Objeto de pantalla de bienvenida del juego")]
     private GameObject placerHolder;
@@ -29,7 +29,7 @@ public class PanelMainMenu : Panel
     private PinchableScrollRect worldViewController;
     [SerializeField] [Tooltip("Controlador de los edificios disponibles en la ciudad")]
     private BuildingsManager worldBuildingsManager;
-    [SerializeField] [Tooltip("Controlador de los edificios disponibles en el pabellón")]
+    [SerializeField] [Tooltip("Controlador de los edificios disponibles en el pabellï¿½n")]
     private BuildingsManager pavilionBuildingsManager;
     [SerializeField] [Tooltip("Controlador de los edificios disponibles en el Auditorio")]
     private BuildingsManager auditoryBuildingsManager;
@@ -50,7 +50,7 @@ public class PanelMainMenu : Panel
     #region Unity Methods
 
     /// <summary>
-    /// Se ejecuta cuando se muestra el mapa principal, obteniendo la versión de la aplicación y las coordenadas del jugador
+    /// Se ejecuta cuando se muestra el mapa principal, obteniendo la versiï¿½n de la aplicaciï¿½n y las coordenadas del jugador
     /// </summary>
     private void OnEnable()
     {
@@ -67,6 +67,7 @@ public class PanelMainMenu : Panel
     /// </summary>
     public void LoadPlayerAccountData()
     {
+         placerHolder.gameObject.SetActive(true);
 #if PLATFORM_ANDROID
         if (!Permission.HasUserAuthorizedPermission(Permission.Camera))
         {
@@ -97,6 +98,7 @@ public class PanelMainMenu : Panel
                     Debug.Log(snapshot.RawJson);
                     JsonConvert.PopulateObject(snapshot.RawJson, ACBSingleton.Instance.AccountData);
                     LoadGameData();
+                     placerHolder.gameObject.SetActive(false);
                 }, error =>
                 {
                     onFailedAccountDataLoad?.Invoke();
@@ -116,6 +118,7 @@ public class PanelMainMenu : Panel
     /// </summary>
     public void LoadGameData()
     {
+         placerHolder.gameObject.SetActive(true);
         if (!isFirstTimeLoading)
             ACBSingleton.Instance.ActivateMainSpinner(true);
         
@@ -194,7 +197,7 @@ public class PanelMainMenu : Panel
     #region Inner Methods
 
     /// <summary>
-    /// Revisa que misiones se encuentran disponibles para el jugador y asigna los datos de misión a una marquesina
+    /// Revisa que misiones se encuentran disponibles para el jugador y asigna los datos de misiï¿½n a una marquesina
     /// </summary>
     private void CheckMission()
     {
@@ -257,7 +260,7 @@ public class PanelMainMenu : Panel
     #region Offline Debug
 
     /// <summary>
-    /// Carga datos por defecto de los objetos donde se tiene la información de los datos de juego general
+    /// Carga datos por defecto de los objetos donde se tiene la informaciï¿½n de los datos de juego general
     /// y los datos del jugador
     /// </summary>
     public void LoadOfflineData()
