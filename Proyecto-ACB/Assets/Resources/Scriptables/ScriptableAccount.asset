@@ -13,37 +13,37 @@ MonoBehaviour:
   m_Name: ScriptableAccount
   m_EditorClassIdentifier: 
   statsData:
-    coinsBalance: 86
-    acballsBalance: 1
-    acballsNotification: 0
+    coinsBalance: 18954
+    acballsBalance: 2
+    acballsNotification: 1
   avatarData:
-    nickName: Azathoth
-    skinColor: 3
-    bodyForm: 136
-    faceForm: 42
+    nickName: Joelus
+    skinColor: 6
+    bodyForm: 138
+    faceForm: 43
     eyes: 72
     ear: 130
     nose: 110
     mouth: 22
     eyeBrow: 56
-    hairStyleFront: 148
-    hairStyleBack: 171
-    hairColor: 12
+    hairStyleFront: 150
+    hairStyleBack: 172
+    hairColor: 15
     facialHair: -1
-    bodyAccessory: 0
+    bodyAccessory: 125
     headAccessory: 0
     armAccessory: 0
     eyesAccessory: 0
     backGround: 0
     foreGround: 0
     isFirstTime: 0
-    img_small: https://donext-dev.s3.eu-west-3.amazonaws.com/resources/448911b8-9ad0-4da0-9996-14ff11174d27_img_small.png
-    img_big: https://donext-dev.s3.eu-west-3.amazonaws.com/resources/448911b8-9ad0-4da0-9996-14ff11174d27_img_big.png
+    img_small: https://donext-dev.s3.eu-west-3.amazonaws.com/resources/81d75f0f-15e4-47cf-8ab9-fccf8ba79009_img_small.png
+    img_big: https://donext-dev.s3.eu-west-3.amazonaws.com/resources/81d75f0f-15e4-47cf-8ab9-fccf8ba79009_img_big.png
     avatarItems: []
   stadiumData:
     collectCoins: 1
-    lastCollectTime: 1663142342
-    nextCollectTime: 1663142342
+    lastCollectTime: 1663193945
+    nextCollectTime: 1663193945
   missionsData:
     missionItems:
     - id: 69

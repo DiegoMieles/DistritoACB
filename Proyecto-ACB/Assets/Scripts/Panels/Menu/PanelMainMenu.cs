@@ -67,7 +67,7 @@ public class PanelMainMenu : Panel
     /// </summary>
     public void LoadPlayerAccountData()
     {
-         placerHolder.gameObject.SetActive(true);
+         
 #if PLATFORM_ANDROID
         if (!Permission.HasUserAuthorizedPermission(Permission.Camera))
         {
@@ -87,7 +87,8 @@ public class PanelMainMenu : Panel
 
         if(!isFirstTimeLoading)
             ACBSingleton.Instance.ActivateMainSpinner(true);
-              
+        else placerHolder.gameObject.SetActive(true);
+
         Firebase.Messaging.FirebaseMessaging.GetTokenAsync().ContinueWithOnMainThread(
             task => {
                 var  token = task.Result;
@@ -98,7 +99,7 @@ public class PanelMainMenu : Panel
                     Debug.Log(snapshot.RawJson);
                     JsonConvert.PopulateObject(snapshot.RawJson, ACBSingleton.Instance.AccountData);
                     LoadGameData();
-                     placerHolder.gameObject.SetActive(false);
+                     
                 }, error =>
                 {
                     onFailedAccountDataLoad?.Invoke();
@@ -118,7 +119,6 @@ public class PanelMainMenu : Panel
     /// </summary>
     public void LoadGameData()
     {
-         placerHolder.gameObject.SetActive(true);
         if (!isFirstTimeLoading)
             ACBSingleton.Instance.ActivateMainSpinner(true);
         
