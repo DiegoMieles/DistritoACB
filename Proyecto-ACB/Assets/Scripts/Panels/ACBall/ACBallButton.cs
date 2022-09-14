@@ -6,18 +6,18 @@ using UnityEngine.UI;
 using WebAPI;
 
 /// <summary>
-/// Clase personalizada con los datos específicos de una ACBall
+/// Clase personalizada con los datos especï¿½ficos de una ACBall
 /// </summary>
 public class ACBallButton : MonoBehaviour
 {
     [Header("Buttons components")]
-    [SerializeField] [Tooltip("Imagen de la ACBall específica")]
+    [SerializeField] [Tooltip("Imagen de la ACBall especï¿½fica")]
     private Image acballImage;
     [SerializeField] [Tooltip("Titulo que contiene el nombre de la ACBall")]
     private Text acballTitleText;
-    [SerializeField] [Tooltip("Texto que contiene la descripción de la ACBall")]
+    [SerializeField] [Tooltip("Texto que contiene la descripciï¿½n de la ACBall")]
     private Text acballDescriptionText;
-    [SerializeField] [Tooltip("Botón que se encarga de llevar al usuario al panel donde se acepta si una ACBall se abre o no se abre")]
+    [SerializeField] [Tooltip("Botï¿½n que se encarga de llevar al usuario al panel donde se acepta si una ACBall se abre o no se abre")]
     private Button openConfirmationPanelButton;
     [SerializeField] [Tooltip("Burbuja de la zona superior que se muestra cuando una ACBall no se ha visto/abierto")]
     private GameObject bubble;
@@ -26,23 +26,23 @@ public class ACBallButton : MonoBehaviour
     [Header("Panel references")]
     [SerializeField] [Tooltip("Clase que controla la apertura de nuevos paneles a mostrar")]
     private PanelOpener panelOpener;
-    [SerializeField] [Tooltip("Prefab del panel de confirmación de si se abre o no una ACBall")]
+    [SerializeField] [Tooltip("Prefab del panel de confirmaciï¿½n de si se abre o no una ACBall")]
     private GameObject confirmationPanelPrefab;
 
-    private Action onFinishedOpeningACBall; //Acción que se llama una vez una ACBall es abierta
-    private Action onGoBack; //Acción que se llama al retroceder en la opción de selecionar si se abre o no una ACBall
+    private Action onFinishedOpeningACBall; //Acciï¿½n que se llama una vez una ACBall es abierta
+    private Action onGoBack; //Acciï¿½n que se llama al retroceder en la opciï¿½n de selecionar si se abre o no una ACBall
     public AcbBallContainer.AcbBallsData.AcBallsItems acballItemData { get; private set; } //Clase con los datos de los items que se encuentran dentro de la ACBall
     public AcbBallContainer.ACBallsToSell.AcBallsItems acballMarketItemData { get; private set; } //Clase con los datos de los items que se encuentran dentro de la ACBall
-    public bool isJumbleSale; //si es true este acball está siendo mostrado en los acballs para publicar en el mercadillo
+    public bool isJumbleSale; //si es true este acball estï¿½ siendo mostrado en los acballs para publicar en el mercadillo
     #region Public Methods
 
     /// <summary>
-    /// Método que configura el botón con sus respectivas acciones al abrir, no abrir y recibir un item de una ACBall
+    /// Mï¿½todo que configura el botï¿½n con sus respectivas acciones al abrir, no abrir y recibir un item de una ACBall
     /// </summary>
     /// <param name="acballItemData">Datos de los items dentro de la ACBall</param>
-    /// <param name="onFinishedOpeningACBall">Acción que se llama al abrir una ACBall</param>
-    /// <param name="onGoBack">Acción que se llama al no abrir una ACBall</param>
-    /// <param name="onClickedButton">Acción que se ejecuta al seleccionar el botón de la ACBall</param>
+    /// <param name="onFinishedOpeningACBall">Acciï¿½n que se llama al abrir una ACBall</param>
+    /// <param name="onGoBack">Acciï¿½n que se llama al no abrir una ACBall</param>
+    /// <param name="onClickedButton">Acciï¿½n que se ejecuta al seleccionar el botï¿½n de la ACBall</param>
     public void SetupButton(AcbBallContainer.AcbBallsData.AcBallsItems acballItemData, Action onFinishedOpeningACBall, Action onGoBack, Action onClickedButton)
     {
         this.onGoBack = onGoBack;
@@ -52,14 +52,15 @@ public class ACBallButton : MonoBehaviour
         WebProcedure.Instance.GetSprite(acballItemData.path_img, OnSuccess, OnFailed);
     }
     /// <summary>
-    /// Método que configura el botón con sus respectivas acciones al abrir, no abrir y recibir un item de una ACBall
+    /// Mï¿½todo que configura el botï¿½n con sus respectivas acciones al abrir, no abrir y recibir un item de una ACBall
     /// </summary>
     /// <param name="acballItemData">Datos de los items dentro de la ACBall</param>
-    /// <param name="onFinishedOpeningACBall">Acción que se llama al abrir una ACBall</param>
-    /// <param name="onGoBack">Acción que se llama al no abrir una ACBall</param>
-    /// <param name="onClickedButton">Acción que se ejecuta al seleccionar el botón de la ACBall</param>
+    /// <param name="onFinishedOpeningACBall">Acciï¿½n que se llama al abrir una ACBall</param>
+    /// <param name="onGoBack">Acciï¿½n que se llama al no abrir una ACBall</param>
+    /// <param name="onClickedButton">Acciï¿½n que se ejecuta al seleccionar el botï¿½n de la ACBall</param>
     public void SetupButton(AcbBallContainer.ACBallsToSell.AcBallsItems acballItemData, Action onFinishedOpeningACBall, Action onGoBack, Action onClickedButton)
     {
+        if(acballItemData == null) return;
         this.onGoBack = onGoBack;
         this.acballMarketItemData = acballItemData;
         this.onFinishedOpeningACBall = onFinishedOpeningACBall;
@@ -83,7 +84,7 @@ public class ACBallButton : MonoBehaviour
     #region Inner Methods
 
     /// <summary>
-    /// Método que se llama al cargar la imagen de la ACBall satisfactoriamente de backend y que se
+    /// Mï¿½todo que se llama al cargar la imagen de la ACBall satisfactoriamente de backend y que se
     /// Encarga de mostrar los datos de la ACBall junto con su imagen
     /// </summary>
     /// <param name="obj">Imagen de la ACBall traida desde backend</param>
@@ -102,7 +103,7 @@ public class ACBallButton : MonoBehaviour
     }
 
     /// <summary>
-    /// Método que se llama si la imagen de la ACBall no se pudo cargar desde backend
+    /// Mï¿½todo que se llama si la imagen de la ACBall no se pudo cargar desde backend
     /// </summary>
     /// <param name="obj">Clase con los datos de error devueltos desde backend</param>
     private void OnFailed(WebError obj)
@@ -112,7 +113,7 @@ public class ACBallButton : MonoBehaviour
     }
 
     /// <summary>
-    /// Método que se encarga de abrir el panel donde se decide si una ACBall se abre o no
+    /// Mï¿½todo que se encarga de abrir el panel donde se decide si una ACBall se abre o no
     /// </summary>
     private void OpenConfirmationPanel()
     {

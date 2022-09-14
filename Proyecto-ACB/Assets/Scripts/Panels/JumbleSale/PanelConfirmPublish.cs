@@ -11,12 +11,12 @@ using WebAPI;
 public class PanelConfirmPublish : Panel
 {
     public delegate void VoidDelegate();
-    //Evento que se dispara al completar la publicación en el mercadillo
+    //Evento que se dispara al completar la publicaciï¿½n en el mercadillo
     public event VoidDelegate OnConfirmedPublish;
     //Nombre de cada tyoo de item para ser reconocido en la venta
     public  enum itemTypes {BOOSTER, SKIN , ACBALL , TOKENCARD, TOKENHIGTHLIGHT };
     [Header("Skins")]
-    //Url donde se alvergan las imágenes del proyecto
+    //Url donde se alvergan las imï¿½genes del proyecto
     public static string IMAGES_URL ="https://donext-dev.s3.eu-west-3.amazonaws.com/resources/";
     [SerializeField]
     [Tooltip("icono del item a mostrar")]
@@ -32,11 +32,11 @@ public class PanelConfirmPublish : Panel
     [Tooltip("Id del item a mostrar")]
     private int m_item_id;
     [SerializeField]
-    [Tooltip("Primer título de alerta al publicar un item")]
-    private string alertPublish = "¿Estás seguro?";
+    [Tooltip("Primer tï¿½tulo de alerta al publicar un item")]
+    private string alertPublish = "ï¿½Estï¿½s seguro?";
     [SerializeField]
-    [Tooltip("Descripción de alerta al publicar un item")]
-    private string alertPublishDescription = "¿Se hará pública tu oferta. Si alguien complra tu token desaparecerá de tu lista. \n Recuerda que puedes eliminarla cuando quieras desde el detalle de tu oferta." ;
+    [Tooltip("Descripciï¿½n de alerta al publicar un item")]
+    private string alertPublishDescription = "ï¿½Se harï¿½ pï¿½blica tu oferta. Si alguien complra tu token desaparecerï¿½ de tu lista. \n Recuerda que puedes eliminarla cuando quieras desde el detalle de tu oferta." ;
     [SerializeField]
     [Tooltip("costo del item")]
     private int itemPriceValue = 10;
@@ -54,7 +54,7 @@ public class PanelConfirmPublish : Panel
     [Tooltip("Imagen de potenciador activo en la carta")]
     private GameObject booster;
     [SerializeField]
-    [Tooltip("Imagen de carta con lesión")]
+    [Tooltip("Imagen de carta con lesiï¿½n")]
     private GameObject injured;
     [SerializeField]
     [Tooltip("icono del Token a mostrar")]
@@ -66,9 +66,9 @@ public class PanelConfirmPublish : Panel
     [Tooltip("icono del highlightIcon a mostrar")]
     public Image highlightIcon;
     /// <summary>
-    /// Recibe la información del item y la dibuja
+    /// Recibe la informaciï¿½n del item y la dibuja
     /// </summary>
-    /// <param name="itemData">información del item</param>
+    /// <param name="itemData">informaciï¿½n del item</param>
     public void Populate(ItemData itemData)
     {
         m_item_id = itemData.id;
@@ -82,9 +82,9 @@ public class PanelConfirmPublish : Panel
         if (itemDescription) itemDescription.text = itemData.description;
         UpdateUI();
     }    /// <summary>
-    /// Recibe la información del highlight y la dibuja
+    /// Recibe la informaciï¿½n del highlight y la dibuja
     /// </summary>
-    /// <param name="itemData">información del item</param>
+    /// <param name="itemData">informaciï¿½n del item</param>
     public void Populate(HighLightData.HigthlightItems highlightData)
     {
         m_item_id = highlightData.id;
@@ -99,9 +99,9 @@ public class PanelConfirmPublish : Panel
         UpdateUI();
     } 
     /// <summary>
-    /// Recibe la información del jugador y la dibuja
+    /// Recibe la informaciï¿½n del jugador y la dibuja
     /// </summary>
-    /// <param name="itemData">información del item</param>
+    /// <param name="itemData">informaciï¿½n del item</param>
     public void Populate(TokenItemData itemData)
     {
         m_item_id = itemData.id;
@@ -118,7 +118,7 @@ public class PanelConfirmPublish : Panel
         UpdateUI();
     }  
     /// <summary>
-    /// Recibe la información del ACBall y la dibuja
+    /// Recibe la informaciï¿½n del ACBall y la dibuja
     /// </summary>
     /// <param name="ACBallData"></param>
     public void Populate(AcbBallContainer.ACBallsToSell.AcBallsItems ACBallData)
@@ -134,9 +134,9 @@ public class PanelConfirmPublish : Panel
         UpdateUI();
     }  
     /// <summary>
-    /// Recibe la información del potenciador y la dibuja
+    /// Recibe la informaciï¿½n del potenciador y la dibuja
     /// </summary>
-    /// <param name="itemData">información del item</param>
+    /// <param name="itemData">informaciï¿½n del item</param>
     public void Populate(BoosterData.BoosterItemData boostData)
     {
         m_item_id = boostData.id;
@@ -222,6 +222,11 @@ public class PanelConfirmPublish : Panel
     /// </summary>
     public void ClickPublish()
     {
+        GameObject spinner = GameObject.Find("Spinner_ACBall");
+        for(int i=0; i<spinner.transform.childCount; i++)
+        {
+            spinner.transform.GetChild(i).gameObject.SetActive(true);
+        }
         ACBSingleton.Instance.AlertPanel.SetupPanel(alertPublish, alertPublishDescription, true,Publish);
     }
     /// <summary>

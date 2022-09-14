@@ -140,7 +140,7 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
         try
         {
             JsonConvert.PopulateObject(obj.RawJson, error);
-            if (error.code != 200 && error.message != "")
+            if (error.code != 200 && !string.IsNullOrEmpty( error.message))
             {
                 ACBSingleton.Instance.AlertPanel.SetupPanel(error.message, "", false, () => { Close();  onSuccessfulbuy?.Invoke();  });
                 return;

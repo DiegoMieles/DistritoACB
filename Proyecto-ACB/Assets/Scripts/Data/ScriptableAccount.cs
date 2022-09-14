@@ -1491,6 +1491,7 @@ namespace Data
         public string freeshots;
         public string rebounds;
         public string assists;
+        public string assits;
         public string points;
         public string st_triples;
         public string st_freeshots;
