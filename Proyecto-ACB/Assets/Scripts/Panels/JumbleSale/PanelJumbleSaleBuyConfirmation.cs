@@ -7,37 +7,37 @@ using WebAPI;
 using System;
 using Newtonsoft.Json;
 /// <summary>
-/// panel de confirmación de compra del mercadillo
+/// panel de confirmaci?n de compra del mercadillo
 /// </summary>
 public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
 {
     protected Action OnDeletePublish; //Action que se ejecuta al eliminarse un producto ;
-    protected JumbleSaleResult.JumbleItems itemData; //Clase con los datos del item que se está comprando
+    protected JumbleSaleResult.JumbleItems itemData; //Clase con los datos del item que se est? comprando
     [SerializeField]
-    [Tooltip("botón de eliminar publicación")]
+    [Tooltip("bot?n de eliminar publicaci?n")]
     public Button deleteButton;
     [SerializeField]
-    [Tooltip("objeto que contiene la información de los costos de la publicación")]
+    [Tooltip("objeto que contiene la informaci?n de los costos de la publicaci?n")]
     public GameObject costInfoLayout;
     [SerializeField]
-    [Tooltip("Primer título de alerta al eliminar un item")]
-    private string alertDelete = "¿Estás seguro?";
+    [Tooltip("Primer t?tulo de alerta al eliminar un item")]
+    private string alertDelete = "?Est?s seguro?";
     [SerializeField]
-    [Tooltip("Descripción de alerta al eliminar un item")]
-    private string alertDeleteDescription = "Esta oferta se eliminará automáticamente";  
+    [Tooltip("Descripci?n de alerta al eliminar un item")]
+    private string alertDeleteDescription = "Esta oferta se eliminar? autom?ticamente";  
     [SerializeField][TextArea]
-    [Tooltip("Descripción de alerta al eliminar un item")]
+    [Tooltip("Descripci?n de alerta al eliminar un item")]
     private string confirmationBuyText ;
     [Header("Mini panels")]
     [SerializeField]
-    [Tooltip("Minipanel que muestra la información de la acball publicado junto con lo que esta puede traer dentro")]
+    [Tooltip("Minipanel que muestra la informaci?n de la acball publicado junto con lo que esta puede traer dentro")]
     protected BuyMiniPanelACBall acballMinipanelOwned;
     /// <summary>
     /// Configura los datos a mostrar del producto a comprar
     /// </summary>
     /// <param name="itemData">Clase con los datos del producto seleccionado para comprar</param>
     /// <param name="productSprite">Imagen del producto a comprar</param>
-    /// <param name="onSuccessfulbuy">Acción que se ejecuta cuando un objeto se ha comprado satisfactoriamente</param>
+    /// <param name="onSuccessfulbuy">Acci?n que se ejecuta cuando un objeto se ha comprado satisfactoriamente</param>
     public void SetupProductData(JumbleSaleResult.JumbleItems itemData, Sprite productSprite, Action onSuccessfulbuy, Action OnDeletePublish)
     {
         if (itemData.seller_user_id == WebProcedure.Instance.accessData.user && deleteButton != null)
@@ -78,7 +78,7 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
         minipanelToOpen.ShowMiniPanel(productSprite, itemData, itemData.description, Close);
     }
     /// <summary>
-    /// Método que controla si el jugador puede comprar un item o no de acuerdo a la cantidad de ACBCoins que tenga
+    /// M?todo que controla si el jugador puede comprar un item o no de acuerdo a la cantidad de ACBCoins que tenga
     /// </summary>
     /// <param name="itemData">Clase con los datos del producto que se quiere comprar</param>
     protected void CheckIfCanBuyItem(JumbleSaleResult.JumbleItems itemData)
@@ -92,7 +92,7 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
             ACBSingleton.Instance.AlertPanel.SetupPanel(enoughCurrencyAmountText, confirmationBuyText + itemData.price + " acbcoins", true, () => { BuyItem(itemData); }, () => { spinner.gameObject.SetActive(false); });
     }
     /// <summary>
-    /// Método que se llama al presionar el botón de comprar producto, llamando a backend para verificar que la compra se pueda hacer
+    /// M?todo que se llama al presionar el bot?n de comprar producto, llamando a backend para verificar que la compra se pueda hacer
     /// </summary>
     /// <param name="itemData">Clase con los datos del producto que se quiere comprar</param>
     protected void BuyItem(JumbleSaleResult.JumbleItems itemData)
@@ -101,7 +101,7 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
         WebProcedure.Instance.BuyJumbleSaleItem(JsonConvert.SerializeObject(body), OnSuccessBuying, OnFailedBuying);
     }
     /// <summary>
-    /// destruye la publicación creada en el mercadillo y crea lo páneles de confirmación
+    /// destruye la publicaci?n creada en el mercadillo y crea lo p?neles de confirmaci?n
     /// </summary>
     protected void DeletePublication(JumbleSaleResult.JumbleItems itemData)
     {
@@ -114,7 +114,7 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
                      JsonConvert.PopulateObject(obj.RawJson, error);
                      if (error.code == 400)
                      {
-                         ACBSingleton.Instance.AlertPanel.SetupPanel("Este elemento ya ha sido vendido", "", false, () => { OnDeletePublish?.Invoke(); Close(); });
+                         ACBSingleton.Instance.AlertPanel.SetupPanel(error.message, "", false, () => { OnDeletePublish?.Invoke(); Close(); });
                          return;
                      }
                  }
@@ -130,13 +130,27 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
        
     }
     /// <summary>
-    /// Método que se ejecuta cuando la compra del producto ha sido exitosa en backend y actualiza las analíticas de firebase
+    /// M?todo que se ejecuta cuando la compra del producto ha sido exitosa en backend y actualiza las anal?ticas de firebase
     /// </summary>
     /// <param name="obj">Clase con los datos de la compra exitosa</param>
     protected override void OnSuccessBuying(DataSnapshot obj)
     {
-    
-            ACBSingleton.Instance.AlertPanel.SetupPanel(onSuccessCode, "", false, () => { JsonConvert.PopulateObject(obj.RawJson, ACBSingleton.Instance.AccountData); Close(); onSuccessfulbuy?.Invoke(); });
+
+        MissionAlreadyComplete error = new MissionAlreadyComplete();
+        try
+        {
+            JsonConvert.PopulateObject(obj.RawJson, error);
+            if (error.code != 200 || error.message != "")
+            {
+                ACBSingleton.Instance.AlertPanel.SetupPanel(error.message, "", false, () => { Close();  onSuccessfulbuy?.Invoke();  });
+                return;
+            }
+        }
+        catch
+        {
+
+        }
+        ACBSingleton.Instance.AlertPanel.SetupPanel(onSuccessCode, "", false, () => { JsonConvert.PopulateObject(obj.RawJson, ACBSingleton.Instance.AccountData); Close(); onSuccessfulbuy?.Invoke(); });
             Firebase.Analytics.Parameter param;
 
             switch (itemData.item_type)
