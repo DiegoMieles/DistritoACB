@@ -236,8 +236,20 @@ public class PanelConfirmPublish : Panel
     /// Se dispara cuando el item ha sido satisfactoriamente publicado
     /// </summary>
     /// 
-    private void OnItemPublished(DataSnapshot snapshot)
+    private void OnItemPublished(DataSnapshot obj)
     {
+        MissionAlreadyComplete error = new MissionAlreadyComplete();
+        try
+        {
+            JsonConvert.PopulateObject(obj.RawJson, error);
+            if (error.code != 200 && error.message != "")
+            {
+                ACBSingleton.Instance.AlertPanel.SetupPanel(error.message, "", false, () => {  OnConfirmedPublish?.Invoke(); Close(); });
+                return;
+            }
+        }
+        catch
+        { }
         OnConfirmedPublish?.Invoke();
         Close();
     }

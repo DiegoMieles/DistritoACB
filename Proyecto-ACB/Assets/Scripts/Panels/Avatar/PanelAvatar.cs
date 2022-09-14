@@ -57,6 +57,9 @@ public class PanelAvatar : Panel
         logOutButton.onClick.AddListener(() => {
             StartCoroutine(CloseSpinner());
             WebProcedure.Instance.PostacbiSignOut(OnLogOutSuccess, OnLogOutFailed );});
+        editAccountButton.onClick.AddListener(() => {
+            OpenEditAccountPanel();
+        });
 
         editAvatarButtons.ForEach(button => { button.onClick.AddListener(OpenAvatarEditor); });
 

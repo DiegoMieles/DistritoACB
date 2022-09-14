@@ -140,16 +140,14 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
         try
         {
             JsonConvert.PopulateObject(obj.RawJson, error);
-            if (error.code != 200 || error.message != "")
+            if (error.code != 200 && error.message != "")
             {
                 ACBSingleton.Instance.AlertPanel.SetupPanel(error.message, "", false, () => { Close();  onSuccessfulbuy?.Invoke();  });
                 return;
             }
         }
         catch
-        {
-
-        }
+        {}
         ACBSingleton.Instance.AlertPanel.SetupPanel(onSuccessCode, "", false, () => { JsonConvert.PopulateObject(obj.RawJson, ACBSingleton.Instance.AccountData); Close(); onSuccessfulbuy?.Invoke(); });
             Firebase.Analytics.Parameter param;
 

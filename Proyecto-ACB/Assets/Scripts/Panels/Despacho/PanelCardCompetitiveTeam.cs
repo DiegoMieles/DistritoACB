@@ -149,9 +149,7 @@ public class PanelCardCompetitiveTeam : Panel
             {
                 if(GameObject.FindObjectOfType<PanelTeamCompetitivo>() != null)
                     GameObject.FindObjectOfType<PanelTeamCompetitivo>().CallInfoActualLeague();
-                else
                     Close();
-
             });
         }, error =>
         {
