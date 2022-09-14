@@ -770,6 +770,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toggle: {fileID: 5832698561098184653}
   imageThumbnail: {fileID: 5832698561098184090}
+  imageBorder: {fileID: 0}
+  clasicBorderSprite: {fileID: 0}
+  actualBorderSprite: {fileID: 0}
+  imageThumbnailHighlight: {fileID: 5832698561098184090}
   textName: {fileID: 5832698561098184484}
   textHash: {fileID: 5832698561098184685}
   team: {fileID: 5832698561098178573}
@@ -792,6 +796,7 @@ MonoBehaviour:
     triples: 
     freeshots: 
     rebounds: 
+    assists: 
     assits: 
     points: 
     st_triples: 
@@ -819,6 +824,19 @@ MonoBehaviour:
     isBoostAssists: 0
     isBoostPoints: 0
     videos: []
+    daysOrTextInjured: 
+    is_clasic: 1
+    card:
+      player_name: 
+      description: 
+      pathImgFront: 
+      pathThumbnail: 
+      st_triples: 
+      st_freeshots: 
+      st_rebounds: 
+      st_assists: 
+      st_points: 
+      subcollection_id: 
   currentHighLight:
     id: 0
     token: 

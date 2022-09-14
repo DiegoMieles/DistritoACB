@@ -148,8 +148,12 @@ public class PanelCardCompetitiveTeam : Panel
             ACBSingleton.Instance.AlertPanel.SetupPanel(snapshot.MessageCustom, string.Empty, false, () =>
             {
                 if(GameObject.FindObjectOfType<PanelTeamCompetitivo>() != null)
+                {
                     GameObject.FindObjectOfType<PanelTeamCompetitivo>().CallInfoActualLeague();
-                    Close();
+                    PanelTeamCompetitivo.OnClose?.Invoke();
+                }
+
+                Close();
             });
         }, error =>
         {

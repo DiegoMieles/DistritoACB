@@ -178,7 +178,10 @@ public class PanelTokenItemToggle : MonoBehaviour
     {
         panelOpener.popupPrefab = cardViewPrefab;
         panelOpener.OpenPopup();
-        panelOpener.popup.GetComponent<PanelCardCompetitiveTeam>().SetCardData(currentToken, null, false, onBoosterSet);
+        panelOpener.popup.GetComponent<PanelCardCompetitiveTeam>().SetCardData(currentToken, ()=> {
+            GameObject.FindObjectOfType<PanelTeamCompetitivo>().CallInfoActualLeague();
+            PanelTeamCompetitivo.OnClose?.Invoke();
+        }, false, onBoosterSet);
     }
 
     #endregion

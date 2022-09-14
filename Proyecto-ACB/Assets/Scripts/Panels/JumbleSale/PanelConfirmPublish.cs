@@ -222,7 +222,7 @@ public class PanelConfirmPublish : Panel
     /// </summary>
     public void ClickPublish()
     {
-        GameObject spinner = GameObject.Find("Spinner_ACBall");
+        GameObject spinner = GameObject.Find("Spinner_Publish");
         for(int i=0; i<spinner.transform.childCount; i++)
         {
             spinner.transform.GetChild(i).gameObject.SetActive(true);
