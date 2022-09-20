@@ -242,6 +242,18 @@ public class PanelPotenciadores : Panel
         
         WebProcedure.Instance.PostApplyUserBoosterToTokenCard(json ,snapshot =>
         {
+            MissionAlreadyComplete error = new MissionAlreadyComplete();
+            try
+            {
+                JsonConvert.PopulateObject(snapshot.RawJson, error);
+                if (error.code != 200 && !string.IsNullOrEmpty(error.message))
+                {
+                    ACBSingleton.Instance.AlertPanel.SetupPanel(error.message, "", false, ()=> { panelOpener.ClosePopup(); });
+                    return;
+                }
+            }
+            catch
+            { }
             boosterDataContainer.boosterData.boosterItems.Clear();
             applyBoosterResponse.boosterData.boosterItems.Clear();
             JsonConvert.PopulateObject(snapshot.RawJson, applyBoosterResponse);

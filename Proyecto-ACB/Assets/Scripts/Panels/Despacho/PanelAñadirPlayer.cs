@@ -225,6 +225,19 @@ public class PanelAñadirPlayer : Panel
         WebProcedure.Instance.PostAddTokenToTeam(cardbody, snapshot =>
         {
             Debug.Log(snapshot.RawJson);
+
+            MissionAlreadyComplete error = new MissionAlreadyComplete();
+            try
+            {
+                JsonConvert.PopulateObject(snapshot.RawJson, error);
+                if (error.code != 200 && !string.IsNullOrEmpty(error.message))
+                {
+                    ACBSingleton.Instance.AlertPanel.SetupPanel(error.message, "", false, ()=> { Close(); });
+                    return;
+                }
+            }
+            catch
+            { }
             ACBSingleton.Instance.AlertPanel.SetupPanel(snapshot.MessageCustom, string.Empty, false, () =>
             {
                 if(GameObject.FindObjectOfType<PanelTeamCompetitivo>() != null)
@@ -238,7 +251,7 @@ public class PanelAñadirPlayer : Panel
             }, null, 0, "Aceptar");  
         }, error =>
         {
-            onFailed.Invoke();
+            onFailed?.Invoke();
             ClosedSpinner();
         });
     }

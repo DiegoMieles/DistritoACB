@@ -208,6 +208,18 @@ public class AvatarEditor : Panel
     private void OnSuccessLoadingAvatarData(DataSnapshot obj)
     {
         Debug.Log(obj.RawJson);
+        MissionAlreadyComplete error = new MissionAlreadyComplete();
+        try
+        {
+            JsonConvert.PopulateObject(obj.RawJson, error);
+            if (error.code != 200 && !string.IsNullOrEmpty(error.message))
+            {
+                ACBSingleton.Instance.AlertPanel.SetupPanel(error.message, "", false, null);
+                return;
+            }
+        }
+        catch
+        { }
         avatarMenuData = new AvatarEditorData();
         JsonConvert.PopulateObject(obj.RawJson, avatarMenuData);
         JsonConvert.PopulateObject(obj.RawJson, ACBSingleton.Instance.AccountData, new JsonSerializerSettings( ){ObjectCreationHandling = ObjectCreationHandling.Replace});

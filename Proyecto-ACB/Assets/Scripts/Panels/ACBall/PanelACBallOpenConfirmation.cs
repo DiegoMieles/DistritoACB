@@ -187,6 +187,19 @@ public class PanelACBallOpenConfirmation : Panel
     /// <param name="obj">Clase con los datos devueltos de backend de la ACBall abierta</param>
     private void OnSuccessOpeningACBall(DataSnapshot obj)
     {
+
+        MissionAlreadyComplete error = new MissionAlreadyComplete();
+        try
+        {
+            JsonConvert.PopulateObject(obj.RawJson, error);
+            if (error.code != 200 && !string.IsNullOrEmpty(error.message))
+            {
+                ACBSingleton.Instance.AlertPanel.SetupPanel(error.message, "", false, ()=> { Close(); });
+                return;
+            }
+        }
+        catch
+        { }
         AcbBallContainer.AcbBallReward reward = new AcbBallContainer.AcbBallReward();
         Debug.Log(obj.RawJson);
         JsonConvert.PopulateObject(obj.RawJson, ACBSingleton.Instance.AccountData);
