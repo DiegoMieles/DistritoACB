@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1228334534
 RectTransform:
   m_ObjectHideFlags: 0
@@ -113,7 +113,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6714827407956989208
 RectTransform:
   m_ObjectHideFlags: 0
@@ -471,7 +471,6 @@ MonoBehaviour:
   isColeccion: 1
   scrollRectTransactions: {fileID: 1078138471376217568}
   panelColeccionData: {fileID: 2222818630309085531, guid: 65631bb537094a041a370a805aa3c155, type: 3}
-  scriptableAccount: {fileID: 11400000, guid: 3dc2961911d06654587eb22f21e1bb37, type: 2}
   onFailed:
     m_PersistentCalls:
       m_Calls: []
@@ -480,8 +479,9 @@ MonoBehaviour:
       collectionItems: []
   spinner: {fileID: 3974872119229880277}
   canClose: 1
-  textFail: "No hay \ncolecciones disponibles "
+  textFail: "Todav\xEDa no hay contenido en esta colecci\xF3n"
   textNoColeccion: {fileID: 4115735113442558896}
+  isActualLeague: 0
 --- !u!1 &1682909883901387512
 GameObject:
   m_ObjectHideFlags: 0

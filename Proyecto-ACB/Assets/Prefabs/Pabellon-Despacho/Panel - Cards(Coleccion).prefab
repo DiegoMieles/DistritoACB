@@ -812,7 +812,7 @@ MonoBehaviour:
     higthlightData:
       higthlightItems: []
   spinner: {fileID: 593220285}
-  textFail: "No tienes cartas disponibles \npara a\xF1adir"
+  textFail: "Todav\xEDa no hay contenido en esta colecci\xF3n"
   textNoPotenciadores: {fileID: 3120165218147666565}
 --- !u!1 &5085504651228219418
 GameObject:

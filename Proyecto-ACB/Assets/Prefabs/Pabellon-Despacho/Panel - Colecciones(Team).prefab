@@ -842,7 +842,7 @@ MonoBehaviour:
       collectionItems: []
   spinner: {fileID: 1902524327}
   canClose: 1
-  textFail: "No tienes ninguna card\r que a\xF1adir a tu equipo"
+  textFail: "Todav\xEDa no hay contenido en esta colecci\xF3n"
   textNoColeccion: {fileID: 2215551666223996575}
   isActualLeague: 0
 --- !u!1 &6128430763923816543
@@ -1181,7 +1181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -236.3732, y: 1167.0798}
+  m_AnchoredPosition: {x: -236.3732, y: 967.08014}
   m_SizeDelta: {x: 472.7464, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8083894040779917405

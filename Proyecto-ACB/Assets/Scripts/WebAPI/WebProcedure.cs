@@ -76,6 +76,7 @@ namespace WebAPI
         private const string GetSeatDetailUrl = "GetSeatDetails?id={0}";
         private const string LeaveFromProjectionRoomUrl = "LeaveFromProjectionRoom?id={0}";
         private const string GetVideoDetailsUrl = "GetVideoDetails?id={0}&seat_id={1}&media_id={2}";
+        private const string RemoveAccountUrl = "RemoveAccount?id={0}&Authorization=Bearer {1}";
 
         public const string CREDENTIALS = "CREDENTIALS";
 
@@ -1229,6 +1230,15 @@ namespace WebAPI
         {
             var form = new WWWForm();
             var url = String.Format(GetVideoDetailsUrl, accessData.user, seat_id,media_id);
+            StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
+        }
+        /// <summary>
+        /// Elimina la cuenta del jugador en la base de datos
+        /// </summary>
+        public void RemoveAccount(Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            var form = new WWWForm();
+            var url = String.Format(RemoveAccountUrl, accessData.user, WebProcedure.Instance.accessData.refreshToken);
             StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
         }
         /// <summary>

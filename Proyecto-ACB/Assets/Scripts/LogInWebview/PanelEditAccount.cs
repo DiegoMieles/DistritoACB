@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using UniWebViews;
-
+using WebAPI;
 /// <summary>
 /// Controla el panel de autenticación al leer datos del usuario
 /// </summary>
@@ -24,10 +24,11 @@ public class PanelEditAccount : Panel
     }
 
     /// <summary>
-    /// Cierra el panel al autenticar al jugador
+    /// Cierra el panel al eliminar al jugador
     /// </summary>
     private void OnDeleted()
     {
+        WebProcedure.Instance.RemoveAccount((DataSnapshot obj) => { }, (WebError error) => { Debug.LogError(error); });
         Close();
     }
 }
