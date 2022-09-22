@@ -371,10 +371,12 @@ MonoBehaviour:
   itemData:
     id: 0
     itemType: 0
+    type: 0
     title: 
     description: 
     path_img: 
     img_show: 
+    on_market: 0
   avatarEditor: {fileID: 0}
   selectButton: {fileID: 6971358692503512693}
   buttonItem: {fileID: 9116945294977351212}
@@ -387,12 +389,13 @@ MonoBehaviour:
   hairFrontImage: {fileID: 2944301127211828029}
   shirtImage: {fileID: 8238225538508602895}
   earsImage: {fileID: 3924695217606259290}
-  normalImage: {fileID: 135902763505536541}
   noseImage: {fileID: 1137399117179786892}
   accesoryImage: {fileID: 8240772334603523644}
   facialHairImage: {fileID: 9167883991033865147}
   NullImage: {fileID: 6926842096019675075}
   itemName: {fileID: 7196024769343916045}
+  textSkinOnMarket: "No puedes aplicar esta skin a tu avatar mientras est\xE9 a la
+    venta en el Mercado"
 --- !u!1 &5181321039569051846
 GameObject:
   m_ObjectHideFlags: 0

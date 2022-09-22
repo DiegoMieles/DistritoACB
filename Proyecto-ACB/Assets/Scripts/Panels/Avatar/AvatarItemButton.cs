@@ -59,7 +59,8 @@ public class AvatarItemButton : MonoBehaviour
     private Text itemName;
 
     private Action onLoadedImage; //Acción que se ejecuta al finalizar la carga de la imagen
-
+    [SerializeField][Tooltip("texto de error cuando la skin está en el mercado")]
+    private string textSkinOnMarket;
     /// <summary>
     /// Configura el funcionamiento del botón asignando el item que va a asignar al jugador
     /// </summary>
@@ -142,6 +143,11 @@ public class AvatarItemButton : MonoBehaviour
     /// </summary>
     private void OnClickInItem()
     {
+        if (itemData.on_market)
+        {
+            ACBSingleton.Instance.AlertPanel.SetupPanel(textSkinOnMarket, "", false, null);
+            return;
+        }
         avatarEditor.AvatarHasChanges = true;
         layoutItems.SelectButton(itemData.id);
         avatarEditor.AvatarView.SetIconInAvatar(itemData);

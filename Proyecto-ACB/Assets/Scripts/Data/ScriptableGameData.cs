@@ -95,7 +95,7 @@ namespace Data
         public string description;
         public string path_img;
         public string img_show;
-
+        public bool on_market;
         private const string SPRITEPATH = "SpriteItem/";
         public Sprite GetSprite()
         {
