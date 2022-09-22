@@ -222,18 +222,18 @@ public class PanelConfirmPublish : Panel
     /// </summary>
     public void ClickPublish()
     {
-        GameObject spinner = GameObject.Find("Spinner_Publish");
-        for(int i=0; i<spinner.transform.childCount; i++)
-        {
-            spinner.transform.GetChild(i).gameObject.SetActive(true);
-        }
         ACBSingleton.Instance.AlertPanel.SetupPanel(alertPublish, alertPublishDescription, true,Publish);
     }
     /// <summary>
     /// Publica el item seleccionado
     /// </summary>
     private void Publish()
-    {   
+    {
+        GameObject spinner = GameObject.Find("Spinner_Publish");
+        for (int i = 0; i < spinner.transform.childCount; i++)
+        {
+            spinner.transform.GetChild(i).gameObject.SetActive(true);
+        }
         var cardbody = JsonConvert.SerializeObject(new SellData() { type = m_type.ToString(), price = itemPriceValue,item_id = m_item_id });
         WebProcedure.Instance.SellItem(cardbody, OnItemPublished, OnItemPublishedFailed);
     }
@@ -256,6 +256,11 @@ public class PanelConfirmPublish : Panel
         catch
         { }
         OnConfirmedPublish?.Invoke();
+        GameObject spinner = GameObject.Find("Spinner_Publish");
+        for (int i = 0; i < spinner.transform.childCount; i++)
+        {
+            spinner.transform.GetChild(i).gameObject.SetActive(false);
+        }
         Close();
     }
     /// <summary>
@@ -263,6 +268,11 @@ public class PanelConfirmPublish : Panel
     /// </summary>
     private void OnItemPublishedFailed(WebError error)
     {
+        GameObject spinner = GameObject.Find("Spinner_Publish");
+        for (int i = 0; i < spinner.transform.childCount; i++)
+        {
+            spinner.transform.GetChild(i).gameObject.SetActive(false);
+        }
         Debug.LogError(error);
         Close();
     }

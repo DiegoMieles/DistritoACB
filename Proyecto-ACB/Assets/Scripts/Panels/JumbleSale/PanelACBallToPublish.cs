@@ -88,14 +88,13 @@ public class PanelACBallToPublish : Panel
     /// <param name="scrollNormalizedPos">Posición actual del jugador en el scroll</param>
     private void OnScrollContent(Vector2 scrollNormalizedPos)
     {
-        if (scrollNormalizedPos.y <= 0.1f && !allAcballsLoaded && !isLoadingNewACBalls)
+        /*if (scrollNormalizedPos.y <= 0.1f && !allAcballsLoaded && !isLoadingNewACBalls)
         {
-           // counter++;
-            SetSpinnerNewState(true);
+            //counter++;
             isLoadingNewACBalls = true;
             page = new PageBody() { page = counter };
-          //  WebProcedure.Instance.GetACBallsToSell(JsonConvert.SerializeObject(page), OnSuccessLoadingMoreACBalls, (error) => { isLoadingNewACBalls = false; textNoACBalls.text = textFail; });
-        }
+           WebProcedure.Instance.GetACBallsToSell(JsonConvert.SerializeObject(page), OnSuccessLoadingMoreACBalls, (error) => { isLoadingNewACBalls = false; textNoACBalls.text = textFail; });
+        }*/
     }
 
     /// <summary>
