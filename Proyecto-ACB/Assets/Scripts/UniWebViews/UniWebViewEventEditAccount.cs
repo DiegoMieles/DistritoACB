@@ -6,7 +6,7 @@ using WebAPI;
 namespace UniWebViews
 {
     /// <summary>
-    /// Controlador de eventos de autenticación
+    /// Controlador de eventos de autenticaciï¿½n
     /// </summary>
     public class UniWebViewEventEditAccount : MonoBehaviour
     {
@@ -20,7 +20,7 @@ namespace UniWebViews
         #region Unity Methods
 
         /// <summary>
-        /// Se ejecuta cuando se activa el controlador, suscribiendo los eventos cada vez que se realiza una autenticación
+        /// Se ejecuta cuando se activa el controlador, suscribiendo los eventos cada vez que se realiza una autenticaciï¿½n
         /// </summary>
         private void OnEnable()
         {
@@ -36,7 +36,7 @@ namespace UniWebViews
         }
 
         /// <summary>
-        /// Asigna el protocolo https para acceder al sitio web donde se hace login y autenticación
+        /// Asigna el protocolo https para acceder al sitio web donde se hace login y autenticaciï¿½n
         /// </summary>
         /// <param name="webview"></param>
         /// <param name="statuscode"></param>
@@ -44,10 +44,11 @@ namespace UniWebViews
         private void UniWebViewOnOnPageFinished(UniWebView webview, int statuscode, string url)
         {
             webview.AddUrlScheme("https");
+          if(  GameObject.FindObjectOfType<PanelEditAccount>() != null)  GameObject.FindObjectOfType<PanelEditAccount>().Close();
         }
 
         /// <summary>
-        /// Cuando se desactiva el controlador, desactiva los eventos suscritos de autenticación
+        /// Cuando se desactiva el controlador, desactiva los eventos suscritos de autenticaciï¿½n
         /// </summary>
         private void OnDisable()
         {
@@ -60,7 +61,7 @@ namespace UniWebViews
         #region Inner Methods
 
         /// <summary>
-        /// Abre la página principal de login
+        /// Abre la pï¿½gina principal de login
         /// </summary>
         /// <param name="webview">Plugin de UniWebView</param>
         /// <param name="message">Estructura con mensaje de WebView</param>
@@ -76,46 +77,19 @@ namespace UniWebViews
                     Firebase.Messaging.FirebaseMessaging.GetTokenAsync().ContinueWithOnMainThread(
                         task => {
                             var  token = task.Result;
-                            WebProcedure.Instance.PostDeletedAccount(message.Args["delete_status"], ONSuccess, ONFailed );
+                            print(message.Args["delete_status"]);
+                            
                         }
                     );
+                    ACBSingleton.Instance.onUserDeleted?.Invoke();
                 }
                 else
                 {
-                    Debug.LogError("No devolvió mensaje: "+webview.Url);
+                    Debug.LogError("No devolviï¿½ mensaje: "+webview.Url);
                 }
             }
         }
         
-
-        /// <summary>
-        /// Se ejecuta al fallar la autenticación del usuario en la página
-        /// </summary>
-        /// <param name="obj">Datos de backend del error</param>
-        private void ONFailed(WebError obj)
-        {
-            Debug.Log("Fallo: " +obj.Message);
-        }
-
-        /// <summary>
-        /// Completa la autenticación del usuario
-        /// </summary>
-        /// <param name="obj"></param>
-        private void ONSuccess(DataSnapshot obj)
-        {
-            if (obj.Code == 200)
-            {
-                Debug.Log("Todo Bien: " +obj.RawJson);
-
-                ACBSingleton.Instance.onUserDeleted?.Invoke();
-                
-            }
-            else
-            {
-                Debug.LogError("Fallo algo: "+obj.RawJson);
-            }
-        }
-
         #endregion
     }
 }
