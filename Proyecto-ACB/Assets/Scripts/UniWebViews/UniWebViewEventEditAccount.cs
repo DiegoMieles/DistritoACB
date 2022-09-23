@@ -44,7 +44,7 @@ namespace UniWebViews
         private void UniWebViewOnOnPageFinished(UniWebView webview, int statuscode, string url)
         {
             webview.AddUrlScheme("https");
-          if(  GameObject.FindObjectOfType<PanelEditAccount>() != null)  GameObject.FindObjectOfType<PanelEditAccount>().Close();
+
         }
 
         /// <summary>
