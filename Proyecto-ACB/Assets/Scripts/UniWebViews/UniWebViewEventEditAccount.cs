@@ -67,10 +67,12 @@ namespace UniWebViews
         /// <param name="message">Estructura con mensaje de WebView</param>
         private void UniWebViewOnOnMessageReceived(UniWebView webview, UniWebViewMessage message)
         {
+            ACBSingleton.Instance.onUserDeleted?.Invoke();
             Debug.LogError(message);
             if (message.Path.Equals("www.acb.com"))
             {
-                if(message.Args.ContainsKey("delete_status"))
+               
+                if (message.Args.ContainsKey("delete_status"))
                 {
                     Debug.LogError("delete_status: " + message.Args["delete_status"]);
                     
@@ -81,7 +83,7 @@ namespace UniWebViews
                             
                         }
                     );
-                    ACBSingleton.Instance.onUserDeleted?.Invoke();
+                   
                 }
                 else
                 {

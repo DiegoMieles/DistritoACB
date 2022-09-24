@@ -27,9 +27,9 @@ public class ACBSingleton : BASESingleton<ACBSingleton>
     [SerializeField] [Tooltip("Panel de recompensas del juego")]
     private PanelReward rewardPanel;
     [SerializeField] [Tooltip("Panel donde se encuentra el mapa principal de la ciudad")]
-    private PanelMainMenu mainMenuPanel;
+    public PanelMainMenu mainMenuPanel;
     [SerializeField] [Tooltip("Panel de autenticación de usuario")]
-    private PanelOpener authenticationPanel;
+    public PanelOpener authenticationPanel;
     [SerializeField] [Tooltip("Clase que controla la apertura de nuevos paneles a mostrar")]
     private PanelOpener ViewPanel;
     [SerializeField] [Tooltip("Controlador general de los edificios del juego")]
