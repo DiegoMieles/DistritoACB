@@ -142,8 +142,6 @@ public class MallObjectButton : MonoBehaviour
         GameObject spinner = GameObject.Find("Spinner_mall");
 
         if (!spinner.activeInHierarchy)
-            spinner = GameObject.Find("Spinner_TablonDesafio");
-        if (!spinner.activeInHierarchy)
             return;
 
         for (int i = 0; i < spinner.transform.childCount; i++)

@@ -1377,14 +1377,6 @@ namespace WebAPI
             var setting = WebProcedureSettings.Instance;
             var www = UnityWebRequest.Put(setting.Ip+url, postData); 
                 www.SetRequestHeader("Content-Type", "application/json");
-            Data.RequestDeleteAccount requestDelete = new Data.RequestDeleteAccount();
-            JsonConvert.PopulateObject(postData, requestDelete);
-            if(requestDelete.user_id != null)
-            {
-                www.SetRequestHeader("user_id", requestDelete.user_id);
-                www.SetRequestHeader("Authorization", requestDelete.Authorization);
-            }
-          
             www.method = method;
 
 #pragma warning disable 618
