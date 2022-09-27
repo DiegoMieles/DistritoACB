@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Net;
 using UnityEngine;
 using UnityEngine.Networking;
+using Newtonsoft.Json;
 
 namespace WebAPI
 {
@@ -76,7 +77,7 @@ namespace WebAPI
         private const string GetSeatDetailUrl = "GetSeatDetails?id={0}";
         private const string LeaveFromProjectionRoomUrl = "LeaveFromProjectionRoom?id={0}";
         private const string GetVideoDetailsUrl = "GetVideoDetails?id={0}&seat_id={1}&media_id={2}";
-        private const string RemoveAccountUrl = "RemoveAccount?id={0}&Authorization=Bearer {1}";
+        private const string RemoveAccountUrl = "RemoveAccount?user_id={0}&Authorization={1}";
 
         public const string CREDENTIALS = "CREDENTIALS";
 
@@ -1238,8 +1239,8 @@ namespace WebAPI
         public void RemoveAccount(Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
         {
             var form = new WWWForm();
-            var url = String.Format(RemoveAccountUrl, accessData.user, WebProcedure.Instance.accessData.refreshToken);
-            StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
+            var url = String.Format(RemoveAccountUrl,accessData.user, "Bearer " + accessData.accessToken);
+            StartCoroutine(RequestCoroutine(url,form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
         }
         /// <summary>
         ///Intenta usar un pase VIP para el Auditorio
@@ -1375,7 +1376,15 @@ namespace WebAPI
         {
             var setting = WebProcedureSettings.Instance;
             var www = UnityWebRequest.Put(setting.Ip+url, postData); 
-            www.SetRequestHeader("Content-Type", "application/json");
+                www.SetRequestHeader("Content-Type", "application/json");
+            Data.RequestDeleteAccount requestDelete = new Data.RequestDeleteAccount();
+            JsonConvert.PopulateObject(postData, requestDelete);
+            if(requestDelete.user_id != null)
+            {
+                www.SetRequestHeader("user_id", requestDelete.user_id);
+                www.SetRequestHeader("Authorization", requestDelete.Authorization);
+            }
+          
             www.method = method;
 
 #pragma warning disable 618
@@ -1383,6 +1392,7 @@ namespace WebAPI
 #pragma warning restore 618
             {
                 yield return www.SendWebRequest();
+                
                 if (!string.IsNullOrEmpty(www.error))
                 {
                     HttpStatusCode status = 0;

@@ -1378,6 +1378,14 @@ namespace Data
 
     }
     /// <summary>
+    /// request para eliminar la cuenta
+    /// </summary>
+    public class RequestDeleteAccount
+    {
+        public string user_id;
+        public string Authorization;
+    }
+    /// <summary>
     /// Contenedor con los datos de cartas de jugadores
     /// </summary>
     [Serializable]
