@@ -109,7 +109,15 @@ public class PanelBoostersToSale : Panel
             boosterDataContainer?.Rebotes?.Clear();
             boosterDataContainer?.Tiros?.Clear();
             Debug.Log(snapshot.RawJson);
-            JsonConvert.PopulateObject(snapshot.RawJson, boosterDataContainer);
+            try
+            {
+                JsonConvert.PopulateObject(snapshot.RawJson, boosterDataContainer);
+            }
+            catch
+            {
+                Debug.LogError("No json received");
+            }
+      
             CheckPotenciadores();
             foreach (var boosterdata in boosterDataContainer.Asistencias)
             {
