@@ -13,7 +13,7 @@ using WebAPI;
 /// </summary>
 public class PanelBoostersToSale : Panel
 {
-    //Evento que se dispara al completar la publicación en el mercadillo
+    //Evento que se dispara al completar la publicaci?n en el mercadillo
     public event PanelConfirmPublish.VoidDelegate OnConfirmedPublish;
     [SerializeField] [Tooltip("Determina si el potenciador es de una carta")]
     private bool isCardPotenciador;
@@ -43,7 +43,7 @@ public class PanelBoostersToSale : Panel
     private Text  textPuntos;
     [SerializeField] [Tooltip("Texto de asistencias")]
     private Text  textAsistencia;
-    [SerializeField] [Tooltip("Texto de título")]
+    [SerializeField] [Tooltip("Texto de t?tulo")]
     private Text  textNoPotenciadores;
     [SerializeField,TextArea] [Tooltip("Texto que se muestra cuando la traida de datos es fallida")]
     private string textFail;
@@ -64,10 +64,10 @@ public class PanelBoostersToSale : Panel
     [SerializeField] [Tooltip("Spinner de carga")]
     private GameObject spinner;
     [SerializeField]
-    [Tooltip("prefab del panel de confirmación ")]
+    [Tooltip("prefab del panel de confirmaci?n ")]
     private GameObject confirmPanelPrefab;
     [SerializeField]
-    [Tooltip("botón para publicar la skin seleccionada")]
+    [Tooltip("bot?n para publicar la skin seleccionada")]
     private Button publishButton;
 
     private bool isCardInTeam; //Determina si una carta se encuentra en el equipo competitivo
@@ -176,7 +176,7 @@ public class PanelBoostersToSale : Panel
     }
 
     /// <summary>
-    /// Muestra el panel de confirmación de aplicar potenciador
+    /// Muestra el panel de confirmaci?n de aplicar potenciador
     /// </summary>
     /// <param name="boosterdata">Datos del potenciado</param>
     /// <param name="playerCard">Carta a la que se le aplica el potenciador</param>
@@ -193,7 +193,7 @@ public class PanelBoostersToSale : Panel
     /// </summary>
     private void CallInfo()
     {
-        WebProcedure.Instance.GetGetBoosterUser(snapshot =>
+        WebProcedure.Instance.GetBoostersToSell(snapshot =>
         {
             boosterDataContainer?.boosterData?.boosterItems?.Clear();
             applyBoosterResponse?.boosterData?.boosterItems?.Clear();
@@ -258,7 +258,7 @@ public class PanelBoostersToSale : Panel
     }
 
     /// <summary>
-    /// Realiza verificación de los potenciadores
+    /// Realiza verificaci?n de los potenciadores
     /// </summary>
     private void CheckPotenciadores()
     {
@@ -285,7 +285,7 @@ public class PanelBoostersToSale : Panel
     }
 
     /// <summary>
-    /// Activa corrutina que retrasa la desactivación del spinner
+    /// Activa corrutina que retrasa la desactivaci?n del spinner
     /// </summary>
     public void SpinnerClosing()
     {
@@ -293,7 +293,7 @@ public class PanelBoostersToSale : Panel
     }
 
     /// <summary>
-    /// Corrutina que retrasa la desactivación del spinner
+    /// Corrutina que retrasa la desactivaci?n del spinner
     /// </summary>
     /// <returns></returns>
     IEnumerator CloseWait()
@@ -302,7 +302,7 @@ public class PanelBoostersToSale : Panel
         ClosedSpinner();
     }
     /// <summary>
-    /// Muestra el panel de confirmación para publicar el item en el mercadillo
+    /// Muestra el panel de confirmaci?n para publicar el item en el mercadillo
     /// </summary>
     /// <param name="itemData">Datos de la skin</param>
     public void ShowDialogConfirmation(ItemData itemData)
@@ -313,7 +313,7 @@ public class PanelBoostersToSale : Panel
         panelOpener.popup.GetComponent<PanelConfirmPublish>().OnConfirmedPublish += () => { OnConfirmedPublish?.Invoke(); Close(); };
     }
     /// <summary>
-    /// Intenta Abrir el panel de confirmación para publicar
+    /// Intenta Abrir el panel de confirmaci?n para publicar
     /// </summary>
     public void PublishClick()
     {
