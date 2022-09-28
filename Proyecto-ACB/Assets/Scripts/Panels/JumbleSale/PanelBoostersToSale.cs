@@ -117,7 +117,7 @@ public class PanelBoostersToSale : Panel
                 prefab.ShowInfo(boosterdata);
                 prefab.GetComponent<Toggle>().group = toggleGroup;
                 prefab.GetComponent<Toggle>().onValueChanged.AddListener(OnToggleValueChanged);
-                textTriples.gameObject.SetActive(true);
+                textAsistencia.gameObject.SetActive(true);
             }
             foreach (var boosterdata in boosterDataContainer.Puntos)
             {
@@ -125,7 +125,7 @@ public class PanelBoostersToSale : Panel
                 prefab.ShowInfo(boosterdata);
                 prefab.GetComponent<Toggle>().group = toggleGroup;
                 prefab.GetComponent<Toggle>().onValueChanged.AddListener(OnToggleValueChanged);
-                textTriples.gameObject.SetActive(true);
+                textPuntos.gameObject.SetActive(true);
             }
             foreach (var boosterdata in boosterDataContainer.Triples)
             {
@@ -141,7 +141,7 @@ public class PanelBoostersToSale : Panel
                 prefab.ShowInfo(boosterdata);
                 prefab.GetComponent<Toggle>().group = toggleGroup;
                 prefab.GetComponent<Toggle>().onValueChanged.AddListener(OnToggleValueChanged);
-                textTriples.gameObject.SetActive(true);
+                textRebotes.gameObject.SetActive(true);
             }
             foreach (var boosterdata in boosterDataContainer.Tiros)
             {
@@ -149,7 +149,7 @@ public class PanelBoostersToSale : Panel
                 prefab.ShowInfo(boosterdata);
                 prefab.GetComponent<Toggle>().group = toggleGroup;
                 prefab.GetComponent<Toggle>().onValueChanged.AddListener(OnToggleValueChanged);
-                textTriples.gameObject.SetActive(true);
+                textLibres.gameObject.SetActive(true);
             }
             ClosedSpinner();
 
