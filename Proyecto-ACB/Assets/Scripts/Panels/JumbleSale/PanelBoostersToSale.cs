@@ -49,7 +49,7 @@ public class PanelBoostersToSale : Panel
     private string textFail;
 
     [SerializeField] [Tooltip("Contenedor de los potenciadores")]
-    private BoosterContainer boosterDataContainer = new BoosterContainer();
+    private BoosterContainerJumbleSale boosterDataContainer = new BoosterContainerJumbleSale();
     [SerializeField] [Tooltip("Datos de los potenciadores")]
     private ApplyBoosterResponse applyBoosterResponse = new ApplyBoosterResponse();
 
@@ -84,97 +84,6 @@ public class PanelBoostersToSale : Panel
             OnToggleValueChanged();
         }
     }
-
-    /// <summary>
-    /// Trae los datos de los potenciadores de backend
-    /// </summary>
-    /// <param name="boostertype">Tipo de potenciador</param>
-    /// <param name="playerCard">Potenciador de la carta</param>
-    /// <param name="isCardInTeam">Determina si la carta se encuentra en el equipo competitivo</param>
-    public void CallInfo(BoosterType boostertype, PlayerCard playerCard, bool isCardInTeam)
-    {
-
-        WebProcedure.Instance.GetBoostersToSell(snapshot =>
-        {
-            boosterDataContainer?.boosterData?.boosterItems?.Clear();
-            applyBoosterResponse?.boosterData?.boosterItems?.Clear();
-            JsonConvert.PopulateObject(snapshot.RawJson, boosterDataContainer);
-            Debug.Log(snapshot.RawJson);
-
-            this.isCardInTeam = isCardInTeam;
-
-            CheckPotenciadores();
-            if (boosterDataContainer.boosterData.boosterItems != null)
-            {
-                foreach (var boosterdata in boosterDataContainer.boosterData.boosterItems)
-                {
-                    
-                    switch (boosterdata.type)
-                    {
-                        case BoosterType.TRIPLES:
-                            var prefab1= Instantiate(panelPotenciador, gridLayoutTriples.transform);
-                            prefab1.ShowInfo(boosterdata, () =>
-                            {
-                                ShowDialogConfirmation(boosterdata);
-                            });
-                            textTriples.gameObject.SetActive(true);
-                            prefab1.GetComponent<Toggle>().group = toggleGroup;
-                            prefab1.GetComponent<Toggle>().onValueChanged.AddListener(OnToggleValueChanged);
-                            break;
-                        case BoosterType.FREESHOTS:
-                            var prefab2= Instantiate(panelPotenciador, gridLayoutTirosLibres.transform);
-                            prefab2.ShowInfo(boosterdata,() =>
-                            {
-                                ShowDialogConfirmation(boosterdata);
-                            });
-                            textLibres.gameObject.SetActive(true);
-                            prefab2.GetComponent<Toggle>().group = toggleGroup;
-                            prefab2.GetComponent<Toggle>().onValueChanged.AddListener(OnToggleValueChanged);
-                            break;
-                        case BoosterType.REBOUNDS:
-                            var prefab3= Instantiate(panelPotenciador, gridLayoutRebotes.transform);
-                            prefab3.ShowInfo(boosterdata,() =>
-                            {
-                                ShowDialogConfirmation(boosterdata);
-                            });
-                            textRebotes.gameObject.SetActive(true);
-                            prefab3.GetComponent<Toggle>().group = toggleGroup;
-                            prefab3.GetComponent<Toggle>().onValueChanged.AddListener(OnToggleValueChanged);
-                            break;
-                        case BoosterType.ASSISTS:
-                            var prefab4= Instantiate(panelPotenciador, gridLayoutAsistencia.transform);
-                            prefab4.ShowInfo(boosterdata,() =>
-                            {
-                                ShowDialogConfirmation(boosterdata);
-                            });
-                            textAsistencia.gameObject.SetActive(true);
-                            prefab4.GetComponent<Toggle>().group = toggleGroup;
-                            prefab4.GetComponent<Toggle>().onValueChanged.AddListener(OnToggleValueChanged);
-                            break;
-                        case BoosterType.POINTS:
-                            var prefab5= Instantiate(panelPotenciador, gridLayoutPuntos.transform);
-                            prefab5.ShowInfo(boosterdata,() =>
-                            {
-                                ShowDialogConfirmation(boosterdata);
-                            });
-                            textPuntos.gameObject.SetActive(true);
-                            prefab5.GetComponent<Toggle>().group = toggleGroup;
-                            prefab5.GetComponent<Toggle>().onValueChanged.AddListener(OnToggleValueChanged);
-                            break;
-                        default:
-                            throw new ArgumentOutOfRangeException();
-                    }
-                }
-            }
-
-            ClosedSpinner();
-        }, error =>
-        {
-            CheckPotenciadores();
-            onFailed.Invoke();
-        });
-    }
-
     /// <summary>
     /// Muestra el panel de confirmaci?n de aplicar potenciador
     /// </summary>
@@ -195,58 +104,53 @@ public class PanelBoostersToSale : Panel
     {
         WebProcedure.Instance.GetBoostersToSell(snapshot =>
         {
-            boosterDataContainer?.boosterData?.boosterItems?.Clear();
-            applyBoosterResponse?.boosterData?.boosterItems?.Clear();
+            boosterDataContainer?.Asistencias?.Clear();
+            boosterDataContainer?.Puntos?.Clear();
+            boosterDataContainer?.Rebotes?.Clear();
+            boosterDataContainer?.Tiros?.Clear();
             Debug.Log(snapshot.RawJson);
             JsonConvert.PopulateObject(snapshot.RawJson, boosterDataContainer);
             CheckPotenciadores();
-            if (boosterDataContainer.boosterData.boosterItems != null)
+            foreach (var boosterdata in boosterDataContainer.Asistencias)
             {
-                foreach (var boosterdata in boosterDataContainer.boosterData.boosterItems)
-                {
-                    switch (boosterdata.type)
-                    {
-                        case BoosterType.TRIPLES:
-                            var prefab1= Instantiate(panelPotenciador, gridLayoutTriples.transform);
-                            prefab1.ShowInfo(boosterdata);
-                            prefab1.GetComponent<Toggle>().group = toggleGroup;
-                            prefab1.GetComponent<Toggle>().onValueChanged.AddListener(OnToggleValueChanged);
-                            textTriples.gameObject.SetActive(true);
-                            break;
-                        case BoosterType.FREESHOTS:
-                            var prefab2= Instantiate(panelPotenciador, gridLayoutTirosLibres.transform);
-                            prefab2.ShowInfo(boosterdata);
-                            prefab2.GetComponent<Toggle>().group = toggleGroup;
-                            prefab2.GetComponent<Toggle>().onValueChanged.AddListener(OnToggleValueChanged);
-                            textLibres.gameObject.SetActive(true);
-                            break;
-                        case BoosterType.REBOUNDS:
-                            var prefab3= Instantiate(panelPotenciador, gridLayoutRebotes.transform);
-                            prefab3.ShowInfo(boosterdata);
-                            prefab3.GetComponent<Toggle>().group = toggleGroup;
-                            prefab3.GetComponent<Toggle>().onValueChanged.AddListener(OnToggleValueChanged);
-                            textRebotes.gameObject.SetActive(true);
-                            break;
-                        case BoosterType.ASSISTS:
-                            var prefab4= Instantiate(panelPotenciador, gridLayoutAsistencia.transform);
-                            prefab4.ShowInfo(boosterdata);
-                            prefab4.GetComponent<Toggle>().group = toggleGroup;
-                            prefab4.GetComponent<Toggle>().onValueChanged.AddListener(OnToggleValueChanged);
-                            textAsistencia.gameObject.SetActive(true);
-                            break;
-                        case BoosterType.POINTS:
-                            var prefab5= Instantiate(panelPotenciador, gridLayoutPuntos.transform);
-                            prefab5.ShowInfo(boosterdata);
-                            prefab5.GetComponent<Toggle>().group = toggleGroup;
-                            prefab5.GetComponent<Toggle>().onValueChanged.AddListener(OnToggleValueChanged);
-                            textPuntos.gameObject.SetActive(true);
-                            break;
-                        default:
-                            throw new ArgumentOutOfRangeException();
-                    }
-                } 
+                var prefab = Instantiate(panelPotenciador, gridLayoutAsistencia.transform);
+                prefab.ShowInfo(boosterdata);
+                prefab.GetComponent<Toggle>().group = toggleGroup;
+                prefab.GetComponent<Toggle>().onValueChanged.AddListener(OnToggleValueChanged);
+                textTriples.gameObject.SetActive(true);
             }
-            
+            foreach (var boosterdata in boosterDataContainer.Puntos)
+            {
+                var prefab = Instantiate(panelPotenciador, gridLayoutPuntos.transform);
+                prefab.ShowInfo(boosterdata);
+                prefab.GetComponent<Toggle>().group = toggleGroup;
+                prefab.GetComponent<Toggle>().onValueChanged.AddListener(OnToggleValueChanged);
+                textTriples.gameObject.SetActive(true);
+            }
+            foreach (var boosterdata in boosterDataContainer.Triples)
+            {
+                var prefab = Instantiate(panelPotenciador, gridLayoutTriples.transform);
+                prefab.ShowInfo(boosterdata);
+                prefab.GetComponent<Toggle>().group = toggleGroup;
+                prefab.GetComponent<Toggle>().onValueChanged.AddListener(OnToggleValueChanged);
+                textTriples.gameObject.SetActive(true);
+            }
+            foreach (var boosterdata in boosterDataContainer.Rebotes)
+            {
+                var prefab = Instantiate(panelPotenciador, gridLayoutRebotes.transform);
+                prefab.ShowInfo(boosterdata);
+                prefab.GetComponent<Toggle>().group = toggleGroup;
+                prefab.GetComponent<Toggle>().onValueChanged.AddListener(OnToggleValueChanged);
+                textTriples.gameObject.SetActive(true);
+            }
+            foreach (var boosterdata in boosterDataContainer.Tiros)
+            {
+                var prefab = Instantiate(panelPotenciador, gridLayoutTirosLibres.transform);
+                prefab.ShowInfo(boosterdata);
+                prefab.GetComponent<Toggle>().group = toggleGroup;
+                prefab.GetComponent<Toggle>().onValueChanged.AddListener(OnToggleValueChanged);
+                textTriples.gameObject.SetActive(true);
+            }
             ClosedSpinner();
 
         }, error =>
@@ -262,7 +166,7 @@ public class PanelBoostersToSale : Panel
     /// </summary>
     private void CheckPotenciadores()
     {
-        if (boosterDataContainer == null || (boosterDataContainer?.boosterData?.boosterItems?.Count == 0 && applyBoosterResponse?.boosterData?.boosterItems?.Count == 0) )
+        if (boosterDataContainer == null || (boosterDataContainer?.Asistencias?.Count == 0 && boosterDataContainer?.Puntos?.Count == 0)&& boosterDataContainer?.Rebotes?.Count == 0 && boosterDataContainer?.Tiros?.Count == 0 && boosterDataContainer?.Triples?.Count == 0)
         {
             textNoPotenciadores.text = textFail;
             ClosedSpinner();

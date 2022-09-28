@@ -34,7 +34,15 @@ public class PanelPotenciador : MonoBehaviour
         {
             if (imageBooter)
             {
-                imageBooter.sprite = boosterdata.GetSprite();
+                
+                if (boosterdata.GetSprite() == null)
+                {
+                    WebAPI.WebProcedure.Instance.GetSprite(boostData.path_img, (Sprite obj) => { imageBooter.sprite = obj; }, (WebAPI.WebError error) => { Debug.LogError(error); });
+                }
+                else
+                {
+                    imageBooter.sprite = boosterdata.GetSprite();
+                }
             }
             if (onshowconfirmation != null)
             {

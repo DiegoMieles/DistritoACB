@@ -1088,6 +1088,8 @@ namespace Data
             public string value;
             public string path_img;
             private const string SPRITEPATH = "Boosters/";
+            public string description;
+            public string user_id;
             public Sprite GetSprite()
             {
                 return Resources.Load<Sprite>(SPRITEPATH + type);
@@ -1129,6 +1131,18 @@ namespace Data
             public bool current;
         }
 
+    }
+    /// <summary>
+    ///Contenedor de los potenciadores para publicar 
+    /// </summary>
+    [Serializable]
+    public class BoosterContainerJumbleSale
+    {
+        public List<BoosterData.BoosterItemData> Asistencias = new List<BoosterData.BoosterItemData>();
+        public List<BoosterData.BoosterItemData> Rebotes = new List<BoosterData.BoosterItemData>();
+        public List<BoosterData.BoosterItemData> Puntos = new List<BoosterData.BoosterItemData>();
+        public List<BoosterData.BoosterItemData> Tiros = new List<BoosterData.BoosterItemData>();
+        public List<BoosterData.BoosterItemData> Triples = new List<BoosterData.BoosterItemData>();
     }
 
     /// <summary>

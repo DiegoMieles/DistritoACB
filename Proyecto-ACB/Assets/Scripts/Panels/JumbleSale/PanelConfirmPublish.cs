@@ -141,30 +141,8 @@ public class PanelConfirmPublish : Panel
     {
         m_item_id = boostData.id;
         m_type = itemTypes.BOOSTER;
-        string typeString = "";
-        switch (boostData.type)
-        {
-            case BoosterType.TRIPLES:
-                typeString = "Tiros de 2";
-                break;
-
-            case BoosterType.ASSISTS:
-                typeString = "Asistencias";
-                break;
-
-            case BoosterType.FREESHOTS:
-                typeString = "Tiros libres";
-                break;
-
-            case BoosterType.POINTS:
-                typeString = "Puntos";
-                break;
-
-            case BoosterType.REBOUNDS:
-                typeString = "Rebotes";
-                break;
-        }
-        if (itemDescription) itemDescription.text ="Potenciador "+ typeString +" " + boostData.value ;
+      
+        if (itemDescription) itemDescription.text =boostData.description ;
 
         if (boosterStat)
         {
@@ -176,7 +154,14 @@ public class PanelConfirmPublish : Panel
             if (boosterIcon)
             {
                 boosterIcon.gameObject.SetActive(true);
-                boosterIcon.sprite = boostData.GetSprite();
+                 if (boostData.GetSprite() == null)
+                {
+                    WebAPI.WebProcedure.Instance.GetSprite(boostData.path_img, (Sprite obj) => { boosterIcon.sprite = obj; }, (WebAPI.WebError error) => { Debug.LogError(error); });
+                }
+                else
+                {
+                    boosterIcon.sprite = boostData.GetSprite();
+                }
             }
         }
         UpdateUI();
