@@ -32,7 +32,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 417324427053264592}
-  - {fileID: 9003552862232212170}
   - {fileID: 7880954813642433535}
   m_Father: {fileID: 417324425671229233}
   m_RootOrder: 0
@@ -144,6 +143,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 417324425671229233}
+  - {fileID: 9003552862232212170}
   m_Father: {fileID: 1874445935903523299}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1044,6 +1044,7 @@ MonoBehaviour:
   textNoChallenges: {fileID: 3539217558021131865}
   textFail: "A\xFAn no has participado en ning\xFAn desaf\xEDo"
   itemsScroll: {fileID: 417324425671229234}
+  allItemsAreLoaded: 1
   actualLeagueButton: {fileID: 3834963154775574173}
   clasicLeagueButton: {fileID: 5532574979701200154}
   isclasicLeague: 0
@@ -1516,13 +1517,13 @@ RectTransform:
   m_Children:
   - {fileID: 6597698355030462427}
   - {fileID: 2716757001481929427}
-  m_Father: {fileID: 109516240218189985}
+  m_Father: {fileID: 6955471271684174218}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.20259094, y: 206.81686}
+  m_SizeDelta: {x: 0.4052, y: 413.6237}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1627801828067933262
 CanvasRenderer:
@@ -1593,7 +1594,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 109516240218189985}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

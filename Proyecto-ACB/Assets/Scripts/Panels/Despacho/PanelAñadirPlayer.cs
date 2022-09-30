@@ -98,6 +98,7 @@ public class PanelAñadirPlayer : Panel
 
         if (isColeccion)
         {
+            OpenSpinner();
             WebProcedure.Instance.GetCardTokenCL(cardbody,snapshot =>
             {
                 Debug.Log(snapshot.RawJson);
@@ -136,10 +137,8 @@ public class PanelAñadirPlayer : Panel
                         }
                     } 
                 }
-                else
-                {
+
                     ClosedSpinner();
-                }
             
             }, error =>
             {
@@ -149,6 +148,7 @@ public class PanelAñadirPlayer : Panel
         }
         else
         {
+            OpenSpinner();
             WebProcedure.Instance.GetUserCardTokenTC(cardbody,snapshot =>
             {
                 Debug.Log(snapshot.RawJson);
@@ -187,10 +187,9 @@ public class PanelAñadirPlayer : Panel
                         }
                     } 
                 }
-                else
-                {
+
                     ClosedSpinner();
-                }
+                
             
             }, error =>
             {
@@ -220,6 +219,7 @@ public class PanelAñadirPlayer : Panel
     /// </summary>
     private void CallTeam()
     {
+        OpenSpinner();
         Debug.Log("Token data " + GetSelectedToggle().GetComponent<PanelTokenItemToggle>().CurrentToken.token);
         var cardbody = JsonConvert.SerializeObject(new BodyTokenCard(){ tokenCard = GetSelectedToggle().GetComponent<PanelTokenItemToggle>().CurrentToken.token}) ;
         WebProcedure.Instance.PostAddTokenToTeam(cardbody, snapshot =>
@@ -262,7 +262,7 @@ public class PanelAñadirPlayer : Panel
     private void DeleteCardFromTeam()
     {
         var cardbody = JsonConvert.SerializeObject(new BodyTokenCard() { tokenCard = GetSelectedToggle().GetComponent<PanelTokenItemToggle>().CurrentToken.token });
-
+        OpenSpinner();
         WebProcedure.Instance.DelRemoveTokenOfTeam(cardbody, snapshot =>
         {
             ACBSingleton.Instance.AlertPanel.SetupPanel(snapshot.MessageCustom, string.Empty, false, () =>
@@ -319,6 +319,9 @@ public class PanelAñadirPlayer : Panel
     {
         Spinner.gameObject.SetActive(false);
     }
-
+    private void OpenSpinner()
+    {
+        Spinner.gameObject.SetActive(true);
+    }
     #endregion
 }
