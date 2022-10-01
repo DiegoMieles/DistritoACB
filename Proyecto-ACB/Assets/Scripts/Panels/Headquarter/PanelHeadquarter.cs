@@ -3,6 +3,7 @@ using WebAPI;
 using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 /// <summary>
 /// Controla el panel de sede central
@@ -28,7 +29,26 @@ public class PanelHeadquarter : Panel
     private PlayerRankingView playerView;
     [SerializeField] [Tooltip("Spinner de carga")]
     private GameObject spinner;
-
+    [SerializeField]
+    [Tooltip("Botón de la liga clasica")]
+    private Button classicLeagueButton;
+    [SerializeField]
+    [Tooltip("Botón de la liga actual")]
+    private Button actualLeagueButton;
+    [SerializeField]
+    [Tooltip("Lista de puntos de la liga actual")]
+    private List<HeadquarterContainerData.RankingUserData> actualLeaguePoints;
+    [SerializeField]
+    [Tooltip("Lista de puntos de la liga clasica")]
+    private List<HeadquarterContainerData.RankingUserData> classicLeaguePoints;   
+    [SerializeField]
+    [Tooltip("Lista de puntos de la liga actual")]
+    private List<HeadquarterContainerData.RankingUserData> playerActualLeaguePoints;
+    [SerializeField]
+    [Tooltip("Lista de puntos de la liga clasica")]
+    private List<HeadquarterContainerData.RankingUserData> playerClassicLeaguePoints;
+    [Tooltip("true si se ha seleccionado la liga clasica")]
+    private bool isClassicLeague = false;
     [Header("Data management")]
     [SerializeField] [Tooltip("Máxima cantidad de entradas de ranking a mostrar")]
     private int rowsToShowInRanking;
@@ -46,7 +66,16 @@ public class PanelHeadquarter : Panel
     }
 
     #endregion
-
+    /// <summary>
+    /// Selecciona una liga desde el botón de rankings
+    /// </summary>
+    public void SelectLeague(bool isClassic)
+    {
+        isClassicLeague = isClassic;
+        actualLeagueButton.GetComponent<Image>().color = new Color(1,1,1, isClassicLeague ? 0.5f : 1f);
+        classicLeagueButton.GetComponent<Image>().color = new Color(1, 1, 1, !isClassicLeague ? 0.5f : 1f);
+        PopulateLeague();
+    }
     #region Public Methods
 
     /// <summary>
@@ -81,15 +110,24 @@ public class PanelHeadquarter : Panel
     /// <param name="obj">Datos del ranking</param>
     private void OnSuccessLoadingRanking(DataSnapshot obj)
     {
+        classicLeaguePoints.Clear();
+        actualLeaguePoints.Clear();
         Debug.Log(obj.RawJson);
         HeadquarterContainerData hqContainerData = new HeadquarterContainerData();
         JsonConvert.PopulateObject(obj.RawJson, hqContainerData);
 
-        containerRectTransform.sizeDelta = new Vector2(containerRectTransform.sizeDelta.x, playerRankingViewPrefab.GetComponent<LayoutElement>().preferredHeight * (hqContainerData.currentUser.Count + hqContainerData.rankingUsers.Count));
+        if(hqContainerData != null)
+        {
+            classicLeaguePoints = hqContainerData.rankingClassic;
+            actualLeaguePoints = hqContainerData.rankingCurrent;
+            playerClassicLeaguePoints = hqContainerData.currentUserClassic;
+            playerActualLeaguePoints= hqContainerData.currentUserCurrent;
+        }
+      
 
-        playerView.ShowRankingView(hqContainerData.currentUser[0]);
-
-        if(hqContainerData.rankingUsers.Count > 0)
+  
+        PopulateLeague();
+       /* if(hqContainerData.rankingUsers.Count > 0)
         {
             for (int i = 0; i < hqContainerData.rankingUsers.Count; i++)
             {
@@ -97,11 +135,31 @@ public class PanelHeadquarter : Panel
                 playerView.GetComponent<PlayerRankingView>().ShowRankingView(hqContainerData.rankingUsers[i]);
             }
         }
-
+       */
         spinner.SetActive(false);
         knowAppButton.onClick.AddListener(() => { OpenHTMLPanel(hqContainerData.headQuartersURL); });
     }
-    
+    /// <summary>
+    /// llena el tablero de información de las ligas
+    /// </summary>
+    public void PopulateLeague()
+    {
+        foreach(Transform child in containerRectTransform)
+        {
+            Destroy(child.gameObject);
+        }
+        List<HeadquarterContainerData.RankingUserData> leagueToPopulate = isClassicLeague ? classicLeaguePoints : actualLeaguePoints;
+        if(playerClassicLeaguePoints.Count >0 && playerActualLeaguePoints.Count > 0) playerView.ShowRankingView(isClassicLeague? playerClassicLeaguePoints[0] : playerActualLeaguePoints[0]);
+        if (leagueToPopulate.Count > 0)
+        {
+            for (int i = 0; i < leagueToPopulate.Count; i++)
+            {
+                GameObject playerView = Instantiate(playerRankingViewPrefab, containerRectTransform);
+                playerView.GetComponent<PlayerRankingView>().ShowRankingView(leagueToPopulate[i]);
+            }
+        }
+        containerRectTransform.sizeDelta = new Vector2(containerRectTransform.sizeDelta.x, playerRankingViewPrefab.GetComponent<LayoutElement>().preferredHeight * (leagueToPopulate.Count + 1));
+    }
     /// <summary>
     /// Método que se ejecuta cuando el ranking no ha podido ser cargado exitosamente
     /// </summary>

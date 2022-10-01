@@ -731,6 +731,10 @@ namespace Data
         public string headQuartersURL;
         public List<RankingUserData> currentUser = new List<RankingUserData>();
         public List<RankingUserData> rankingUsers = new List<RankingUserData>();
+        public List<RankingUserData> currentUserClassic = new List<RankingUserData>();
+        public List<RankingUserData> currentUserCurrent = new List<RankingUserData>();
+        public List<RankingUserData> rankingCurrent = new List<RankingUserData>();
+        public List<RankingUserData> rankingClassic = new List<RankingUserData>();
 
         [Serializable]
         public class RankingUserData : AvatarData
