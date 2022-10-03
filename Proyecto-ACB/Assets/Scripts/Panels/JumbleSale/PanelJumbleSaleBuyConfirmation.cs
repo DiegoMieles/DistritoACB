@@ -97,7 +97,7 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
     /// <param name="itemData">Clase con los datos del producto que se quiere comprar</param>
     protected void BuyItem(JumbleSaleResult.JumbleItems itemData)
     {
-        JumbleSaleResult.JumbleBuyRequest body = new JumbleSaleResult.JumbleBuyRequest() { item_id = itemData.id, user_id = WebProcedure.Instance.accessData.user };
+        JumbleSaleResult.JumbleBuyRequest body = new JumbleSaleResult.JumbleBuyRequest() { item_id = itemData.id, user_id = WebProcedure.Instance.accessData.user, item_type = itemData.item_type };
         WebProcedure.Instance.BuyJumbleSaleItem(JsonConvert.SerializeObject(body), OnSuccessBuying, OnFailedBuying);
     }
     /// <summary>

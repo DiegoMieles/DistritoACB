@@ -951,6 +951,7 @@ namespace Data
         {
             public string user_id;
             public int item_id;
+            public string item_type;
         }
         /// <summary>
         /// Elimina un elemento del mercadillo
