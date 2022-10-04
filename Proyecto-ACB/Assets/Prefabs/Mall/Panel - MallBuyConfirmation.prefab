@@ -2886,6 +2886,8 @@ MonoBehaviour:
   productImage: {fileID: 4133304327584986650}
   titleText: {fileID: 4630002485749134642}
   descriptionText: {fileID: 1811648244924666448}
+  publicationDate: {fileID: 0}
+  ownedItemPrice: {fileID: 0}
   acballTitleText: "\xBFQuieres comprar este acball?"
   cardTitleText: "\xBFQuieres comprar este player token?"
   skinTitleText: "\xBFQuieres comprar esta skin?"
@@ -2896,6 +2898,7 @@ MonoBehaviour:
   skinRandomTitleText: "\xBFQuieres comprar una skin aleatoria?"
   boosterRandomTitleText: "\xBFQuieres comprar un potenciador aleatorio?"
   highlightRandomTitleText: "\xBFQuieres comprar un highlight token aleatorio?"
+  jumbleSaleOwnedPublicationTitleText: 
   rewardImagePrefab: {fileID: 7687711796515224607, guid: 0b78b4231b1bd2348bfb6e472f0013e0, type: 3}
   imagePrefabContainer: {fileID: 8723609453566977934}
 --- !u!1 &2118290057853421103
@@ -6066,6 +6069,8 @@ MonoBehaviour:
   productImage: {fileID: 0}
   titleText: {fileID: 8883140887937808480}
   descriptionText: {fileID: 0}
+  publicationDate: {fileID: 0}
+  ownedItemPrice: {fileID: 0}
   acballTitleText: "\xBFQuieres comprar este acball?"
   cardTitleText: "\xBFQuieres comprar este player token?"
   skinTitleText: "\xBFQuieres comprar esta skin?"
@@ -6076,6 +6081,7 @@ MonoBehaviour:
   skinRandomTitleText: "\xBFQuieres comprar una skin aleatoria?"
   boosterRandomTitleText: "\xBFQuieres comprar un potenciador aleatorio?"
   highlightRandomTitleText: "\xBFQuieres comprar un highlight token aleatorio?"
+  jumbleSaleOwnedPublicationTitleText: 
   flipCardButton: {fileID: 8636342940170288171}
   frontCardView: {fileID: 1933521541671611566}
   backCardView: {fileID: 2812381781695867681}
@@ -6107,9 +6113,13 @@ MonoBehaviour:
   highlightDate: {fileID: 3143540517539738863}
   highlightDescription: {fileID: 4952257355329355362}
   leagueImage: {fileID: 7568526297511976473}
+  highlightBackBackground: {fileID: 0}
   spinner: {fileID: 3189610594517128755}
   highlightFrame: {fileID: 21300000, guid: 8edef0fad0ae9b34280609d3e8bf5031, type: 3}
   tokenFrame: {fileID: 21300000, guid: 29ba46e25e44069459bdad0a866c2df6, type: 3}
+  boosterFlag: {fileID: 0}
+  injuredFlag: {fileID: 0}
+  panelBuyConfirmation: {fileID: 0}
 --- !u!1 &3640351439921796445
 GameObject:
   m_ObjectHideFlags: 0
@@ -11967,6 +11977,8 @@ MonoBehaviour:
   productImage: {fileID: 1372701804057252265}
   titleText: {fileID: 1991094386251840721}
   descriptionText: {fileID: 7251745061886786272}
+  publicationDate: {fileID: 0}
+  ownedItemPrice: {fileID: 0}
   acballTitleText: "\xBFQuieres comprar este acball?"
   cardTitleText: "\xBFQuieres comprar este player token?"
   skinTitleText: "\xBFQuieres comprar esta skin?"
@@ -11977,6 +11989,7 @@ MonoBehaviour:
   skinRandomTitleText: "\xBFQuieres comprar una skin aleatoria?"
   boosterRandomTitleText: "\xBFQuieres comprar un potenciador aleatorio?"
   highlightRandomTitleText: "\xBFQuieres comprar un highlight token aleatorio?"
+  jumbleSaleOwnedPublicationTitleText: 
 --- !u!1 &7837245072423190372
 GameObject:
   m_ObjectHideFlags: 0
@@ -12177,6 +12190,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8590675485207677316}
   - component: {fileID: 2342502787074832724}
+  - component: {fileID: 7792194766771728082}
+  - component: {fileID: 3246529788797827689}
+  - component: {fileID: 7611599562583352763}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -12233,6 +12249,57 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 353.1671, y: 436.56348}
   m_EdgeRadius: 0
+--- !u!222 &7792194766771728082
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7921026653648907248}
+  m_CullTransparentMesh: 1
+--- !u!114 &3246529788797827689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7921026653648907248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7611599562583352763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7921026653648907248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 0
 --- !u!1 &8014213956576098513
 GameObject:
   m_ObjectHideFlags: 0
