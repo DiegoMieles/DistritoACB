@@ -307,7 +307,7 @@ namespace Data
         public TransactionData transactionData = new TransactionData();
         public MissionsData missionsData = new MissionsData();
         public StadiumData stadiumData = new StadiumData();
-
+        public int balance;
         [Serializable, JsonConverter(typeof(MissionRewardConvert))]
         public class RewardData
         {

@@ -141,9 +141,12 @@ public class MallBuyConfirmation : Panel
     {
         if (obj.Code == 200)
         {
-            ACBSingleton.Instance.AlertPanel.SetupPanel(onSuccessCode, "", false, () => { JsonConvert.PopulateObject(obj.RawJson, ACBSingleton.Instance.AccountData); Close(); onSuccessfulbuy?.Invoke(); });
+            JsonConvert.PopulateObject(obj.RawJson, ACBSingleton.Instance.AccountData);
+            MissionRewardData transactionData = new MissionRewardData();
+            JsonConvert.PopulateObject(obj.RawJson, transactionData);
+      
+            ACBSingleton.Instance.AlertPanel.SetupPanel(onSuccessCode, "", false, () => {ACBSingleton.Instance.AccountData.statsData.coinsBalance = transactionData.balance; Close(); onSuccessfulbuy?.Invoke(); });
             Firebase.Analytics.Parameter param;
-
             switch (itemData.elementType)
             {
                 case ItemType.ACBALL:

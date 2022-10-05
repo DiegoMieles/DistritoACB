@@ -13,26 +13,26 @@ public class PanelMall : Panel
 
     [Header("Panel Components")]
     [SerializeField] [Tooltip("Texto con la cantidad de monedas que tiene el jugador")]
-    private Text coinAmount;
-    [SerializeField] [Tooltip("Cantidad de ACBCoins máxima a mostrar a nivel gráfico")]
+    public Text coinAmount;
+    [SerializeField] [Tooltip("Cantidad de ACBCoins m?xima a mostrar a nivel gr?fico")]
     private float limit;
-    [SerializeField] [Tooltip("Prefab del panel de confirmación de compra")]
+    [SerializeField] [Tooltip("Prefab del panel de confirmaci?n de compra")]
     private GameObject mallProductPrefab;
     [SerializeField] [Tooltip("Objeto que contiene el listado de productos de la tienda")]
     private RectTransform mallProductsContainer;
-    [SerializeField] [Tooltip("Botón que se encarga del cerrado del panel")]
+    [SerializeField] [Tooltip("Bot?n que se encarga del cerrado del panel")]
     private Button exitButton;
     [SerializeField] [Tooltip("Area arrastrable donde se encuentran los objetos disponibles para compra en la tienda")]
     private ScrollRect scroll;
 
     private bool allItemsLoaded; //Determina si ya se han cargado todos los objetos disponibles de la tienda
-    private bool isLoadingNewItems; //Determina si se encuentra cargando más objetos de la tienda
-    private PageBody page; //Página actual de los objetos de tienda cargados
+    private bool isLoadingNewItems; //Determina si se encuentra cargando m?s objetos de la tienda
+    private PageBody page; //P?gina actual de los objetos de tienda cargados
     private int counter; //Contador de paginas de objetos mostrados
     
     private const float DistanceToRecalcVisibility = 400.0f; //Distancia para recargar la visibilidad de los objetos de la tienda
     private const float DistanceMarginForLoad = 600.0f; //Distancia para iniciar cargado de objetos
-    private float lastPos = Mathf.Infinity; //Última posición donde se encuentra el objeto arrastrable
+    private float lastPos = Mathf.Infinity; //?ltima posici?n donde se encuentra el objeto arrastrable
 
     #endregion
 
@@ -98,9 +98,9 @@ public class PanelMall : Panel
     #region Private Methods
 
     /// <summary>
-    /// Método que se ejecuta cada vez que el jugador se mueve entre el católogo
+    /// M?todo que se ejecuta cada vez que el jugador se mueve entre el cat?logo
     /// </summary>
-    /// <param name="scrollNormalizedPos">Posición normalizada del objeto arrastrable</param>
+    /// <param name="scrollNormalizedPos">Posici?n normalizada del objeto arrastrable</param>
     private void OnScrollContent(Vector2 scrollNormalizedPos)
     {
         if (scrollNormalizedPos.y <= 0.1f && !allItemsLoaded && !isLoadingNewItems)
@@ -114,7 +114,7 @@ public class PanelMall : Panel
     }
 
     /// <summary>
-    /// Método que se ejecuta cuando los objetos de tienda han sido satisfactoriamente cargados
+    /// M?todo que se ejecuta cuando los objetos de tienda han sido satisfactoriamente cargados
     /// </summary>
     /// <param name="obj">Datos de los objetos de la tienda</param>
     private void OnSuccessLoadingMallData(DataSnapshot obj)
@@ -139,7 +139,7 @@ public class PanelMall : Panel
     }
 
     /// <summary>
-    /// Método que se ejecuta cuando una página de objetos de la tienda ha sido satisfactoriamente cargados
+    /// M?todo que se ejecuta cuando una p?gina de objetos de la tienda ha sido satisfactoriamente cargados
     /// </summary>
     /// <param name="obj">Datos de los objetos de la tienda</param>
     private void OnSuccessLoadingMoreItems(DataSnapshot obj)
@@ -166,7 +166,7 @@ public class PanelMall : Panel
     }
 
     /// <summary>
-    /// Método que se ejecuta cuando no se han podido traer los objetos de tienda
+    /// M?todo que se ejecuta cuando no se han podido traer los objetos de tienda
     /// </summary>
     /// <param name="obj">Clase con los datos de error</param>
     private void OnFailedLoadingMallData(WebError obj)
@@ -178,12 +178,12 @@ public class PanelMall : Panel
     /// <summary>
     /// Actualiza las monedas que tiene el jugador
     /// </summary>
-    private void UpdateCoinsText() => coinAmount.text = Mathf.Clamp(ACBSingleton.Instance.AccountData.statsData.coinsBalance, 0, limit).ToString();
+    public void UpdateCoinsText() => coinAmount.text = Mathf.Clamp(ACBSingleton.Instance.AccountData.statsData.coinsBalance, 0, limit).ToString();
 
     /// <summary>
-    /// Asigna el valor de activación del spinner de carga
+    /// Asigna el valor de activaci?n del spinner de carga
     /// </summary>
-    /// <param name="state">Estado de activación del spinner carga</param>
+    /// <param name="state">Estado de activaci?n del spinner carga</param>
     private void SetSpinnerNewState(bool state)
     {
         GameObject spinner = GameObject.Find("Spinner_mall");
