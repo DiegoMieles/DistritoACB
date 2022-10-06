@@ -15,7 +15,7 @@ namespace Data
     /// Objeto que almacena los datos de la cuenta del jugador
     /// </summary>
     [CreateAssetMenu(fileName = "ScriptableAccount", menuName = "ScriptableObjects/ScriptableAccount", order = 2)]
-    public class ScriptableAccount : ScriptableObject
+    public class  ScriptableAccount : ScriptableObject
     {
         private const string SCRIPTABLEACCOUNT = "Scriptables/ScriptableAccount";
         public StatsData statsData = new StatsData();
@@ -921,6 +921,10 @@ namespace Data
         public int hairColor;
         public int points;
         public int frozencoins;
+    }
+    public class JumbleResult
+    {
+        public int balance;
     }
     public class JumbleSaleResult
     {

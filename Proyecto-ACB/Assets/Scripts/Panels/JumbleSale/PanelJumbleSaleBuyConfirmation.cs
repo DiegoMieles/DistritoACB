@@ -142,15 +142,17 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
             JsonConvert.PopulateObject(obj.RawJson, error);
             if (error.code != 200 && !string.IsNullOrEmpty( error.message))
             {
-                ACBSingleton.Instance.AlertPanel.SetupPanel(error.message, "", false, () => { Close();  onSuccessfulbuy?.Invoke();  });
+                ACBSingleton.Instance.AlertPanel.SetupPanel(error.message, "", false, () => { Close();  onSuccessfulbuy?.Invoke();});
                 return;
             }
         }
         catch
         {}
-        ACBSingleton.Instance.AlertPanel.SetupPanel(onSuccessCode, "", false, () => { JsonConvert.PopulateObject(obj.RawJson, ACBSingleton.Instance.AccountData); Close(); onSuccessfulbuy?.Invoke(); });
+        JumbleResult jumbleResult = new JumbleResult();
+        JsonConvert.PopulateObject(obj.RawJson, jumbleResult);
+        JsonConvert.PopulateObject(obj.RawJson, ACBSingleton.Instance.AccountData);
+        ACBSingleton.Instance.AlertPanel.SetupPanel(onSuccessCode, "", false, () => { ACBSingleton.Instance.AccountData.statsData.coinsBalance = jumbleResult.balance; Close(); onSuccessfulbuy?.Invoke(); });
             Firebase.Analytics.Parameter param;
-
             switch (itemData.item_type)
             {
                 case "ACBALL":
