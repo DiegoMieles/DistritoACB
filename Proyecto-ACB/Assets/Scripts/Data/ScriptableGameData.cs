@@ -20,6 +20,7 @@ namespace Data
         public int hours;
         public string country;
         public int costChallenge;
+        public int costChallengeCurrentEdition;
         public App app;
         public MainMenuData mainMenuData;
 
