@@ -8395,7 +8395,7 @@ MonoBehaviour:
     isBoostPoints: 0
     videos: []
     daysOrTextInjured: 
-    is_clasic: 1
+    current: 1
     card:
       player_name: 
       description: 
@@ -16893,7 +16893,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 40d0fa54cc7b2b04f86a46546b6f646d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
