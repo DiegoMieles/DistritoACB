@@ -25,6 +25,7 @@ public class Panel : MonoBehaviour
     /// </summary>
     public virtual void Close()
     {
+
         var animator = GetComponent<Animator>();
 
         if (animator)

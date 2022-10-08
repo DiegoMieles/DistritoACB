@@ -109,7 +109,7 @@ public class MallObjectButton : MonoBehaviour
     /// <param name="obj">Imagen del objeto</param>
     protected virtual void OnSuccessLoadingImage(Sprite obj)
     {
-        buttonImage.sprite = obj;
+       if(buttonImage) buttonImage.sprite = obj;
         DeactivateSpinner();
 
     }
@@ -141,7 +141,7 @@ public class MallObjectButton : MonoBehaviour
     {
         GameObject spinner = GameObject.Find("Spinner_mall");
 
-        if (!spinner.activeInHierarchy)
+        if (spinner!= null && !spinner.activeInHierarchy)
             return;
 
         for (int i = 0; i < spinner.transform.childCount; i++)

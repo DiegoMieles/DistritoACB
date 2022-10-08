@@ -131,7 +131,7 @@ public class PanelTokenItemToggle : MonoBehaviour
         bool isActualLeague = false;
         PanelTeamCompetitivo addTeamPanel = FindObjectOfType<PanelTeamCompetitivo>(true);
         if (addTeamPanel) isActualLeague = addTeamPanel.isActualLeague;
-        else isActualLeague = tokendata.card.subcollection.collection.edition.current;
+        else isActualLeague = tokendata.current;
         currentToken = tokendata;
         this.onBoosterSet = onBoosterSet;
         team.SetActive(currentToken.isTeam);

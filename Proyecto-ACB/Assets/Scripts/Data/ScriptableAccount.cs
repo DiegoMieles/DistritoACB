@@ -1551,7 +1551,7 @@ namespace Data
         public bool isBoostPoints;
         public List<CardVideoData> videos = new List<CardVideoData>();
         public string daysOrTextInjured;
-        public bool is_clasic = true;
+        public bool current = true;
         public CardTokenData card = new CardTokenData();
     }
     [Serializable]

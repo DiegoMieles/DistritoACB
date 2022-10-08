@@ -118,9 +118,9 @@ public class MallBuyConfirmation : Panel
     {
         spinner.gameObject.SetActive(true);
         if (itemData.price > ACBSingleton.Instance.AccountData.statsData.coinsBalance)
-            ACBSingleton.Instance.AlertPanel.SetupPanel(notEnoughCurrencyAmountText, "", false, () => { spinner.gameObject.SetActive(false); });
+            ACBSingleton.Instance.AlertPanel.SetupPanel(notEnoughCurrencyAmountText, "", false, () => { if (spinner) spinner.gameObject.SetActive(false); });
         else
-            ACBSingleton.Instance.AlertPanel.SetupPanel(enoughCurrencyAmountText, "Esta operación te costará " + itemData.price + " acbcoins", true, () => { BuyItem(itemData); }, () => { spinner.gameObject.SetActive(false); });
+            ACBSingleton.Instance.AlertPanel.SetupPanel(enoughCurrencyAmountText, "Esta operación te costará " + itemData.price + " acbcoins", true, () => { if(gameObject)BuyItem(itemData); }, () => { spinner.gameObject.SetActive(false); });
     }
 
     /// <summary>
@@ -145,7 +145,7 @@ public class MallBuyConfirmation : Panel
             MissionRewardData transactionData = new MissionRewardData();
             JsonConvert.PopulateObject(obj.RawJson, transactionData);
       
-            ACBSingleton.Instance.AlertPanel.SetupPanel(onSuccessCode, "", false, () => {ACBSingleton.Instance.AccountData.statsData.coinsBalance = transactionData.balance; Close(); onSuccessfulbuy?.Invoke(); });
+            ACBSingleton.Instance.AlertPanel.SetupPanel(onSuccessCode, "", false, () => {ACBSingleton.Instance.AccountData.statsData.coinsBalance = transactionData.balance; if (gameObject) Close(); onSuccessfulbuy?.Invoke(); });
             Firebase.Analytics.Parameter param;
             switch (itemData.elementType)
             {
@@ -247,9 +247,9 @@ public class MallBuyConfirmation : Panel
             }
         }
         else if(!string.IsNullOrEmpty(obj.MessageCustom))
-            ACBSingleton.Instance.AlertPanel.SetupPanel(obj.MessageCustom, "", false, Close);
+            ACBSingleton.Instance.AlertPanel.SetupPanel(obj.MessageCustom, "", false, () => { if (gameObject) Close(); });
         else
-            ACBSingleton.Instance.AlertPanel.SetupPanel(ACBSingleton.Instance.LostConnectionTextError, "", false, Close);
+            ACBSingleton.Instance.AlertPanel.SetupPanel(ACBSingleton.Instance.LostConnectionTextError, "", false,()=> { if (gameObject) Close(); });
 
         Debug.Log(obj.RawJson);
     }
@@ -259,8 +259,8 @@ public class MallBuyConfirmation : Panel
     /// </summary>
     /// <param name="obj"></param>
     protected void OnFailedBuying(WebError obj)
-    {
-        ACBSingleton.Instance.AlertPanel.SetupPanel(onFailedCode, "", false, null);
+    { 
+        ACBSingleton.Instance.AlertPanel.SetupPanel(onFailedCode, "", false,()=> { });
         ClosingSpinner();
     }
 
