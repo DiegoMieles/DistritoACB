@@ -728,22 +728,52 @@ namespace Data
     public class HeadquarterContainerData
     {
         public int code;
-        public string headQuartersURL;
+        public string headQuartersURL = "";
         public List<RankingUserData> currentUser = new List<RankingUserData>();
         public List<RankingUserData> rankingUsers = new List<RankingUserData>();
         public List<RankingUserData> currentUserClassic = new List<RankingUserData>();
         public List<RankingUserData> currentUserCurrent = new List<RankingUserData>();
         public List<RankingUserData> rankingCurrent = new List<RankingUserData>();
         public List<RankingUserData> rankingClassic = new List<RankingUserData>();
+        public string message= "";
 
         [Serializable]
-        public class RankingUserData : AvatarData
+        public class RankingUserData 
         {
             public int id;
             public string user_id;
             public int points;
             public int frozencoins;
             public int position;
+            public int challenge_id;
+            public string created;
+            public string expiration;
+            public string nickName;
+            public int skinColor;
+            public int faceForm;
+            public int eyes;
+            public int ear;
+            public int nose;
+            public int mouth;
+            public int eyeBrow;
+            public int hairStyleFront;
+            public int facialHair;
+            public int bodyAccessory;
+            public int headAccessory;
+            public int armAccessory;
+            public int eyesAccessory;
+            public int backGround;
+            public int foreGround;
+            public int hairStyleBack;
+            public int bodyForm;
+            public int hairColor;
+            public int statusId;
+            public string status;
+            public bool show;
+            public int level;
+            public int challengeCost;
+            public string img_small;
+            public string img_big;
         }
     }
 
