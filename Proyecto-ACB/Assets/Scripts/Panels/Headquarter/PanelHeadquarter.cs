@@ -16,18 +16,33 @@ public class PanelHeadquarter : Panel
     private Button goBackButton;
     [SerializeField] [Tooltip("Botón de conocer app")]
     private Button knowAppButton;
+    [SerializeField]
+    [Tooltip("Botón para ver más jugadores del ranking")]
+    private Button showMorePlayersButton;
     [SerializeField] [Tooltip("Clase que controla la apertura de nuevos paneles a mostrar")]
     private PanelOpener panelOpener;
     [SerializeField] [Tooltip("Prefab del panel de sede central en versión HTML")]
     private GameObject headquarterHTMLPanel;
     [SerializeField] [Tooltip("Prefab del elemento donde se ve el ranking del jugador")]
     private GameObject playerRankingViewPrefab;
+    [SerializeField]
+    [Tooltip("Prefab del elemento donde se ve el ranking histórico del jugador")]
+    private GameObject playerRankingViewHistoricPrefab;
     [SerializeField] [Tooltip("Objeto que contiene los datos de los jugadores dentro del ranking")]
     private RectTransform containerRectTransform;
+    [SerializeField]
+    [Tooltip("Objeto que contiene los datos de los jugadores dentro del ranking")]
+    private RectTransform containerHistoricRectTransform;
     [SerializeField] [Tooltip("Vista del jugador dentro del ranking")]
     private PlayerRankingView playerView;
     [SerializeField] [Tooltip("Spinner de carga")]
     private GameObject spinner;
+    [SerializeField]
+    [Tooltip("Scrollview de los puntajes")]
+    private GameObject scrollViewPuntajes;
+    [SerializeField]
+    [Tooltip("Scrollview de los puntajes historicos")]
+    private GameObject scrollViewHistoric;
 
     [Header("Data management")]
     [SerializeField] [Tooltip("Máxima cantidad de entradas de ranking a mostrar")]
