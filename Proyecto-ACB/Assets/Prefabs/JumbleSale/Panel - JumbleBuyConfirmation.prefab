@@ -4263,7 +4263,7 @@ MonoBehaviour:
   cardTitleText: "\xBFQuieres comprar este player token?"
   skinTitleText: "\xBFQuieres comprar esta skin?"
   boosterTitleText: "\xBFQuieres comprar este potenciador?"
-  highlightTitleText: "\xBFQuieres comprar este highlight token?"
+  highlightTitleText: "\xBFQuieres comprar esta highlight token?"
   acballRandomTitleText: "\xBFQuieres comprar un acball aleatorio?"
   cardRandomTitleText: "\xBFQuieres comprar un player token aleatorio?"
   skinRandomTitleText: "\xBFQuieres comprar una skin aleatoria?"
@@ -5806,7 +5806,7 @@ MonoBehaviour:
   spinner: {fileID: 1997694872}
   deleteButton: {fileID: 8707620105162457721}
   costInfoLayout: {fileID: 2959318434407866648}
-  alertDelete: "\xBFEst\xE1s seguro de querer eliminar tu oferta?"
+  alertDelete: "\xBFEst\xE1s seguro de querer eliminar tu art\xEDculo?"
   alertDeleteDescription: 
   confirmationBuyText: "Esta operaci\xF3n te costar\xE1 "
   acballMinipanelOwned: {fileID: 5714120854168719407}
@@ -8438,7 +8438,7 @@ MonoBehaviour:
   cardTitleText: "\xBFQuieres comprar este player token?"
   skinTitleText: "\xBFQuieres comprar esta skin?"
   boosterTitleText: "\xBFQuieres comprar este potenciador?"
-  highlightTitleText: "\xBFQuieres comprar este highlight token?"
+  highlightTitleText: "\xBFQuieres comprar esta highlight token?"
   acballRandomTitleText: "\xBFQuieres comprar un acball aleatorio?"
   cardRandomTitleText: "\xBFQuieres comprar un player token aleatorio?"
   skinRandomTitleText: "\xBFQuieres comprar una skin aleatoria?"
@@ -11279,10 +11279,10 @@ RectTransform:
   m_Father: {fileID: 1707396067275084804}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -16.3486}
+  m_SizeDelta: {x: 0, y: 32.6972}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5286702087575817715
 GameObject:
@@ -13936,7 +13936,7 @@ MonoBehaviour:
   cardTitleText: "\xBFQuieres comprar este player token?"
   skinTitleText: "\xBFQuieres comprar esta skin?"
   boosterTitleText: "\xBFQuieres comprar este potenciador?"
-  highlightTitleText: "\xBFQuieres comprar este highlight token?"
+  highlightTitleText: "\xBFQuieres comprar esta highlight token?"
   acballRandomTitleText: "\xBFQuieres comprar un acball aleatorio?"
   cardRandomTitleText: "\xBFQuieres comprar un player token aleatorio?"
   skinRandomTitleText: "\xBFQuieres comprar una skin aleatoria?"
@@ -14777,10 +14777,10 @@ RectTransform:
   m_Father: {fileID: 1707396067275084804}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -16.3486}
+  m_SizeDelta: {x: 0, y: 32.6972}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7330150046658424795
 GameObject:
@@ -15562,7 +15562,7 @@ MonoBehaviour:
   cardTitleText: "\xBFQuieres comprar este player token?"
   skinTitleText: "\xBFQuieres comprar esta skin?"
   boosterTitleText: "\xBFQuieres comprar este potenciador?"
-  highlightTitleText: "\xBFQuieres comprar este highlight token?"
+  highlightTitleText: "\xBFQuieres comprar esta highlight token?"
   acballRandomTitleText: "\xBFQuieres comprar un acball aleatorio?"
   cardRandomTitleText: "\xBFQuieres comprar un player token aleatorio?"
   skinRandomTitleText: "\xBFQuieres comprar una skin aleatoria?"
@@ -16588,7 +16588,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Eliminar oferta
+  m_Text: "Eliminar art\xEDculo"
 --- !u!1 &8227765624797563482
 GameObject:
   m_ObjectHideFlags: 0

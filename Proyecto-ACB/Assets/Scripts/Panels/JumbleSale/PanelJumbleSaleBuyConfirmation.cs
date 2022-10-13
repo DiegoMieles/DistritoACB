@@ -24,7 +24,7 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
     private string alertDelete = "?Est?s seguro?";
     [SerializeField]
     [Tooltip("Descripci?n de alerta al eliminar un item")]
-    private string alertDeleteDescription = "Esta oferta se eliminar? autom?ticamente";  
+    private string alertDeleteDescription = "Este artículo  se eliminar? autom?ticamente";  
     [SerializeField][TextArea]
     [Tooltip("Descripci?n de alerta al eliminar un item")]
     private string confirmationBuyText ;
@@ -122,7 +122,7 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
                  {
                     
                  }
-                 ACBSingleton.Instance.AlertPanel.SetupPanel("Oferta eliminada", "", false, () => { OnDeletePublish?.Invoke(); Close(); });
+                 ACBSingleton.Instance.AlertPanel.SetupPanel("artículo eliminado", "", false, () => { OnDeletePublish?.Invoke(); Close(); });
              }, (WebError obj) => {
                          Debug.LogError(obj); });
          });
