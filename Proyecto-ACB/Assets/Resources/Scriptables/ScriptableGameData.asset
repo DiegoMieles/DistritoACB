@@ -15,14 +15,15 @@ MonoBehaviour:
   hours: 2
   country: ES
   costChallenge: 1
+  costChallengeCurrentEdition: 2
   app:
     version: 1.0
-    vers_android: 1.0
-    vers_ios: 1.0
+    vers_android: 1.0.6
+    vers_ios: 1.0.6
     text: "\xA1Nuestro equipo de desarrolladores no para de mejorar! Para disfrutar
       de sus avances tendr\xE1s que actualizar la versi\xF3n de tu APP."
-    url_android: https://play.google.com/store/apps/details?id=com.acb.www&gl=ES
-    url_ios: https://apps.apple.com/es/app/acb/id437202587
+    url_android: https://play.google.com/store/apps/details?id=com.distritoacb
+    url_ios: https://apps.apple.com/us/app/distrito-acb/id1622124793
   mainMenuData:
     transitionTime: 0
     buildInfoData:
