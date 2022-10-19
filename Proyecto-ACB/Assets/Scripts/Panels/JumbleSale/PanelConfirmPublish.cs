@@ -149,8 +149,8 @@ public class PanelConfirmPublish : Panel
     /// <param name="ACBallData"></param>
     public void Populate(AcbBallContainer.ACBallsToSell.AcBallsItems ACBallData)
     {
-        minValue =
-          maxValue =
+        minValue = 5;
+        maxValue = 50;
       m_item_id = ACBallData.id;
         m_type = itemTypes.ACBALL;
         if (itemIcon && !string.IsNullOrEmpty(ACBallData.path_img))
@@ -167,8 +167,8 @@ public class PanelConfirmPublish : Panel
     /// <param name="itemData">informaci�n del item</param>
     public void Populate(BoosterData.BoosterItemData boostData)
     {
-        minValue =
-          maxValue =
+        minValue = 5;
+          maxValue = 50;
       m_item_id = boostData.id;
         m_type = itemTypes.BOOSTER;
       
@@ -237,7 +237,11 @@ public class PanelConfirmPublish : Panel
     /// </summary>
     public void ClickPublish()
     {
-        ACBSingleton.Instance.AlertPanel.SetupPanel(alertPublish, alertPublishDescription, true,Publish);
+        PanelJumbleSale jumbleSale = GameObject.FindObjectOfType<PanelJumbleSale>();
+        if (jumbleSale != null && jumbleSale.ownedPublications >= 10)
+            ACBSingleton.Instance.AlertPanel.SetupPanel("No es posible publicar el artículo pues ha alcanzado el límite máximo de artículos a la venta en el Mercado", "", false, null);
+        else
+            ACBSingleton.Instance.AlertPanel.SetupPanel(alertPublish, alertPublishDescription, true,Publish);
     }
     /// <summary>
     /// Publica el item seleccionado
@@ -250,7 +254,7 @@ public class PanelConfirmPublish : Panel
             spinner.transform.GetChild(i).gameObject.SetActive(true);
         }
         var cardbody = JsonConvert.SerializeObject(new SellData() { type = m_type.ToString(), price = itemPriceValue,item_id = m_item_id });
-        WebProcedure.Instance.SellItem(cardbody, OnItemPublished, OnItemPublishedFailed);
+      WebProcedure.Instance.SellItem(cardbody, OnItemPublished, OnItemPublishedFailed);
     }
     /// <summary>
     /// Se dispara cuando el item ha sido satisfactoriamente publicado
