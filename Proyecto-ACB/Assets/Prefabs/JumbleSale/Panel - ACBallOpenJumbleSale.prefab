@@ -895,6 +895,7 @@ GameObject:
   - component: {fileID: 3429824365214900861}
   - component: {fileID: 7886589183977356991}
   - component: {fileID: 9062258008226935649}
+  - component: {fileID: -5433220146524957272}
   m_Layer: 5
   m_Name: Panel - ACBallOpenJumbleSale
   m_TagString: Untagged
@@ -1033,6 +1034,41 @@ MonoBehaviour:
     status: 
     show: 0
   spinner: {fileID: 5850027069476963647}
+--- !u!114 &-5433220146524957272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2840942316626349556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5bc81df762b894095658cc89bd1a40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productButton: {fileID: 0}
+  buttonImage: {fileID: 0}
+  productName: {fileID: 0}
+  productCost: {fileID: 0}
+  panelOpener: {fileID: 0}
+  panelBuyPrefab: {fileID: 0}
+  itemData:
+    id: 0
+    title: 
+    description: 
+    price: 0
+    postdate: 
+    path_img: 
+    random: 0
+    elementType: 0
+  spritePlace: {fileID: 0}
+  publishDateText: {fileID: 0}
+  playerName: {fileID: 0}
+  publicationOwnedColor: {r: 0, g: 0, b: 0, a: 0}
+  tokenCardImage: {fileID: 0}
+  tokenHighlightCardImage: {fileID: 0}
+  booster: {fileID: 0}
+  injured: {fileID: 0}
 --- !u!1 &3728660418976485134
 GameObject:
   m_ObjectHideFlags: 0

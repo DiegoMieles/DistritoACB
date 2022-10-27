@@ -238,9 +238,7 @@ public class PanelConfirmPublish : Panel
     public void ClickPublish()
     {
         PanelJumbleSale jumbleSale = GameObject.FindObjectOfType<PanelJumbleSale>();
-        if (jumbleSale != null && jumbleSale.ownedPublications >= 10)
-            ACBSingleton.Instance.AlertPanel.SetupPanel("No es posible publicar el artículo pues ha alcanzado el límite máximo de artículos a la venta en el Mercado", "", false, null);
-        else
+
             ACBSingleton.Instance.AlertPanel.SetupPanel(alertPublish, alertPublishDescription, true,Publish);
     }
     /// <summary>

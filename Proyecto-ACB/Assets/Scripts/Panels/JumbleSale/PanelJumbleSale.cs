@@ -85,8 +85,8 @@ public class PanelJumbleSale : Panel
     private const float DistanceMarginForLoad = 600.0f; //Distancia para iniciar cargado de objetos
     private float lastPos = Mathf.Infinity; //?ltima posici?n donde se encuentra el objeto arrastrable
     private string researchWord; //Palabra que se usar? para buscar entre el mercadillo
+    private bool hasPressedPublish;
 
-    public int ownedPublications;
     #endregion
 
     #region Unity Methods
@@ -141,7 +141,6 @@ public class PanelJumbleSale : Panel
     {
         exitButton.onClick.AddListener(() => { ACBSingleton.Instance.UpdateGameData(); Close(); });
         counter = 1;
-        ownedPublications = 0;
         allItemsLoaded = false;
         List<string> filters = new List<string>();
         foreach (Filters filter in appliedFilters)
@@ -333,21 +332,33 @@ public class PanelJumbleSale : Panel
         JsonConvert.PopulateObject(obj.RawJson, mallData);
         if(mallData != null )
         {
-           if(mallData.balance > 0) coinAmount.text = mallData.balance.ToString();
-            if (mallData.items.Count <= 0)
-            {
-                allItemsLoaded = true;
+          if( hasPressedPublish )
+                {
+                if(!string.IsNullOrEmpty(mallData.MESSAGE_MAX_POSTS))
+                {
+                    layoutPublish.SetActive(false);
+                    hasPressedPublish = false;
+                    ACBSingleton.Instance.AlertPanel.SetupPanel(mallData.MESSAGE_MAX_POSTS, "", false, () => { });
+                }
+                
+                else
+                    layoutPublish.SetActive(true);
             }
-            for (int i = mallProductsContainer.childCount - 1; i >= 0; i--)
-            {
-                Destroy(mallProductsContainer.GetChild(i).gameObject);
-            }
-            InstanciateJumbleSaleItems(mallData.items);
+
+                if (mallData.balance > 0) coinAmount.text = mallData.balance.ToString();
+                if (mallData.items.Count <= 0)
+                {
+                    allItemsLoaded = true;
+                }
+                foreach (Transform child  in mallProductsContainer )
+                {
+                    Destroy(child.gameObject);
+                }
+                InstanciateJumbleSaleItems(mallData.items);
+            
         }
         isLoadingNewItems = false;
         SetSpinnerNewState(false);
-        if(mallData.total_pages > counter)
-        OnScrollContent(new Vector2(0, 0));
     }
         /// <summary>
     /// M?todo que se ejecuta cuando una p?gina de objetos de la tienda ha sido satisfactoriamente cargados al escrollear la pagina
@@ -368,8 +379,6 @@ public class PanelJumbleSale : Panel
         }
         isLoadingNewItems = false;
         SetSpinnerNewState(false);
-        if (mallData.total_pages != 0 && mallData.total_pages > counter)
-            OnScrollContent(new Vector2(0, 0));
     }
 
     public void InstanciateJumbleSaleItems(List<JumbleSaleResult.JumbleItems> jumbleItems)
@@ -378,7 +387,6 @@ public class PanelJumbleSale : Panel
         mallProductsContainer.sizeDelta += new Vector2(0, mallProductPrefab.GetComponent<LayoutElement>().preferredHeight * jumbleItems.Count);
         for (int i = 0; i < jumbleItems.Count; i++)
         {
-            if (jumbleItems[i].seller_user_id == WebProcedure.Instance.accessData.user) ownedPublications++;
                 if (!appliedFilters.Contains(Filters.Mine) && jumbleItems[i].seller_user_id == WebProcedure.Instance.accessData.user) continue;
             if (!appliedFilters.Contains(Filters.All) && jumbleItems[i].seller_user_id != WebProcedure.Instance.accessData.user) continue;
             GameObject productButton = Instantiate(mallProductPrefab, mallProductsContainer);
@@ -518,6 +526,51 @@ public class PanelJumbleSale : Panel
         SetSpinnerNewState(true);
         WebProcedure.Instance.GetJumbleSaleItems(JsonConvert.SerializeObject(page), OnSuccessLoadingMallData, OnFailedLoadingMallData);
         
+    }
+    public void OpenItemTypes()
+    {
+        counter = 1;
+        List<string> filters = new List<string>();
+        foreach (Filters filter in appliedFilters)
+        {
+            string data = "";
+            switch (filter)
+            {
+                case Filters.ACBalls:
+                    data = "ACBALL";
+                    break;
+                case Filters.Cards:
+                    data = "TOKENCARD";
+                    break;
+                case Filters.Highlights:
+                    data = "TOKENHIGTHLIGHT";
+                    break;
+                case Filters.Potenciators:
+                    data = "BOOSTER";
+                    break;
+                case Filters.Skins:
+                    data = "SKIN";
+                    break;
+            }
+            if (!string.IsNullOrEmpty(data))
+                filters.Add(data);
+        }
+        List<string[]> order = new List<string[]>();
+        switch (appliedOrderFilter)
+        {
+            case OrderFilters.Date:
+                order.Add(new string[] { "publication_date", "DESC" });
+                break;
+            case OrderFilters.Higher:
+                order.Add(new string[] { "price", "DESC" });
+                break;
+            case OrderFilters.Lower:
+                order.Add(new string[] { "price", "ASC" });
+                break;
+        }
+        JumbleSaleRequest page = new JumbleSaleRequest() { page = counter, num_items = 20, types = filters.ToArray(), order = order, user_id = "", query = researchWord };
+        hasPressedPublish = true;
+        WebProcedure.Instance.GetJumbleSaleItems(JsonConvert.SerializeObject(page), OnSuccessLoadingMallData, OnFailedLoadingMallData);
     }
     #endregion
 }

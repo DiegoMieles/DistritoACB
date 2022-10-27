@@ -962,6 +962,7 @@ namespace Data
         public int total_pages;
         public List<JumbleItems> items = new List<JumbleItems>();
         public int balance;
+        public string MESSAGE_MAX_POSTS;
 
         public class JumbleItems
         {
