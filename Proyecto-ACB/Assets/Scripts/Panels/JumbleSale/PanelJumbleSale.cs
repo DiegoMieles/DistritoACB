@@ -334,10 +334,10 @@ public class PanelJumbleSale : Panel
         {
           if( hasPressedPublish )
                 {
-                if(!string.IsNullOrEmpty(mallData.MESSAGE_MAX_POSTS))
+                layoutPublish.SetActive(false);
+                hasPressedPublish = false;
+                if (!string.IsNullOrEmpty(mallData.MESSAGE_MAX_POSTS))
                 {
-                    layoutPublish.SetActive(false);
-                    hasPressedPublish = false;
                     ACBSingleton.Instance.AlertPanel.SetupPanel(mallData.MESSAGE_MAX_POSTS, "", false, () => { });
                 }
                 

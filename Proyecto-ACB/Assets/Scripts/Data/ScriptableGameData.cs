@@ -123,6 +123,7 @@ namespace Data
         public List<ItemData> ARMACCESORY = new List<ItemData>();
         public List<ItemData> EYEACCESORY = new List<ItemData>();
         public List<ItemData> BACKGROUNDACCESORY = new List<ItemData>();
+        public List<ItemData> FOREGROUNDACCESORY = new List<ItemData>();
     }
     /// <summary>
     /// Enumerador que contiene la franja del día
