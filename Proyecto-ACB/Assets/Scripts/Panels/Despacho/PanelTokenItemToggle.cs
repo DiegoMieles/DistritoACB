@@ -20,7 +20,7 @@ public class PanelTokenItemToggle : MonoBehaviour
     [Tooltip("Imagen borde de la carta")]
     private Image imageBorder;
     [SerializeField]
-    [Tooltip("Imagen borde de la liga clásica")]
+    [Tooltip("Imagen borde de la liga cl?sica")]
     private Sprite clasicBorderSprite;
     [SerializeField]
     [Tooltip("Imagen borde de la liga actual")]
@@ -36,7 +36,7 @@ public class PanelTokenItemToggle : MonoBehaviour
     private GameObject team;
     [SerializeField] [Tooltip("Imagen de potenciador activo en la carta")]
     private GameObject booster;
-    [SerializeField] [Tooltip("Imagen de carta con lesión")]
+    [SerializeField] [Tooltip("Imagen de carta con lesi?n")]
     private GameObject injured;
     [SerializeField]
     [Tooltip("Datos de la carta")]
@@ -64,7 +64,7 @@ public class PanelTokenItemToggle : MonoBehaviour
     public TokenItemData CurrentToken => currentToken;
     public DragableObject Dragable => dragable;
 
-    private Action onBoosterSet; //Acción que se ejecuta cuando a la carta se le aplica un potenciador
+    private Action onBoosterSet; //Acci?n que se ejecuta cuando a la carta se le aplica un potenciador
 
     #endregion
 
@@ -74,9 +74,9 @@ public class PanelTokenItemToggle : MonoBehaviour
     /// Muestra los datos de la carta en el objeto arrastrable
     /// </summary>
     /// <param name="hightlightdata">Datos de highlight</param>
-    /// <param name="objectivePosition">Posición objetivo del objeto arrastrable</param>
-    /// <param name="onDraggedPosition">Acción a ejecutar cuando el objeto llega a su posición final</param>
-    /// <param name="onBoosterSet">Acción que se ejecuta cuando a la carta se le aplica un potenciador</param>
+    /// <param name="objectivePosition">Posici?n objetivo del objeto arrastrable</param>
+    /// <param name="onDraggedPosition">Acci?n a ejecutar cuando el objeto llega a su posici?n final</param>
+    /// <param name="onBoosterSet">Acci?n que se ejecuta cuando a la carta se le aplica un potenciador</param>
     public void ShowInfo(HighLightData.HigthlightItems hightlightdata, GameObject objectivePosition = null, Action onDraggedPosition = null, Action onBoosterSet = null, UnityAction<bool> onToggleClicked = null)
     {
         currentHighLight = hightlightdata;
@@ -123,9 +123,9 @@ public class PanelTokenItemToggle : MonoBehaviour
     /// Muestra los datos de la carta en el objeto arrastrable
     /// </summary>
     /// <param name="tokendata">Datos de la carta</param>
-    /// <param name="objectivePosition">Posición objetivo del objeto arrastrable</param>
-    /// <param name="onDraggedPosition">Acción a ejecutar cuando el objeto llega a su posición final</param>
-    /// <param name="onBoosterSet">Acción que se ejecuta cuando a la carta se le aplica un potenciador</param>
+    /// <param name="objectivePosition">Posici?n objetivo del objeto arrastrable</param>
+    /// <param name="onDraggedPosition">Acci?n a ejecutar cuando el objeto llega a su posici?n final</param>
+    /// <param name="onBoosterSet">Acci?n que se ejecuta cuando a la carta se le aplica un potenciador</param>
     public void ShowInfo(TokenItemData tokendata, GameObject objectivePosition = null, Action onDraggedPosition = null, Action onBoosterSet = null, UnityAction<bool> onToggleClicked = null)
     {
         bool isActualLeague = false;
@@ -180,7 +180,7 @@ public class PanelTokenItemToggle : MonoBehaviour
         panelOpener.OpenPopup();
         panelOpener.popup.GetComponent<PanelCardCompetitiveTeam>().SetCardData(currentToken, ()=> {
             GameObject.FindObjectOfType<PanelTeamCompetitivo>().CallInfoActualLeague();
-            PanelTeamCompetitivo.OnClose?.Invoke();
+            //PanelTeamCompetitivo.OnClose?.Invoke();
         }, false, onBoosterSet);
     }
 

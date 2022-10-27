@@ -166,7 +166,8 @@ public class PanelMall : Panel
     }
 
     /// <summary>
-    /// M?todo que se ejecuta cuando no se han podido traer los objetos de tienda
+    /// M?todo
+    /// que se ejecuta cuando no se han podido traer los objetos de tienda
     /// </summary>
     /// <param name="obj">Clase con los datos de error</param>
     private void OnFailedLoadingMallData(WebError obj)

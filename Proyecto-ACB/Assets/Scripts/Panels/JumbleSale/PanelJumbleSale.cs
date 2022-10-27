@@ -378,7 +378,7 @@ public class PanelJumbleSale : Panel
             InstanciateJumbleSaleItems(mallData.items);
         }
         isLoadingNewItems = false;
-        SetSpinnerNewState(false);
+       
     }
 
     public void InstanciateJumbleSaleItems(List<JumbleSaleResult.JumbleItems> jumbleItems)
