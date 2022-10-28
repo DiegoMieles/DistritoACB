@@ -9,22 +9,22 @@ using WebAPI;
 /// </summary>
 public class PanelSkin : MonoBehaviour
 {
-    public ItemData skinData { get; private set; } // Información de la Skin
-    [SerializeField] [Tooltip("B1otón de cerrar panel")]
+    public ItemData skinData { get; private set; } // Informaci?n de la Skin
+    [SerializeField] [Tooltip("B1ot?n de cerrar panel")]
     private Button button;
-    [SerializeField] [Tooltip("Muestra estadísticas del potenciador")]
+    [SerializeField] [Tooltip("Muestra estad?sticas del potenciador")]
     private Text textStat;
     [SerializeField] [Tooltip("Imagen del potenciador")]
     public Image imageIcon;
     [SerializeField]
-    [Tooltip("Imagen de bloqueo de interacción")]
+    [Tooltip("Imagen de bloqueo de interacci?n")]
     private GameObject disabledPanel;
 
     /// <summary>
-    /// Muestra la información del potenciador
+    /// Muestra la informaci?n del potenciador
     /// </summary>
     /// <param name="boosterdata">Datos del potenciador</param>
-    /// <param name="onshowconfirmation">Acción que se ejecuta al mostrar la confirmación</param>
+    /// <param name="onshowconfirmation">Acci?n que se ejecuta al mostrar la confirmaci?n</param>
     public void ShowInfo(ItemData itemData, Action onshowconfirmation = null, UnityAction<bool> onToggleClicked = null)
     {
         skinData = itemData;
@@ -33,7 +33,9 @@ public class PanelSkin : MonoBehaviour
         {
             if (imageIcon)
             {
-                string imagePath = "https://donext-dev.s3.eu-west-3.amazonaws.com/resources/" + itemData.img_show;
+                //Se ha cambiadola variable que se usa para cargar la imagen TODO
+                //string imagePath = "https://donext-dev.s3.eu-west-3.amazonaws.com/resources/" + itemData.img_show;
+                string imagePath = itemData.img_show_full;
                 WebProcedure.Instance.GetSprite(imagePath, OnSuccess, (WebError error) => { Debug.LogError(error); });
             }
         }
