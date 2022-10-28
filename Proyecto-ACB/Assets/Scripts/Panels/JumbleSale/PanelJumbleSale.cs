@@ -367,6 +367,19 @@ public class PanelJumbleSale : Panel
     private void OnSuccessScrollLoadingMallData(DataSnapshot obj)
     {
         Debug.Log(obj.RawJson);
+        try
+        {
+            MissionAlreadyComplete error = new MissionAlreadyComplete();
+            JsonConvert.PopulateObject(obj.RawJson, error);
+            if(error.code == 400)
+            {
+                SetSpinnerNewState(false);
+            }
+        }
+        catch
+        {
+
+        }
         JumbleSaleResult mallData = new JumbleSaleResult();
         JsonConvert.PopulateObject(obj.RawJson, mallData);
         if(mallData != null && mallData.total_pages > 0)
