@@ -271,7 +271,7 @@ public class PanelJumbleSale : Panel
     /// <param name="scrollNormalizedPos">Posici?n normalizada del objeto arrastrable</param>
     private void OnScrollContent(Vector2 scrollNormalizedPos)
     {
-        if (scrollNormalizedPos.y <= 0.1f && !allItemsLoaded && !isLoadingNewItems)
+        if (scrollNormalizedPos.y <= 0.1f && allItemsLoaded && !isLoadingNewItems)
         {
             counter++;
             SetSpinnerNewState(true);
@@ -374,6 +374,8 @@ public class PanelJumbleSale : Panel
             if(error.code == 400)
             {
                 SetSpinnerNewState(false);
+                allItemsLoaded = true;
+                isLoadingNewItems = false;
             }
         }
         catch
