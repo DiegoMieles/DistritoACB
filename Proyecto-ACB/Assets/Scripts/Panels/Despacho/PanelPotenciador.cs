@@ -8,28 +8,28 @@ using UnityEngine.UI;
 /// </summary>
 public class PanelPotenciador : MonoBehaviour
 {
-    [SerializeField] [Tooltip("Botón de cerrar panel")]
+    [SerializeField] [Tooltip("Bot?n de cerrar panel")]
     private Button button;
-    [SerializeField] [Tooltip("Muestra estadísticas del potenciador")]
+    [SerializeField] [Tooltip("Muestra estad?sticas del potenciador")]
     private Text textStat;
     [SerializeField]
-    [Tooltip("Muestra descripción del potenciador")]
+    [Tooltip("Muestra descripci?n del potenciador")]
     private Text textDescription;
     [SerializeField] [Tooltip("Imagen del potenciador")]
     public Image imageBooter;
-    [HideInInspector] [Tooltip("Información del potenciador")]
+    [HideInInspector] [Tooltip("Informaci?n del potenciador")]
     public BoosterData.BoosterItemData boostData ;
     
     /// <summary>
-    /// Muestra la información del potenciador
+    /// Muestra la informaci?n del potenciador
     /// </summary>
     /// <param name="boosterdata">Datos del potenciador</param>
-    /// <param name="onshowconfirmation">Acción que se ejecuta al mostrar la confirmación</param>
+    /// <param name="onshowconfirmation">Acci?n que se ejecuta al mostrar la confirmaci?n</param>
     public void ShowInfo(BoosterData.BoosterItemData boosterdata, Action onshowconfirmation = null)
     {
         if (boosterdata != null) boostData = boosterdata;
         textStat.text = boosterdata.value;
-        if (textDescription) textDescription.text = "Potenciador " + boosterdata.name + " " + boosterdata.value;
+        if (textDescription) textDescription.text = "Potenciador " + (boosterdata.name == "Triples" ? "Tiros de 2":boosterdata.name )+ " " + boosterdata.value;
         if (!string.IsNullOrEmpty(boosterdata.path_img))
         {
             if (imageBooter)
