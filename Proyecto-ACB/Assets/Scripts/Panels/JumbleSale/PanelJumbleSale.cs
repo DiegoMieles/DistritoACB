@@ -271,7 +271,7 @@ public class PanelJumbleSale : Panel
     /// <param name="scrollNormalizedPos">Posici?n normalizada del objeto arrastrable</param>
     private void OnScrollContent(Vector2 scrollNormalizedPos)
     {
-        if (scrollNormalizedPos.y <= 0.1f && allItemsLoaded && !isLoadingNewItems && (mallProductsContainer.GetChildCount() > 0 || !appliedFilters.Contains(Filters.All)))
+        if (scrollNormalizedPos.y <= 0.1f && allItemsLoaded && !isLoadingNewItems && (mallProductsContainer.GetChildCount() > 0 || appliedFilters.Contains(Filters.All)))
         {
             counter++;
             SetSpinnerNewState(true);
