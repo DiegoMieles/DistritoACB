@@ -271,7 +271,7 @@ public class PanelJumbleSale : Panel
     /// <param name="scrollNormalizedPos">Posici?n normalizada del objeto arrastrable</param>
     private void OnScrollContent(Vector2 scrollNormalizedPos)
     {
-        if (scrollNormalizedPos.y <= 0.1f && allItemsLoaded && !isLoadingNewItems)
+        if (scrollNormalizedPos.y <= 0.1f && allItemsLoaded && !isLoadingNewItems && (mallProductsContainer.GetChildCount() > 0 || !appliedFilters.Contains(Filters.All)))
         {
             counter++;
             SetSpinnerNewState(true);
@@ -332,7 +332,11 @@ public class PanelJumbleSale : Panel
         JsonConvert.PopulateObject(obj.RawJson, mallData);
         if(mallData != null )
         {
-          if( hasPressedPublish )
+            if (mallData.items.Count <= 0)
+            {
+                allItemsLoaded = true;
+            }
+            if ( hasPressedPublish )
                 {
                 layoutPublish.SetActive(false);
                 hasPressedPublish = false;
@@ -356,7 +360,7 @@ public class PanelJumbleSale : Panel
             
         }
         isLoadingNewItems = false;
-        allItemsLoaded = true;
+       
     }
         /// <summary>
     /// M?todo que se ejecuta cuando una p?gina de objetos de la tienda ha sido satisfactoriamente cargados al escrollear la pagina
@@ -380,15 +384,18 @@ public class PanelJumbleSale : Panel
         {
 
         }
+        
         JumbleSaleResult mallData = new JumbleSaleResult();
         JsonConvert.PopulateObject(obj.RawJson, mallData);
         if(mallData != null && mallData.total_pages > 0)
         {
-
+            if (mallData.items.Count <= 0)
+            {
+                allItemsLoaded = true;
+            }
             InstanciateJumbleSaleItems(mallData.items);
         }
         isLoadingNewItems = false;
-        allItemsLoaded = true;
     }
 
     public void InstanciateJumbleSaleItems(List<JumbleSaleResult.JumbleItems> jumbleItems)
@@ -398,12 +405,17 @@ public class PanelJumbleSale : Panel
         int items = 0;
         for (int i = 0; i < jumbleItems.Count; i++)
         {
-                if (!appliedFilters.Contains(Filters.Mine) && jumbleItems[i].seller_user_id == WebProcedure.Instance.accessData.user) continue;
+            if (i >= jumbleItems.Count - 1)
+            {
+                allItemsLoaded = true;
+                if (items == 0)
+                    SetSpinnerNewState(false);
+            }
+            if (!appliedFilters.Contains(Filters.Mine) && jumbleItems[i].seller_user_id == WebProcedure.Instance.accessData.user) continue;
             if (!appliedFilters.Contains(Filters.All) && jumbleItems[i].seller_user_id != WebProcedure.Instance.accessData.user) continue;
             items++;
             GameObject productButton = Instantiate(mallProductPrefab, mallProductsContainer);
-            productButton.GetComponent<JumbleSaleObjectButton>().SetupMallButton(jumbleItems[i], () => { ACBSingleton.Instance.UpdateGameData(); SetupPanel(); }, SetupPanel);
-            if (i >= jumbleItems.Count && items == 0) SetSpinnerNewState(false); 
+            productButton.GetComponent<JumbleSaleObjectButton>().SetupMallButton(jumbleItems[i], () => { ACBSingleton.Instance.UpdateGameData(); SetupPanel(); }, SetupPanel); 
         }
 
     }
