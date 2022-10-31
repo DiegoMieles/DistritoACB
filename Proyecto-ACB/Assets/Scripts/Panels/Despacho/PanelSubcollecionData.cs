@@ -68,7 +68,7 @@ namespace Panels
                         ClosedSpinner();
                     }
                     
-                    if (subcollecionData.type != ItemType.HIGTHLIGHT)
+                    if (subcollecionData.type != ItemType.HIGTHLIGHT || subcollecionData.type != ItemType.H)
                     {
                         button.onClick.AddListener(OpenAddTeamPanel);
                     }

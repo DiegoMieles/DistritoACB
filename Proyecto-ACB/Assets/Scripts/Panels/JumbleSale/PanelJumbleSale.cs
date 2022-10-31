@@ -181,7 +181,7 @@ public class PanelJumbleSale : Panel
                 break;
         }
         SetSpinnerNewState(true);
-        JumbleSaleRequest page = new JumbleSaleRequest() { page = counter, num_items = 20, types = filters.ToArray(), order = order, user_id = "", query = researchWord };
+        JumbleSaleRequest page = new JumbleSaleRequest() { page = counter, num_items = 20, types = filters.ToArray(), order = order, user_id = !appliedFilters.Contains(Filters.All) ? WebProcedure.Instance.accessData.user : "", query = researchWord };
         WebProcedure.Instance.GetJumbleSaleItems(JsonConvert.SerializeObject(page), OnSuccessLoadingMallData, OnFailedLoadingMallData);
         UpdateFilterButtons();
        
@@ -314,7 +314,7 @@ public class PanelJumbleSale : Panel
                     order.Add(new string[] { "price", "ASC" });
                     break;
             }
-            JumbleSaleRequest page = new JumbleSaleRequest() { page = counter, num_items = 20, types = filters.ToArray(), order = order,user_id = "", query = researchWord };
+            JumbleSaleRequest page = new JumbleSaleRequest() { page = counter, num_items = 20, types = filters.ToArray(), order = order,user_id = !appliedFilters.Contains(Filters.All)? WebProcedure.Instance.accessData.user: "", query = researchWord };
             WebProcedure.Instance.GetJumbleSaleItems(JsonConvert.SerializeObject(page), OnSuccessScrollLoadingMallData, OnFailedLoadingMallData);
         }
     }
@@ -402,18 +402,11 @@ public class PanelJumbleSale : Panel
     {
        
         mallProductsContainer.sizeDelta += new Vector2(0, mallProductPrefab.GetComponent<LayoutElement>().preferredHeight * jumbleItems.Count);
-        int items = 0;
+     
         for (int i = 0; i < jumbleItems.Count; i++)
         {
-            if (i >= jumbleItems.Count - 1)
-            {
-                allItemsLoaded = true;
-                if (items == 0)
-                    SetSpinnerNewState(false);
-            }
+          
             if (!appliedFilters.Contains(Filters.Mine) && jumbleItems[i].seller_user_id == WebProcedure.Instance.accessData.user) continue;
-            if (!appliedFilters.Contains(Filters.All) && jumbleItems[i].seller_user_id != WebProcedure.Instance.accessData.user) continue;
-            items++;
             GameObject productButton = Instantiate(mallProductPrefab, mallProductsContainer);
             productButton.GetComponent<JumbleSaleObjectButton>().SetupMallButton(jumbleItems[i], () => { ACBSingleton.Instance.UpdateGameData(); SetupPanel(); }, SetupPanel); 
         }

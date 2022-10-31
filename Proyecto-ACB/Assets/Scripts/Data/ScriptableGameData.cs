@@ -78,7 +78,8 @@ namespace Data
         HIGTHLIGHT,
         SUBCOLECTION,
             CH,
-            H
+            H,
+            C
     }
 
     /// <summary>
