@@ -80,11 +80,10 @@ public class PanelConfirmPublish : Panel
         maxValue = 25;
         m_item_id = itemData.id;
         m_type = itemTypes.SKIN;
-        if (itemIcon && !string.IsNullOrEmpty(itemData.img_show))
+        if (itemIcon && !string.IsNullOrEmpty(itemData.img_show_full))
         {
             itemIcon.gameObject.SetActive(true);
-            string imagePath = IMAGES_URL + itemData.img_show;
-            WebProcedure.Instance.GetSprite(imagePath, OnSuccess, (WebError error) => { Debug.LogError(error); });
+            WebProcedure.Instance.GetSprite(itemData.img_show_full, OnSuccess, (WebError error) => { Debug.LogError(error); });
         }
         if (itemDescription) itemDescription.text = itemData.description;
         UpdateUI();

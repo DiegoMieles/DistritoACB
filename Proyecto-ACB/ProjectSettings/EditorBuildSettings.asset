@@ -11,13 +11,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/UniWebView/Demo/UniWebViewDemo.unity
     guid: 938c077f40a814d4584ce2ad17947cf3
-  - enabled: 0
+  - enabled: 1
     path: Assets/QRcode/Scenes/QREncodeScene.unity
     guid: 5b98748f1570d5c4e9d8535e33be4156
-  - enabled: 0
+  - enabled: 1
     path: Assets/QRcode/Scenes/QRScanScene.unity
     guid: 724ccd96f8f94144bbd76e0cec804ba2
-  - enabled: 0
+  - enabled: 1
     path: Assets/ArCode/Scene/Ar.unity
     guid: 78f9c3f92e7bc3545aba04bc26018ded
   m_configObjects:

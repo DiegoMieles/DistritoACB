@@ -10,78 +10,52 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b058b7eac12c9a44b0df526ce001fbb, type: 3}
-  m_Name: ScriptableAccount
+  m_Name: Camiseta
   m_EditorClassIdentifier: 
   statsData:
-    coinsBalance: 18954
-    acballsBalance: 2
+    coinsBalance: 907
+    acballsBalance: 1
     acballsNotification: 1
   avatarData:
-    nickName: Joelus
-    skinColor: 6
-    bodyForm: 138
-    faceForm: 43
+    nickName: FFFFFFFFFFF
+    skinColor: 3
+    bodyForm: 136
+    faceForm: 42
     eyes: 72
     ear: 130
     nose: 110
     mouth: 22
     eyeBrow: 56
-    hairStyleFront: 150
-    hairStyleBack: 172
-    hairColor: 15
+    hairStyleFront: 148
+    hairStyleBack: 171
+    hairColor: 12
     facialHair: -1
-    bodyAccessory: 125
+    bodyAccessory: 0
     headAccessory: 0
     armAccessory: 0
     eyesAccessory: 0
     backGround: 0
     foreGround: 0
     isFirstTime: 0
-    img_small: https://donext-dev.s3.eu-west-3.amazonaws.com/resources/81d75f0f-15e4-47cf-8ab9-fccf8ba79009_img_small.png
-    img_big: https://donext-dev.s3.eu-west-3.amazonaws.com/resources/81d75f0f-15e4-47cf-8ab9-fccf8ba79009_img_big.png
+    img_small: https://donext-dev.s3.eu-west-3.amazonaws.com/resources/b504a40c-eebc-401e-936a-c1a90673d257_img_small.png
+    img_big: https://donext-dev.s3.eu-west-3.amazonaws.com/resources/b504a40c-eebc-401e-936a-c1a90673d257_img_big.png
     avatarItems: []
   stadiumData:
     collectCoins: 1
-    lastCollectTime: 1663193945
-    nextCollectTime: 1663193945
+    lastCollectTime: 1667214617
+    nextCollectTime: 1667214617
   missionsData:
     missionItems:
-    - id: 69
-      name: Trivia pesado 1
-      info: Trivia pesado 1
-      url: https://s3.eu-central-1.amazonaws.com/distritoacb.com/deals/1661339429568/index.html
-      img: https://donext-dev.s3.eu-west-3.amazonaws.com/resources/test2.png
-      type: 2
+    - id: 957
+      name: 502 AR 10.10.22
+      info: a
+      url: https://s3.eu-central-1.amazonaws.com/distritoacb.com/deals/1665347364104/index.html
+      img: https://donext-dev.s3.eu-west-3.amazonaws.com/resources/Estandar_AR.png
+      type: 0
       position: 0
-      rewardType: 16
+      rewardType: 24
       rewardTypeImg: https://donext-dev.s3.eu-west-3.amazonaws.com/resources/0000000-8abc-4a07-8ed6-4f6b76eed400.jpg
-      uuid_r: c35355bb-c35c-4a79-b125-a3ae34d4d641
-      lat: 
-      lon: 
-      valGPS: 0
-    - id: 70
-      name: QR MONEY
-      info: M ONEY
-      url: https://s3.eu-central-1.amazonaws.com/distritoacb.com/deals/1661856348613/index.html
-      img: https://donext-dev.s3.eu-west-3.amazonaws.com/resources/Twitter_SuperManagerACB.png
-      type: 1
-      position: 1
-      rewardType: 0
-      rewardTypeImg: NONE
-      uuid_r: 0e82b3a9-4ab7-4d93-8832-c1a7924117cf
-      lat: 
-      lon: 
-      valGPS: 0
-    - id: 71
-      name: Jugador LE2021-22
-      info: "\xD1FSK\n"
-      url: https://s3.eu-central-1.amazonaws.com/distritoacb.com/deals/1662223190592/index.html
-      img: https://donext-dev.s3.eu-west-3.amazonaws.com/resources/ig_distritoacb.png
-      type: 1
-      position: 2
-      rewardType: 0
-      rewardTypeImg: NONE
-      uuid_r: 74bedeef-7701-4120-9d32-303ac52ea849
+      uuid_r: f3e962a8-bb89-4682-8ed4-20bd7ef2cf9a
       lat: 
       lon: 
       valGPS: 0
