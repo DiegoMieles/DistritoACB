@@ -34,6 +34,9 @@ namespace Panels
         [SerializeField] [Tooltip("Panel de añadir al equipo competitivo")]
         protected GameObject panelAddTeamPrefab;
 
+        [SerializeField]
+        [Tooltip("Panel de añadir colección")]
+        private GameObject panelSubCollectionHighlights;
         [SerializeField] [Tooltip("Nombre del spinner de carga")]
         protected string spinner_name;
 
@@ -67,16 +70,13 @@ namespace Panels
                     {
                         ClosedSpinner();
                     }
-                    
-                    if (subcollecionData.type != ItemType.HIGTHLIGHT || subcollecionData.type != ItemType.H)
-                    {
-                        button.onClick.AddListener(OpenAddTeamPanel);
-                    }
-                    else
-                    {
+
+                    if(currentSubcollection.type == ItemType.HIGTHLIGHT)
                         button.onClick.AddListener(OpenAddTeamHightLightPanel);
-                    }
-          
+                    
+                    else button.onClick.AddListener(OpenAddTeamPanel);
+
+
                 }, error =>
                 {
                     onFailed.Invoke();
@@ -101,14 +101,14 @@ namespace Panels
         {
             panelOpener.popupPrefab = panelAddTeamPrefab;
             panelOpener.OpenPopup();
-            panelOpener.popup.GetComponent<PanelAñadirEquipo>().CallInfo(currentSubcollection.id,currentSubcollection.name );
+            panelOpener.popup.GetComponent<PanelAñadirEquipo>().CallInfo(currentSubcollection.id, currentSubcollection.name);
             onClickedButton?.Invoke();
         }
 
         // <summary>
         /// Abre panel de highlight
         /// </summary>
-        protected void OpenAddTeamHightLightPanel()
+        protected virtual void OpenAddTeamHightLightPanel()
         {
             panelOpener.popupPrefab = panelAddTeamPrefab;
             panelOpener.OpenPopup();

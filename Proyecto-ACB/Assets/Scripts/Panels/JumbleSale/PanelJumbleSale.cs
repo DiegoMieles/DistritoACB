@@ -271,7 +271,7 @@ public class PanelJumbleSale : Panel
     /// <param name="scrollNormalizedPos">Posici?n normalizada del objeto arrastrable</param>
     private void OnScrollContent(Vector2 scrollNormalizedPos)
     {
-        if (scrollNormalizedPos.y <= 0.1f && allItemsLoaded && !isLoadingNewItems && mallProductsContainer.GetChildCount() > 0 )
+        if (scrollNormalizedPos.y <= 0.1f && allItemsLoaded && !isLoadingNewItems && mallProductsContainer.childCount > 0 )
         {
             counter++;
             SetSpinnerNewState(true);
@@ -326,7 +326,6 @@ public class PanelJumbleSale : Panel
     /// <param name="obj">Datos de los objetos de la tienda</param>
     private void OnSuccessLoadingMallData(DataSnapshot obj)
     {
-
         Debug.Log(obj.RawJson);
         JumbleSaleResult mallData = new JumbleSaleResult();
         JsonConvert.PopulateObject(obj.RawJson, mallData);
@@ -335,6 +334,7 @@ public class PanelJumbleSale : Panel
             if (mallData.items.Count <= 0)
             {
                 allItemsLoaded = true;
+                SetSpinnerNewState(false);
             }
             if ( hasPressedPublish )
                 {
@@ -392,6 +392,7 @@ public class PanelJumbleSale : Panel
             if (mallData.items.Count <= 0)
             {
                 allItemsLoaded = true;
+                SetSpinnerNewState(false);
             }
             InstanciateJumbleSaleItems(mallData.items);
         }
