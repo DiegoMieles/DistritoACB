@@ -36,7 +36,7 @@ namespace Panels
 
         [SerializeField]
         [Tooltip("Panel de añadir colección")]
-        private GameObject panelSubCollectionHighlights;
+        protected GameObject panelSubCollectionHighlights;
         [SerializeField] [Tooltip("Nombre del spinner de carga")]
         protected string spinner_name;
 

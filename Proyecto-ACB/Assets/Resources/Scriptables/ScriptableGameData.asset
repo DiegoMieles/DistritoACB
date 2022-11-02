@@ -15,11 +15,11 @@ MonoBehaviour:
   hours: 2
   country: ES
   costChallenge: 1
-  costChallengeCurrentEdition: 2
+  costChallengeCurrentEdition: 1
   app:
     version: 1.0
-    vers_android: 1.0.6
-    vers_ios: 1.0.6
+    vers_android: 1.0.9
+    vers_ios: 1.0.9
     text: "\xA1Nuestro equipo de desarrolladores no para de mejorar! Para disfrutar
       de sus avances tendr\xE1s que actualizar la versi\xF3n de tu APP."
     url_android: https://play.google.com/store/apps/details?id=com.distritoacb

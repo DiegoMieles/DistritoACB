@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class PanelSubCollectionToPublishData : Panels.PanelSubcollecionData
 {
-    [SerializeField]
-    [Tooltip("Panel de a?adir colecci?n")]
-    private GameObject panelSubCollectionHighlights;
     /// <summary>
     /// Abre panel de a?adir carta al equipo competitivo
     /// </summary>
