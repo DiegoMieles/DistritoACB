@@ -20,6 +20,7 @@ namespace Data
         public int hours;
         public string country;
         public int costChallenge;
+        public int costChallengeCurrentEdition;
         public App app;
         public MainMenuData mainMenuData;
 
@@ -77,7 +78,8 @@ namespace Data
         HIGTHLIGHT,
         SUBCOLECTION,
             CH,
-            H
+            H,
+            C
     }
 
     /// <summary>
@@ -96,6 +98,8 @@ namespace Data
         public string path_img;
         public string img_show;
         public bool on_market;
+        public string path_img_full;
+        public string img_show_full;
         private const string SPRITEPATH = "SpriteItem/";
         public Sprite GetSprite()
         {
@@ -122,6 +126,7 @@ namespace Data
         public List<ItemData> ARMACCESORY = new List<ItemData>();
         public List<ItemData> EYEACCESORY = new List<ItemData>();
         public List<ItemData> BACKGROUNDACCESORY = new List<ItemData>();
+        public List<ItemData> FOREGROUNDACCESORY = new List<ItemData>();
     }
     /// <summary>
     /// Enumerador que contiene la franja del día

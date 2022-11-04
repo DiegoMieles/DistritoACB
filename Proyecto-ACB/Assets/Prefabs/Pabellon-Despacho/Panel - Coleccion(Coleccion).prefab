@@ -171,9 +171,10 @@ MonoBehaviour:
     position: 0
     hasSubcollections: 0
     type: 0
+    current: 0
   panelOpener: {fileID: 2222818630309085544}
   panelAddCollection: {fileID: 8682030588992683725, guid: 0029deac53ae1074089fff02324fb31a, type: 3}
-  panelSubCollectionHighlights: {fileID: 0}
+  panelSubCollectionHighlights: {fileID: 5377484464920305861, guid: 0f4cec1b2b6c8b34ca4c0fb1b7469b4a, type: 3}
   panelAddCards: {fileID: 4691811486969869459, guid: a28d5aa5a28030c41989b5fc7d70a8a2, type: 3}
   spinner_name: Spinner_Colecciones(Colecciones)
 --- !u!114 &8063373194379685072

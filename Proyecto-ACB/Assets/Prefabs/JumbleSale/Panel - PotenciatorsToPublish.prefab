@@ -500,7 +500,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000000029802322, y: 453.1504}
+  m_AnchoredPosition: {x: -0.000000029802322, y: 847.95013}
   m_SizeDelta: {x: 467.67444, y: 0}
   m_Pivot: {x: 0.5, y: 0.97}
 --- !u!114 &1225573668775862773
@@ -1428,8 +1428,11 @@ MonoBehaviour:
   textNoPotenciadores: {fileID: 4606394632658305900}
   textFail: No tienes potenciadores disponibles para publicar
   boosterDataContainer:
-    boosterData:
-      boosterItems: []
+    Asistencias: []
+    Rebotes: []
+    Puntos: []
+    Tiros: []
+    Triples: []
   applyBoosterResponse:
     boosterData:
       boosterItems: []

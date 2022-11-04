@@ -12,7 +12,7 @@ public class MallObjectButton : MonoBehaviour
     #region Fields and properties
 
     [Header("Button components")]
-    [SerializeField] [Tooltip("Botón del producto")]
+    [SerializeField] [Tooltip("Bot?n del producto")]
     protected Button productButton;
     [SerializeField] [Tooltip("Imagen del producto")]
     protected Image buttonImage;
@@ -22,14 +22,14 @@ public class MallObjectButton : MonoBehaviour
     protected Text productCost;
     [SerializeField] [Tooltip("Clase que controla la apertura de nuevos paneles a mostrar")]
     protected PanelOpener panelOpener;
-    [SerializeField] [Tooltip("Prefab del panel de confirmación de compra")]
+    [SerializeField] [Tooltip("Prefab del panel de confirmaci?n de compra")]
     protected GameObject panelBuyPrefab;
     [Tooltip("Datos del objeto de tienda")]
     public MallContainerData.MallData.MallItems itemData;
     [SerializeField] [Tooltip("Sprite del lugar")]
     protected Sprite spritePlace;
     
-    protected Action onSuccesfulBuy; //Acción que se ejecuta cuando la compra se ha realizado exitosamente
+    protected Action onSuccesfulBuy; //Acci?n que se ejecuta cuando la compra se ha realizado exitosamente
     protected bool loaded; //Determina si los datos del objeto han sido cargados exitosamente
     protected bool imageloaded; //Determina si la imagen del objeto ha sido cargada
     protected Coroutine _coroutine; //Corrutina de carga de imagen del objeto de la tienda
@@ -76,10 +76,10 @@ public class MallObjectButton : MonoBehaviour
     }
 
     /// <summary>
-    /// Configura el botón y los datos del objeto de la tienda
+    /// Configura el bot?n y los datos del objeto de la tienda
     /// </summary>
     /// <param name="itemData">Datos del objeto</param>
-    /// <param name="onSuccesfulBuy">Acción que se ejecuta cuando la compra del objeto ha sido exitosa</param>
+    /// <param name="onSuccesfulBuy">Acci?n que se ejecuta cuando la compra del objeto ha sido exitosa</param>
     public void SetupMallButton(MallContainerData.MallData.MallItems itemData, Action onSuccesfulBuy)
     {
         this.itemData = itemData;
@@ -91,10 +91,10 @@ public class MallObjectButton : MonoBehaviour
         loaded = true;
     }  
     /// <summary>
-    /// Configura el botón y los datos del objeto del mercadillo
+    /// Configura el bot?n y los datos del objeto del mercadillo
     /// </summary>
     /// <param name="itemData">Datos del objeto</param>
-    /// <param name="onSuccesfulBuy">Acción que se ejecuta cuando la compra del objeto ha sido exitosa</param>
+    /// <param name="onSuccesfulBuy">Acci?n que se ejecuta cuando la compra del objeto ha sido exitosa</param>
     public void SetupMallButton(JumbleSaleResult.JumbleItems itemData, Action onSuccesfulBuy)
     {
     }
@@ -104,18 +104,18 @@ public class MallObjectButton : MonoBehaviour
     #region protected Methods
 
     /// <summary>
-    /// Método que se ejecuta cuando backend carga la imagen del objeto de forma exitosa
+    /// M?todo que se ejecuta cuando backend carga la imagen del objeto de forma exitosa
     /// </summary>
     /// <param name="obj">Imagen del objeto</param>
     protected virtual void OnSuccessLoadingImage(Sprite obj)
     {
-        buttonImage.sprite = obj;
+       if(buttonImage) buttonImage.sprite = obj;
         DeactivateSpinner();
 
     }
 
     /// <summary>
-    /// Método que se ejecuta cuando backend no puede cargar la imagen del objeto
+    /// M?todo que se ejecuta cuando backend no puede cargar la imagen del objeto
     /// </summary>
     /// <param name="obj">Clase con los datos de error</param>
     protected void OnFailedLoadingImage(WebError obj)
@@ -137,11 +137,11 @@ public class MallObjectButton : MonoBehaviour
     /// <summary>
     /// Desactiva el spinner de carga
     /// </summary>
-    protected void DeactivateSpinner()
+    protected virtual void DeactivateSpinner()
     {
         GameObject spinner = GameObject.Find("Spinner_mall");
 
-        if (!spinner.activeInHierarchy)
+        if (spinner!= null && !spinner.activeInHierarchy)
             return;
 
         for (int i = 0; i < spinner.transform.childCount; i++)

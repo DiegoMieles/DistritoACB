@@ -724,9 +724,9 @@ MonoBehaviour:
   itemDescription: {fileID: 7776240873193996700}
   itemPrice: {fileID: 5651893116546200753}
   alertPublish: "\xBFEst\xE1s seguro?"
-  alertPublishDescription: "Se har\xE1 p\xFAblica tu oferta. Si alguien compra tu
-    token desaparecer\xE1 de tu lista. \n Recuerda que puedes eliminarla cuando quieras
-    desde el detalle de tu oferta."
+  alertPublishDescription: " Se har\xE1 p\xFAblico tu art\xEDculo en venta. Si alguien
+    lo compra, desaparecer\xE1 de tu lista. Recuerda que puedes eliminarlo cuando
+    quieras desde el detalle."
   itemPriceValue: 10
   boosterStat: {fileID: 7394357795264935349}
   boosterIcon: {fileID: 7394357794249978566}
@@ -2029,10 +2029,10 @@ RectTransform:
   m_Father: {fileID: 5406785461987769813}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 10.449524, y: 0}
-  m_SizeDelta: {x: -142.3875, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 45.852783, y: -2.2754}
+  m_SizeDelta: {x: -149.5579, y: 51.7373}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8026126060122467325
 CanvasRenderer:
@@ -2075,7 +2075,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Publicar oferta
+  m_Text: "Publicar art\xEDculo"
 --- !u!1 &6035677193488865071
 GameObject:
   m_ObjectHideFlags: 0
@@ -3589,8 +3589,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 104}
-  m_SizeDelta: {x: -106.428314, y: 134.89142}
+  m_AnchoredPosition: {x: -8.977173, y: 104}
+  m_SizeDelta: {x: -124.38, y: 134.8914}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2387055740961900687
 CanvasRenderer:

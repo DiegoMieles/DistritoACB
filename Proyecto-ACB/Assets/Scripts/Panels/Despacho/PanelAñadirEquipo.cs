@@ -270,7 +270,6 @@ public class PanelAñadirEquipo : Panel
                 }
                 
                 ClosedSpinner();
-            
             }, error =>
             {
                 onFailed.Invoke();

@@ -15,7 +15,7 @@ namespace Data
     /// Objeto que almacena los datos de la cuenta del jugador
     /// </summary>
     [CreateAssetMenu(fileName = "ScriptableAccount", menuName = "ScriptableObjects/ScriptableAccount", order = 2)]
-    public class ScriptableAccount : ScriptableObject
+    public class  ScriptableAccount : ScriptableObject
     {
         private const string SCRIPTABLEACCOUNT = "Scriptables/ScriptableAccount";
         public StatsData statsData = new StatsData();
@@ -307,7 +307,7 @@ namespace Data
         public TransactionData transactionData = new TransactionData();
         public MissionsData missionsData = new MissionsData();
         public StadiumData stadiumData = new StadiumData();
-
+        public int balance;
         [Serializable, JsonConverter(typeof(MissionRewardConvert))]
         public class RewardData
         {
@@ -728,18 +728,52 @@ namespace Data
     public class HeadquarterContainerData
     {
         public int code;
-        public string headQuartersURL;
+        public string headQuartersURL = "";
         public List<RankingUserData> currentUser = new List<RankingUserData>();
         public List<RankingUserData> rankingUsers = new List<RankingUserData>();
+        public List<RankingUserData> currentUserClassic = new List<RankingUserData>();
+        public List<RankingUserData> currentUserCurrent = new List<RankingUserData>();
+        public List<RankingUserData> rankingCurrent = new List<RankingUserData>();
+        public List<RankingUserData> rankingClassic = new List<RankingUserData>();
+        public string message= "";
 
         [Serializable]
-        public class RankingUserData : AvatarData
+        public class RankingUserData 
         {
             public int id;
             public string user_id;
             public int points;
             public int frozencoins;
             public int position;
+            public int challenge_id;
+            public string created;
+            public string expiration;
+            public string nickName;
+            public int skinColor;
+            public int faceForm;
+            public int eyes;
+            public int ear;
+            public int nose;
+            public int mouth;
+            public int eyeBrow;
+            public int hairStyleFront;
+            public int facialHair;
+            public int bodyAccessory;
+            public int headAccessory;
+            public int armAccessory;
+            public int eyesAccessory;
+            public int backGround;
+            public int foreGround;
+            public int hairStyleBack;
+            public int bodyForm;
+            public int hairColor;
+            public int statusId;
+            public string status;
+            public bool show;
+            public int level;
+            public int challengeCost;
+            public string img_small;
+            public string img_big;
         }
     }
 
@@ -918,12 +952,17 @@ namespace Data
         public int points;
         public int frozencoins;
     }
+    public class JumbleResult
+    {
+        public int balance;
+    }
     public class JumbleSaleResult
     {
         public int total_items;
         public int total_pages;
         public List<JumbleItems> items = new List<JumbleItems>();
         public int balance;
+        public string MESSAGE_MAX_POSTS;
 
         public class JumbleItems
         {
@@ -947,6 +986,7 @@ namespace Data
         {
             public string user_id;
             public int item_id;
+            public string item_type;
         }
         /// <summary>
         /// Elimina un elemento del mercadillo
@@ -1542,7 +1582,7 @@ namespace Data
         public bool isBoostPoints;
         public List<CardVideoData> videos = new List<CardVideoData>();
         public string daysOrTextInjured;
-        public bool is_clasic = true;
+        public bool current = true;
         public CardTokenData card = new CardTokenData();
     }
     [Serializable]

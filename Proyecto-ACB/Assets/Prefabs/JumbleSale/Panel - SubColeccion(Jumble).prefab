@@ -166,6 +166,7 @@ MonoBehaviour:
   panelOpener: {fileID: 608770335385370229}
   panelAddTeamPrefab: {fileID: 2667838604713201793, guid: 36e30504c9b6cd848b08d0ad0a88f540, type: 3}
   spinner_name: Spinner_Subolecciones(team)
+  panelSubCollectionHighlights: {fileID: 2667838604713201793, guid: 41178327ce030a34abf0c009e45b6588, type: 3}
 --- !u!114 &608770335385370229
 MonoBehaviour:
   m_ObjectHideFlags: 0

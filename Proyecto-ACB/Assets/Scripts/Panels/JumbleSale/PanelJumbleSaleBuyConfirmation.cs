@@ -24,7 +24,7 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
     private string alertDelete = "?Est?s seguro?";
     [SerializeField]
     [Tooltip("Descripci?n de alerta al eliminar un item")]
-    private string alertDeleteDescription = "Esta oferta se eliminar? autom?ticamente";  
+    private string alertDeleteDescription = "Este artículo  se eliminar? autom?ticamente";  
     [SerializeField][TextArea]
     [Tooltip("Descripci?n de alerta al eliminar un item")]
     private string confirmationBuyText ;
@@ -97,7 +97,7 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
     /// <param name="itemData">Clase con los datos del producto que se quiere comprar</param>
     protected void BuyItem(JumbleSaleResult.JumbleItems itemData)
     {
-        JumbleSaleResult.JumbleBuyRequest body = new JumbleSaleResult.JumbleBuyRequest() { item_id = itemData.id, user_id = WebProcedure.Instance.accessData.user };
+        JumbleSaleResult.JumbleBuyRequest body = new JumbleSaleResult.JumbleBuyRequest() { item_id = itemData.id, user_id = WebProcedure.Instance.accessData.user, item_type = itemData.item_type };
         WebProcedure.Instance.BuyJumbleSaleItem(JsonConvert.SerializeObject(body), OnSuccessBuying, OnFailedBuying);
     }
     /// <summary>
@@ -122,7 +122,7 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
                  {
                     
                  }
-                 ACBSingleton.Instance.AlertPanel.SetupPanel("Oferta eliminada", "", false, () => { OnDeletePublish?.Invoke(); Close(); });
+                 ACBSingleton.Instance.AlertPanel.SetupPanel("artículo eliminado", "", false, () => { OnDeletePublish?.Invoke(); Close(); });
              }, (WebError obj) => {
                          Debug.LogError(obj); });
          });
@@ -142,15 +142,17 @@ public class PanelJumbleSaleBuyConfirmation : MallBuyConfirmation
             JsonConvert.PopulateObject(obj.RawJson, error);
             if (error.code != 200 && !string.IsNullOrEmpty( error.message))
             {
-                ACBSingleton.Instance.AlertPanel.SetupPanel(error.message, "", false, () => { Close();  onSuccessfulbuy?.Invoke();  });
+                ACBSingleton.Instance.AlertPanel.SetupPanel(error.message, "", false, () => { Close();  onSuccessfulbuy?.Invoke();});
                 return;
             }
         }
         catch
         {}
-        ACBSingleton.Instance.AlertPanel.SetupPanel(onSuccessCode, "", false, () => { JsonConvert.PopulateObject(obj.RawJson, ACBSingleton.Instance.AccountData); Close(); onSuccessfulbuy?.Invoke(); });
+        JumbleResult jumbleResult = new JumbleResult();
+        JsonConvert.PopulateObject(obj.RawJson, jumbleResult);
+        JsonConvert.PopulateObject(obj.RawJson, ACBSingleton.Instance.AccountData);
+        ACBSingleton.Instance.AlertPanel.SetupPanel(onSuccessCode, "", false, () => { ACBSingleton.Instance.AccountData.statsData.coinsBalance = jumbleResult.balance; Close(); onSuccessfulbuy?.Invoke(); });
             Firebase.Analytics.Parameter param;
-
             switch (itemData.item_type)
             {
                 case "ACBALL":

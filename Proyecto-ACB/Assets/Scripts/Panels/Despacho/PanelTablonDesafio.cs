@@ -197,7 +197,7 @@ namespace Panels
                         byte[] tempBytes;
                         tempBytes = System.Text.Encoding.Default.GetBytes(mensaje);
                         string message= System.Text.Encoding.UTF8.GetString(tempBytes);
-                        ACBSingleton.Instance.AlertPanel.SetupPanel(createChallengeText, message + ACBSingleton.Instance.GameData.costChallenge + " acbCoins", true, CreateAlertChallenge);
+                        ACBSingleton.Instance.AlertPanel.SetupPanel(createChallengeText, message + (isClasicLeague ? ACBSingleton.Instance.GameData.costChallenge : ACBSingleton.Instance.GameData.costChallengeCurrentEdition) + " acbCoins", true, CreateAlertChallenge);
                     }
                   
                 }

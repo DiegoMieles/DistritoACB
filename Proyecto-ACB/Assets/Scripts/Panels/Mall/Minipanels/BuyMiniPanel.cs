@@ -91,7 +91,7 @@ public class BuyMiniPanel : MonoBehaviour
                                 WebProcedure.Instance.GetSprite(boosterData.element.path_img, OnSuccessLoading, (error) => { });
                             }
                         },
-                        (error) => { ACBSingleton.Instance.AlertPanel.SetupPanel(error.Message, "", false, onFailedLoading); });
+                        (error) => { ACBSingleton.Instance.AlertPanel.SetupPanel(error.Message, "", false, () =>{ }); });
 
                         break;
 
@@ -105,7 +105,7 @@ public class BuyMiniPanel : MonoBehaviour
                             JsonConvert.PopulateObject(obj.RawJson, skinData);
                             WebProcedure.Instance.GetSprite(skinData.element.img_show, OnSuccessLoading, (error) => { });
                         },
-                        (error) => { ACBSingleton.Instance.AlertPanel.SetupPanel(error.Message, "", false, onFailedLoading); });
+                        (error) => { ACBSingleton.Instance.AlertPanel.SetupPanel(error.Message, "", false, () => { }); });
 
                         break;
 

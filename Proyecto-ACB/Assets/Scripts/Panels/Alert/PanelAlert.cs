@@ -41,8 +41,8 @@ public class PanelAlert : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        acceptButton.onClick.AddListener(() => { onSelectAcceptButton?.Invoke(); gameObject.SetActive(false); descriptionText.gameObject.SetActive(false);  imagePanel.transform.parent.gameObject.SetActive(false); });
-        cancelButton.onClick.AddListener(() => { onSelectCancelButton?.Invoke(); gameObject.SetActive(false); descriptionText.gameObject.SetActive(false); imagePanel.transform.parent.gameObject.SetActive(false); });
+        acceptButton.onClick.AddListener(() => { onSelectAcceptButton?.Invoke(); if(gameObject) gameObject.SetActive(false); if(descriptionText) descriptionText.gameObject.SetActive(false);  if (imagePanel) imagePanel.transform.parent.gameObject.SetActive(false); });
+        cancelButton.onClick.AddListener(() => { onSelectCancelButton?.Invoke(); if (gameObject) gameObject.SetActive(false); if (descriptionText) descriptionText.gameObject.SetActive(false); if (imagePanel) imagePanel.transform.parent.gameObject.SetActive(false); });
     }
 
     #endregion

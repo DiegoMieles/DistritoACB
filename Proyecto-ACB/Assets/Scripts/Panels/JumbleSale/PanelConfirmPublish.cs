@@ -65,19 +65,25 @@ public class PanelConfirmPublish : Panel
     [Header("highlight")]
     [Tooltip("icono del highlightIcon a mostrar")]
     public Image highlightIcon;
+    [Tooltip("Valor minimo de la publicación")]
+    public int minValue;
+    [Tooltip("Valor maximo de la publicación")]
+    public int maxValue;
+
     /// <summary>
     /// Recibe la informaci�n del item y la dibuja
     /// </summary>
     /// <param name="itemData">informaci�n del item</param>
     public void Populate(ItemData itemData)
     {
+        minValue = 5;
+        maxValue = 25;
         m_item_id = itemData.id;
         m_type = itemTypes.SKIN;
-        if (itemIcon && !string.IsNullOrEmpty(itemData.img_show))
+        if (itemIcon && !string.IsNullOrEmpty(itemData.img_show_full))
         {
             itemIcon.gameObject.SetActive(true);
-            string imagePath = IMAGES_URL + itemData.img_show;
-            WebProcedure.Instance.GetSprite(imagePath, OnSuccess, (WebError error) => { Debug.LogError(error); });
+            WebProcedure.Instance.GetSprite(itemData.img_show_full, OnSuccess, (WebError error) => { Debug.LogError(error); });
         }
         if (itemDescription) itemDescription.text = itemData.description;
         UpdateUI();
@@ -87,7 +93,9 @@ public class PanelConfirmPublish : Panel
     /// <param name="itemData">informaci�n del item</param>
     public void Populate(HighLightData.HigthlightItems highlightData)
     {
-        m_item_id = highlightData.id;
+        minValue = 5;
+        maxValue = 30;
+      m_item_id = highlightData.id;
         m_type = itemTypes.TOKENHIGTHLIGHT;
         if (highlightIcon && !string.IsNullOrEmpty(highlightData.pathImgThumbnail))
         {
@@ -104,8 +112,25 @@ public class PanelConfirmPublish : Panel
     /// <param name="itemData">informaci�n del item</param>
     public void Populate(TokenItemData itemData)
     {
-        m_item_id = itemData.id;
+        switch(itemData.rarity)
+        {
+            case TokenRarety.COMÚN:
+                minValue = 10;
+                maxValue = 50;
+                break;
+            case TokenRarety.LEGENDARIA:
+                minValue = 50;
+                maxValue = 200;
+                break;
+            case TokenRarety.ÉPICA:
+                minValue = 25;
+                maxValue = 100;
+                break;
+        }
+
+      m_item_id = itemData.id;
         m_type = itemTypes.TOKENCARD;
+       // itemData.rarity
         team.SetActive(itemData.isTeam);
         booster.SetActive(itemData.isBooster);
         injured.SetActive(itemData.isInjured);
@@ -123,7 +148,9 @@ public class PanelConfirmPublish : Panel
     /// <param name="ACBallData"></param>
     public void Populate(AcbBallContainer.ACBallsToSell.AcBallsItems ACBallData)
     {
-        m_item_id = ACBallData.id;
+        minValue = 5;
+        maxValue = 50;
+      m_item_id = ACBallData.id;
         m_type = itemTypes.ACBALL;
         if (itemIcon && !string.IsNullOrEmpty(ACBallData.path_img))
         {
@@ -139,7 +166,9 @@ public class PanelConfirmPublish : Panel
     /// <param name="itemData">informaci�n del item</param>
     public void Populate(BoosterData.BoosterItemData boostData)
     {
-        m_item_id = boostData.id;
+        minValue = 5;
+          maxValue = 50;
+      m_item_id = boostData.id;
         m_type = itemTypes.BOOSTER;
       
         if (itemDescription) itemDescription.text =boostData.description ;
@@ -199,7 +228,7 @@ public class PanelConfirmPublish : Panel
     /// </summary>
     public void UpdateUI()
     {
-        itemPriceValue = Mathf.Clamp(itemPriceValue, 1, 9999);
+        itemPriceValue = Mathf.Clamp(itemPriceValue, minValue, maxValue);
         itemPrice.text = itemPriceValue.ToString();
     }
     /// <summary>
@@ -207,7 +236,9 @@ public class PanelConfirmPublish : Panel
     /// </summary>
     public void ClickPublish()
     {
-        ACBSingleton.Instance.AlertPanel.SetupPanel(alertPublish, alertPublishDescription, true,Publish);
+        PanelJumbleSale jumbleSale = GameObject.FindObjectOfType<PanelJumbleSale>();
+
+            ACBSingleton.Instance.AlertPanel.SetupPanel(alertPublish, alertPublishDescription, true,Publish);
     }
     /// <summary>
     /// Publica el item seleccionado
@@ -220,7 +251,7 @@ public class PanelConfirmPublish : Panel
             spinner.transform.GetChild(i).gameObject.SetActive(true);
         }
         var cardbody = JsonConvert.SerializeObject(new SellData() { type = m_type.ToString(), price = itemPriceValue,item_id = m_item_id });
-        WebProcedure.Instance.SellItem(cardbody, OnItemPublished, OnItemPublishedFailed);
+      WebProcedure.Instance.SellItem(cardbody, OnItemPublished, OnItemPublishedFailed);
     }
     /// <summary>
     /// Se dispara cuando el item ha sido satisfactoriamente publicado

@@ -23,6 +23,9 @@ public class PanelSkinsToPublish : Panel
     [Tooltip("Grupo que almacena las camisetas y abrigos")]
     private GridLayoutGroup gridLayoutCamisetas;
     [SerializeField]
+    [Tooltip("Grupo de  complementos de fondos")]
+    private GridLayoutGroup gridLayoutForeground;
+    [SerializeField]
     [Tooltip("Grupo que almacena los accesorios de cabeza")]
     private GridLayoutGroup gridLayoutAccesoriosCabeza;
     [SerializeField]
@@ -40,6 +43,9 @@ public class PanelSkinsToPublish : Panel
     [SerializeField]
     [Tooltip("Texto de tiros dobles (antes tiros de tres)")]
     private Text textCamisetas;
+    [SerializeField]
+    [Tooltip("Texto de complementos del fondo")]
+    private Text textComplementosFondo;
     [SerializeField]
     [Tooltip("Texto de rebotes")]
     private Text textAccesoriosCabeza;
@@ -134,6 +140,16 @@ public class PanelSkinsToPublish : Panel
                     prefab.GetComponent<Toggle>().group = toggleGroup;
                 }
             }
+            foreach (ItemData itemData in skinData.FOREGROUNDACCESORY)
+            {
+                var prefab = Instantiate(panelSkin, gridLayoutForeground.transform);
+                prefab.ShowInfo(itemData, null, OnToggleValueChanged);
+                textComplementosFondo.gameObject.SetActive(true);
+                if (toggleGroup)
+                {
+                    prefab.GetComponent<Toggle>().group = toggleGroup;
+                }
+            }
         }
     }
     /// <summary>
@@ -158,7 +174,7 @@ public class PanelSkinsToPublish : Panel
             {
                 JsonConvert.PopulateObject(obj.RawJson, skinData);
             }
-        if (skinData != null && obj.RawJson != "[]"  && (skinData.BODYACCESORY.Count > 0 || skinData.ARMACCESORY.Count > 0 || skinData.BACKGROUNDACCESORY.Count > 0 || skinData.EYEACCESORY.Count > 0 || skinData.HEADACCESORY.Count > 0))
+        if (skinData != null && obj.RawJson != "[]"  && (skinData.BODYACCESORY.Count > 0 || skinData.ARMACCESORY.Count > 0 || skinData.BACKGROUNDACCESORY.Count > 0 || skinData.EYEACCESORY.Count > 0 || skinData.HEADACCESORY.Count > 0 || skinData.FOREGROUNDACCESORY.Count > 0))
         {
             textNoSkins.text = "";
         }

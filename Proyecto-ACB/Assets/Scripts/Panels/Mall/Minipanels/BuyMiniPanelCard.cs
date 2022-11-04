@@ -228,7 +228,7 @@ public class BuyMiniPanelCard : BuyMiniPanel
     /// <param name="cardData">Datos de la carta del jugador</param>
     private void SetCardData(MallContainerData.MallData.MallItemsToken cardData)
     {
-        WebProcedure.Instance.GetSprite(cardData.element.pathImgFront, (obj) => { frontCardImage.sprite = obj; spinner.gameObject.SetActive(false); flipCardButton.interactable = true; }, (error) => { });
+        WebProcedure.Instance.GetSprite(cardData.element.pathImgFront, (obj) => {if(frontCardImage) frontCardImage.sprite = obj; spinner.gameObject.SetActive(false); flipCardButton.interactable = true; }, (error) => { });
         SetRarityImage(cardData.element.rarity);
         victoriesText.text = cardData.element.victories;
         cardNameTexts.ForEach(card => card.text = cardData.element.name);

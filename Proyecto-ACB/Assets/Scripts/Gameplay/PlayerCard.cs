@@ -156,7 +156,7 @@ public class PlayerCard : MonoBehaviour
         bool isActualLeague = false;
         PanelTeamCompetitivo addTeamPanel = FindObjectOfType<PanelTeamCompetitivo>(true);
         if (addTeamPanel) isActualLeague = addTeamPanel.isActualLeague;
-        else isActualLeague = tokenData.card.subcollection.collection.edition.current;
+        else isActualLeague = tokenData.current;
         cardBorders.ForEach(t => t.sprite = isActualLeague ? actualborderCard:clasicborderCard );
         this.tokenData = tokenData;
         this.doFillAnimation = doFillAnimation;

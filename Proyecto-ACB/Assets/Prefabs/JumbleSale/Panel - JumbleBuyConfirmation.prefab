@@ -4263,7 +4263,7 @@ MonoBehaviour:
   cardTitleText: "\xBFQuieres comprar este player token?"
   skinTitleText: "\xBFQuieres comprar esta skin?"
   boosterTitleText: "\xBFQuieres comprar este potenciador?"
-  highlightTitleText: "\xBFQuieres comprar este highlight token?"
+  highlightTitleText: "\xBFQuieres comprar esta highlight token?"
   acballRandomTitleText: "\xBFQuieres comprar un acball aleatorio?"
   cardRandomTitleText: "\xBFQuieres comprar un player token aleatorio?"
   skinRandomTitleText: "\xBFQuieres comprar una skin aleatoria?"
@@ -5100,7 +5100,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 10.647308}
+  m_AnchoredPosition: {x: 0, y: 10.647278}
   m_SizeDelta: {x: -58.285, y: -56.4186}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &171235792361599503
@@ -5368,8 +5368,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 242.90869, y: -398}
-  m_SizeDelta: {x: 485.81738, y: 627.6}
+  m_AnchoredPosition: {x: 540, y: -818}
+  m_SizeDelta: {x: 1080, y: 1467.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4102117147871761996
 MonoBehaviour:
@@ -5806,7 +5806,7 @@ MonoBehaviour:
   spinner: {fileID: 1997694872}
   deleteButton: {fileID: 8707620105162457721}
   costInfoLayout: {fileID: 2959318434407866648}
-  alertDelete: "\xBFEst\xE1s seguro de querer eliminar tu oferta?"
+  alertDelete: "\xBFEst\xE1s seguro de querer eliminar tu art\xEDculo?"
   alertDeleteDescription: 
   confirmationBuyText: "Esta operaci\xF3n te costar\xE1 "
   acballMinipanelOwned: {fileID: 5714120854168719407}
@@ -8438,7 +8438,7 @@ MonoBehaviour:
   cardTitleText: "\xBFQuieres comprar este player token?"
   skinTitleText: "\xBFQuieres comprar esta skin?"
   boosterTitleText: "\xBFQuieres comprar este potenciador?"
-  highlightTitleText: "\xBFQuieres comprar este highlight token?"
+  highlightTitleText: "\xBFQuieres comprar esta highlight token?"
   acballRandomTitleText: "\xBFQuieres comprar un acball aleatorio?"
   cardRandomTitleText: "\xBFQuieres comprar un player token aleatorio?"
   skinRandomTitleText: "\xBFQuieres comprar una skin aleatoria?"
@@ -9012,7 +9012,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 109.100006, y: 26.800018}
+  m_AnchoredPosition: {x: 109.100006, y: 26.799988}
   m_SizeDelta: {x: 85.895386, y: 111.19269}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &606195169187045974
@@ -9058,8 +9058,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 242.90869, y: -728.39996}
-  m_SizeDelta: {x: 485.81738, y: 13.2}
+  m_AnchoredPosition: {x: 540, y: -1568.3999}
+  m_SizeDelta: {x: 1080, y: 13.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6664599609243923738
 MonoBehaviour:
@@ -10894,8 +10894,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 242.90869, y: -37.1}
-  m_SizeDelta: {x: 485.81738, y: 74.2}
+  m_AnchoredPosition: {x: 540, y: -37.1}
+  m_SizeDelta: {x: 1080, y: 74.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4566661750244336856
 MonoBehaviour:
@@ -11279,10 +11279,10 @@ RectTransform:
   m_Father: {fileID: 1707396067275084804}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -16.3486}
+  m_SizeDelta: {x: 0, y: 32.6972}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5286702087575817715
 GameObject:
@@ -13936,7 +13936,7 @@ MonoBehaviour:
   cardTitleText: "\xBFQuieres comprar este player token?"
   skinTitleText: "\xBFQuieres comprar esta skin?"
   boosterTitleText: "\xBFQuieres comprar este potenciador?"
-  highlightTitleText: "\xBFQuieres comprar este highlight token?"
+  highlightTitleText: "\xBFQuieres comprar esta highlight token?"
   acballRandomTitleText: "\xBFQuieres comprar un acball aleatorio?"
   cardRandomTitleText: "\xBFQuieres comprar un player token aleatorio?"
   skinRandomTitleText: "\xBFQuieres comprar una skin aleatoria?"
@@ -14777,10 +14777,10 @@ RectTransform:
   m_Father: {fileID: 1707396067275084804}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -16.3486}
+  m_SizeDelta: {x: 0, y: 32.6972}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7330150046658424795
 GameObject:
@@ -15562,7 +15562,7 @@ MonoBehaviour:
   cardTitleText: "\xBFQuieres comprar este player token?"
   skinTitleText: "\xBFQuieres comprar esta skin?"
   boosterTitleText: "\xBFQuieres comprar este potenciador?"
-  highlightTitleText: "\xBFQuieres comprar este highlight token?"
+  highlightTitleText: "\xBFQuieres comprar esta highlight token?"
   acballRandomTitleText: "\xBFQuieres comprar un acball aleatorio?"
   cardRandomTitleText: "\xBFQuieres comprar un player token aleatorio?"
   skinRandomTitleText: "\xBFQuieres comprar una skin aleatoria?"
@@ -15968,6 +15968,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8590675485207677316}
   - component: {fileID: 2342502787074832724}
+  - component: {fileID: 333648218593561077}
+  - component: {fileID: 4688906435480411531}
+  - component: {fileID: 8842631195465708708}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -16024,6 +16027,57 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 353.1671, y: 436.56348}
   m_EdgeRadius: 0
+--- !u!222 &333648218593561077
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7921026653648907248}
+  m_CullTransparentMesh: 1
+--- !u!114 &4688906435480411531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7921026653648907248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 40d0fa54cc7b2b04f86a46546b6f646d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8842631195465708708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7921026653648907248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 0
 --- !u!1 &7925231524641747973
 GameObject:
   m_ObjectHideFlags: 0
@@ -16534,7 +16588,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Eliminar oferta
+  m_Text: "Eliminar art\xEDculo"
 --- !u!1 &8227765624797563482
 GameObject:
   m_ObjectHideFlags: 0
