@@ -872,12 +872,12 @@ namespace Data
         public int card_id;
         public string player_name;
         public string description;
-        public string path_img_front;
+        public string pathImgFront;
         public string pathThumbnail;
         public string pathImgCol;
         public string path_img_leauge;
         public string path_img;
-        public string path_img_back;
+        public string pathImgBack;
         public string triples;
         public string freeshots;
         public string rebounds;

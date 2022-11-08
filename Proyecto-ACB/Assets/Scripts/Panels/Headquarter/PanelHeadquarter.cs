@@ -95,6 +95,12 @@ public class PanelHeadquarter : Panel
     [Header("Data management")]
     [SerializeField] [Tooltip("M?xima cantidad de entradas de ranking a mostrar")]
     private int rowsToShowInRanking;
+    [SerializeField]
+    [Tooltip("Visualizador de la carta")]
+    private PlayerCard cardViewer;
+    [SerializeField]
+    [Tooltip("Texto del encabezado en los paneles de las secciones")]
+    private Text headerTitleText;
     //true cuando el endpoint para cargar los puntos ha entregado un resultado
     private bool allItemsLoaded;
     //numero de paginacion
@@ -122,6 +128,11 @@ public class PanelHeadquarter : Panel
 
     #endregion
 
+    public void ShowCard(TokenItemData tokenData)
+    {
+        cardViewer.transform.parent.gameObject.SetActive(true);
+        cardViewer.SetupCardData(tokenData,()=> { });
+    }
     #region Public Methods
 
 
@@ -280,7 +291,7 @@ public class PanelHeadquarter : Panel
     /// </summary>
     public void ClassicLeaguePressed()
     {
-        
+        headerTitleText.text = "Puntos";
         actualSection = RankingSections.ClassicLeague;
                panelScores.SetActive(true);
           
@@ -290,6 +301,7 @@ public class PanelHeadquarter : Panel
       }
     public void ActualLeaguePressed()
     {
+        headerTitleText.text = "Puntos";
         actualSection = RankingSections.ActualLeague;
         panelScores.SetActive(true);
      
@@ -299,18 +311,21 @@ public class PanelHeadquarter : Panel
     }
     public void MissionsPressed()
     {
+        headerTitleText.text = "Misiones";
         actualSection = RankingSections.Missions;
         panelScores.SetActive(true);
         LoadSeasonPoints();
     }
     public void CardsPressed()
     {
+        headerTitleText.text = "Cards";
         actualSection = RankingSections.Cards;
         panelScores.SetActive(true);
         LoadSeasonPoints();
     }
     public void PlayerTokensPressed()
     {
+        headerTitleText.text = "Mejores player token";
         actualSection = RankingSections.PlayerTokens;
         panelScores.SetActive(true);
         LoadSeasonPoints();

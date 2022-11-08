@@ -14,11 +14,17 @@ public class PlayerRankingViewToken : MonoBehaviour
     [Tooltip("Texto con los puntos obtenidos por el jugador")]
     private Text pointsText;
     [SerializeField]
+    [Tooltip("Texto con el id del jugador")]
+    private Text idText;
+    [SerializeField]
     [Tooltip("Texto con la posición en ranking del jugador")]
     private Text positionText;
     [SerializeField]
     [Tooltip("Imagen miniatura de la carta")]
     private PanelTokenItemToggle TokenToggle;
+    [SerializeField]
+    [Tooltip("boton para abrir la info del boton")]
+    private Button tokenButton;
 
     [Space(5)]
     [Header("Avatar part references")]
@@ -34,7 +40,7 @@ public class PlayerRankingViewToken : MonoBehaviour
     /// </summary>
     /// <param name="userData"></param>
     public void ShowRankingView(TokenDataRanking userData)
-    { 
+    {
         if (userData == null) return;
         HeadquarterContainerData.RankingUserData user = new HeadquarterContainerData.RankingUserData() { img_small = userData.img_small};
         TokenItemData tokenItemData = new TokenItemData()
@@ -51,9 +57,9 @@ public class PlayerRankingViewToken : MonoBehaviour
             pt_assists = userData.pt_assists,
             description = userData.description,
             daysOrTextInjured = userData.daysOrTextInjured,
-            pathImgBack = userData.path_img_back,
+            pathImgBack = userData.pathImgBack,
             pathImgCol = userData.pathImgCol,
-            pathImgFront = userData.path_img_front,
+            pathImgFront = userData.pathImgFront,
             pt_points = userData.pt_points,
             pt_rebounds = userData.pt_rebounds,
             st_points = userData.st_points,
@@ -73,10 +79,12 @@ public class PlayerRankingViewToken : MonoBehaviour
          
 
         };
+        tokenButton.onClick.AddListener(()=> { FindObjectOfType<PanelHeadquarter>().ShowCard(tokenItemData); });
         TokenToggle.ShowInfo(tokenItemData);
         avatarView.UpdateView(user);
         nameText.text = userData.nickName;
-        pointsText.text = userData.victories + " Victorias";
+        idText.text = userData.user_id;
+        pointsText.text = "<size=50>" + userData.victories + "</size>" + " Victorias";
        
         if (positionText != null) positionText.text = userData.position.ToString() + "º";
     }
