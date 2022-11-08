@@ -45,6 +45,9 @@ public class PanelHeadquarter : Panel
     [SerializeField] [Tooltip("Prefab del elemento donde se ve el ranking del jugador")]
     private GameObject playerRankingViewPrefab;
     [SerializeField]
+    [Tooltip("Prefab del elemento donde se ve el ranking de la cartas")]
+    private GameObject playerRankingTokenViewPrefab;
+    [SerializeField]
     [Tooltip("Prefab del elemento donde se ve el ranking hist?rico del jugador")]
     private GameObject playerRankingViewHistoricPrefab;
     [SerializeField] [Tooltip("Objeto que contiene los datos de los jugadores dentro del ranking")]
@@ -144,7 +147,7 @@ public class PanelHeadquarter : Panel
         HeadquarterContainerData hqContainerData = new HeadquarterContainerData();
         switch (actualSection)
         {
-            default:  // actual y Classic League , missiones y cards
+            default:  // actual y Classic League , missiones y cards collections
                 Debug.Log(obj.RawJson);
               
                 JsonConvert.PopulateObject(obj.RawJson, hqContainerData);
@@ -202,11 +205,24 @@ public class PanelHeadquarter : Panel
                 }
                 break;
             
-          /*  case RankingSections.PlayerTokens:
-                break;*/
+         case RankingSections.PlayerTokens:
+                 Debug.Log(obj.RawJson);
+                TokenDataRankingContainer tokenDataRanking = new TokenDataRankingContainer();
+                JsonConvert.PopulateObject(obj.RawJson, tokenDataRanking);
+                maxPages = tokenDataRanking.total_pages;
+                if (tokenDataRanking.items.Count > 0)
+                {
+                    for (int i = 0; i < tokenDataRanking.items.Count; i++)
+                    {
+                        GameObject playerView = Instantiate(playerRankingTokenViewPrefab, containerRectTransform);
+                        playerView.GetComponent<PlayerRankingViewToken>().ShowRankingView(tokenDataRanking.items[i]);
+                    }
+                }
+
+                break;
              
         }
-        containerRectTransform.sizeDelta = new Vector2(containerRectTransform.sizeDelta.x, (actualTimeScale == TimeScales.Historic ? playerRankingViewHistoricPrefab.GetComponent<LayoutElement>().preferredHeight : playerRankingViewPrefab.GetComponent<LayoutElement>().preferredHeight) * (1 + containerRectTransform.childCount));
+        containerRectTransform.sizeDelta = new Vector2(containerRectTransform.sizeDelta.x,(actualSection == RankingSections.PlayerTokens? playerRankingTokenViewPrefab.GetComponent<LayoutElement>().preferredHeight : (actualTimeScale == TimeScales.Historic ? playerRankingViewHistoricPrefab.GetComponent<LayoutElement>().preferredHeight : playerRankingViewPrefab.GetComponent<LayoutElement>().preferredHeight)) * (1 + containerRectTransform.childCount));
         allItemsLoaded = true;
                 spinner.SetActive(false);
 
@@ -264,7 +280,7 @@ public class PanelHeadquarter : Panel
 
     public void LoadSeasonPoints()
     {
-        playerView.gameObject.SetActive(true);
+        playerView.gameObject.SetActive(actualSection != RankingSections.PlayerTokens);
         hasLoadedMorePlayer = false;
         loadMoreButton.transform.GetChild(0).GetComponentInChildren<Text>().text = "Ver competidores";
         actualTimeScale = TimeScales.Season;
@@ -307,7 +323,7 @@ public class PanelHeadquarter : Panel
     public void LoadTrimesterPoints()
     {
         counter = 1;
-        playerView.gameObject.SetActive(true);
+        playerView.gameObject.SetActive(actualSection != RankingSections.PlayerTokens);
         hasLoadedMorePlayer = false;
         loadMoreButton.transform.GetChild(0).GetComponentInChildren<Text>().text = "Ver competidores";
         actualTimeScale = TimeScales.Trimester;
@@ -337,7 +353,8 @@ public class PanelHeadquarter : Panel
                 WebProcedure.Instance.GetRankingsTokensQuarter(JsonConvert.SerializeObject(body), OnSuccessLoadingRanking, OnFailedLoadingRanking);
                 break;
             case RankingSections.PlayerTokens:
-                break;
+                WebProcedure.Instance.GetAllRankingTokenCardsOfLastQaurter(JsonConvert.SerializeObject(body), OnSuccessLoadingRanking, OnFailedLoadingRanking);
+                break; 
         }
     }
     public void LoadHistoricPoints()
@@ -371,6 +388,7 @@ public class PanelHeadquarter : Panel
                 WebProcedure.Instance.GetAllHistoricOfTokens(OnSuccessLoadingRanking, OnFailedLoadingRanking);
                 break;
             case RankingSections.PlayerTokens:
+                WebProcedure.Instance.GetAllHistoricOfVictories(OnSuccessLoadingRanking, OnFailedLoadingRanking);
                 break;
         }
     }
@@ -403,7 +421,7 @@ public class PanelHeadquarter : Panel
                 break;
             case RankingSections.ActualLeague:
                 if (actualTimeScale == TimeScales.Season) WebProcedure.Instance.GetRankingCompetitors(true, OnSuccessLoadingRanking, OnFailedLoadingRanking);
-                   else WebProcedure.Instance.GetCompetitorsLastQuarter(false, OnSuccessLoadingRanking, OnFailedLoadingRanking);
+                   else WebProcedure.Instance.GetCompetitorsLastQuarter(true, OnSuccessLoadingRanking, OnFailedLoadingRanking);
                 break;
             case RankingSections.Missions:
                 if (actualTimeScale == TimeScales.Season) WebProcedure.Instance.GetCompetitorsMissionsQuarters( OnSuccessLoadingRanking, OnFailedLoadingRanking);
@@ -453,12 +471,14 @@ public class PanelHeadquarter : Panel
                 case RankingSections.Cards:
                     if (actualTimeScale == TimeScales.Trimester)
                         WebProcedure.Instance.GetRankingsTokensQuarter(JsonConvert.SerializeObject(body), OnSuccessLoadingRanking, OnFailedLoadingRanking);
-
                     else
                         WebProcedure.Instance.GetRankingsTokens(JsonConvert.SerializeObject(body), OnSuccessLoadingRanking, OnFailedLoadingRanking);
                     break;
                 case RankingSections.PlayerTokens:
-                    WebProcedure.Instance.GetAllRankingTokenCardsVictories(JsonConvert.SerializeObject(body), OnSuccessLoadingRanking, OnFailedLoadingRanking);
+                    if (actualTimeScale == TimeScales.Trimester)
+                        WebProcedure.Instance.GetAllRankingTokenCardsOfLastQaurter(JsonConvert.SerializeObject(body), OnSuccessLoadingRanking, OnFailedLoadingRanking);
+                    else
+                        WebProcedure.Instance.GetAllRankingTokenCardsVictories(JsonConvert.SerializeObject(body), OnSuccessLoadingRanking, OnFailedLoadingRanking);
                     break;
             }
 

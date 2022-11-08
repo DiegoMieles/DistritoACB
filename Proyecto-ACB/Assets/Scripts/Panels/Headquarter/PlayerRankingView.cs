@@ -44,10 +44,7 @@ public class PlayerRankingView : MonoBehaviour
                 sfx = " tokens";
                 points = userData.total_tokens;
                 break;
-            case PanelHeadquarter.RankingSections.PlayerTokens:
-                sfx = "Victorias";
-                points = userData.victories;
-                break;
+        
             default:
                 sfx = " pts";
                 points = userData.points;

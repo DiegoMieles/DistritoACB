@@ -82,7 +82,7 @@ namespace WebAPI
         private const string GetCompetitorsUrl = "GetCompetitors?current={0}&id={1}";
         private const string GetAllPointsOfLastQuarterUrl = "GetAllPointsOfLastQuarter?current={0}&id={1}";
         private const string GetAllHistoricUrl = "GetAllHistoric?current={0}&id={1}";
-        private const string GetCompetitorsLastQuarterUrl = "GetCompetitorsLastQuarter?id={0}";
+        private const string GetCompetitorsLastQuarterUrl = "GetCompetitorsLastQuarter?current={0}&id={1}";
         private const string GetAllRankingMissionsUrl = "GetAllRankingMissions?id={0}";
         private const string GetMissionCompetitorsUrl = "GetMissionCompetitors?id={0}";
         private const string GetAllRankingMissionsOfLastQaurterUrl = "GetAllRankingMissionsOfLastQaurter?id={0}";
@@ -94,6 +94,8 @@ namespace WebAPI
         private const string GetAllHistoricOfTokensUrl = "GetAllHistoricOfTokens?id={0}";
         private const string GetTokenCompetitorsLastQuarterUrl = "GetTokenCompetitorsLastQuarter?id={0}"; 
         private const string GetAllRankingTokenCardsVictoriesUrl = "GetAllRankingTokenCardsVictories?id={0}";
+        private const string GetAllRankingTokenCardsOfLastQaurterUrl = "GetAllRankingTokenCardsOfLastQaurter?id={0}";
+        private const string GetAllHistoricOfVictoriesUrl = "GetAllHistoricOfVictories?id={0}";
         public const string CREDENTIALS = "CREDENTIALS"; 
 
         #region USERS  
@@ -1502,7 +1504,38 @@ namespace WebAPI
                 onFailed?.Invoke(new WebError(ex.Message));
             }
         }
+        /// <summary>
+        /// Obtiene las mejores cartas del trimestre
+        /// </summary>
+
+        public void GetAllRankingTokenCardsOfLastQaurter(string json, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            try
+            {
+                var url = String.Format(GetAllRankingTokenCardsOfLastQaurterUrl, accessData.user);
+                StartCoroutine(RequestCoroutine(url, json, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbPUT));
+            }
+            catch (WebException webEx)
+            {
+                onFailed?.Invoke(WebError.Create(webEx));
+            }
+            catch (Exception ex)
+            {
+                onFailed?.Invoke(new WebError(ex.Message));
+            }
+        }
+        /// <summary>
+        /// Obtiene las mejores 3 cartas de cada trimestre
+        /// </summary>
+
+        public void GetAllHistoricOfVictories(Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            var form = new WWWForm();
+            var url = String.Format(GetAllHistoricOfVictoriesUrl, accessData.user);
+            StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
+        }
         
+
         #endregion
 
         /// <summary>

@@ -12,18 +12,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2552211f5a2559f4fa1fcf39d681ed35, type: 3}
   m_Name: ScriptableGameData
   m_EditorClassIdentifier: 
-  hours: 2
+  hours: 1
   country: ES
   costChallenge: 1
-  costChallengeCurrentEdition: 1
+  costChallengeCurrentEdition: 2
   app:
     version: 1.0
-    vers_android: 1.0.9
-    vers_ios: 1.0.9
+    vers_android: 1.0.6
+    vers_ios: 1.0.6
     text: "\xA1Nuestro equipo de desarrolladores no para de mejorar! Para disfrutar
       de sus avances tendr\xE1s que actualizar la versi\xF3n de tu APP."
     url_android: https://play.google.com/store/apps/details?id=com.distritoacb
     url_ios: https://apps.apple.com/us/app/distrito-acb/id1622124793
   mainMenuData:
     transitionTime: 0
-    buildInfoData: []
+    buildInfoData:
+    - id: Edf-Banco
+      title: Banco
+      info: Acude al Banco para consultar el saldo y movimientos de tus acbcoins.
+    - id: Edf-Misiones
+      title: Misiones
+      info: "En las marquesinas te proponemos misiones. \xA1Compl\xE9talas y consigue
+        tus premios!"
+    - id: Edf-Pabellon
+      title: "Pabell\xF3n"
+      info: "El Pabell\xF3n es el lugar en el que podr\xE1s gestionar tu Equipo Competitivo,
+        publicar y aceptar desaf\xEDos, ver tus tokens y potenciar tus cartas."
+    - id: Edf-Despacho
+      title: Despacho
+      info: "El Despacho es el lugar en el que puedes ver todos tus tokens, mejorarlos
+        con potenciadores y decidir cu\xE1l es la alineaci\xF3n de tu Equipo Competitivo."
+    - id: Edf-Tablon
+      title: "Tabl\xF3n"
+      info: "En el Tabl\xF3n de Anuncios podr\xE1s publicar ofertas de desaf\xEDo
+        y aceptar las de otros usuarios."
+    - id: Edf-CanchaInt
+      title: Cancha
+      info: "Acude a la Cancha para ver todos los desaf\xEDos en los que has competido."
+    - id: Edf-Cancha
+      title: Canchas Callejeras
+      info: "\xBFQuieres acbcoins? Puedes conseguirlos en las Canchas Callejeras
+        varias veces al d\xEDa."
+    - id: Edf-HeadQuarters
+      title: acb Headquarters
+      info: "acb Headquarters es el lugar donde acudir para consultar las condiciones
+        legales, los rankings y aprender m\xE1s sobre el juego.\n"
+    - id: Edf-Mall
+      title: Tienda
+      info: "En la Tienda podr\xE1s comprar nuevos tokens\n\xA1Atento a las oportunidades!"
+    - id: Edf-Auditorio
+      title: Auditorio
+      info: "En el Auditorio podr\xE1s ver contenidos exclusivos en streaming o grabados.
+        Consigue tu pase VIP para poder acceder"
+    - id: Edf-Mercado
+      title: Mercado
+      info: "El Mercado es el lugar en el que podr\xE1s comprar y vender activos
+        a otros jugadores"
+    - id: Edf-Cartelera
+      title: Cartelera
+      info: "En la Cartelera puedes consultar el cat\xE1logo de todos los contenidos
+        actualmente disponibles en el Auditorio"
+    - id: Edf-Acceso
+      title: Control de acceso
+      info: Para acceder a al Sala de Proyecciones debes pasar por el Control de
+        Acceso y seleccionar uno de tus pases VIP
+    - id: Edf-Cajero
+      title: Cajero
+      info: "En el Cajero podr\xE1s escanear tus QRs transform\xE1ndolos en pases
+        VIP, as\xED como consultar tu relaci\xF3n de pases VIP vigentes"

@@ -806,11 +806,89 @@ namespace Data
             public int missions_number;
             //tokens
             public int total_tokens;
-            // card Tokens
-            public int victories;
+       
         }
     }
-
+    [Serializable]
+    public class TokenDataRankingContainer
+    {
+        public int total_pages;
+        public int total_items;
+        public List<TokenDataRanking> items = new List<TokenDataRanking>();
+    }
+        [Serializable]
+    public class TokenDataRanking
+    {
+        public int id;
+        public string user_id;
+        public string nickName;
+        public int skinColor;
+        public int faceForm;
+        public int eyes;
+        public int ear;
+        public int nose;
+        public int mouth;
+        public int eyeBrow;
+        public int hairStyleFront;
+        public int facialHair;
+        public int bodyAccessory;
+        public int headAccessory;
+        public int armAccessory;
+        public int eyesAccessory;
+        public int backGround;
+        public int foreGround;
+        public int hairStyleBack;
+        public int bodyForm;
+        public int hairColor;
+        public int frozencoins;
+        public int level;
+        public object bch_account;
+        public List<ItemData> avatarItems;
+        public string img_small;
+        public string img_big;
+        public string token;
+        public int card_id;
+        public string player_name;
+        public string description;
+        public string path_img_front;
+        public string pathThumbnail;
+        public string pathImgCol;
+        public string path_img_leauge;
+        public string path_img;
+        public string path_img_back;
+        public string triples;
+        public string freeshots;
+        public string rebounds;
+        public string assists;
+        public string points;
+        public string st_triples;
+        public string st_freeshots;
+        public string st_rebounds;
+        public string st_assists;
+        public string st_points;
+        public string pt_triples;
+        public string pt_freeshots;
+        public string pt_rebounds;
+        public string pt_assists;
+        public string pt_points;
+        public string token_bchain;
+        public int subcollection_id;
+        [JsonConverter(typeof(StringEnumConverter))]
+        public TokenRarety rarity;
+        public bool isTeam;
+        public string victories;
+        public bool isInjured;
+        public string textInjured;
+        public string daysOrTextInjured;
+        public bool isBooster;
+        public object videos;
+        public int useradmin_id;
+        public int status;
+        public Dictionary<ItemType, string> assets;
+        public Dictionary<ItemType, string> tit_elements;
+        public Dictionary<ItemType, string> desc_elements;
+        public int position;
+    }
     /// <summary>
     /// Datos generales de la tienda, por ejemplo, de los items disponibles y su precio
     /// </summary>
