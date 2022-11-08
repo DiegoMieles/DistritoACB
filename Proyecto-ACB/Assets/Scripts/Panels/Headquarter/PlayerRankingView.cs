@@ -53,7 +53,7 @@ public class PlayerRankingView : MonoBehaviour
         if (userData == null) return;
         avatarView.UpdateView(userData);
         nameText.text = userData.nickName;
-        pointsText.text = "<size=50>" + points.ToString() + "</size>" + sfx;
+        pointsText.text = points.ToString() + sfx;
         if(positionText != null) positionText.text = userData.position.ToString()+"º";
     }
 
