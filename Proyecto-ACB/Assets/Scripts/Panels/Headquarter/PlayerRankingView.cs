@@ -32,7 +32,6 @@ public class PlayerRankingView : MonoBehaviour
     /// <param name="userData"></param>
     public void ShowRankingView(HeadquarterContainerData.RankingUserData userData,PanelHeadquarter.RankingSections rankingSection = PanelHeadquarter.RankingSections.ClassicLeague)
     {
-
         string sfx;
         int points;
         switch (rankingSection)
@@ -45,6 +44,10 @@ public class PlayerRankingView : MonoBehaviour
                 sfx = " tokens";
                 points = userData.total_tokens;
                 break;
+            case PanelHeadquarter.RankingSections.PlayerTokens:
+                sfx = "Victorias";
+                points = userData.victories;
+                break;
             default:
                 sfx = " pts";
                 points = userData.points;
@@ -53,8 +56,6 @@ public class PlayerRankingView : MonoBehaviour
         if (userData == null) return;
         avatarView.UpdateView(userData);
         nameText.text = userData.nickName;
-        
-
         pointsText.text = points.ToString() + sfx;
         if(positionText != null) positionText.text = userData.position.ToString()+"º";
     }

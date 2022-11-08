@@ -806,6 +806,8 @@ namespace Data
             public int missions_number;
             //tokens
             public int total_tokens;
+            // card Tokens
+            public int victories;
         }
     }
 

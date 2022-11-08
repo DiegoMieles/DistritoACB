@@ -91,7 +91,10 @@ namespace WebAPI
         private const string GetAllRankingTokensUrl = "GetAllRankingTokens?id={0}";
         private const string GetTokenCompetitorsUrl = "GetTokenCompetitors?id={0}";
         private const string GetAllRankingTokensOfLastQaurterUrl = "GetAllRankingTokensOfLastQaurter?id={0}";
-        public const string CREDENTIALS = "CREDENTIALS";
+        private const string GetAllHistoricOfTokensUrl = "GetAllHistoricOfTokens?id={0}";
+        private const string GetTokenCompetitorsLastQuarterUrl = "GetTokenCompetitorsLastQuarter?id={0}"; 
+        private const string GetAllRankingTokenCardsVictoriesUrl = "GetAllRankingTokenCardsVictories?id={0}";
+        public const string CREDENTIALS = "CREDENTIALS"; 
 
         #region USERS  
 
@@ -1246,6 +1249,26 @@ namespace WebAPI
             StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
         }
         /// <summary>
+        ///Intenta usar un pase VIP para el Auditorio
+        /// </summary>
+        public void LeaveProjectionRoom(string json, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            try
+            {
+                var url = String.Format(LeaveFromProjectionRoomUrl, accessData.user, accessData.accessToken, accessData.refreshToken);
+                StartCoroutine(RequestCoroutine(url, json, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbPOST));
+            }
+            catch (WebException webEx)
+            {
+                onFailed?.Invoke(WebError.Create(webEx));
+            }
+            catch (Exception ex)
+            {
+                onFailed?.Invoke(new WebError(ex.Message));
+            }
+
+        }
+        /// <summary>
         /// Elimina la cuenta del jugador en la base de datos
         /// </summary>
         public void RemoveAccount(Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
@@ -1421,14 +1444,14 @@ namespace WebAPI
             StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
         }
         /// <summary>
-        /// Obtiene los puntos del trimestre de las colecciones de artas
+        /// Obtiene los puntos del trimestre de las colecciones de cartas
         /// </summary>
 
-        public void s(string json, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        public void GetRankingsTokensQuarter(string json, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
         {
             try
             {
-                var url = String.Format(GetAllRankingMissionsOfLastQaurterUrl, accessData.user);
+                var url = String.Format(GetAllRankingTokensOfLastQaurterUrl, accessData.user);
                 StartCoroutine(RequestCoroutine(url, json, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbPUT));
             }
             catch (WebException webEx)
@@ -1441,14 +1464,34 @@ namespace WebAPI
             }
         }
         /// <summary>
-        ///Intenta usar un pase VIP para el Auditorio
+        /// Obtiene los puntos de los 10 jugadores alrededor del jugador actual  en las cantidad de tokens 
         /// </summary>
-        public void LeaveProjectionRoom(string json, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        public void GetAllHistoricOfTokens(Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            var form = new WWWForm();
+            var url = String.Format(GetAllHistoricOfTokensUrl, accessData.user);
+            StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
+        }
+        /// <summary>
+        /// Obtiene los puntos de los 10 jugadores al rededor del jugador del trimestre de las colecciones de cartas
+        /// </summary>
+
+        public void GetTokenCompetitorsLastQuarter(Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            var form = new WWWForm();
+            var url = String.Format(GetTokenCompetitorsLastQuarterUrl, accessData.user);
+            StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
+        }
+        /// <summary>
+        /// Obtiene las mejores cartas de la temporada
+        /// </summary>
+
+        public void GetAllRankingTokenCardsVictories(string json, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
         {
             try
             {
-                var url = String.Format(LeaveFromProjectionRoomUrl, accessData.user, accessData.accessToken, accessData.refreshToken);
-                StartCoroutine(RequestCoroutine(url, json, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbPOST));
+                var url = String.Format(GetAllRankingTokenCardsVictoriesUrl, accessData.user);
+                StartCoroutine(RequestCoroutine(url, json, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbPUT));
             }
             catch (WebException webEx)
             {
@@ -1458,8 +1501,8 @@ namespace WebAPI
             {
                 onFailed?.Invoke(new WebError(ex.Message));
             }
-
         }
+        
         #endregion
 
         /// <summary>

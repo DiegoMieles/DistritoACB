@@ -202,8 +202,8 @@ public class PanelHeadquarter : Panel
                 }
                 break;
             
-            case RankingSections.PlayerTokens:
-                break;
+          /*  case RankingSections.PlayerTokens:
+                break;*/
              
         }
         containerRectTransform.sizeDelta = new Vector2(containerRectTransform.sizeDelta.x, (actualTimeScale == TimeScales.Historic ? playerRankingViewHistoricPrefab.GetComponent<LayoutElement>().preferredHeight : playerRankingViewPrefab.GetComponent<LayoutElement>().preferredHeight) * (1 + containerRectTransform.childCount));
@@ -295,13 +295,15 @@ public class PanelHeadquarter : Panel
                 break;
             case RankingSections.Cards:
                 WebProcedure.Instance.GetRankingsTokens(JsonConvert.SerializeObject(body), OnSuccessLoadingRanking, OnFailedLoadingRanking);
-
                 break;
             case RankingSections.PlayerTokens:
+                WebProcedure.Instance.GetAllRankingTokenCardsVictories(JsonConvert.SerializeObject(body), OnSuccessLoadingRanking, OnFailedLoadingRanking);
                 break;
         }
+        
 
     }
+
     public void LoadTrimesterPoints()
     {
         counter = 1;
@@ -332,6 +334,7 @@ public class PanelHeadquarter : Panel
                 WebProcedure.Instance.GetRankingsMissionsPointsQuarter(JsonConvert.SerializeObject(body), OnSuccessLoadingRanking, OnFailedLoadingRanking);
                 break;
             case RankingSections.Cards:
+                WebProcedure.Instance.GetRankingsTokensQuarter(JsonConvert.SerializeObject(body), OnSuccessLoadingRanking, OnFailedLoadingRanking);
                 break;
             case RankingSections.PlayerTokens:
                 break;
@@ -365,6 +368,7 @@ public class PanelHeadquarter : Panel
                 WebProcedure.Instance.GetHistoricMissions( OnSuccessLoadingRanking, OnFailedLoadingRanking);
                 break;
             case RankingSections.Cards:
+                WebProcedure.Instance.GetAllHistoricOfTokens(OnSuccessLoadingRanking, OnFailedLoadingRanking);
                 break;
             case RankingSections.PlayerTokens:
                 break;
@@ -403,11 +407,12 @@ public class PanelHeadquarter : Panel
                 break;
             case RankingSections.Missions:
                 if (actualTimeScale == TimeScales.Season) WebProcedure.Instance.GetCompetitorsMissionsQuarters( OnSuccessLoadingRanking, OnFailedLoadingRanking);
-                WebProcedure.Instance.GetCompetitorsMissions(OnSuccessLoadingRanking, OnFailedLoadingRanking);
+                else WebProcedure.Instance.GetCompetitorsMissions(OnSuccessLoadingRanking, OnFailedLoadingRanking);
                 break;
             case RankingSections.Cards:
-                WebProcedure.Instance.GetTokenCompetitors(OnSuccessLoadingRanking, OnFailedLoadingRanking);
-                break;
+                if (actualTimeScale == TimeScales.Season) WebProcedure.Instance.GetTokenCompetitors(OnSuccessLoadingRanking, OnFailedLoadingRanking);
+               else  WebProcedure.Instance.GetTokenCompetitorsLastQuarter(OnSuccessLoadingRanking, OnFailedLoadingRanking);
+                break; 
             case RankingSections.PlayerTokens:
                 break;
         }
@@ -447,11 +452,13 @@ public class PanelHeadquarter : Panel
                     break;
                 case RankingSections.Cards:
                     if (actualTimeScale == TimeScales.Trimester)
-                        WebProcedure.Instance.GetRankingsTokens(JsonConvert.SerializeObject(body), OnSuccessLoadingRanking, OnFailedLoadingRanking);
+                        WebProcedure.Instance.GetRankingsTokensQuarter(JsonConvert.SerializeObject(body), OnSuccessLoadingRanking, OnFailedLoadingRanking);
+
                     else
                         WebProcedure.Instance.GetRankingsTokens(JsonConvert.SerializeObject(body), OnSuccessLoadingRanking, OnFailedLoadingRanking);
                     break;
                 case RankingSections.PlayerTokens:
+                    WebProcedure.Instance.GetAllRankingTokenCardsVictories(JsonConvert.SerializeObject(body), OnSuccessLoadingRanking, OnFailedLoadingRanking);
                     break;
             }
 
