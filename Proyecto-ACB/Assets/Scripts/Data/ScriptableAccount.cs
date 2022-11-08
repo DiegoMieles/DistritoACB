@@ -718,7 +718,8 @@ namespace Data
     [Serializable]
     public class RankingBody
     {
-        public int rowQuantity = 30;
+        public int page = 1;
+        public int num_items = 100;
     }
 
     /// <summary>
@@ -727,6 +728,10 @@ namespace Data
     [Serializable]
     public class HeadquarterContainerData
     {
+        public int total_pages;
+        public int total_items;
+        public List<RankingUserData> items = new List<RankingUserData>();
+        public RankingUserData current_user;
         public int code;
         public string headQuartersURL = "";
         public List<RankingUserData> currentUser = new List<RankingUserData>();
@@ -736,7 +741,29 @@ namespace Data
         public List<RankingUserData> rankingCurrent = new List<RankingUserData>();
         public List<RankingUserData> rankingClassic = new List<RankingUserData>();
         public string message= "";
+        //historico
+        public List<RankingUserData> best_leauge = new List<RankingUserData>();
+        public List<DataSeason> data = new List<DataSeason>();
+        [Serializable]
+        public class DataSeason
+        {
+            public List<Season> SEASON_2025 = new List<Season>();
+            public List<Season> SEASON_2024 = new List<Season>();
+            public List<Season> SEASON_2023 = new List<Season>();
+            public List<Season> SEASON_2022 = new List<Season>();
+                  public List<Season> SEASON_2021 = new List<Season>();
+            public List<Season> SEASON_2020 = new List<Season>();
+         
+         }
+        [Serializable]
+        public class Season
+        {
+            public List<RankingUserData> ENE_MAR = new List<RankingUserData>();
+            public List<RankingUserData> ABR_JUN = new List<RankingUserData>();
+            public List<RankingUserData> JUL_SEP = new List<RankingUserData>();
+            public List<RankingUserData> OCT_DEC = new List<RankingUserData>();
 
+        }
         [Serializable]
         public class RankingUserData 
         {
@@ -774,6 +801,11 @@ namespace Data
             public int challengeCost;
             public string img_small;
             public string img_big;
+            public int quarter;
+            //missions
+            public int missions_number;
+            //tokens
+            public int total_tokens;
         }
     }
 

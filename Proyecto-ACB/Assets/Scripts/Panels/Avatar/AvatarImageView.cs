@@ -43,8 +43,10 @@ public class AvatarImageView : MonoBehaviour
     /// <param name="userData">Dato de ranking del usuario</param>
     public void UpdateView(HeadquarterContainerData.RankingUserData userData)
     {
+        if (userData == null || backendLoadedImage == null) return;
         WebProcedure.Instance.GetSprite(userData.img_small,
-            (obj) => { backendLoadedImage.sprite = obj; },
+            (obj) => {
+                backendLoadedImage.sprite = obj; },
             (error) => { });
     }
 

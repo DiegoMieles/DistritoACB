@@ -78,7 +78,19 @@ namespace WebAPI
         private const string LeaveFromProjectionRoomUrl = "LeaveFromProjectionRoom?id={0}";
         private const string GetVideoDetailsUrl = "GetVideoDetails?id={0}&seat_id={1}&media_id={2}";
         private const string RemoveAccountUrl = "RemoveAccount?user_id={0}&Authorization={1}";
-
+        private const string GetAllPointsUrl = "GetAllPoints?current={0}&id={1}";
+        private const string GetCompetitorsUrl = "GetCompetitors?current={0}&id={1}";
+        private const string GetAllPointsOfLastQuarterUrl = "GetAllPointsOfLastQuarter?current={0}&id={1}";
+        private const string GetAllHistoricUrl = "GetAllHistoric?current={0}&id={1}";
+        private const string GetCompetitorsLastQuarterUrl = "GetCompetitorsLastQuarter?id={0}";
+        private const string GetAllRankingMissionsUrl = "GetAllRankingMissions?id={0}";
+        private const string GetMissionCompetitorsUrl = "GetMissionCompetitors?id={0}";
+        private const string GetAllRankingMissionsOfLastQaurterUrl = "GetAllRankingMissionsOfLastQaurter?id={0}";
+        private const string GetMissionCompetitorsLastQuarterUrl = "GetMissionCompetitorsLastQuarter?id={0}";
+        private const string GetAllHistoricOfMisssionsUrl = "GetAllHistoricOfMisssions?id={0}";
+        private const string GetAllRankingTokensUrl = "GetAllRankingTokens?id={0}";
+        private const string GetTokenCompetitorsUrl = "GetTokenCompetitors?id={0}";
+        private const string GetAllRankingTokensOfLastQaurterUrl = "GetAllRankingTokensOfLastQaurter?id={0}";
         public const string CREDENTIALS = "CREDENTIALS";
 
         #region USERS  
@@ -1239,8 +1251,194 @@ namespace WebAPI
         public void RemoveAccount(Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
         {
             var form = new WWWForm();
-            var url = String.Format(RemoveAccountUrl,accessData.user, "Bearer " + accessData.accessToken);
+            var url = String.Format(RemoveAccountUrl,accessData.user);
             StartCoroutine(RequestCoroutine(url,form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
+        }
+        /// <summary>
+        /// Obtiene los puntos de la temporada de la liga Clásica o actual 
+        /// </summary>
+        /// <param name="isCurrent">es la temporada actual ?</param>
+ 
+        public void GetRankingsPoints(string json, bool isCurrent, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            try
+            {
+                var url = String.Format(GetAllPointsUrl, isCurrent, accessData.user );
+                StartCoroutine(RequestCoroutine(url, json, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbPUT));
+            }
+            catch (WebException webEx)
+            {
+                onFailed?.Invoke(WebError.Create(webEx));
+            }
+            catch (Exception ex)
+            {
+                onFailed?.Invoke(new WebError(ex.Message));
+            }
+        }
+        /// <summary>
+        /// Obtiene los jugadores que están adelante y atrás del jugador actual de la temporada en el headquarter
+        /// </summary>
+        public void GetRankingCompetitors(bool isCurrent,Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            var form = new WWWForm();
+            var url = String.Format(GetCompetitorsUrl, isCurrent, accessData.user);
+            StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
+        }
+        /// <summary>
+        /// Obtiene los puntos del trimestre de la liga Clásica o actual 
+        /// </summary>
+        /// <param name="isCurrent">es la temporada actual ?</param>
+
+        public void GetRankingsQuarterPoints(string json, bool isCurrent, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            try
+            {
+                var url = String.Format(GetAllPointsOfLastQuarterUrl, isCurrent, accessData.user);
+                StartCoroutine(RequestCoroutine(url, json, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbPUT));
+            }
+            catch (WebException webEx)
+            {
+                onFailed?.Invoke(WebError.Create(webEx));
+            }
+            catch (Exception ex)
+            {
+                onFailed?.Invoke(new WebError(ex.Message));
+            }
+        }
+        /// <summary>
+        /// Obtiene los mejores 3 jugadores de las temporadas 
+        /// </summary>
+        public void GetHistoricPoints(bool isCurrent, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            var form = new WWWForm();
+            var url = String.Format(GetAllHistoricUrl, isCurrent, accessData.user);
+            StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
+        }
+        /// <summary>
+        /// Obtiene los puntos de los 10 jugadores alrededor del jugador actual en el trimestre 
+        /// </summary>
+        public void GetCompetitorsLastQuarter(bool isCurrent, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            var form = new WWWForm();
+            var url = String.Format(GetCompetitorsLastQuarterUrl, isCurrent, accessData.user);
+            StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
+        }
+        /// <summary>
+        /// Obtiene la cantidad de misiones de la temporada de los jugadores
+        /// </summary>
+        /// <param name="isCurrent">es la temporada actual ?</param>
+
+        public void GetRankingsMissionsPoints(string json, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            try
+            {
+                var url = String.Format(GetAllRankingMissionsUrl, accessData.user);
+                StartCoroutine(RequestCoroutine(url, json, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbPUT));
+            }
+            catch (WebException webEx)
+            {
+                onFailed?.Invoke(WebError.Create(webEx));
+            }
+            catch (Exception ex)
+            {
+                onFailed?.Invoke(new WebError(ex.Message));
+            }
+        }
+        /// <summary>
+        /// Obtiene los puntos del trimestre de las misiones
+        /// </summary>
+
+        public void GetRankingsMissionsPointsQuarter(string json, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            try
+            {
+                var url = String.Format(GetAllRankingMissionsOfLastQaurterUrl, accessData.user);
+                StartCoroutine(RequestCoroutine(url, json, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbPUT));
+            }
+            catch (WebException webEx)
+            {
+                onFailed?.Invoke(WebError.Create(webEx));
+            }
+            catch (Exception ex)
+            {
+                onFailed?.Invoke(new WebError(ex.Message));
+            }
+        }
+
+        /// <summary>
+        /// Obtiene los puntos de los 10 jugadores alrededor del jugador actual  en las misiones
+        /// </summary>
+        public void GetCompetitorsMissions( Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            var form = new WWWForm();
+            var url = String.Format(GetMissionCompetitorsUrl,accessData.user);
+            StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
+        }
+        /// <summary>
+        /// Obtiene los puntos de los 10 jugadores alrededor del jugador actual  en las misiones del trimestre
+        /// </summary>
+        public void GetCompetitorsMissionsQuarters(Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            var form = new WWWForm();
+            var url = String.Format(GetMissionCompetitorsLastQuarterUrl, accessData.user);
+            StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
+        }
+        /// <summary>
+        /// Obtiene los mejores 3 jugadores de las temporadas en las misiones
+        /// </summary>
+        public void GetHistoricMissions( Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            var form = new WWWForm();
+            var url = String.Format(GetAllHistoricOfMisssionsUrl, accessData.user);
+            StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
+        }
+        /// <summary>
+        /// Obtiene los puntos de los tokens de la temporada
+        /// </summary>
+        public void GetRankingsTokens(string json, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            try
+            {
+                var url = String.Format(GetAllRankingTokensUrl, accessData.user);
+                StartCoroutine(RequestCoroutine(url, json, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbPUT));
+            }
+            catch (WebException webEx)
+            {
+                onFailed?.Invoke(WebError.Create(webEx));
+            }
+            catch (Exception ex)
+            {
+                onFailed?.Invoke(new WebError(ex.Message));
+            }
+        }
+        /// <summary>
+        /// Obtiene los puntos de los 10 jugadores alrededor del jugador actual  en las cantidad de tokens 
+        /// </summary>
+        public void GetTokenCompetitors (Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            var form = new WWWForm();
+            var url = String.Format(GetTokenCompetitorsUrl, accessData.user);
+            StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
+        }
+        /// <summary>
+        /// Obtiene los puntos del trimestre de las colecciones de artas
+        /// </summary>
+
+        public void s(string json, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
+        {
+            try
+            {
+                var url = String.Format(GetAllRankingMissionsOfLastQaurterUrl, accessData.user);
+                StartCoroutine(RequestCoroutine(url, json, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbPUT));
+            }
+            catch (WebException webEx)
+            {
+                onFailed?.Invoke(WebError.Create(webEx));
+            }
+            catch (Exception ex)
+            {
+                onFailed?.Invoke(new WebError(ex.Message));
+            }
         }
         /// <summary>
         ///Intenta usar un pase VIP para el Auditorio

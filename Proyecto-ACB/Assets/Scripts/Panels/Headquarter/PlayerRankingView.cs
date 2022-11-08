@@ -30,12 +30,33 @@ public class PlayerRankingView : MonoBehaviour
     /// Configura los datos de la vista del jugador en el ranking
     /// </summary>
     /// <param name="userData"></param>
-    public void ShowRankingView(HeadquarterContainerData.RankingUserData userData)
+    public void ShowRankingView(HeadquarterContainerData.RankingUserData userData,PanelHeadquarter.RankingSections rankingSection = PanelHeadquarter.RankingSections.ClassicLeague)
     {
+
+        string sfx;
+        int points;
+        switch (rankingSection)
+        {
+            case PanelHeadquarter.RankingSections.Missions:
+                sfx = " misiones";
+                points = userData.missions_number;
+                break;
+            case PanelHeadquarter.RankingSections.Cards:
+                sfx = " tokens";
+                points = userData.total_tokens;
+                break;
+            default:
+                sfx = " pts";
+                points = userData.points;
+                break;
+        }
+        if (userData == null) return;
         avatarView.UpdateView(userData);
         nameText.text = userData.nickName;
-        pointsText.text = userData.points.ToString() + " pts";
-        positionText.text = userData.position.ToString()+"º";
+        
+
+        pointsText.text = points.ToString() + sfx;
+        if(positionText != null) positionText.text = userData.position.ToString()+"º";
     }
 
     #endregion
