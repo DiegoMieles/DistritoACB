@@ -50,6 +50,9 @@ public class PanelHeadquarter : Panel
     [SerializeField]
     [Tooltip("Prefab del elemento donde se ve el ranking hist?rico del jugador")]
     private GameObject playerRankingViewHistoricPrefab;
+    [SerializeField]
+    [Tooltip("Prefab del elemento donde se ve el ranking hist?rico de los tokens")]
+    private GameObject playerRankingViewHistoricTokenPrefab;
     [SerializeField] [Tooltip("Objeto que contiene los datos de los jugadores dentro del ranking")]
     private RectTransform containerRectTransform;
     [SerializeField]
@@ -110,6 +113,8 @@ public class PanelHeadquarter : Panel
     /// </summary>
     private void Start()
     {
+        knowAppButton.onClick.AddListener(() => { OpenHTMLPanel(ACBSingleton.Instance.GameData.headQuartersURL); });
+        
         //  SetupPanel();
         scrollViewPuntajes.GetComponentInChildren<ScrollRect>().onValueChanged.AddListener(OnScrollContent);
         goBackButton.onClick.AddListener(() => { Close(); ACBSingleton.Instance.UpdateGameData(); });
@@ -169,7 +174,7 @@ public class PanelHeadquarter : Panel
                 {
                     if(hqContainerData.best_leauge.Count > 0)
                     {
-                        GameObject playerView = Instantiate(playerRankingViewHistoricPrefab, containerRectTransform);
+                        GameObject playerView = Instantiate( playerRankingViewHistoricPrefab, containerRectTransform);
                         playerView.GetComponent<PanelSeasonRanking>().ShowRankingSeasonView(hqContainerData.best_leauge, "Mejores Temporada 21-22");
                     }
                     foreach (HeadquarterContainerData.DataSeason dataSeason in hqContainerData.data)
@@ -193,7 +198,7 @@ public class PanelHeadquarter : Panel
                             if (quarterSeason.OCT_DEC.Count > 0) {quarter = quarterSeason.OCT_DEC; quarterText = "oct-dic "; }
                             if (quarter.Count == 0) continue;
                             GameObject playerView = Instantiate(playerRankingViewHistoricPrefab, containerRectTransform);
-                            playerView.GetComponent<PanelSeasonRanking>().ShowRankingSeasonView(quarter, "Mejores " + quarterText + yearText);
+                            playerView.GetComponent<PanelSeasonRanking>().ShowRankingSeasonView(quarter, "Mejores " + quarterText + yearText,actualSection);
                         }
                             
                     }
@@ -218,11 +223,44 @@ public class PanelHeadquarter : Panel
                         playerView.GetComponent<PlayerRankingViewToken>().ShowRankingView(tokenDataRanking.items[i]);
                     }
                 }
+                //significa que es un historico
+                if (tokenDataRanking.data.Count > 0)
+                {
+                    /*if (tokenDataRanking.best_leauge.Count > 0)
+                    {
+                        GameObject playerView = Instantiate(playerRankingViewHistoricTokenPrefab, containerRectTransform);
+                        playerView.GetComponent<PanelSeasonRanking>().ShowRankingSeasonView(hqContainerData.best_leauge, "Mejores Temporada 21-22");
+                    }*/
+                    foreach (TokenDataRankingContainer.DataSeason dataSeason in tokenDataRanking.data)
+                    {
+                        string yearText = "";
+                        string quarterText = "";
+                        List<TokenDataRankingContainer.Season> season = new List<TokenDataRankingContainer.Season>();
+                        if (dataSeason.SEASON_2020.Count > 0) { season = dataSeason.SEASON_2020; yearText = "20"; }
+                        if (dataSeason.SEASON_2021.Count > 0) { season = dataSeason.SEASON_2021; yearText = "21"; }
+                        if (dataSeason.SEASON_2022.Count > 0) { season = dataSeason.SEASON_2022; yearText = "22"; }
+                        if (dataSeason.SEASON_2023.Count > 0) { season = dataSeason.SEASON_2023; yearText = "23"; }
+                        if (dataSeason.SEASON_2024.Count > 0) { season = dataSeason.SEASON_2024; yearText = "24"; }
+                        if (dataSeason.SEASON_2025.Count > 0) { season = dataSeason.SEASON_2025; yearText = "25"; }
+                        if (season.Count == 0) continue;
+                        List<TokenDataRanking> quarter = new List<TokenDataRanking>();
+                        foreach (TokenDataRankingContainer.Season quarterSeason in season)
+                        {
+                            if (quarterSeason.ENE_MAR.Count > 0) { quarter = quarterSeason.ENE_MAR; quarterText = "ene-mar "; }
+                            if (quarterSeason.ABR_JUN.Count > 0) { quarter = quarterSeason.ABR_JUN; quarterText = "abr-jun "; }
+                            if (quarterSeason.JUL_SEP.Count > 0) { quarter = quarterSeason.JUL_SEP; quarterText = "jul-sep "; }
+                            if (quarterSeason.OCT_DEC.Count > 0) { quarter = quarterSeason.OCT_DEC; quarterText = "oct-dic "; }
+                            if (quarter.Count == 0) continue;
+                            GameObject playerView = Instantiate(playerRankingViewHistoricTokenPrefab, containerRectTransform);
+                            playerView.GetComponent<PanelSeasonRanking>().ShowRankingSeasonView(quarter, "Mejores " + quarterText + yearText);
+                        }
 
+                    }
+                }
                 break;
              
         }
-        containerRectTransform.sizeDelta = new Vector2(containerRectTransform.sizeDelta.x,(actualSection == RankingSections.PlayerTokens? playerRankingTokenViewPrefab.GetComponent<LayoutElement>().preferredHeight : (actualTimeScale == TimeScales.Historic ? playerRankingViewHistoricPrefab.GetComponent<LayoutElement>().preferredHeight : playerRankingViewPrefab.GetComponent<LayoutElement>().preferredHeight)) * (1 + containerRectTransform.childCount));
+        containerRectTransform.sizeDelta = new Vector2(containerRectTransform.sizeDelta.x, (actualTimeScale == TimeScales.Historic ? (actualSection == RankingSections.PlayerTokens ? playerRankingViewHistoricTokenPrefab.GetComponent<LayoutElement>().preferredHeight : playerRankingViewHistoricPrefab.GetComponent<LayoutElement>().preferredHeight ): (actualSection == RankingSections.PlayerTokens ? playerRankingTokenViewPrefab.GetComponent<LayoutElement>().preferredHeight : playerRankingViewPrefab.GetComponent<LayoutElement>().preferredHeight)) * (1 + containerRectTransform.childCount));
         allItemsLoaded = true;
                 spinner.SetActive(false);
 
@@ -245,7 +283,7 @@ public class PanelHeadquarter : Panel
         
         actualSection = RankingSections.ClassicLeague;
                panelScores.SetActive(true);
-           LayoutLeagueIcon.gameObject.SetActive(true);
+          
         imageLeagueIcon.sprite = spriteClasicLeagueIcon;
         imageLeagueIcon.transform.parent.GetComponent<Image>().color = Color.white;
         LoadSeasonPoints();
@@ -254,7 +292,7 @@ public class PanelHeadquarter : Panel
     {
         actualSection = RankingSections.ActualLeague;
         panelScores.SetActive(true);
-        LayoutLeagueIcon.gameObject.SetActive(true);
+     
         imageLeagueIcon.sprite = spriteActualLeagueIcon;
         imageLeagueIcon.transform.parent.GetComponent<Image>().color = Color.black;
         LoadSeasonPoints();
@@ -280,6 +318,7 @@ public class PanelHeadquarter : Panel
 
     public void LoadSeasonPoints()
     {
+        LayoutLeagueIcon.gameObject.SetActive(actualSection == RankingSections.ClassicLeague || actualSection == RankingSections.ActualLeague);
         playerView.gameObject.SetActive(actualSection != RankingSections.PlayerTokens);
         hasLoadedMorePlayer = false;
         loadMoreButton.transform.GetChild(0).GetComponentInChildren<Text>().text = "Ver competidores";
@@ -295,7 +334,7 @@ public class PanelHeadquarter : Panel
         seasonButton.transform.GetChild(1).gameObject.SetActive(true);
         trimesterButton.transform.GetChild(1).gameObject.SetActive(false);
         historicButton.transform.GetChild(1).gameObject.SetActive(false);
-        loadMoreButton.gameObject.SetActive(true);
+        loadMoreButton.gameObject.SetActive(actualSection != RankingSections.PlayerTokens);
         RankingBody body = new RankingBody() { page = counter, num_items = rowsToShowInRanking };
         switch (actualSection)
         {
@@ -303,7 +342,7 @@ public class PanelHeadquarter : Panel
                 WebProcedure.Instance.GetRankingsPoints(JsonConvert.SerializeObject(body), false, OnSuccessLoadingRanking, OnFailedLoadingRanking);
                 break;
             case RankingSections.ActualLeague:
-                WebProcedure.Instance.GetRankingsPoints(JsonConvert.SerializeObject(body), true, OnSuccessLoadingRanking, OnFailedLoadingRanking);
+                WebProcedure.Instance.GetRankingsPoints(JsonConvert.SerializeObject(body), true , OnSuccessLoadingRanking, OnFailedLoadingRanking);
                 break;
             case RankingSections.Missions:
                 WebProcedure.Instance.GetRankingsMissionsPoints(JsonConvert.SerializeObject(body), OnSuccessLoadingRanking, OnFailedLoadingRanking);
@@ -323,6 +362,7 @@ public class PanelHeadquarter : Panel
     public void LoadTrimesterPoints()
     {
         counter = 1;
+        LayoutLeagueIcon.gameObject.SetActive(actualSection == RankingSections.ClassicLeague || actualSection == RankingSections.ActualLeague);
         playerView.gameObject.SetActive(actualSection != RankingSections.PlayerTokens);
         hasLoadedMorePlayer = false;
         loadMoreButton.transform.GetChild(0).GetComponentInChildren<Text>().text = "Ver competidores";
@@ -336,7 +376,7 @@ public class PanelHeadquarter : Panel
         seasonButton.transform.GetChild(1).gameObject.SetActive(false);
         trimesterButton.transform.GetChild(1).gameObject.SetActive(true);
         historicButton.transform.GetChild(1).gameObject.SetActive(false);
-        loadMoreButton.gameObject.SetActive(true);
+        loadMoreButton.gameObject.SetActive(actualSection != RankingSections.PlayerTokens);
         RankingBody body = new RankingBody() { page = counter, num_items = rowsToShowInRanking };
         switch (actualSection)
         {
@@ -359,6 +399,7 @@ public class PanelHeadquarter : Panel
     }
     public void LoadHistoricPoints()
     {
+        LayoutLeagueIcon.gameObject.SetActive(actualSection == RankingSections.ClassicLeague || actualSection == RankingSections.ActualLeague);
         playerView.gameObject.SetActive(false);
         hasLoadedMorePlayer = false;
         actualTimeScale = TimeScales.Historic;

@@ -23,8 +23,10 @@ namespace Data
         public int costChallengeCurrentEdition;
         public App app;
         public MainMenuData mainMenuData;
+        public string headQuartersURL;
 
-        
+
+
         private static ScriptableGameData _cached = null;
 
         public static ScriptableGameData Get()

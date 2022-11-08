@@ -1288,7 +1288,7 @@ namespace WebAPI
         {
             try
             {
-                var url = String.Format(GetAllPointsUrl, isCurrent, accessData.user );
+                var url = String.Format(GetAllPointsUrl, isCurrent ? "true" : "false" , accessData.user );
                 StartCoroutine(RequestCoroutine(url, json, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbPUT));
             }
             catch (WebException webEx)
@@ -1306,7 +1306,7 @@ namespace WebAPI
         public void GetRankingCompetitors(bool isCurrent,Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
         {
             var form = new WWWForm();
-            var url = String.Format(GetCompetitorsUrl, isCurrent, accessData.user);
+            var url = String.Format(GetCompetitorsUrl, isCurrent ? "true" : "false", accessData.user);
             StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
         }
         /// <summary>
@@ -1318,7 +1318,7 @@ namespace WebAPI
         {
             try
             {
-                var url = String.Format(GetAllPointsOfLastQuarterUrl, isCurrent, accessData.user);
+                var url = String.Format(GetAllPointsOfLastQuarterUrl, isCurrent? "true":"false", accessData.user);
                 StartCoroutine(RequestCoroutine(url, json, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbPUT));
             }
             catch (WebException webEx)
@@ -1336,7 +1336,7 @@ namespace WebAPI
         public void GetHistoricPoints(bool isCurrent, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
         {
             var form = new WWWForm();
-            var url = String.Format(GetAllHistoricUrl, isCurrent, accessData.user);
+            var url = String.Format(GetAllHistoricUrl, isCurrent ? "true" : "false", accessData.user);
             StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
         }
         /// <summary>
@@ -1345,13 +1345,13 @@ namespace WebAPI
         public void GetCompetitorsLastQuarter(bool isCurrent, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
         {
             var form = new WWWForm();
-            var url = String.Format(GetCompetitorsLastQuarterUrl, isCurrent, accessData.user);
+            var url = String.Format(GetCompetitorsLastQuarterUrl, isCurrent ? "true" : "false", accessData.user);
             StartCoroutine(RequestCoroutine(url, form, onSuccess, onFailed, null, UnityWebRequest.kHttpVerbGET));
         }
         /// <summary>
         /// Obtiene la cantidad de misiones de la temporada de los jugadores
         /// </summary>
-        /// <param name="isCurrent">es la temporada actual ?</param>
+
 
         public void GetRankingsMissionsPoints(string json, Action<DataSnapshot> onSuccess, Action<WebError> onFailed)
         {

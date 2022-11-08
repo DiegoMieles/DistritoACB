@@ -815,6 +815,28 @@ namespace Data
         public int total_pages;
         public int total_items;
         public List<TokenDataRanking> items = new List<TokenDataRanking>();
+        public List<DataSeason> data = new List<DataSeason>();
+
+        [Serializable]
+        public class DataSeason
+        {
+            public List<Season> SEASON_2025 = new List<Season>();
+            public List<Season> SEASON_2024 = new List<Season>();
+            public List<Season> SEASON_2023 = new List<Season>();
+            public List<Season> SEASON_2022 = new List<Season>();
+            public List<Season> SEASON_2021 = new List<Season>();
+            public List<Season> SEASON_2020 = new List<Season>();
+
+        }
+        [Serializable]
+        public class Season
+        {
+            public List<TokenDataRanking> ENE_MAR = new List<TokenDataRanking>();
+            public List<TokenDataRanking> ABR_JUN = new List<TokenDataRanking>();
+            public List<TokenDataRanking> JUL_SEP = new List<TokenDataRanking>();
+            public List<TokenDataRanking> OCT_DEC = new List<TokenDataRanking>();
+
+        }
     }
         [Serializable]
     public class TokenDataRanking

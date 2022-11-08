@@ -81,6 +81,7 @@ public class ACBSingleton : BASESingleton<ACBSingleton>
     public string LostConnectionTextError => textError;
     public bool ScriptablesAreLoaded { get => scriptablesAreLoaded; set => scriptablesAreLoaded = value; }
 
+
     #region Unity Methods
 
     /// <summary>

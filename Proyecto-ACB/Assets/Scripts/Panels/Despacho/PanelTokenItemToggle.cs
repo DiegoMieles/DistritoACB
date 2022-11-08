@@ -151,8 +151,8 @@ public class PanelTokenItemToggle : MonoBehaviour
         {
             WebProcedure.Instance.GetSprite(pathThumbnail, sprite =>
             {
-                imageThumbnail.sprite = sprite;
-                imageThumbnail.gameObject.SetActive(true);
+                if(imageThumbnail!= null)imageThumbnail.sprite = sprite;
+                if (imageThumbnail != null) imageThumbnail.gameObject.SetActive(true);
                 GameObject spinner = GameObject.Find(spinner_name);
                 if (spinner)
                 {
