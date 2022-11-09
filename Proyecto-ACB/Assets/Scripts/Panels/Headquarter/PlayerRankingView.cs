@@ -16,6 +16,18 @@ public class PlayerRankingView : MonoBehaviour
     private Text pointsText;
     [SerializeField] [Tooltip("Texto con la posición en ranking del jugador")]
     private Text positionText;
+    [SerializeField]
+    [Tooltip("Color del primer lugar")]
+    private Color firstPlaceColor;
+    [SerializeField]
+    [Tooltip("Color del segundo lugar")]
+    private Color secondPlaceColor;
+    [SerializeField]
+    [Tooltip("Color del tercer lugar")]
+    private Color thirdPlaceColor;
+    [SerializeField]
+    [Tooltip("anillo alrededor de la imagen del jugador")]
+    private Image profileCircle;
 
     [Space(5)]
     [Header("Avatar part references")]
@@ -52,9 +64,33 @@ public class PlayerRankingView : MonoBehaviour
         }
         if (userData == null) return;
         avatarView.UpdateView(userData);
-        nameText.text = userData.nickName;
         pointsText.text = points.ToString() + sfx;
-        if(positionText != null) positionText.text = userData.position.ToString()+"º";
+        Color colorToUse = Color.black;
+        switch (userData.position)
+        {
+            case 1:
+                colorToUse = firstPlaceColor;
+                break;
+            case 2:
+                colorToUse = secondPlaceColor;
+                break;
+            case 3:
+                colorToUse = thirdPlaceColor;
+                break;
+
+        }
+        if(nameText != null)
+        {
+            nameText.text = userData.nickName;
+           if(colorToUse != Color.black) nameText.color = colorToUse;
+        }
+        if (positionText != null)
+        {
+            positionText.text = userData.position.ToString() + "º";
+            if (colorToUse != Color.black) positionText.color = colorToUse;
+        }
+        if (profileCircle != null && colorToUse != Color.black) profileCircle.color = colorToUse;
+        
     }
 
     #endregion

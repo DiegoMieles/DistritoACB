@@ -51,7 +51,7 @@ public class PanelSeasonRanking : MonoBehaviour
         }
 
     }
-    public void ShowRankingSeasonView(List<TokenDataRanking> playersRanking, string titleQuarter)
+    public void ShowRankingSeasonView(List<TokenDataRanking> playersRanking, string titleQuarter, PanelHeadquarter.RankingSections rankingSection = PanelHeadquarter.RankingSections.ClassicLeague)
     {
         if (playersRanking == null) return;
         if (!string.IsNullOrEmpty(titleQuarter)) SeasonNameText.text = titleQuarter;
@@ -61,15 +61,15 @@ public class PanelSeasonRanking : MonoBehaviour
             {
                 case 1:
                     playerHistoryRankingFirst.gameObject.SetActive(true);
-                    playerHistoryRankingFirst.ShowRankingView(playersRanking[i]);
+                    playerHistoryRankingFirst.ShowRankingView(playersRanking[i], rankingSection);
                     break;
                 case 2:
                     playerHistoryRankingSecond.gameObject.SetActive(true);
-                    playerHistoryRankingSecond.ShowRankingView(playersRanking[i]);
+                    playerHistoryRankingSecond.ShowRankingView(playersRanking[i], rankingSection);
                     break;
                 case 3:
                     playerHistoryRankingThird.gameObject.SetActive(true);
-                    playerHistoryRankingThird.ShowRankingView(playersRanking[i]);
+                    playerHistoryRankingThird.ShowRankingView(playersRanking[i], rankingSection);
                     break;
             }
         }

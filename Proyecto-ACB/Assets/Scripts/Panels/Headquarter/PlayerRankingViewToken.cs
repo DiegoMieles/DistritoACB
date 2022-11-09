@@ -25,12 +25,27 @@ public class PlayerRankingViewToken : MonoBehaviour
     [SerializeField]
     [Tooltip("boton para abrir la info del boton")]
     private Button tokenButton;
-
+    [SerializeField]
+    [Tooltip("Color del primer lugar")]
+    private Color firstPlaceColor;
+    [SerializeField]
+    [Tooltip("Color del segundo lugar")]
+    private Color secondPlaceColor;
+    [SerializeField]
+    [Tooltip("Color del tercer lugar")]
+    private Color thirdPlaceColor;
+    [SerializeField]
+    [Tooltip("anillo alrededor de la imagen del jugador")]
+    private Image profileCircle;
+    [SerializeField]
+    [Tooltip("borde alrededor de la imagen del token")]
+    private Image tokenBorder;
     [Space(5)]
     [Header("Avatar part references")]
     [SerializeField]
     [Tooltip("Vista del avatar del jugador")]
     private AvatarImageView avatarView;
+ 
 
     #endregion
 
@@ -39,7 +54,7 @@ public class PlayerRankingViewToken : MonoBehaviour
     /// Configura los datos de la vista del jugador en el ranking
     /// </summary>
     /// <param name="userData"></param>
-    public void ShowRankingView(TokenDataRanking userData)
+    public void ShowRankingView(TokenDataRanking userData, PanelHeadquarter.RankingSections rankingSection = PanelHeadquarter.RankingSections.ClassicLeague)
     {
         if (userData == null) return;
         HeadquarterContainerData.RankingUserData user = new HeadquarterContainerData.RankingUserData() { img_small = userData.img_small};
@@ -84,9 +99,29 @@ public class PlayerRankingViewToken : MonoBehaviour
         avatarView.UpdateView(user);
         nameText.text = userData.nickName;
         idText.text = userData.user_id;
-        pointsText.text = "<size=50>" + userData.victories + "</size>" + " Victorias";
-       
-        if (positionText != null) positionText.text = userData.position.ToString() + "º";
+        pointsText.text = "<size=50>" + userData.victories + " </size>" + " Victorias";
+        Color colorToUse = Color.black;
+        switch (userData.position)
+        {
+            case 1:
+                colorToUse = firstPlaceColor;
+                break;
+            case 2:
+                colorToUse = secondPlaceColor;
+                break;
+            case 3:
+                colorToUse = thirdPlaceColor;
+                break;
+
+        }
+        if (positionText != null)
+        {
+            if (colorToUse != Color.black) positionText.color = colorToUse;
+            positionText.text = userData.position.ToString() + "º";
+        }
+        if (profileCircle != null && colorToUse != Color.black) profileCircle.color = colorToUse;
+        if (TokenToggle != null && colorToUse != Color.black) TokenToggle.textName.color = colorToUse;
+        if (tokenBorder != null && colorToUse != Color.black) tokenBorder.color = colorToUse;
     }
 
     #endregion

@@ -186,7 +186,7 @@ public class PanelHeadquarter : Panel
                     if(hqContainerData.best_leauge.Count > 0)
                     {
                         GameObject playerView = Instantiate( playerRankingViewHistoricPrefab, containerRectTransform);
-                        playerView.GetComponent<PanelSeasonRanking>().ShowRankingSeasonView(hqContainerData.best_leauge, "Mejores Temporada 21-22");
+                        playerView.GetComponent<PanelSeasonRanking>().ShowRankingSeasonView(hqContainerData.best_leauge, "Mejores Temporada 21-22",actualSection);
                     }
                     foreach (HeadquarterContainerData.DataSeason dataSeason in hqContainerData.data)
                     {
@@ -231,17 +231,17 @@ public class PanelHeadquarter : Panel
                     for (int i = 0; i < tokenDataRanking.items.Count; i++)
                     {
                         GameObject playerView = Instantiate(playerRankingTokenViewPrefab, containerRectTransform);
-                        playerView.GetComponent<PlayerRankingViewToken>().ShowRankingView(tokenDataRanking.items[i]);
+                        playerView.GetComponent<PlayerRankingViewToken>().ShowRankingView(tokenDataRanking.items[i],actualSection);
                     }
                 }
                 //significa que es un historico
                 if (tokenDataRanking.data.Count > 0)
                 {
-                    /*if (tokenDataRanking.best_leauge.Count > 0)
+                    if (tokenDataRanking.best_leauge.Count > 0)
                     {
                         GameObject playerView = Instantiate(playerRankingViewHistoricTokenPrefab, containerRectTransform);
-                        playerView.GetComponent<PanelSeasonRanking>().ShowRankingSeasonView(hqContainerData.best_leauge, "Mejores Temporada 21-22");
-                    }*/
+                        playerView.GetComponent<PanelSeasonRanking>().ShowRankingSeasonView(tokenDataRanking.best_leauge, "Mejores Temporada 21-22",actualSection);
+                    }
                     foreach (TokenDataRankingContainer.DataSeason dataSeason in tokenDataRanking.data)
                     {
                         string yearText = "";
@@ -283,7 +283,7 @@ public class PanelHeadquarter : Panel
     /// <param name="obj">Datos de error devueltos por backend</param>
     private void OnFailedLoadingRanking(WebError obj)
     {
-        ACBSingleton.Instance.AlertPanel.SetupPanel("No se ha podido cargar el ranking correctamente", "", false, Close);
+        ACBSingleton.Instance.AlertPanel.SetupPanel("No se ha podido cargar el ranking correctamente", "", false, null);
         spinner.SetActive(false);
     }
     /// <summary>
@@ -451,7 +451,7 @@ public class PanelHeadquarter : Panel
     public void LoadMorePlayers()
     {
         hasLoadedMorePlayer = !hasLoadedMorePlayer;
-        loadMoreButton.transform.GetChild(0).GetComponentInChildren<Text>().text = hasLoadedMorePlayer ? "Volver arriba": "Ver competidores";
+        loadMoreButton.transform.GetChild(0).GetComponentInChildren<Text>().text = hasLoadedMorePlayer ? "Volver": "Ver competidores";
         playerView.gameObject.SetActive(!hasLoadedMorePlayer);
         if (!hasLoadedMorePlayer)
         {

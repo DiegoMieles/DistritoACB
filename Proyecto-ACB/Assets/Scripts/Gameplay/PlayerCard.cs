@@ -153,6 +153,7 @@ public class PlayerCard : MonoBehaviour
     /// <param name="onBoosterAdded">Acción que se ejecuta cuando un potenciador se ha añadido a la carta</param>
     public void SetupCardData(TokenItemData tokenData, Action onClickBackPartCardButton, bool canScroll = true, bool isDeletingAction = true, bool doFillAnimation = false, bool change = true, Action onBoosterAdded = null)
     {
+        Spinner.gameObject.SetActive(true);
         bool isActualLeague = false;
         PanelTeamCompetitivo addTeamPanel = FindObjectOfType<PanelTeamCompetitivo>(true);
         if (addTeamPanel) isActualLeague = addTeamPanel.isActualLeague;
@@ -188,6 +189,7 @@ public class PlayerCard : MonoBehaviour
     /// <param name="onBoosterAdded">Acción que se ejecuta cuando un potenciador se ha añadido a la carta</param>
     public void SetupCardData(ChallengeAcceptedData.CardChallengeData.CardItems cardData, Action onBoosterAdded = null)
     {
+        Spinner.gameObject.SetActive(true);
         cardBorders.ForEach(t => t.sprite = cardData.is_clasic ? clasicborderCard: actualborderCard );
         this.cardData = cardData;
         this.onBoosterAdded = onBoosterAdded;

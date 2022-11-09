@@ -816,7 +816,7 @@ namespace Data
         public int total_items;
         public List<TokenDataRanking> items = new List<TokenDataRanking>();
         public List<DataSeason> data = new List<DataSeason>();
-
+        public List<TokenDataRanking> best_leauge = new List<TokenDataRanking>();
         [Serializable]
         public class DataSeason
         {

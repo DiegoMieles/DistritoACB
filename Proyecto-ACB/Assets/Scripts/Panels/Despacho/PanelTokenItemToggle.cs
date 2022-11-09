@@ -29,7 +29,7 @@ public class PanelTokenItemToggle : MonoBehaviour
     [Tooltip("Imagen miniatura de la carta si es highlight")]
     private Image imageThumbnailHighlight;
     [SerializeField] [Tooltip("Texto con el nombre del objeto")]
-    private Text textName;
+    public Text textName;
     [SerializeField] [Tooltip("Texto con el valor hash de la carta")]
     private Text textHash;
     [SerializeField] [Tooltip("Imagen de la carta en el equipo competitivo")]
