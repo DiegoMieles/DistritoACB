@@ -91,8 +91,8 @@ public class ChallengeFieldButton : MonoBehaviour
         loaded = true;
         loaded2 = true;
         if (boosterMark != null) boosterMark.SetActive(challengeFieldData.isBooster);
-        if (isInjuredMark != null) boosterMark.SetActive(challengeFieldData.isInjured);
-        if (isInTeamMark != null) boosterMark.SetActive(challengeFieldData.isTeam);
+        if (isInjuredMark != null) isInjuredMark.SetActive(challengeFieldData.isInjured);
+        if (isInTeamMark != null) isInTeamMark.SetActive(challengeFieldData.isTeam);
         border.sprite =GameObject.FindObjectOfType<PanelPavilionField>().isclasicLeague ? classicBorder : actualBorder;
     }
 

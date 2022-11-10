@@ -186,7 +186,7 @@ public class PanelHeadquarter : Panel
                     if(hqContainerData.best_leauge.Count > 0)
                     {
                         GameObject playerView = Instantiate( playerRankingViewHistoricPrefab, containerRectTransform);
-                        playerView.GetComponent<PanelSeasonRanking>().ShowRankingSeasonView(hqContainerData.best_leauge, "Mejores Temporada 21-22",actualSection);
+                        playerView.GetComponent<PanelSeasonRanking>().ShowRankingSeasonView(hqContainerData.best_leauge, hqContainerData.TEXT_EDITION,actualSection);
                     }
                     foreach (HeadquarterContainerData.DataSeason dataSeason in hqContainerData.data)
                     {
@@ -240,7 +240,7 @@ public class PanelHeadquarter : Panel
                     if (tokenDataRanking.best_leauge.Count > 0)
                     {
                         GameObject playerView = Instantiate(playerRankingViewHistoricTokenPrefab, containerRectTransform);
-                        playerView.GetComponent<PanelSeasonRanking>().ShowRankingSeasonView(tokenDataRanking.best_leauge, "Mejores Temporada 21-22",actualSection);
+                        playerView.GetComponent<PanelSeasonRanking>().ShowRankingSeasonView(tokenDataRanking.best_leauge, tokenDataRanking.TEXT_EDITION,actualSection);
                     }
                     foreach (TokenDataRankingContainer.DataSeason dataSeason in tokenDataRanking.data)
                     {
