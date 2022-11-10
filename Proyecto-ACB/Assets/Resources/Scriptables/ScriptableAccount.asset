@@ -10,26 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b058b7eac12c9a44b0df526ce001fbb, type: 3}
-  m_Name: Camiseta
+  m_Name: ScriptableAccount
   m_EditorClassIdentifier: 
   statsData:
-    coinsBalance: 907
-    acballsBalance: 1
-    acballsNotification: 1
+    coinsBalance: 0
+    acballsBalance: 0
+    acballsNotification: 0
   avatarData:
-    nickName: FFFFFFFFFFF
-    skinColor: 3
-    bodyForm: 136
-    faceForm: 42
-    eyes: 72
-    ear: 130
-    nose: 110
-    mouth: 22
-    eyeBrow: 56
-    hairStyleFront: 148
-    hairStyleBack: 171
-    hairColor: 12
-    facialHair: -1
+    nickName: 
+    skinColor: 0
+    bodyForm: 0
+    faceForm: 0
+    eyes: 0
+    ear: 0
+    nose: 0
+    mouth: 0
+    eyeBrow: 0
+    hairStyleFront: 0
+    hairStyleBack: 0
+    hairColor: 0
+    facialHair: 0
     bodyAccessory: 0
     headAccessory: 0
     armAccessory: 0
@@ -37,25 +37,12 @@ MonoBehaviour:
     backGround: 0
     foreGround: 0
     isFirstTime: 0
-    img_small: https://donext-dev.s3.eu-west-3.amazonaws.com/resources/b504a40c-eebc-401e-936a-c1a90673d257_img_small.png
-    img_big: https://donext-dev.s3.eu-west-3.amazonaws.com/resources/b504a40c-eebc-401e-936a-c1a90673d257_img_big.png
+    img_small: 
+    img_big: 
     avatarItems: []
   stadiumData:
-    collectCoins: 1
-    lastCollectTime: 1667214617
-    nextCollectTime: 1667214617
+    collectCoins: 0
+    lastCollectTime: 0
+    nextCollectTime: 0
   missionsData:
-    missionItems:
-    - id: 957
-      name: 502 AR 10.10.22
-      info: a
-      url: https://s3.eu-central-1.amazonaws.com/distritoacb.com/deals/1665347364104/index.html
-      img: https://donext-dev.s3.eu-west-3.amazonaws.com/resources/Estandar_AR.png
-      type: 0
-      position: 0
-      rewardType: 24
-      rewardTypeImg: https://donext-dev.s3.eu-west-3.amazonaws.com/resources/0000000-8abc-4a07-8ed6-4f6b76eed400.jpg
-      uuid_r: f3e962a8-bb89-4682-8ed4-20bd7ef2cf9a
-      lat: 
-      lon: 
-      valGPS: 0
+    missionItems: []
