@@ -159,7 +159,7 @@ public class PanelHeadquarter : Panel
     /// <param name="obj">Datos del ranking</param>
     private void OnSuccessLoadingRanking(DataSnapshot obj)
     {
-    
+        spinner.SetActive(false);
         HeadquarterContainerData hqContainerData = new HeadquarterContainerData();
         switch (actualSection)
         {
@@ -168,6 +168,11 @@ public class PanelHeadquarter : Panel
               
                 JsonConvert.PopulateObject(obj.RawJson, hqContainerData);
 
+                if(!string.IsNullOrEmpty( hqContainerData.MESSAGE))
+                {
+                    ACBSingleton.Instance.AlertPanel.SetupPanel(hqContainerData.MESSAGE, "", false, null);
+                    return;
+                }
 
                 maxPages = hqContainerData.total_pages;
                 if (hqContainerData.current_user != null) playerView.ShowRankingView(hqContainerData.current_user,actualSection);
@@ -225,6 +230,12 @@ public class PanelHeadquarter : Panel
                  Debug.Log(obj.RawJson);
                 TokenDataRankingContainer tokenDataRanking = new TokenDataRankingContainer();
                 JsonConvert.PopulateObject(obj.RawJson, tokenDataRanking);
+
+                if (!string.IsNullOrEmpty(tokenDataRanking.MESSAGE))
+                {
+                    ACBSingleton.Instance.AlertPanel.SetupPanel(tokenDataRanking.MESSAGE, "", false, null);
+                    return;
+                }
                 maxPages = tokenDataRanking.total_pages;
                 if (tokenDataRanking.items.Count > 0)
                 {
@@ -273,7 +284,7 @@ public class PanelHeadquarter : Panel
         }
         containerRectTransform.sizeDelta = new Vector2(containerRectTransform.sizeDelta.x, (actualTimeScale == TimeScales.Historic ? (actualSection == RankingSections.PlayerTokens ? playerRankingViewHistoricTokenPrefab.GetComponent<LayoutElement>().preferredHeight : playerRankingViewHistoricPrefab.GetComponent<LayoutElement>().preferredHeight ): (actualSection == RankingSections.PlayerTokens ? playerRankingTokenViewPrefab.GetComponent<LayoutElement>().preferredHeight : playerRankingViewPrefab.GetComponent<LayoutElement>().preferredHeight)) * (1 + containerRectTransform.childCount));
         allItemsLoaded = true;
-                spinner.SetActive(false);
+                
 
     }
 

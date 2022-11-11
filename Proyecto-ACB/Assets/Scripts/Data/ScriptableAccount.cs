@@ -744,6 +744,7 @@ namespace Data
         //historico
         public List<RankingUserData> best_leauge = new List<RankingUserData>();
         public string TEXT_EDITION;
+        public string MESSAGE;
         public List<DataSeason> data = new List<DataSeason>();
         [Serializable]
         public class DataSeason
@@ -819,6 +820,7 @@ namespace Data
         public List<DataSeason> data = new List<DataSeason>();
         public List<TokenDataRanking> best_leauge = new List<TokenDataRanking>();
         public string TEXT_EDITION;
+        public string MESSAGE;
         [Serializable]
         public class DataSeason
         {
