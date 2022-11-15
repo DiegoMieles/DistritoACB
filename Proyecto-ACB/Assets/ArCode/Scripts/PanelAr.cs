@@ -30,7 +30,11 @@ public class PanelAr : Panel
     private Button closeButton;
     [SerializeField] [Tooltip("Spinner de carga del panel")]
     private GameObject spinner;
-    
+    private bool isARFake;
+    [SerializeField]
+    [Tooltip("texto del botón de fake ar")]
+    private Text buttonFakeARText;
+
     private MissionsData.MissionItemData missionData; //Datos de la misión
     private bool checkRaycast; //Determina si se debe hacer raycasting a los objetos que se renderizan en cámara
 
@@ -191,6 +195,12 @@ public class PanelAr : Panel
             Close();
             ACBSingleton.Instance.AlertPanel.SetupPanel(cached.message, "", false, null);
         }
+    }
+    public void EnableDisableFakeAR()
+    {
+        isARFake = !isARFake;
+        SetAndShowReward(missionData, isARFake);
+        buttonFakeARText.text = isARFake ? "Deshabilitar Fake AR" : "Habilitar Fake AR";
     }
 
     #endregion
