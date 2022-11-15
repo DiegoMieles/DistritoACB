@@ -22,17 +22,17 @@ namespace Panels
         private GameObject PaneltabloDesafioData;
         [SerializeField] [Tooltip("Evento que se ejeuta cuando los desafios no se han podido cargar")]
         private UnityEvent onFailed;
-        [SerializeField] [Tooltip("Botón de creación de desafio")]
+        [SerializeField] [Tooltip("Bot?n de creaci?n de desafio")]
         private Button createChallengeButton;
-        [SerializeField] [Tooltip("Botón de cerrar panel")]
+        [SerializeField] [Tooltip("Bot?n de cerrar panel")]
         private Button closePanelButton;
         [SerializeField] [Tooltip("Datos con los desafios publicados")]
         private ChallengeContainer challengeContainer = new ChallengeContainer();
         [SerializeField]
-        [Tooltip("botón de la liga actual")]
+        [Tooltip("bot?n de la liga actual")]
         private Button actualLeagueButton ;
         [SerializeField]
-        [Tooltip("botón de la liga clásica")]
+        [Tooltip("bot?n de la liga cl?sica")]
         private Button clasicLeagueButton;
         [Space(5)]
         [Header("Panel opener data")]
@@ -43,12 +43,12 @@ namespace Panels
 
         [Space(5)]
         [Header("Creation challenge alert texts")]
-        [SerializeField] [Tooltip("Texto de creación de desafio que se muestra en el panel de alerta")]
+        [SerializeField] [Tooltip("Texto de creaci?n de desafio que se muestra en el panel de alerta")]
         private string createChallengeText;
         [SerializeField] [Tooltip("Texto que se muestra en el panel de alerta cuando hay un error al crear un desafio")]
         private string CreationErrorText;
 
-        [SerializeField] [Tooltip("Descripción de costo del desafio que se muestra en el panel de alerta")]
+        [SerializeField] [Tooltip("Descripci?n de costo del desafio que se muestra en el panel de alerta")]
         private string mensaje;
 
         private List<GameObject> postedChallenges; //Lista de desafios publicados
@@ -59,7 +59,7 @@ namespace Panels
         #region Unity Methods
 
         /// <summary>
-        /// Método que se ejecuta cuando se activa el panel, actualiza la información de los desafios
+        /// M?todo que se ejecuta cuando se activa el panel, actualiza la informaci?n de los desafios
         /// </summary>
         private void OnEnable()
         {
@@ -86,7 +86,7 @@ namespace Panels
             if (isClasicLeague) CallInfoClasicLeague(); else CallInfoActualLeague();
         }
         /// <summary>
-        /// Actualiza la información de los desafios que se van a mostrar en panel
+        /// Actualiza la informaci?n de los desafios que se van a mostrar en panel
         /// </summary>
         private void CallInfoActualLeague()
         {
@@ -132,7 +132,7 @@ namespace Panels
 
 
         /// <summary>
-        /// Actualiza la información de los desafios que se van a mostrar en panel
+        /// Actualiza la informaci?n de los desafios que se van a mostrar en panel
         /// </summary>
         private void CallInfoClasicLeague()
         {
@@ -176,7 +176,7 @@ namespace Panels
             }, !isClasicLeague);
         }
         /// <summary>
-        /// Llama a la alerta de confirmación de creación de desafio
+        /// Llama a la alerta de confirmaci?n de creaci?n de desafio
         /// </summary>
         private void CreateChallenge()
         {
@@ -235,7 +235,7 @@ namespace Panels
         }
 
         /// <summary>
-        /// Método que se ejecuta cuando el desafio ha sido correctamente publicado
+        /// M?todo que se ejecuta cuando el desafio ha sido correctamente publicado
         /// </summary>
         /// <param name="obj">Datos del desafio publicado devueltos desde backend</param>
         private void OnSuccess(DataSnapshot obj)
@@ -249,7 +249,7 @@ namespace Panels
                 ACBSingleton.Instance.AlertPanel.SetupPanel(obj.MessageCustom, "", false, UpdateLeague, null, 0, "Volver");
             }
             else
-                ACBSingleton.Instance.AlertPanel.SetupPanel(obj.MessageCustom, "", false, null, null, 0, "Volver");
+                ACBSingleton.Instance.AlertPanel.SetupPanel(obj.MessageCustom, "", false, UpdateLeague, null, 0, "Volver");
                 SetSpinnerState(false);
         }
 
@@ -263,7 +263,7 @@ namespace Panels
         /// <summary>
         /// Activa o desactiva el spinner de carga
         /// </summary>
-        /// <param name="state">Estado de activación del spinner</param>
+        /// <param name="state">Estado de activaci?n del spinner</param>
         private void SetSpinnerState(bool state)
         {
             GameObject spinner = GameObject.Find("Spinner_TablonDesafio");
