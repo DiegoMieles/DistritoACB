@@ -66,7 +66,7 @@ public class PanelMision : Panel
         missionPanelOpener.canParentCanvas = false;
         ACBSingleton.Instance.SetActiveCamera(false);
         missionPanelOpener.OpenPopup();
-        missionPanelOpener.popup.GetComponent<PanelAr>().SetAndShowReward(currentMission, ARSupportChecker.IsSupported());
+        missionPanelOpener.popup.GetComponent<PanelAr>().SetAndShowReward(currentMission, SupportedDevices.IsGroundPlaneSupported());
         Close(); 
     }
 
