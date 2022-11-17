@@ -3,6 +3,7 @@ using WebAPI;
 using UnityEngine;
 using UnityEngine.UI;
 using Newtonsoft.Json;
+using System.Collections;
 
 /// <summary>
 /// Controla lo que se muestra en el panel de AR
@@ -146,16 +147,21 @@ public class PanelAr : Panel
                 break;
         }
 
-        objectToShow.SetActive(true);
         
+        StartCoroutine(WaitForTurnOnCoin(objectToShow));
         if(!isARSupported)
             objectToShow.GetComponent<MeshRenderer>().enabled = true;
 
         ARCamera.gameObject.SetActive(true);
     }
-
+    
     #endregion
 
+    IEnumerator WaitForTurnOnCoin(GameObject objectToShow)
+    {
+        yield return new WaitForSeconds(1.5f);
+        objectToShow.SetActive(true);
+    }
     #region Inner Methods
 
     /// <summary>
