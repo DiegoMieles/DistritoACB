@@ -3,6 +3,7 @@ using WebAPI;
 using UnityEngine;
 using UnityEngine.UI;
 using Newtonsoft.Json;
+using System.Collections;
 
 /// <summary>
 /// Controla lo que se muestra en el panel de AR
@@ -10,7 +11,7 @@ using Newtonsoft.Json;
 public class PanelAr : Panel
 {
     [Header("Panel AR Components")]
-    [SerializeField] [Tooltip("Cámara donde se renderizan los elementos de AR y de lo mostrado por la cámara")]
+    [SerializeField] [Tooltip("C?mara donde se renderizan los elementos de AR y de lo mostrado por la c?mara")]
     private Camera ARCamera;
     [SerializeField] [Tooltip("Elemento AR en forma de carta que muestra el tipo de recompensa que se va a obtener")]
     private GameObject arCard;
@@ -26,19 +27,23 @@ public class PanelAr : Panel
     private GameObject highlightModel;
     [SerializeField] [Tooltip("Imagen AR de recompensa potenciador")]
     private GameObject boosterModel;
-    [SerializeField] [Tooltip("Botón que se encarga del cerrado del panel")]
+    [SerializeField] [Tooltip("Bot?n que se encarga del cerrado del panel")]
     private Button closeButton;
     [SerializeField] [Tooltip("Spinner de carga del panel")]
     private GameObject spinner;
-    
-    private MissionsData.MissionItemData missionData; //Datos de la misión
-    private bool checkRaycast; //Determina si se debe hacer raycasting a los objetos que se renderizan en cámara
+    private bool isARFake;
+    [SerializeField]
+    [Tooltip("texto del bot?n de fake ar")]
+    private Text buttonFakeARText;
+
+    private MissionsData.MissionItemData missionData; //Datos de la misi?n
+    private bool checkRaycast; //Determina si se debe hacer raycasting a los objetos que se renderizan en c?mara
 
     #region Unity Methods
 
     /// <summary>
     /// Se ejecuta cuando el panel ha sido iniciado por primera vez en escena, desactivando el spinner de carga y 
-    /// configurando el botón de cerrado del panel
+    /// configurando el bot?n de cerrado del panel
     /// </summary>
     private void Start()
     {
@@ -76,6 +81,7 @@ public class PanelAr : Panel
                         mission_id = missionData.id,
                         uuid_r = missionData.uuid_r,
                     };
+                    if (scan.mission_id == 0) return;
                     var json = JsonConvert.SerializeObject(scan);
                     spinner.SetActive(true);
                     WebProcedure.Instance.PostSaveMissionComplete(json, OnSuccessMissionCompleting, OnFailedMissionCompleting);
@@ -93,18 +99,12 @@ public class PanelAr : Panel
     /// <summary>
     /// Determina el premio que se debe mostrar en el panel para que el jugador pueda recolectarlo
     /// </summary>
-    /// <param name="missionData">Datos de la misión AR traidos desde backend previamente</param>
-    /// <param name="isARSupported">Determina si el dispositivo donde se está jugando soporta tecnología AR</param>
+    /// <param name="missionData">Datos de la misi?n AR traidos desde backend previamente</param>
+    /// <param name="isARSupported">Determina si el dispositivo donde se est? jugando soporta tecnolog?a AR</param>
     public void SetAndShowReward(MissionsData.MissionItemData missionData, bool isARSupported)
     {
         checkRaycast = false;
         this.missionData = missionData;
-
-        if (!isARSupported)
-        {
-            arCard.transform.SetParent(gameObject.transform);
-        }
-        
 
         skinModel.SetActive(false);
         tokenModel.SetActive(false);
@@ -112,7 +112,6 @@ public class PanelAr : Panel
         boosterModel.SetActive(false);
         coinModel.SetActive(false);
         acballModel.SetActive(false);
-
         GameObject objectToShow = new GameObject();
 
         switch (missionData.rewardType)
@@ -142,35 +141,49 @@ public class PanelAr : Panel
                 break;
         }
 
-        objectToShow.SetActive(true);
-        
-        if(!isARSupported)
-            objectToShow.GetComponent<MeshRenderer>().enabled = true;
+            objectToShow.GetComponent<MeshRenderer>().enabled = false;
 
-        ARCamera.gameObject.SetActive(true);
+        if (!isARSupported)
+        {
+            arCard.transform.SetParent(gameObject.transform);
+        }
+        StartCoroutine(WaitForTurnOnCoin(objectToShow, isARSupported));
+     
     }
-
+    
     #endregion
 
+    IEnumerator WaitForTurnOnCoin(GameObject objectToShow,bool isARSupported)
+    {
+        ARCamera.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(3f);
+        objectToShow.SetActive(true);
+        objectToShow.GetComponent<MeshRenderer>().enabled = true;
+
+    }
     #region Inner Methods
 
     /// <summary>
-    /// Método que se ejecuta cuando backend no puede determinar si la misión ha sido terminada satisfactoriamente
+    /// M?todo que se ejecuta cuando backend no puede determinar si la misi?n ha sido terminada satisfactoriamente
     /// </summary>
-    /// <param name="obj">Clase con los datos de error de la misión completada</param>
+    /// <param name="obj">Clase con los datos de error de la misi?n completada</param>
     private void OnFailedMissionCompleting(WebError obj)
     {
+        spinner.SetActive(false);
         ARCamera.gameObject.SetActive(false);
         ACBSingleton.Instance.AlertPanel.SetupPanel("Hubo un error, por favor intenta nuevamente", "", false, Close);
+        ACBSingleton.Instance.SetActiveCamera(true);
     }
 
     /// <summary>
-    /// Método que se ejecuta cuando backend determina si una misión ha sido completada satisfactoriamente
-    /// y manda al jugador al panel de recompensa de la misión
+    /// M?todo que se ejecuta cuando backend determina si una misi?n ha sido completada satisfactoriamente
+    /// y manda al jugador al panel de recompensa de la misi?n
     /// </summary>
     /// <param name="obj"></param>
     private void OnSuccessMissionCompleting(DataSnapshot obj)
     {
+        spinner.SetActive(true);
         var cached = JsonConvert.DeserializeObject<MissionRewardData>(obj.RawJson);
         ARCamera.gameObject.SetActive(false);
         Debug.Log(obj.RawJson);
@@ -191,6 +204,18 @@ public class PanelAr : Panel
             Close();
             ACBSingleton.Instance.AlertPanel.SetupPanel(cached.message, "", false, null);
         }
+    }
+    public override void Close()
+    {
+        missionData = new MissionsData.MissionItemData();
+        base.Close();
+       
+    }
+    public void EnableDisableFakeAR()
+    {
+        isARFake = !isARFake;
+        SetAndShowReward(missionData, !isARFake);
+        buttonFakeARText.text = isARFake ? "Deshabilitar Fake AR" : "Habilitar Fake AR";
     }
 
     #endregion
