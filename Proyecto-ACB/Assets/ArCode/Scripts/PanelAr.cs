@@ -81,6 +81,7 @@ public class PanelAr : Panel
                         mission_id = missionData.id,
                         uuid_r = missionData.uuid_r,
                     };
+                    if (scan.mission_id == 0) return;
                     var json = JsonConvert.SerializeObject(scan);
                     spinner.SetActive(true);
                     WebProcedure.Instance.PostSaveMissionComplete(json, OnSuccessMissionCompleting, OnFailedMissionCompleting);
@@ -105,19 +106,12 @@ public class PanelAr : Panel
         checkRaycast = false;
         this.missionData = missionData;
 
-        if (!isARSupported)
-        {
-            arCard.transform.SetParent(gameObject.transform);
-        }
-        
-
         skinModel.SetActive(false);
         tokenModel.SetActive(false);
         highlightModel.SetActive(false);
         boosterModel.SetActive(false);
         coinModel.SetActive(false);
         acballModel.SetActive(false);
-
         GameObject objectToShow = new GameObject();
 
         switch (missionData.rewardType)
@@ -147,20 +141,26 @@ public class PanelAr : Panel
                 break;
         }
 
-        
-        StartCoroutine(WaitForTurnOnCoin(objectToShow));
-        if(!isARSupported)
-            objectToShow.GetComponent<MeshRenderer>().enabled = true;
+            objectToShow.GetComponent<MeshRenderer>().enabled = false;
 
-        ARCamera.gameObject.SetActive(true);
+        if (!isARSupported)
+        {
+            arCard.transform.SetParent(gameObject.transform);
+        }
+        StartCoroutine(WaitForTurnOnCoin(objectToShow, isARSupported));
+     
     }
     
     #endregion
 
-    IEnumerator WaitForTurnOnCoin(GameObject objectToShow)
+    IEnumerator WaitForTurnOnCoin(GameObject objectToShow,bool isARSupported)
     {
-        yield return new WaitForSeconds(1.5f);
+        ARCamera.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(3f);
         objectToShow.SetActive(true);
+        objectToShow.GetComponent<MeshRenderer>().enabled = true;
+
     }
     #region Inner Methods
 
@@ -170,8 +170,10 @@ public class PanelAr : Panel
     /// <param name="obj">Clase con los datos de error de la misi?n completada</param>
     private void OnFailedMissionCompleting(WebError obj)
     {
+        spinner.SetActive(false);
         ARCamera.gameObject.SetActive(false);
         ACBSingleton.Instance.AlertPanel.SetupPanel("Hubo un error, por favor intenta nuevamente", "", false, Close);
+        ACBSingleton.Instance.SetActiveCamera(true);
     }
 
     /// <summary>
@@ -181,6 +183,7 @@ public class PanelAr : Panel
     /// <param name="obj"></param>
     private void OnSuccessMissionCompleting(DataSnapshot obj)
     {
+        spinner.SetActive(true);
         var cached = JsonConvert.DeserializeObject<MissionRewardData>(obj.RawJson);
         ARCamera.gameObject.SetActive(false);
         Debug.Log(obj.RawJson);
@@ -201,6 +204,12 @@ public class PanelAr : Panel
             Close();
             ACBSingleton.Instance.AlertPanel.SetupPanel(cached.message, "", false, null);
         }
+    }
+    public override void Close()
+    {
+        missionData = new MissionsData.MissionItemData();
+        base.Close();
+       
     }
     public void EnableDisableFakeAR()
     {
