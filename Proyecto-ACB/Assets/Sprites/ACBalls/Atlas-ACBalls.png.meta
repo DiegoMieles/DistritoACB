@@ -129,6 +129,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -964,6 +965,42 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Hexagono-0: -3867676958724869254
+      ACBall-Casademont: 5630115097500079049
+      ACBall-Urbas: -4560323569368416727
+      Potenciadores-Tirador: -8267454214809627721
+      ACBall-FCB: -6827606554280898236
+      Atlas-ACBalls_23: -2241210486908860392
+      Hexagono-2: 7570918892198307919
+      ACBall-Obradoiro: 7024657904142205313
+      ACBall-CJB: 170055283035326060
+      Potenciador-Cuadro: -7020413415652068074
+      ACBall-Burgos: -1989251605741556342
+      ACBall-GranCanaria: -498216977259402482
+      ACBall-Valencia: 5704614727495167152
+      Hexagono-1: -5403764129327757563
+      ACBall-Andorra: 4609399203698294298
+      Potenciadores-Rebote: 3177252138949176562
+      ACBall-Abierto-ON: 4959967729231871612
+      ACBall-CBC: 5924575239438740365
+      ACBall-Baskonia: 2979231048505830435
+      ACBall-Verde: 1327100772413228269
+      ACBall-Unicaja: 6838834003375888578
+      ACBall-Baxi: -8881548617537399034
+      ACBall-Lila: -9119143922681297735
+      ACBall-Leon: 1051972158877313226
+      Atlas-ACBalls_12: 4061948178588636118
+      ACBall-RealMadrid: -3380510853826299638
+      Atlas-ACBalls_13: 835157756534831474
+      ACBall-Abierto-OFF: -622296246031744683
+      ACBall-Coosur: 5812336307138448593
+      Potenciadores-Cesta: 5354310171465811031
+      Atlas-ACBalls_49: -5889168678901867649
+      ACBall-UCAM: 2404393843422943922
+      Flechas-Potenciadores: 2076323681607913690
+      ACBall-BilbaoBasket: -2073844015347850019
+      ACBall-Naranja: 7670147994478788847
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

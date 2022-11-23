@@ -63,6 +63,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -448,6 +449,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      colapsar: -5309694633564142047
+      cuadro-blanco: -852676519926344964
+      Btn-Ropa: 3258886731900059611
+      btn-gris: -4352507226814342030
+      Atlas-Avatar_8: -5846291400322127354
+      Btn-ok: -2769447719320588838
+      Toggle-rec: 127726529982857853
+      toggle-extra: 4986834134245345871
+      btn-negro: -2536364892903097203
+      btn-Shuffle: -6939613762345833223
+      Ventana: -316682653538801564
+      btn-editar: 1090511886596164990
+      Toggle-Avatar: 4872708246976115859
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
