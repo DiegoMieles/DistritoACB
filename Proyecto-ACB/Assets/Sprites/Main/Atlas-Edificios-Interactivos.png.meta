@@ -60,6 +60,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -334,7 +335,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c5eb9e3a36213a0f0800000000000000
-      internalID: -1107020864241942948
+      internalID: -3103508664024133730
       vertices: []
       indices: 
       edges: []
@@ -355,7 +356,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: b2136fe2ecbfc4d50800000000000000
-      internalID: 6723025206727029035
+      internalID: -5970474113140544222
       vertices: []
       indices: 
       edges: []
@@ -376,7 +377,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 0f78149973a530390800000000000000
-      internalID: -7853334130363103248
+      internalID: 1582807858706387577
       vertices: []
       indices: 
       edges: []
@@ -412,6 +413,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Bilboard-I: -5970474113140544222
+      Circulo-Avatar: -3103508664024133730
+      Velero: 1253531066720695360
+      Edf-Pabellon: -5795358740077567376
+      Avion-D: -9094412938915083863
+      Edf-Mall: 2818244676241149714
+      Edf-Headquarters: 1582807858706387577
+      Avion-I: -8427100894333178145
+      Atlas-Edificios-Interactivos_4: -4887561734047248538
+      Bilboard-D: 5634455312939400818
+      Edf-Banco: -8963582352109437606
+      Yate: -4590301341185807919
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
