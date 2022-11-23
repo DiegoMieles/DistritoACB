@@ -135,7 +135,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1025,44 +1024,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      icono-Puntos: -3405748623579903761
-      icono-Puerta: -2247894414512913946
-      voltear-carta: 6992103696299082947
-      icono-tache: -8867704406888707568
-      icono-BolaFugaz: 9125022375614917940
-      icono-Paloma: -2828354978733313150
-      rec-redondeado: 2500448627546117671
-      icono-Recepcion: -7802040831218993928
-      Boton-gris: 4330881686934585497
-      Palomita: -2919192913366427481
-      ilus-bolaFugaz: -1087056870613723741
-      icono-rebote: -6143682014216016578
-      rec-negro: -635923424281816441
-      btn-anadir-al-TC: -5313143854973642808
-      Rareza-epica: 5649579695196609702
-      Rec-info: -6117787561603517421
-      icono-Silla: -4923019924246146669
-      Potenciador-flechitas: -6801869776564816982
-      contorno-Lesionado: 1257154218914814629
-      boton-negro: -7033500636726090236
-      boton-CrearDesafio: 6280455161560730875
-      icono-triangulo: -4498145196933845493
-      boton-gris: 6822000872290321199
-      rareza-comun: 3557603092265632909
-      Rec-desafio: -1205894053327281395
-      Signo-Mas: -7059473586114884849
-      rec-Lesionado: 5152829173951952217
-      icono-Pabellon: -7053241291496860252
-      contorno-rec-negro: 3445013737804817978
-      Rec-Blanco: -1732403334880012034
-      icono-Tiros-d-3: -2203645112017777582
-      Hexagono-Blanco: -611028203908382085
-      Atlas-Pabellon-01_58: 115735251190600650
-      icono-circ: -3020297205173844524
-      rec-info: -8798208069287690274
-      rareza-Legendaria: 7994209153370180137
-      icono-bola-Foto: 8583732001275437588
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

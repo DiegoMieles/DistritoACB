@@ -81,7 +81,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -497,22 +496,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      circulo-blanco: 5687633079575826318
-      img-Avatar: -2129668917377849811
-      HUD-element-rec: -6474791559132582472
-      icono-Banco: -8531650280577380673
-      icono-flecha-arriba: 2721971113651694249
-      btn-cerrar: 3614501269786247245
-      icono-info: -6701362150599499359
-      Medidor-monedas: 6132888466433819208
-      icono-azul-ACBcoin: -3216026538687485459
-      icono-atras: 7131180765998652849
-      Circulo-negro: -4625379203041903168
-      icono-rosa-ACBcoin: 8725268137724833346
-      marcador-nombre-edificio: -2902698607423640474
-      icono-blanco-ACBcoin: 5250423710992578351
-      icono-ACBall: -3794263870042698949
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

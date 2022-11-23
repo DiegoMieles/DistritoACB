@@ -75,7 +75,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -545,24 +544,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      rec-info-2: -8703793822211519454
-      rec-info-4: -2684757293076112418
-      rec-info-1: 2737556997987758958
-      rec-contorno: -7026148666174172938
-      desliza: -6968302904243953562
-      rec-lastimado: 7519592641908138629
-      hexagono: -216139874681259050
-      pantalla-ipad: 427418558594797327
-      icon-TeamCompetitivo: 8350718284889101608
-      rec-info-5: -5626872988522929236
-      circ-lesionado: 1833526721721639646
-      circ-TeamCompetitivo: 9189745415076915908
-      rec-red-blanco: -4271776351447521109
-      circ-Potenciador: -498590975384899846
-      semiCirculo: 1945407975441230349
-      rec-info-3: 3883708299644338070
-      icono-Potenciadores: 4796296095465446660
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
