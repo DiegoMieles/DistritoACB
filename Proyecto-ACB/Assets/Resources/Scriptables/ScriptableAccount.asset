@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b058b7eac12c9a44b0df526ce001fbb, type: 3}
-  m_Name: Camiseta
+  m_Name: ScriptableAccount
   m_EditorClassIdentifier: 
   statsData:
     coinsBalance: 907
